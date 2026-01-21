@@ -1,0 +1,73 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#84A59D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A8C5BE;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#354F52;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5F8A81;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 噪声纹理 -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" />
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" />
+    </filter>
+  </defs>
+
+  <!-- 背景圆 -->
+  <circle cx="100" cy="100" r="98" fill="url(#bgGradient)" opacity="0.95"/>
+
+  <!-- 神经网络节点图案 -->
+  <g opacity="0.6">
+    <!-- 中心节点 -->
+    <circle cx="100" cy="100" r="8" fill="#FDFCF8"/>
+
+    <!-- 第一层节点 -->
+    <circle cx="100" cy="60" r="6" fill="url(#accentGradient)"/>
+    <circle cx="130" cy="80" r="6" fill="url(#accentGradient)"/>
+    <circle cx="130" cy="120" r="6" fill="url(#accentGradient)"/>
+    <circle cx="100" cy="140" r="6" fill="url(#accentGradient)"/>
+    <circle cx="70" cy="120" r="6" fill="url(#accentGradient)"/>
+    <circle cx="70" cy="80" r="6" fill="url(#accentGradient)"/>
+
+    <!-- 连接线 -->
+    <line x1="100" y1="100" x2="100" y2="60" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="100" y1="100" x2="130" y2="80" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="100" y1="100" x2="130" y2="120" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="100" y1="100" x2="100" y2="140" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="100" y1="100" x2="70" y2="120" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="100" y1="100" x2="70" y2="80" stroke="#FDFCF8" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- 外层节点 -->
+    <circle cx="100" cy="40" r="4" fill="#FDFCF8" opacity="0.7"/>
+    <circle cx="145" cy="70" r="4" fill="#FDFCF8" opacity="0.7"/>
+    <circle cx="145" cy="130" r="4" fill="#FDFCF8" opacity="0.7"/>
+    <circle cx="100" cy="160" r="4" fill="#FDFCF8" opacity="0.7"/>
+    <circle cx="55" cy="130" r="4" fill="#FDFCF8" opacity="0.7"/>
+    <circle cx="55" cy="70" r="4" fill="#FDFCF8" opacity="0.7"/>
+  </g>
+
+  <!-- 字母 "AI" -->
+  <g transform="translate(100, 100)">
+    <text x="0" y="8"
+          font-family="Arial, sans-serif"
+          font-size="36"
+          font-weight="700"
+          fill="#FDFCF8"
+          text-anchor="middle"
+          opacity="0.9">
+      AI
+    </text>
+  </g>
+
+  <!-- 微妙的光晕 -->
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#FDFCF8" stroke-width="2" opacity="0.3"/>
+
+  <!-- 噪声叠加（极淡） -->
+  <rect width="200" height="200" fill="white" opacity="0.02" filter="url(#noise)"/>
+</svg>
