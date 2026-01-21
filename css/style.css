@@ -4575,3 +4575,58 @@ a:focus-visible {
     padding: 5px 12px;
   }
 }
+
+/* ========================================
+   Footer 社交链接优化
+   ======================================== */
+
+.footer-social-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.footer-social-link:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-alpha-30);
+}
+
+.footer-social-link svg {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer-social-links {
+    gap: var(--spacing-sm);
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+}
