@@ -5621,8 +5621,8 @@ a:focus-visible {
   overflow: hidden;
   height: 100vh;
   padding: 0;
-  padding-top: clamp(12px, 2.5vh, 28px);
-  padding-bottom: clamp(8px, 2vh, 20px);
+  padding-top: clamp(6px, 1.6vh, 16px);
+  padding-bottom: clamp(6px, 1.6vh, 16px);
   justify-content: flex-start;
   align-items: stretch;
   gap: var(--spacing-sm);
@@ -5638,7 +5638,7 @@ a:focus-visible {
 
 /* 首页摄影内容容器 */
 .gallery-body {
-  width: min(720px, 100%);
+  width: min(980px, 100%);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
   display: flex;
@@ -5900,14 +5900,14 @@ a:focus-visible {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(10px, 1.4vw, 16px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 20px);
   width: 100%;
 }
 
 .gallery-item {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: none;
@@ -5918,7 +5918,7 @@ a:focus-visible {
 }
 
 :root.fullpage-enabled .gallery-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .gallery-item:hover {
