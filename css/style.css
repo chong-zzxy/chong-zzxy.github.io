@@ -4746,8 +4746,8 @@ a:focus-visible {
 
 /* 全屏切屏模式 */
 :root.fullpage-enabled {
-  --fullpage-top-pad: clamp(56px, 8vh, 120px);
-  --fullpage-bottom-pad: clamp(12px, 3vh, 40px);
+  --fullpage-top-pad: clamp(44px, 7vh, 100px);
+  --fullpage-bottom-pad: clamp(8px, 2.5vh, 28px);
 }
 
 :root.fullpage-enabled .fullpage-container {
@@ -4814,41 +4814,33 @@ a:focus-visible {
 /* 全屏模式下的内容滚动区域 */
 :root.fullpage-enabled .section-scroll {
   max-height: calc(100vh - var(--fullpage-top-pad) - var(--fullpage-bottom-pad));
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-alpha-30) transparent;
-}
-
-:root.fullpage-enabled .featured-section .section-scroll,
-:root.fullpage-enabled .gallery-section .section-scroll {
-  overflow-y: hidden;
 }
 
 :root.fullpage-enabled .section-title-fp {
-  margin-bottom: clamp(12px, 2.5vh, 28px);
+  margin-bottom: clamp(8px, 2vh, 20px);
 }
 
 :root.fullpage-enabled .summary-content {
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 :root.fullpage-enabled .about-intro {
-  padding: var(--spacing-xl);
-}
-
-:root.fullpage-enabled .intro-text {
-  margin-bottom: var(--spacing-sm);
-}
-
-:root.fullpage-enabled .stat-item {
   padding: var(--spacing-lg);
 }
 
+:root.fullpage-enabled .intro-text {
+  margin-bottom: var(--spacing-xs);
+}
+
+:root.fullpage-enabled .stat-item {
+  padding: var(--spacing-md);
+}
+
 :root.fullpage-enabled .stat-value {
-  font-size: 2.4rem;
+  font-size: 2.1rem;
 }
 
 :root.fullpage-enabled .featured-slider-wrapper {
@@ -4857,19 +4849,31 @@ a:focus-visible {
 
 :root.fullpage-enabled .featured-cover,
 :root.fullpage-enabled .featured-cover-placeholder {
-  height: 170px;
+  height: 150px;
 }
 
 :root.fullpage-enabled .featured-content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
+}
+
+:root.fullpage-enabled .featured-excerpt {
+  -webkit-line-clamp: 2;
 }
 
 :root.fullpage-enabled .guestbook-layout {
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 :root.fullpage-enabled .guestbook-form .form-textarea {
-  min-height: 110px;
+  min-height: 90px;
+}
+
+:root.fullpage-enabled .guestbook-title {
+  margin-bottom: var(--spacing-md);
+}
+
+:root.fullpage-enabled .guestbook-form .form-group {
+  margin-bottom: var(--spacing-sm);
 }
 
 :root.fullpage-enabled .section-scroll::-webkit-scrollbar {
@@ -5612,7 +5616,7 @@ a:focus-visible {
   overflow: hidden;
   padding: 0;
   height: 100vh;
-  padding-top: calc(var(--fullpage-top-pad) - 20px);
+  padding-top: calc(var(--fullpage-top-pad) - 12px);
 }
 
 .gallery-section .section-scroll {
@@ -5638,7 +5642,7 @@ a:focus-visible {
 .gallery-scroll-wrapper {
   width: 100%;
   overflow: visible;
-  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-md);
+  padding: 0 var(--spacing-lg) var(--spacing-md);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5846,14 +5850,14 @@ a:focus-visible {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   width: 100%;
   max-width: 1200px;
 }
 
 .gallery-item {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -5861,6 +5865,19 @@ a:focus-visible {
   text-decoration: none;
   color: inherit;
   background: var(--bg-secondary);
+}
+
+:root.fullpage-enabled .gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 980px;
+}
+
+:root.fullpage-enabled .gallery-item {
+  aspect-ratio: 16 / 10;
+}
+
+:root.fullpage-enabled .gallery-item:nth-child(n+5) {
+  display: none;
 }
 
 .gallery-item:hover {
@@ -6329,20 +6346,20 @@ a:focus-visible {
 
 @media (max-height: 820px) {
   :root.fullpage-enabled {
-    --fullpage-top-pad: clamp(48px, 7vh, 100px);
-    --fullpage-bottom-pad: clamp(8px, 2.5vh, 32px);
+    --fullpage-top-pad: clamp(36px, 6vh, 88px);
+    --fullpage-bottom-pad: clamp(6px, 2vh, 24px);
   }
 
   :root.fullpage-enabled .section-title-fp {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
   }
 
   :root.fullpage-enabled .summary-content {
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
   }
 
   :root.fullpage-enabled .about-intro {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
   }
 
   :root.fullpage-enabled .intro-text {
@@ -6350,28 +6367,28 @@ a:focus-visible {
   }
 
   :root.fullpage-enabled .stat-item {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   :root.fullpage-enabled .stat-value {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
   }
 
   :root.fullpage-enabled .featured-cover,
   :root.fullpage-enabled .featured-cover-placeholder {
-    height: 170px;
+    height: 150px;
   }
 
   :root.fullpage-enabled .featured-content {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   :root.fullpage-enabled .guestbook-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   :root.fullpage-enabled .guestbook-form .form-textarea {
-    min-height: 110px;
+    min-height: 90px;
   }
 }
 
