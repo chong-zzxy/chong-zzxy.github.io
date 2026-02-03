@@ -4817,9 +4817,13 @@ a:focus-visible {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-bottom: var(--spacing-xl);
   scrollbar-width: thin;
   scrollbar-color: var(--primary-alpha-30) transparent;
+}
+
+:root.fullpage-enabled .featured-section .section-scroll,
+:root.fullpage-enabled .gallery-section .section-scroll {
+  overflow-y: hidden;
 }
 
 :root.fullpage-enabled .section-title-fp {
@@ -5657,15 +5661,18 @@ a:focus-visible {
 
 .btn-secondary {
   background: transparent;
-  border: 2px solid var(--border-color);
-  color: var(--text-primary);
+  border: none;
+  color: var(--text-secondary);
   box-shadow: none;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .btn-secondary:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
+  background: transparent;
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Gallery 底部固定区 */
@@ -5844,20 +5851,6 @@ a:focus-visible {
   box-shadow: var(--shadow-xl);
 }
 
-.gallery-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  pointer-events: none;
-}
-
-.gallery-item:hover::after {
-  opacity: 1;
-}
-
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -5886,16 +5879,18 @@ a:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
   display: flex;
   align-items: flex-end;
   padding: var(--spacing-lg);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  opacity: 0.9;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  transform: translateY(6px);
 }
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-overlay .gallery-info {
@@ -5903,7 +5898,7 @@ a:focus-visible {
 }
 
 .gallery-title {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
@@ -5911,6 +5906,16 @@ a:focus-visible {
 .gallery-date {
   font-size: 0.875rem;
   opacity: 0.9;
+}
+
+.gallery-desc {
+  margin-top: var(--spacing-xs);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.85);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .view-all-gallery {
