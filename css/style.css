@@ -5621,7 +5621,7 @@ a:focus-visible {
   overflow: hidden;
   height: 100vh;
   padding: 0;
-  padding-top: clamp(18px, 3vh, 36px);
+  padding-top: clamp(28px, 4vh, 52px);
   padding-bottom: clamp(6px, 1.6vh, 16px);
   justify-content: flex-start;
   align-items: stretch;
@@ -5638,7 +5638,7 @@ a:focus-visible {
 
 /* 首页摄影内容容器 */
 .gallery-body {
-  width: min(900px, 100%);
+  width: min(860px, 100%);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
   display: flex;
@@ -5654,7 +5654,7 @@ a:focus-visible {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: var(--spacing-lg);
   background: transparent;
   border-radius: 0;
@@ -5901,7 +5901,7 @@ a:focus-visible {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 20px);
+  gap: clamp(10px, 1.5vw, 18px);
   width: 100%;
 }
 
@@ -5930,6 +5930,42 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.gallery-item-viewall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.gallery-item-viewall:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(49, 126, 251, 0.18);
+}
+
+.viewall-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.viewall-label {
+  font-size: 0.95rem;
+}
+
+.viewall-arrow {
+  font-size: 1.1rem;
+  transition: transform var(--transition-base);
+}
+
+.gallery-item-viewall:hover .viewall-arrow {
+  transform: translateX(4px);
 }
 
 .gallery-item:hover img {
