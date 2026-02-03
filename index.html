@@ -8,6 +8,27 @@
   <link rel="icon" href="/img/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/theme-green.css">
+  
+    <script>
+      (function() {
+        try {
+          if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+          }
+          var w = window.innerWidth || 0;
+          var h = window.innerHeight || 0;
+          var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var pointerCoarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+          var enable = !prefersReducedMotion && !pointerCoarse && w >= 1024 && h >= 700;
+          if (enable) {
+            document.documentElement.classList.add('fullpage-enabled');
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+          }
+          document.documentElement.dataset.homeMode = enable ? 'fullpage' : 'scroll';
+        } catch (e) {}
+      })();
+    </script>
+  
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
   <!-- Navigation -->
@@ -66,25 +87,6 @@
   <!-- Main Content -->
   <main class="main-container">
     <!-- 全屏滚动首页 -->
-<script>
-  (function() {
-    try {
-      var w = window.innerWidth || 0;
-      var h = window.innerHeight || 0;
-      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var pointerCoarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-      var enable = !prefersReducedMotion && !pointerCoarse && w >= 1024 && h >= 700;
-      if (enable) {
-        document.documentElement.classList.add('fullpage-enabled');
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      }
-      document.documentElement.dataset.homeMode = enable ? 'fullpage' : 'scroll';
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-    } catch (e) {}
-  })();
-</script>
 <div id="fullpage-wrapper" class="fullpage-container" data-current="0">
 
   <!-- Section 1: Hero -->
@@ -451,7 +453,7 @@
         <div class="gallery-grid">
         
           <a href="/gallery/Madame-Nian.html"
-             class="gallery-item is-large"
+             class="gallery-item"
              data-aos="fade-up"
              data-aos-delay="0">
             
