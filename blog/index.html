@@ -24,32 +24,22 @@
       
         <a href="/"
            class="nav-item ">
-          首页
+          Home
         </a>
       
         <a href="/blog/"
            class="nav-item active">
-          博客
+          Blog
         </a>
       
         <a href="/gallery/"
            class="nav-item ">
-          摄影
-        </a>
-      
-        <a href="/guestbook/"
-           class="nav-item ">
-          留言板
+          Gallery
         </a>
       
         <a href="/about/"
            class="nav-item ">
-          关于
-        </a>
-      
-        <a href="/archives/"
-           class="nav-item ">
-          归档
+          Resume
         </a>
       
     </div>
@@ -86,6 +76,22 @@
     <p class="blog-description">
       分享技术见解，记录学习旅程
     </p>
+
+    <!-- 视图切换按钮 -->
+    <div class="view-switcher">
+      <button class="view-btn active" data-view="list">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="currentColor" d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+        </svg>
+        列表视图
+      </button>
+      <button class="view-btn" data-view="timeline">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+        </svg>
+        时间线
+      </button>
+    </div>
   </div>
 
   <div class="blog-layout">
@@ -93,54 +99,6 @@
     <div class="blog-main">
       <!-- 文章列表 -->
       <div class="post-list">
-        
-          <article class="post-card">
-            <!-- 封面图 -->
-            
-
-            <!-- 文章内容 -->
-            <div class="post-content">
-              <!-- 分类标签 -->
-              
-                <a href="/categories/Life/" class="post-category">
-                  <svg viewBox="0 0 24 24" width="14" height="14">
-                    <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-                  </svg>
-                  Life
-                </a>
-              
-
-              <!-- 标题 -->
-              <h2 class="post-card-title">
-                <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/">萌宠</a>
-              </h2>
-
-              <!-- 摘要 -->
-              
-
-              <!-- 元信息 -->
-              <div class="post-meta">
-                <time class="post-date">
-                  <svg viewBox="0 0 24 24" width="16" height="16">
-                    <path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10z"/>
-                  </svg>
-                  2026-01-18
-                </time>
-
-                <span class="post-dot">•</span>
-
-                <span class="post-reading-time">
-                  <svg viewBox="0 0 24 24" width="16" height="16">
-                    <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                  </svg>
-                  0 分钟阅读
-                </span>
-
-                <!-- 标签 -->
-                
-              </div>
-            </div>
-          </article>
         
           <article class="post-card">
             <!-- 封面图 -->
@@ -182,6 +140,54 @@
                     <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
                   </svg>
                   5 分钟阅读
+                </span>
+
+                <!-- 标签 -->
+                
+              </div>
+            </div>
+          </article>
+        
+          <article class="post-card">
+            <!-- 封面图 -->
+            
+
+            <!-- 文章内容 -->
+            <div class="post-content">
+              <!-- 分类标签 -->
+              
+                <a href="/categories/Life/" class="post-category">
+                  <svg viewBox="0 0 24 24" width="14" height="14">
+                    <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                  </svg>
+                  Life
+                </a>
+              
+
+              <!-- 标题 -->
+              <h2 class="post-card-title">
+                <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/">萌宠</a>
+              </h2>
+
+              <!-- 摘要 -->
+              
+
+              <!-- 元信息 -->
+              <div class="post-meta">
+                <time class="post-date">
+                  <svg viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10z"/>
+                  </svg>
+                  2026-01-18
+                </time>
+
+                <span class="post-dot">•</span>
+
+                <span class="post-reading-time">
+                  <svg viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                  </svg>
+                  0 分钟阅读
                 </span>
 
                 <!-- 标签 -->
@@ -378,16 +384,16 @@
           <ul class="popular-list">
             
               <li class="popular-item">
-                <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="popular-link">
+                <a href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/" class="popular-link">
                   <span class="popular-number">1</span>
-                  <span class="popular-title">萌宠</span>
+                  <span class="popular-title">自然语言处理-NLP基础</span>
                 </a>
               </li>
             
               <li class="popular-item">
-                <a href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/" class="popular-link">
+                <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="popular-link">
                   <span class="popular-number">2</span>
-                  <span class="popular-title">自然语言处理-NLP基础</span>
+                  <span class="popular-title">萌宠</span>
                 </a>
               </li>
             
@@ -410,12 +416,144 @@
       
     </aside>
   </div>
+
+  <!-- 时间线视图（默认隐藏） -->
+  <div class="timeline-view" style="display: none;">
+    <div class="archive-timeline">
+      
+
+      
+        
+
+        
+          
+          <div class="archive-year">
+            <h2 class="year-title">2026</h2>
+          </div>
+        
+
+        <article class="archive-item">
+          <time class="archive-date" datetime="2026-01-18T14:15:08.377Z">
+            01-18
+          </time>
+          <div class="archive-content">
+            <h3 class="archive-post-title">
+              <a href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/">自然语言处理-NLP基础</a>
+            </h3>
+            
+              <a href="/categories/NLP/" class="archive-category">
+                NLP
+              </a>
+            
+          </div>
+        </article>
+      
+        
+
+        
+
+        <article class="archive-item">
+          <time class="archive-date" datetime="2026-01-18T14:15:08.377Z">
+            01-18
+          </time>
+          <div class="archive-content">
+            <h3 class="archive-post-title">
+              <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/">萌宠</a>
+            </h3>
+            
+              <a href="/categories/Life/" class="archive-category">
+                Life
+              </a>
+            
+          </div>
+        </article>
+      
+        
+
+        
+
+        <article class="archive-item">
+          <time class="archive-date" datetime="2026-01-18T14:15:08.377Z">
+            01-18
+          </time>
+          <div class="archive-content">
+            <h3 class="archive-post-title">
+              <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
+            </h3>
+            
+              <a href="/categories/CV/" class="archive-category">
+                CV
+              </a>
+            
+          </div>
+        </article>
+      
+        
+
+        
+
+        <article class="archive-item">
+          <time class="archive-date" datetime="2026-01-18T14:15:08.376Z">
+            01-18
+          </time>
+          <div class="archive-content">
+            <h3 class="archive-post-title">
+              <a href="/2026/01/18/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a>
+            </h3>
+            
+              <a href="/categories/CV/" class="archive-category">
+                CV
+              </a>
+            
+          </div>
+        </article>
+      
+    </div>
+  </div>
 </div>
+
+<script>
+// 视图切换功能
+(function() {
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const listView = document.querySelector('.blog-layout');
+  const timelineView = document.querySelector('.timeline-view');
+
+  // 从localStorage读取上次选择的视图
+  const savedView = localStorage.getItem('blogView') || 'list';
+  if (savedView === 'timeline') {
+    switchView('timeline');
+  }
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.dataset.view;
+      switchView(view);
+      localStorage.setItem('blogView', view);
+    });
+  });
+
+  function switchView(view) {
+    viewBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.view === view);
+    });
+
+    if (view === 'timeline') {
+      listView.style.display = 'none';
+      timelineView.style.display = 'block';
+    } else {
+      listView.style.display = 'grid';
+      timelineView.style.display = 'none';
+    }
+  }
+})();
+</script>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- Footer (隐藏在首页，因为首页已有访问统计和联系方式) -->
+  
+    <footer class="footer">
   <div class="footer-container">
     <div class="footer-content">
       <div class="footer-info">
@@ -522,6 +660,7 @@
   </div>
 </footer>
 
+  
 
   <!-- Back to Top -->
   <button id="back-to-top" class="back-to-top" aria-label="返回顶部">
