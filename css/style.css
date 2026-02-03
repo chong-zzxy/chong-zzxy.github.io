@@ -2886,7 +2886,7 @@ a:focus-visible {
   padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-.gallery-section .gallery-header {
+.gallery-container .gallery-header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
   padding: var(--spacing-3xl) 0;
@@ -2894,14 +2894,14 @@ a:focus-visible {
   border-radius: var(--radius-xl);
 }
 
-.gallery-title {
+.gallery-container .gallery-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
 }
 
-.gallery-title .title-text {
+.gallery-container .gallery-title .title-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2910,7 +2910,7 @@ a:focus-visible {
   display: inline-block;
 }
 
-.gallery-title .title-subtitle {
+.gallery-container .gallery-title .title-subtitle {
   display: block;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2919,7 +2919,7 @@ a:focus-visible {
   opacity: 0.8;
 }
 
-.gallery-description {
+.gallery-container .gallery-description {
   font-size: 1.125rem;
   color: var(--text-secondary);
   max-width: 600px;
@@ -5852,14 +5852,14 @@ a:focus-visible {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   width: 100%;
-  max-width: 960px;
+  max-width: 900px;
 }
 
 .gallery-item {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: none;
@@ -5871,7 +5871,7 @@ a:focus-visible {
 
 :root.fullpage-enabled .gallery-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 960px;
+  max-width: 900px;
 }
 
 .gallery-item:hover {
