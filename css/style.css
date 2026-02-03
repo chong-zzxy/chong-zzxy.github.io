@@ -5612,35 +5612,46 @@ a:focus-visible {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 :root.fullpage-enabled .gallery-section {
   overflow: hidden;
-  padding: 0;
   height: 100vh;
-  padding-top: clamp(20px, 4vh, 44px);
-  padding-bottom: clamp(12px, 3vh, 32px);
-  gap: var(--spacing-md);
+  padding: 0;
+  padding-top: clamp(12px, 2.5vh, 28px);
+  padding-bottom: clamp(8px, 2vh, 20px);
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--spacing-sm);
 }
 
 .gallery-section .section-scroll {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  gap: var(--spacing-md);
+}
+
+/* 首页摄影内容容器 */
+.gallery-body {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-md);
 }
 
 /* Gallery 顶部标题区 */
 .gallery-header {
   flex-shrink: 0;
-  padding: 0 var(--spacing-lg);
+  padding: 0;
   text-align: left;
   width: 100%;
-  max-width: 760px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5648,7 +5659,8 @@ a:focus-visible {
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  margin-bottom: var(--spacing-xs);
+  border: 0;
+  margin: 0;
 }
 
 .gallery-header .section-title-fp {
@@ -5657,7 +5669,12 @@ a:focus-visible {
   text-align: left;
 }
 
+.gallery-header .title-text {
+  padding-bottom: 0;
+}
+
 .gallery-header .title-text::after {
+  content: none;
   display: none;
 }
 
@@ -5665,7 +5682,7 @@ a:focus-visible {
 .gallery-scroll-wrapper {
   width: 100%;
   overflow: visible;
-  padding: 0 var(--spacing-lg) var(--spacing-sm);
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5688,13 +5705,14 @@ a:focus-visible {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   transition: color var(--transition-base), transform var(--transition-base);
   position: relative;
-  padding: 6px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   background: transparent;
+  box-shadow: none;
 }
 
 .gallery-more::after {
@@ -5702,15 +5720,28 @@ a:focus-visible {
   transition: transform var(--transition-base);
 }
 
+.gallery-more::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition-base);
+}
+
 .gallery-more:hover {
   color: var(--primary);
-  border-color: var(--primary);
   transform: translateY(-1px);
-  box-shadow: 0 6px 12px var(--primary-alpha-20);
 }
 
 .gallery-more:hover::after {
   transform: translateX(4px);
+}
+
+.gallery-more:hover::before {
+  width: 100%;
 }
 
 
@@ -5870,15 +5901,14 @@ a:focus-visible {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--spacing-sm);
+  gap: clamp(10px, 1.4vw, 16px);
   width: 100%;
-  max-width: 760px;
 }
 
 .gallery-item {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: none;
   transition: all var(--transition-base);
@@ -5889,7 +5919,6 @@ a:focus-visible {
 
 :root.fullpage-enabled .gallery-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 760px;
 }
 
 .gallery-item:hover {
