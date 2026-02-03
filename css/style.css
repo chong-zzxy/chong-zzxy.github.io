@@ -4744,6 +4744,11 @@ a:focus-visible {
 }
 
 /* 全屏切屏模式 */
+:root.fullpage-enabled {
+  --fullpage-top-pad: clamp(88px, 12vh, 160px);
+  --fullpage-bottom-pad: clamp(24px, 4vh, 56px);
+}
+
 :root.fullpage-enabled .fullpage-container {
   height: 100vh;
   overflow: hidden;
@@ -4757,8 +4762,8 @@ a:focus-visible {
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  padding-top: clamp(88px, 12vh, 160px);
-  padding-bottom: 0;
+  padding-top: var(--fullpage-top-pad);
+  padding-bottom: var(--fullpage-bottom-pad);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
@@ -4801,19 +4806,28 @@ a:focus-visible {
 :root.fullpage-enabled .fullpage-container[data-current="4"] .fullpage-section[data-index="3"] { transform: translateY(-100vh); }
 :root.fullpage-enabled .fullpage-container[data-current="4"] .fullpage-section[data-index="4"] { transform: translateY(0); }
 
-/* Hero, Summary, Featured sections 严格限制不可滚动和溢出（仅全屏模式） */
-:root.fullpage-enabled .hero-section,
-:root.fullpage-enabled .summary-section,
-:root.fullpage-enabled .featured-section {
-  overflow: hidden !important;
+/* 全屏模式下的内容滚动区域 */
+:root.fullpage-enabled .section-scroll {
+  max-height: calc(100vh - var(--fullpage-top-pad) - var(--fullpage-bottom-pad));
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: var(--spacing-xl);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-alpha-30) transparent;
 }
 
-/* 确保这些section的内容不会溢出（仅全屏模式） */
-:root.fullpage-enabled .hero-section .hero-content,
-:root.fullpage-enabled .summary-section .section-container,
-:root.fullpage-enabled .featured-section .section-container {
-  max-height: 75vh;
-  overflow: hidden;
+:root.fullpage-enabled .section-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+:root.fullpage-enabled .section-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:root.fullpage-enabled .section-scroll::-webkit-scrollbar-thumb {
+  background: var(--primary-alpha-30);
+  border-radius: 999px;
 }
 
 .section-container {
@@ -5143,6 +5157,7 @@ a:focus-visible {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
   margin-bottom: var(--spacing-3xl);
+  width: 100%;
 }
 
 /* 个人简介 */
@@ -5312,6 +5327,8 @@ a:focus-visible {
 .featured-slider-wrapper {
   position: relative;
   margin-bottom: var(--spacing-2xl);
+  width: 100%;
+  padding: 0 clamp(32px, 4vw, 56px);
 }
 
 .featured-slider {
@@ -5492,11 +5509,11 @@ a:focus-visible {
 }
 
 .slider-nav.prev {
-  left: -60px;
+  left: 0;
 }
 
 .slider-nav.next {
-  right: -60px;
+  right: 0;
 }
 
 .view-all-posts {
@@ -5532,6 +5549,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: stretch;
   gap: var(--spacing-lg);
 }
 
@@ -5539,6 +5557,14 @@ a:focus-visible {
   overflow: hidden;
   padding: 0;
   height: 100vh;
+}
+
+.gallery-section .section-scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
 }
 
 /* Gallery 顶部标题区 */
@@ -6320,6 +6346,58 @@ a:focus-visible {
    响应式设计
    ======================================== */
 
+@media (max-height: 820px) {
+  :root.fullpage-enabled {
+    --fullpage-top-pad: clamp(64px, 9vh, 120px);
+    --fullpage-bottom-pad: clamp(16px, 3vh, 36px);
+  }
+
+  :root.fullpage-enabled .section-title-fp {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  :root.fullpage-enabled .summary-content {
+    gap: var(--spacing-xl);
+  }
+
+  :root.fullpage-enabled .about-intro {
+    padding: var(--spacing-xl);
+  }
+
+  :root.fullpage-enabled .intro-text {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  :root.fullpage-enabled .stat-item {
+    padding: var(--spacing-lg);
+  }
+
+  :root.fullpage-enabled .stat-value {
+    font-size: 2.4rem;
+  }
+
+  :root.fullpage-enabled .featured-cover,
+  :root.fullpage-enabled .featured-cover-placeholder {
+    height: 170px;
+  }
+
+  :root.fullpage-enabled .featured-content {
+    padding: var(--spacing-lg);
+  }
+
+  :root.fullpage-enabled .guestbook-card {
+    padding: var(--spacing-lg);
+  }
+
+  :root.fullpage-enabled .guestbook-form .form-textarea {
+    min-height: 110px;
+  }
+
+  :root.fullpage-enabled .gallery-card-image {
+    height: 140px;
+  }
+}
+
 @media (max-width: 1024px) {
   .summary-content {
     grid-template-columns: 1fr;
@@ -6330,12 +6408,16 @@ a:focus-visible {
     flex: 0 0 calc(50% - 12px);
   }
 
+  .featured-slider-wrapper {
+    padding: 0 24px;
+  }
+
   .slider-nav.prev {
-    left: -30px;
+    left: 0;
   }
 
   .slider-nav.next {
-    right: -30px;
+    right: 0;
   }
 }
 

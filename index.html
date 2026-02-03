@@ -129,7 +129,7 @@
 
   <!-- Section 2: About/Summary -->
   <section class="fullpage-section summary-section" id="section-summary" data-index="1">
-    <div class="section-container">
+    <div class="section-container section-scroll">
       <h2 class="section-title-fp" data-aos="fade-up">
         <span class="title-icon">📊</span>
         <span class="title-text">About Me & Blog</span>
@@ -211,7 +211,7 @@
 
   <!-- Section 3: Featured Posts -->
   <section class="fullpage-section featured-section" id="section-featured" data-index="2">
-    <div class="section-container">
+    <div class="section-container section-scroll">
       <h2 class="section-title-fp" data-aos="fade-up">
         <span class="title-icon">⭐</span>
         <span class="title-text">Featured Posts</span>
@@ -418,17 +418,18 @@
 
   <!-- Section 4: Photography Gallery -->
   <section class="fullpage-section gallery-section" id="section-gallery" data-index="3">
-    <!-- 顶部标题 -->
-    <div class="gallery-header">
-      <h2 class="section-title-fp" data-aos="fade-up">
-        <span class="title-icon">📷</span>
-        <span class="title-text">Photography</span>
-      </h2>
-    </div>
+    <div class="section-scroll gallery-body">
+      <!-- 顶部标题 -->
+      <div class="gallery-header">
+        <h2 class="section-title-fp" data-aos="fade-up">
+          <span class="title-icon">📷</span>
+          <span class="title-text">Photography</span>
+        </h2>
+      </div>
 
-    <!-- 中间横向滚动相册 -->
-    <div class="gallery-scroll-wrapper">
-      <div class="gallery-scroll-container">
+      <!-- 中间横向滚动相册 -->
+      <div class="gallery-scroll-wrapper">
+        <div class="gallery-scroll-container">
         
           <a href="/gallery/Madame-Nian.html"
              class="gallery-card"
@@ -463,6 +464,7 @@
             <h4>View All Gallery</h4>
           </div>
         </a>
+        </div>
       </div>
     </div>
 
@@ -470,7 +472,7 @@
 
   <!-- Section 5: Guestbook & Info -->
   <section class="fullpage-section guestbook-section" id="section-guestbook" data-index="4">
-    <div class="section-container">
+    <div class="section-container section-scroll">
       <h2 class="section-title-fp" data-aos="fade-up">
         <span class="title-icon">💬</span>
         <span class="title-text">留言板 & 联系我</span>
@@ -511,7 +513,7 @@
               <span id="busuanzi_container_site_pv" style="display:none">
                 👀 本站访问量 <strong id="busuanzi_value_site_pv"></strong>
               </span>
-              <span class="stats-sep" style="display:none"> · </span>
+              <span class="stats-divider" style="display:none"> · </span>
               <span id="busuanzi_container_site_uv" style="display:none">
                 👤 访客数 <strong id="busuanzi_value_site_uv"></strong>
               </span>
@@ -627,6 +629,7 @@
     _handlers: null,
     _navDotHandlers: null,
     _arrowHandlers: null,
+    _aosFallbackApplied: false,
 
     init() {
       this.initTypewriter();
@@ -636,12 +639,49 @@
       this.updateNavigation();
     },
 
+    getSection(index) {
+      return document.querySelector(`.fullpage-section[data-index="${index}"]`);
+    },
+
+    getScrollContainer(section) {
+      return section?.querySelector('.section-scroll');
+    },
+
+    canScroll(container, deltaY) {
+      if (!container) return false;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
+      if (scrollHeight <= clientHeight + 1) return false;
+      const scrollTop = container.scrollTop;
+      const atTop = scrollTop <= 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+      if (deltaY > 0 && !atBottom) return true;
+      if (deltaY < 0 && !atTop) return true;
+      return false;
+    },
+
+    refreshAOS() {
+      if (window.AOS) {
+        if (typeof window.AOS.refreshHard === 'function') {
+          window.AOS.refreshHard();
+        } else if (typeof window.AOS.refresh === 'function') {
+          window.AOS.refresh();
+        }
+        return;
+      }
+
+      if (this._aosFallbackApplied) return;
+      this._aosFallbackApplied = true;
+      document.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
+    },
+
     enable() {
       if (this.enabled) return;
       this.enabled = true;
       this.bindEvents();
       this.syncContainer();
       this.updateNavigation();
+      this.refreshAOS();
     },
 
     disable() {
@@ -652,6 +692,7 @@
       this.isScrolling = false;
       this.syncContainer();
       this.updateNavigation();
+      this.refreshAOS();
     },
 
     syncContainer() {
@@ -724,27 +765,11 @@
     handleWheel(e) {
       if (this.isScrolling) return;
 
-      // 如果在 Gallery Section (section 3)，检查是否需要内部滚动
-      if (this.currentSection === 3) {
-        const gallerySection = document.getElementById('section-gallery');
-        const scrollTop = gallerySection.scrollTop;
-        const scrollHeight = gallerySection.scrollHeight;
-        const clientHeight = gallerySection.clientHeight;
+      const activeSection = this.getSection(this.currentSection);
+      const scrollContainer = this.getScrollContainer(activeSection);
 
-        // 向下滚动
-        if (e.deltaY > 0) {
-          // 如果还没滚动到底部，不切换section
-          if (scrollTop + clientHeight < scrollHeight - 10) {
-            return;
-          }
-        }
-        // 向上滚动
-        else {
-          // 如果还没滚动到顶部，不切换section
-          if (scrollTop > 10) {
-            return;
-          }
-        }
+      if (scrollContainer && scrollContainer.contains(e.target) && this.canScroll(scrollContainer, e.deltaY)) {
+        return;
       }
 
       e.preventDefault();
@@ -816,12 +841,10 @@
     goToSection(index) {
       if (index === this.currentSection || this.isScrolling) return;
 
-      // 如果离开 Gallery Section (section 3)，重置其滚动位置
-      if (this.currentSection === 3 && index !== 3) {
-        const gallerySection = document.getElementById('section-gallery');
-        if (gallerySection) {
-          gallerySection.scrollTop = 0;
-        }
+      const currentSection = this.getSection(this.currentSection);
+      const scrollContainer = this.getScrollContainer(currentSection);
+      if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
       }
 
       this.isScrolling = true;
@@ -832,6 +855,7 @@
       container.setAttribute('data-current', index);
 
       this.updateNavigation();
+      this.refreshAOS();
 
       setTimeout(() => {
         this.isScrolling = false;
@@ -851,13 +875,6 @@
       if (arrowUp) arrowUp.style.opacity = this.currentSection === 0 ? '0.3' : '1';
       if (arrowDown) arrowDown.style.opacity = this.currentSection === this.totalSections - 1 ? '0.3' : '1';
 
-      // 确保非Gallery section时，Gallery滚动条在顶部
-      if (this.currentSection !== 3) {
-        const gallerySection = document.getElementById('section-gallery');
-        if (gallerySection && gallerySection.scrollTop !== 0) {
-          gallerySection.scrollTop = 0;
-        }
-      }
     },
 
     // 打字机效果
@@ -1174,7 +1191,7 @@
         var loading = document.getElementById('stats-loading');
         var pv = document.getElementById('busuanzi_container_site_pv');
         if (loading && pv && pv.style.display === 'none') {
-          loading.querySelector('.stat-text').textContent = '统计加载中...';
+          loading.textContent = '📊 统计加载中...';
         }
       }, 3000);
     });
