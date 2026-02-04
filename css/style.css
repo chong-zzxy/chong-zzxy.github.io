@@ -5931,7 +5931,7 @@ a:focus-visible {
 
 .gallery-grid {
   position: relative;
-  height: clamp(220px, 32vh, 320px);
+  height: clamp(210px, 30vh, 300px);
   display: block;
   width: 100%;
 }
@@ -5939,7 +5939,7 @@ a:focus-visible {
 .gallery-item {
   --gallery-tilt: 0deg;
   position: absolute;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(10, 10, 10, 0.14);
@@ -5954,30 +5954,30 @@ a:focus-visible {
 }
 
 :root.fullpage-enabled .gallery-grid {
-  height: clamp(200px, 28vh, 300px);
+  height: clamp(190px, 26vh, 280px);
 }
 
 .gallery-grid > .gallery-item:nth-child(1) {
   --gallery-tilt: -1.5deg;
   left: 0;
   top: 0;
-  width: 42%;
+  width: 40%;
   z-index: 3;
 }
 
 .gallery-grid > .gallery-item:nth-child(2) {
   --gallery-tilt: 0.8deg;
-  left: 18%;
-  top: 16%;
-  width: 48%;
+  left: 19%;
+  top: 14%;
+  width: 46%;
   z-index: 4;
 }
 
 .gallery-grid > .gallery-item:nth-child(3) {
   --gallery-tilt: 1.2deg;
   right: 0;
-  top: 30%;
-  width: 42%;
+  top: 28%;
+  width: 40%;
   z-index: 2;
 }
 
