@@ -5692,8 +5692,8 @@ a:focus-visible {
   text-align: center;
   font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  letter-spacing: 0.02em;
+  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+  letter-spacing: 0.01em;
 }
 
 .gallery-header .title-icon {
@@ -5931,7 +5931,7 @@ a:focus-visible {
 
 .gallery-grid {
   position: relative;
-  height: clamp(260px, 38vh, 380px);
+  height: clamp(220px, 32vh, 320px);
   display: block;
   width: 100%;
 }
@@ -5940,44 +5940,44 @@ a:focus-visible {
   --gallery-tilt: 0deg;
   position: absolute;
   aspect-ratio: 4 / 3;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(10, 10, 10, 0.18);
+  box-shadow: 0 16px 36px rgba(10, 10, 10, 0.14);
   transition: all var(--transition-base);
   text-decoration: none;
   color: inherit;
-  background: rgba(255, 255, 255, 0.85);
-  border: 2px solid rgba(20, 20, 20, 0.9);
-  padding: clamp(8px, 1.2vw, 12px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid rgba(20, 20, 20, 0.75);
+  padding: clamp(6px, 1vw, 10px);
   box-sizing: border-box;
   transform: rotate(var(--gallery-tilt));
 }
 
 :root.fullpage-enabled .gallery-grid {
-  height: clamp(220px, 32vh, 340px);
+  height: clamp(200px, 28vh, 300px);
 }
 
 .gallery-grid > .gallery-item:nth-child(1) {
   --gallery-tilt: -1.5deg;
   left: 0;
   top: 0;
-  width: 46%;
+  width: 42%;
   z-index: 3;
 }
 
 .gallery-grid > .gallery-item:nth-child(2) {
   --gallery-tilt: 0.8deg;
-  left: 20%;
-  top: 18%;
-  width: 52%;
+  left: 18%;
+  top: 16%;
+  width: 48%;
   z-index: 4;
 }
 
 .gallery-grid > .gallery-item:nth-child(3) {
   --gallery-tilt: 1.2deg;
   right: 0;
-  top: 34%;
-  width: 46%;
+  top: 30%;
+  width: 42%;
   z-index: 2;
 }
 
@@ -5993,14 +5993,14 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 9px;
   transition: transform 0.5s ease;
 }
 
 .gallery-item-viewall {
   position: absolute;
   right: 0;
-  bottom: -10px;
+  bottom: -4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6024,8 +6024,8 @@ a:focus-visible {
   gap: var(--spacing-sm);
   font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
-  letter-spacing: 0.02em;
+  font-size: clamp(1.3rem, 3vw, 2.1rem);
+  letter-spacing: 0.015em;
 }
 
 .viewall-label {
@@ -6062,7 +6062,7 @@ a:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.45) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.4) 100%);
   display: flex;
   align-items: flex-end;
   padding: var(--spacing-md);
