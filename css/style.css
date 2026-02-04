@@ -4830,6 +4830,10 @@ a:focus-visible {
   margin-bottom: clamp(8px, 2vh, 20px);
 }
 
+:root.fullpage-enabled .summary-section .section-title-fp {
+  margin-bottom: clamp(16px, 3vh, 32px);
+}
+
 :root.fullpage-enabled .featured-section .section-title-fp {
   margin-bottom: clamp(16px, 3vh, 32px);
 }
@@ -4844,7 +4848,7 @@ a:focus-visible {
 }
 
 :root.fullpage-enabled .intro-text {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 :root.fullpage-enabled .stat-item {
@@ -4923,6 +4927,10 @@ a:focus-visible {
   margin-bottom: clamp(1.5rem, 4vh, var(--spacing-3xl));
   color: var(--text-primary);
   text-align: center;
+}
+
+.summary-section .section-title-fp {
+  margin-bottom: clamp(2rem, 4.2vh, 3.25rem);
 }
 
 .featured-section .section-title-fp {
