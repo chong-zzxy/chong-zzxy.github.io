@@ -4830,6 +4830,10 @@ a:focus-visible {
   margin-bottom: clamp(8px, 2vh, 20px);
 }
 
+:root.fullpage-enabled .featured-section .section-title-fp {
+  margin-bottom: clamp(16px, 3vh, 32px);
+}
+
 :root.fullpage-enabled .summary-content {
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
@@ -4919,6 +4923,10 @@ a:focus-visible {
   margin-bottom: clamp(1.5rem, 4vh, var(--spacing-3xl));
   color: var(--text-primary);
   text-align: center;
+}
+
+.featured-section .section-title-fp {
+  margin-bottom: clamp(2rem, 4.5vh, 3.5rem);
 }
 
 .title-icon {
