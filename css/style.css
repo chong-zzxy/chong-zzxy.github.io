@@ -4748,6 +4748,7 @@ a:focus-visible {
 :root.fullpage-enabled {
   --fullpage-top-pad: clamp(44px, 7vh, 100px);
   --fullpage-bottom-pad: clamp(8px, 2.5vh, 28px);
+  --fullpage-center-offset: clamp(-60px, -4vh, -20px);
 }
 
 :root.fullpage-enabled .fullpage-container {
@@ -4760,13 +4761,18 @@ a:focus-visible {
   position: absolute;
   top: 0;
   left: 0;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   padding-top: var(--fullpage-top-pad);
   padding-bottom: var(--fullpage-bottom-pad);
   transition: none;
   will-change: transform;
+}
+
+:root.fullpage-enabled .fullpage-section .section-scroll,
+:root.fullpage-enabled .fullpage-section .hero-content {
+  margin-top: var(--fullpage-center-offset);
 }
 
 :root.fullpage-enabled.fullpage-ready .fullpage-section {
