@@ -18,7 +18,7 @@
 
   /* 中性色 */
   --text-primary: #1a202c;
-  --text-secondary: #4a5568;
+  --text-secondary: #4a5568;      
   --text-tertiary: #718096;
   --bg-primary: #ffffff;
   --bg-secondary: #f7fafc;
@@ -5629,7 +5629,7 @@ a:focus-visible {
    ======================================== */
 
 .gallery-section {
-  background: var(--bg-primary);
+  background: radial-gradient(1200px 520px at 20% -10%, rgba(255, 255, 255, 0.95), rgba(246, 246, 248, 0.92) 50%, rgba(238, 240, 244, 0.96) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -5661,9 +5661,14 @@ a:focus-visible {
 
 /* 首页摄影内容容器 */
 .gallery-body {
-  width: min(1100px, 70vw);
+  /* Responsive "editorial" gutters:
+     - vw keeps proportions across screens
+     - clamp prevents ultra-wide / small-screen extremes */
+  --gallery-gutter: clamp(36px, 12vw, 260px);
+  --gallery-max: clamp(860px, 62vw, 1120px);
+  width: min(var(--gallery-max), calc(100% - (2 * var(--gallery-gutter))));
   margin: 0 auto;
-  padding: 0 2vw;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -5673,14 +5678,13 @@ a:focus-visible {
 /* Gallery 顶部标题区 */
 .gallery-header {
   flex-shrink: 0;
-  padding: clamp(40px, 8vh, 80px) 0 clamp(24px, 5vh, 48px);
-  text-align: left;
+  padding: 0;
+  text-align: center;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: clamp(8px, 1.8vh, 16px);
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -5690,18 +5694,15 @@ a:focus-visible {
 
 .gallery-header .section-title-fp {
   margin: 0;
-  justify-content: flex-start;
-  text-align: left;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-weight: 500;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  letter-spacing: 0;
 }
 
 .gallery-header .title-icon {
   display: inline-flex;
-  color: var(--text-primary);
 }
 
 .gallery-header .title-text {
@@ -5711,51 +5712,6 @@ a:focus-visible {
 .gallery-header .title-text::after {
   content: none;
   display: none;
-}
-
-.gallery-kicker {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  color: var(--text-tertiary);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.gallery-serial {
-  font-weight: 300;
-}
-
-.gallery-kicker-text {
-  font-weight: 300;
-}
-
-.gallery-header-line {
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--border-color);
-  opacity: 0.6;
-}
-
-.gallery-subtitle {
-  margin: 0;
-  color: var(--text-tertiary);
-  font-size: 0.9rem;
-  letter-spacing: 0.2px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.gallery-subtitle-count {
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-.gallery-subtitle-sep {
-  opacity: 0.6;
 }
 
 /* Gallery 中间展示区 - 改为网格布局 */
@@ -5988,14 +5944,14 @@ a:focus-visible {
 .gallery-item {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 30px rgba(10, 10, 10, 0.12);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   text-decoration: none;
   color: inherit;
-  background: var(--bg-secondary);
-  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(20, 20, 20, 0.16);
   display: block;
 }
 
@@ -6005,7 +5961,7 @@ a:focus-visible {
 
 .gallery-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 16px 36px rgba(10, 10, 10, 0.16);
 }
 
 .gallery-item img {
@@ -6016,40 +5972,46 @@ a:focus-visible {
 }
 
 .gallery-item-viewall {
-  position: relative;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: none;
+  padding: clamp(18px, 3vw, 28px);
 }
 
-.gallery-tag {
-  position: absolute;
-  right: 12px;
-  bottom: -10px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(20, 20, 20, 0.12);
-  border-radius: 999px;
-  color: #111;
-  font-size: 0.7rem;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  z-index: 2;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.gallery-item-viewall:hover .gallery-tag {
+.gallery-item-viewall:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.viewall-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  letter-spacing: 0;
+}
+
+.viewall-label {
+  font-size: 1em;
+}
+
+.viewall-arrow {
+  font-size: 1.2rem;
+  transition: transform var(--transition-base);
+}
+
+.gallery-item-viewall:hover .viewall-arrow {
+  transform: translateX(4px);
 }
 
 .gallery-item:hover img {
   transform: scale(1.05);
-}
-
-.gallery-item-viewall:hover img {
-  transform: scale(1.02);
-  filter: none;
 }
 
 .gallery-placeholder {
@@ -6065,31 +6027,26 @@ a:focus-visible {
 
 .gallery-overlay {
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 28%;
-  min-height: 72px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.62) 100%);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.4) 100%);
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
-  padding: 16px 18px;
+  padding: var(--spacing-md);
   opacity: 0;
-  transform: translateY(15px);
   transition: opacity var(--transition-base), transform var(--transition-base);
+  transform: translateY(12px);
 }
 
 @media (max-width: 900px) {
-  .gallery-body {
-    width: 100%;
-    padding: 0 6vw;
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .gallery-item-viewall {
+    grid-column: 1 / -1;
   }
 }
 
@@ -6099,63 +6056,32 @@ a:focus-visible {
 }
 
 .gallery-overlay .gallery-info {
-  color: #fff;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
-  text-align: left;
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  gap: 2px;
 }
-
-.gallery-item:hover .gallery-overlay .gallery-info {
-  opacity: 1;
-}
-
 
 .gallery-title {
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-xs);
 }
 
 .gallery-date {
-  font-size: 0.8rem;
-  opacity: 0.85;
+  font-size: 0.8125rem;
+  opacity: 0.9;
 }
 
 .gallery-desc {
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
+  margin-top: var(--spacing-xs);
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 90%;
-}
-
-.gallery-count {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.viewall-label {
-  font-size: 0.85rem;
-  font-weight: 200;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.viewall-line {
-  width: 48px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.6);
-  margin: 6px 0;
-}
-
-.viewall-action {
-  font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .view-all-gallery {
@@ -6366,10 +6292,9 @@ a:focus-visible {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(0, 0, 0, 0.25);
+  background: var(--border-color);
+  border: 2px solid var(--text-tertiary);
   cursor: pointer;
-  opacity: 0.3;
   transition: all var(--transition-base);
 }
 
@@ -6378,7 +6303,6 @@ a:focus-visible {
   background: var(--primary);
   border-color: var(--primary);
   transform: scale(1.3);
-  opacity: 1;
 }
 
 /* 滚动箭头 */
@@ -6631,15 +6555,6 @@ a:focus-visible {
   .gallery-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .gallery-header .section-title-fp {
-    font-size: clamp(1.8rem, 8vw, 2.4rem);
-    letter-spacing: 0.14em;
-  }
-
-  .gallery-kicker {
-    font-size: 0.7rem;
   }
 
   .section-title-fp {
