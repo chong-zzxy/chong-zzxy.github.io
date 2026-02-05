@@ -5661,9 +5661,9 @@ a:focus-visible {
 
 /* 首页摄影内容容器 */
 .gallery-body {
-  width: min(980px, 100%);
+  width: min(720px, 100%);
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 48px);
+  padding: 0 clamp(12px, 3vw, 32px);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -5690,14 +5690,13 @@ a:focus-visible {
   margin: 0;
   justify-content: center;
   text-align: center;
-  font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
-  letter-spacing: 0.01em;
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  letter-spacing: 0;
 }
 
 .gallery-header .title-icon {
-  display: none;
+  display: inline-flex;
 }
 
 .gallery-header .title-text {
@@ -5930,91 +5929,56 @@ a:focus-visible {
 }
 
 .gallery-grid {
-  position: relative;
-  height: clamp(210px, 30vh, 300px);
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
   width: 100%;
 }
 
 .gallery-item {
-  --gallery-tilt: 0deg;
-  position: absolute;
+  position: relative;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(10, 10, 10, 0.14);
-  transition: all var(--transition-base);
+  box-shadow: 0 12px 30px rgba(10, 10, 10, 0.12);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
   text-decoration: none;
   color: inherit;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1.5px solid rgba(20, 20, 20, 0.75);
-  padding: clamp(6px, 1vw, 10px);
-  box-sizing: border-box;
-  transform: rotate(var(--gallery-tilt));
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(20, 20, 20, 0.16);
+  display: block;
 }
 
 :root.fullpage-enabled .gallery-grid {
-  height: clamp(190px, 26vh, 280px);
-}
-
-.gallery-grid > .gallery-item:nth-child(1) {
-  --gallery-tilt: -1.5deg;
-  left: 0;
-  top: 0;
-  width: 40%;
-  z-index: 3;
-}
-
-.gallery-grid > .gallery-item:nth-child(2) {
-  --gallery-tilt: 0.8deg;
-  left: 19%;
-  top: 14%;
-  width: 46%;
-  z-index: 4;
-}
-
-.gallery-grid > .gallery-item:nth-child(3) {
-  --gallery-tilt: 1.2deg;
-  right: 0;
-  top: 28%;
-  width: 40%;
-  z-index: 2;
-}
-
-.gallery-grid > .gallery-item:nth-child(n+4):not(.gallery-item-viewall) {
-  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .gallery-item:hover {
-  transform: translateY(-6px) scale(1.01) rotate(var(--gallery-tilt));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 10, 10, 0.16);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 9px;
   transition: transform 0.5s ease;
 }
 
 .gallery-item-viewall {
-  position: absolute;
-  right: 0;
-  bottom: -4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: none;
+  border: 1.5px solid var(--border-color);
   color: var(--text-primary);
   box-shadow: none;
-  padding: 0;
-  width: auto;
-  height: auto;
+  padding: clamp(18px, 3vw, 28px);
 }
 
 .gallery-item-viewall:hover {
   transform: translateY(-2px);
+  border-color: var(--primary);
   box-shadow: none;
 }
 
@@ -6022,10 +5986,9 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(1.3rem, 3vw, 2.1rem);
-  letter-spacing: 0.015em;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  letter-spacing: 0;
 }
 
 .viewall-label {
@@ -6033,7 +5996,7 @@ a:focus-visible {
 }
 
 .viewall-arrow {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: transform var(--transition-base);
 }
 
@@ -6042,7 +6005,7 @@ a:focus-visible {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .gallery-placeholder {
@@ -6073,30 +6036,11 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   .gallery-grid {
-    position: static;
-    height: auto;
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(10px, 3vw, 20px);
-  }
-
-  .gallery-grid > .gallery-item {
-    position: relative;
-    width: 100%;
-    transform: none;
-  }
-
-  .gallery-grid > .gallery-item:nth-child(n+4):not(.gallery-item-viewall) {
-    display: block;
   }
 
   .gallery-item-viewall {
-    position: relative;
-    bottom: auto;
-    right: auto;
     grid-column: 1 / -1;
-    justify-content: center;
-    padding-top: var(--spacing-md);
   }
 }
 
