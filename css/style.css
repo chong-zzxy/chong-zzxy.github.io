@@ -5661,9 +5661,9 @@ a:focus-visible {
 
 /* 首页摄影内容容器 */
 .gallery-body {
-  width: min(720px, 100%);
+  width: min(100%, 76vw);
   margin: 0 auto;
-  padding: 0 clamp(12px, 3vw, 32px);
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -5691,10 +5691,11 @@ a:focus-visible {
   margin: 0;
   justify-content: flex-start;
   text-align: left;
-  font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  letter-spacing: 1px;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .gallery-header .title-icon {
@@ -5709,6 +5710,32 @@ a:focus-visible {
 .gallery-header .title-text::after {
   content: none;
   display: none;
+}
+
+.gallery-kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.gallery-serial {
+  font-weight: 300;
+}
+
+.gallery-kicker-text {
+  font-weight: 300;
+}
+
+.gallery-header-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--border-color);
+  opacity: 0.6;
 }
 
 .gallery-subtitle {
@@ -5988,56 +6015,17 @@ a:focus-visible {
 }
 
 .gallery-item-viewall {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(15, 15, 20, 0.7), rgba(15, 15, 20, 0.55));
-  color: #fff;
-  box-shadow: none;
   position: relative;
-  overflow: hidden;
-}
-
-.gallery-item-viewall::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  z-index: 0;
-}
-
-.gallery-item-viewall:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-}
-
-.viewall-content {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-weight: 700;
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
-  letter-spacing: 0.4px;
-  position: relative;
-  z-index: 1;
-}
-
-.viewall-label {
-  font-size: 1em;
-}
-
-.viewall-arrow {
-  font-size: 1.2rem;
-  transition: transform var(--transition-base);
-}
-
-.gallery-item-viewall:hover .viewall-arrow {
-  transform: translateX(4px);
+  cursor: pointer;
 }
 
 .gallery-item:hover img {
   transform: scale(1.05);
+}
+
+.gallery-item-viewall:hover img {
+  transform: scale(1.06);
+  filter: blur(2px);
 }
 
 .gallery-placeholder {
@@ -6059,6 +6047,7 @@ a:focus-visible {
   bottom: 0;
   background: rgba(10, 10, 14, 0.35);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6068,17 +6057,18 @@ a:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .gallery-body {
+    width: 100%;
+    padding: 0 6vw;
   }
 
-  .gallery-item-viewall {
-    grid-column: 1 / -1;
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 .gallery-item:hover .gallery-overlay {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .gallery-overlay .gallery-info {
@@ -6096,6 +6086,25 @@ a:focus-visible {
 .gallery-item:hover .gallery-overlay .gallery-info {
   transform: translateY(0);
   opacity: 1;
+}
+
+.gallery-item-viewall .gallery-overlay {
+  opacity: 0.6;
+}
+
+.gallery-item-viewall:hover .gallery-overlay {
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.gallery-item-viewall .gallery-overlay .gallery-info {
+  opacity: 1;
+  transform: translateY(6px);
+}
+
+.gallery-item-viewall:hover .gallery-overlay .gallery-info {
+  transform: translateY(0);
 }
 
 .gallery-title {
@@ -6118,6 +6127,27 @@ a:focus-visible {
 .gallery-count {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.viewall-label {
+  font-size: 0.85rem;
+  font-weight: 200;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.viewall-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 6px 0;
+}
+
+.viewall-action {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .view-all-gallery {
@@ -6591,6 +6621,15 @@ a:focus-visible {
   .gallery-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .gallery-header .section-title-fp {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    letter-spacing: 0.14em;
+  }
+
+  .gallery-kicker {
+    font-size: 0.7rem;
   }
 
   .section-title-fp {
