@@ -5935,8 +5935,11 @@ a:focus-visible {
 }
 
 .gallery-grid {
+  /* Cap card width so the 3-col grid doesn't feel "full bleed" on large screens. */
+  --gallery-card-max: clamp(240px, 18vw, 320px);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, var(--gallery-card-max)));
+  justify-content: center;
   gap: clamp(10px, 1.2vw, 16px);
   width: 100%;
 }
@@ -6042,7 +6045,8 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, var(--gallery-card-max)));
+    justify-content: center;
   }
 
   .gallery-item-viewall {
@@ -6592,6 +6596,7 @@ a:focus-visible {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+    justify-content: stretch;
   }
 
   .section-nav {
