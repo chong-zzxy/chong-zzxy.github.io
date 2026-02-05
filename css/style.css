@@ -18,7 +18,7 @@
 
   /* 中性色 */
   --text-primary: #1a202c;
-  --text-secondary: #4a5568;      
+  --text-secondary: #4a5568;
   --text-tertiary: #718096;
   --bg-primary: #ffffff;
   --bg-secondary: #f7fafc;
@@ -4749,6 +4749,9 @@ a:focus-visible {
   --fullpage-top-pad: clamp(44px, 7vh, 100px);
   --fullpage-bottom-pad: clamp(8px, 2.5vh, 28px);
   --fullpage-center-offset: clamp(-60px, -4vh, -20px);
+  /* Section-specific fine-tune: Gallery tends to read "lower" visually; nudge it up a bit. */
+  /* Use vh so the compensation scales with screen height (dynamic). */
+  --gallery-center-comp: clamp(-96px, -7.2vh, -40px);
 }
 
 :root.fullpage-enabled .fullpage-container {
@@ -4773,6 +4776,11 @@ a:focus-visible {
 :root.fullpage-enabled .fullpage-section .section-scroll,
 :root.fullpage-enabled .fullpage-section .hero-content {
   margin-top: var(--fullpage-center-offset);
+}
+
+/* Gallery: keep vertical centering but apply an extra proportional upward compensation. */
+:root.fullpage-enabled .gallery-section .section-scroll {
+  margin-top: calc(var(--fullpage-center-offset) + var(--gallery-center-comp));
 }
 
 :root.fullpage-enabled.fullpage-ready .fullpage-section {
@@ -5643,10 +5651,10 @@ a:focus-visible {
 :root.fullpage-enabled .gallery-section {
   overflow: hidden;
   height: 100vh;
-  padding: 0;
-  padding-top: clamp(28px, 4vh, 52px);
-  padding-bottom: clamp(6px, 1.6vh, 16px);
-  justify-content: flex-start;
+  /* Align the Gallery section like other fullpage sections: centered with a slight global offset. */
+  padding-top: var(--fullpage-top-pad);
+  padding-bottom: var(--fullpage-bottom-pad);
+  justify-content: center;
   align-items: stretch;
   gap: var(--spacing-sm);
 }
@@ -5664,27 +5672,33 @@ a:focus-visible {
   /* Responsive "editorial" gutters:
      - vw keeps proportions across screens
      - clamp prevents ultra-wide / small-screen extremes */
-  --gallery-gutter: clamp(36px, 12vw, 260px);
-  --gallery-max: clamp(860px, 62vw, 1120px);
-  width: min(var(--gallery-max), calc(100% - (2 * var(--gallery-gutter))));
-  margin: 0 auto;
+  --gallery-gutter: clamp(44px, 10vw, 220px);
+  --gallery-max: clamp(1100px, 76vw, 1500px);
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  /* More vertical breathing room between header and grid (less "cramped"). */
+  gap: clamp(18px, 2.6vh, 34px);
   box-sizing: border-box;
 }
 
-/* Gallery 顶部标题区 */
-.gallery-header {
+/* Ensure gallery container is truly centered; override `.gallery-section .section-scroll { width: 100%; }` */
+.gallery-section .section-scroll.gallery-body {
+  width: min(var(--gallery-max), calc(100% - (2 * var(--gallery-gutter))));
+  margin: 0 auto;
+}
+
+/* Gallery 顶部标题区 (homepage section only; avoid leaking into /gallery/ page) */
+.gallery-section .gallery-header {
   flex-shrink: 0;
   padding: 0;
-  text-align: center;
+  text-align: left;
   width: 100%;
+  /* Editorial but calmer: title first, meta under it (as user requested). */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -5692,49 +5706,81 @@ a:focus-visible {
   margin: 0;
 }
 
-.gallery-header .section-title-fp {
-  margin: 0;
-  justify-content: center;
-  text-align: center;
-  font-weight: 700;
-  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
-  letter-spacing: 0;
+.gallery-section .gallery-kicker {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(10, 10, 10, 0.62);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.gallery-header .title-icon {
+.gallery-section .gallery-serial {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(10, 10, 10, 0.52);
+}
+
+.gallery-section .gallery-kicker-text {
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.gallery-section .gallery-header .section-title-fp {
+  margin: 0;
+  order: 1;
+  justify-content: flex-start;
+  text-align: left;
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.gallery-section .gallery-header .title-icon {
   display: inline-flex;
 }
 
-.gallery-header .title-text {
+.gallery-section .gallery-header .title-text {
   padding-bottom: 0;
 }
 
-.gallery-header .title-text::after {
+.gallery-section .gallery-header .title-text::after {
   content: none;
   display: none;
 }
 
+.gallery-section .gallery-header-line {
+  order: 3;
+  width: 40px;
+  height: 1px;
+  background: rgba(10, 10, 10, 0.22);
+}
+
 /* Gallery 中间展示区 - 改为网格布局 */
-.gallery-scroll-wrapper {
+.gallery-section .gallery-scroll-wrapper {
   width: 100%;
   overflow: visible;
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: var(--spacing-lg);
   flex: 0 0 auto;
 }
 
-:root.fullpage-enabled .gallery-scroll-wrapper {
-  flex: 1 1 auto;
+:root.fullpage-enabled .gallery-section .gallery-scroll-wrapper {
+  /* Don't stretch; stretching makes the content feel "lower" and more cramped. */
+  flex: 0 0 auto;
 }
 
-.gallery-scroll-wrapper::-webkit-scrollbar {
+.gallery-section .gallery-scroll-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.gallery-more {
+.gallery-section .gallery-more {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -5751,12 +5797,12 @@ a:focus-visible {
   box-shadow: none;
 }
 
-.gallery-more::after {
+.gallery-section .gallery-more::after {
   content: '→';
   transition: transform var(--transition-base);
 }
 
-.gallery-more::before {
+.gallery-section .gallery-more::before {
   content: '';
   position: absolute;
   left: 0;
@@ -5767,22 +5813,22 @@ a:focus-visible {
   transition: width var(--transition-base);
 }
 
-.gallery-more:hover {
+.gallery-section .gallery-more:hover {
   color: var(--primary);
   transform: translateY(-1px);
 }
 
-.gallery-more:hover::after {
+.gallery-section .gallery-more:hover::after {
   transform: translateX(4px);
 }
 
-.gallery-more:hover::before {
+.gallery-section .gallery-more:hover::before {
   width: 100%;
 }
 
 
 /* Gallery 底部固定区 */
-.gallery-footer {
+.gallery-section .gallery-footer {
   padding: var(--spacing-md) var(--spacing-xl);
   border-top: 3px solid var(--primary);
   background: transparent;
@@ -5798,18 +5844,18 @@ a:focus-visible {
   margin-top: var(--spacing-lg);
 }
 
-:root.fullpage-enabled .gallery-footer {
+:root.fullpage-enabled .gallery-section .gallery-footer {
   margin-top: auto;
 }
 
 /* Gallery 联系方式 */
-.gallery-contact {
+.gallery-section .gallery-contact {
   display: flex;
   gap: var(--spacing-md);
   align-items: center;
 }
 
-.gallery-contact-link {
+.gallery-section .gallery-contact-link {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -5823,7 +5869,7 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.gallery-contact-link:hover {
+.gallery-section .gallery-contact-link:hover {
   background: var(--primary);
   border-color: var(--primary);
   color: white;
@@ -5831,7 +5877,7 @@ a:focus-visible {
 }
 
 /* Gallery 信息区 */
-.gallery-info {
+.gallery-section .gallery-info {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
@@ -5839,38 +5885,38 @@ a:focus-visible {
   color: var(--text-tertiary);
 }
 
-.gallery-stats {
+.gallery-section .gallery-stats {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
 }
 
-.stats-sep {
+.gallery-section .stats-sep {
   opacity: 0.5;
 }
 
-.gallery-copyright {
+.gallery-section .gallery-copyright {
   white-space: nowrap;
 }
 
-.gallery-copyright a {
+.gallery-section .gallery-copyright a {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
 }
 
-.gallery-copyright a:hover {
+.gallery-section .gallery-copyright a:hover {
   color: var(--primary);
 }
 
 /* 响应式 */
 @media (max-width: 768px) {
-  .gallery-footer {
+  .gallery-section .gallery-footer {
     flex-direction: column;
     text-align: center;
   }
 
-  .gallery-info {
+  .gallery-section .gallery-info {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
@@ -5934,20 +5980,24 @@ a:focus-visible {
   transform: translateY(-2px);
 }
 
-.gallery-grid {
+.gallery-section .gallery-grid {
   /* Cap card width so the 3-col grid doesn't feel "full bleed" on large screens. */
-  --gallery-card-max: clamp(240px, 18vw, 320px);
+  /* Wider max so it doesn't look tiny on large displays, but still keeps side breathing room. */
+  /* Slightly larger cards while keeping the same editorial gutters. */
+  --gallery-card-max: clamp(372px, 29vw, 620px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--gallery-card-max)));
-  justify-content: center;
-  gap: clamp(10px, 1.2vw, 16px);
+  justify-content: start;
+  /* Increase inter-card whitespace for a calmer, more "editorial" rhythm. */
+  gap: clamp(16px, 2.2vw, 30px);
   width: 100%;
 }
 
-.gallery-item {
+.gallery-section .gallery-item {
   position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  /* Slightly taller ratio reduces the "thin strip" feel in a single-row layout. */
+  aspect-ratio: 3 / 2;
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(10, 10, 10, 0.12);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
@@ -5958,66 +6008,54 @@ a:focus-visible {
   display: block;
 }
 
-:root.fullpage-enabled .gallery-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+:root.fullpage-enabled .gallery-section .gallery-grid {
+  /* Keep the same "breathing room" sizing in fullpage mode (avoid full-bleed cards). */
+  grid-template-columns: repeat(3, minmax(0, var(--gallery-card-max)));
 }
 
-.gallery-item:hover {
+.gallery-section .gallery-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(10, 10, 10, 0.16);
 }
 
-.gallery-item img {
+.gallery-section .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.gallery-item-viewall {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1.5px solid var(--border-color);
-  color: var(--text-primary);
-  box-shadow: none;
-  padding: clamp(18px, 3vw, 28px);
+/* "View All" should look like a normal card; only add a subtle editorial tag. */
+.gallery-section .gallery-item-viewall {
+  border: 0;
 }
 
-.gallery-item-viewall:hover {
-  transform: translateY(-2px);
-  border-color: var(--primary);
-  box-shadow: none;
+.gallery-section .gallery-tag {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.78);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(10, 10, 10, 0.14);
 }
 
-.viewall-content {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-weight: 700;
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
-  letter-spacing: 0;
+.gallery-section .gallery-item-viewall:hover .gallery-tag {
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.viewall-label {
-  font-size: 1em;
-}
-
-.viewall-arrow {
-  font-size: 1.2rem;
-  transition: transform var(--transition-base);
-}
-
-.gallery-item-viewall:hover .viewall-arrow {
-  transform: translateX(4px);
-}
-
-.gallery-item:hover img {
+.gallery-section .gallery-item:hover img {
   transform: scale(1.05);
 }
 
-.gallery-placeholder {
+.gallery-section .gallery-placeholder {
   width: 100%;
   height: 100%;
   display: flex;
@@ -6028,7 +6066,7 @@ a:focus-visible {
   background: var(--gradient-subtle);
 }
 
-.gallery-overlay {
+.gallery-section .gallery-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -6044,22 +6082,22 @@ a:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .gallery-grid {
+  .gallery-section .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, var(--gallery-card-max)));
     justify-content: center;
   }
 
-  .gallery-item-viewall {
+  .gallery-section .gallery-item-viewall {
     grid-column: 1 / -1;
   }
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-section .gallery-item:hover .gallery-overlay {
   opacity: 1;
   transform: translateY(0);
 }
 
-.gallery-overlay .gallery-info {
+.gallery-section .gallery-overlay .gallery-info {
   color: white;
   display: flex;
   flex-direction: column;
@@ -6067,18 +6105,18 @@ a:focus-visible {
   gap: 2px;
 }
 
-.gallery-title {
+.gallery-section .gallery-overlay .gallery-title {
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
 
-.gallery-date {
+.gallery-section .gallery-date {
   font-size: 0.8125rem;
   opacity: 0.9;
 }
 
-.gallery-desc {
+.gallery-section .gallery-desc {
   margin-top: var(--spacing-xs);
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.85);
@@ -6542,8 +6580,10 @@ a:focus-visible {
     padding: 0 24px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .gallery-section .gallery-grid {
+    /* Keep the capped sizing on tablet widths (avoid full-bleed 1fr tracks). */
+    grid-template-columns: repeat(2, minmax(0, var(--gallery-card-max)));
+    justify-content: center;
   }
 
   .slider-nav.prev {
@@ -6556,9 +6596,13 @@ a:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .gallery-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .gallery-section .gallery-scroll-wrapper {
+    align-items: stretch;
+  }
+
+  .gallery-section .gallery-header {
+    gap: 8px;
+    width: 100%;
   }
 
   .section-title-fp {
@@ -6594,9 +6638,10 @@ a:focus-visible {
     display: none;
   }
 
-  .gallery-grid {
+  .gallery-section .gallery-grid {
     grid-template-columns: 1fr;
     justify-content: stretch;
+    width: 100%;
   }
 
   .section-nav {
