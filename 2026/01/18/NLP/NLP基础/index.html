@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770566890439">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770566890439">
+  <link rel="stylesheet" href="/css/style.css?v=1770569030857">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770569030857">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -192,15 +192,24 @@
           var layout = document.querySelector('[data-post-layout]');
           var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
           var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
-          var header = document.querySelector('.header');
+          var postBody = document.querySelector('.post-body');
+          var toc = document.querySelector('.post-toc');
 
           var updateTocOffset = function() {
-            if (!layout) return;
-            var rect = layout.getBoundingClientRect();
-            var headerOffset = header ? header.getBoundingClientRect().height : 0;
-            var top = rect.top > headerOffset ? rect.top : headerOffset;
+            if (!layout || !postBody || !toc) return;
+            var bodyRect = postBody.getBoundingClientRect();
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+            var bodyTop = bodyRect.top;
+            var bodyBottom = bodyRect.bottom;
+            var tocContentHeight = toc.scrollHeight;
+
+            var top = bodyTop > 0 ? bodyTop : 0;
+            if (bodyBottom <= viewportHeight && (bodyBottom - tocContentHeight) < top) {
+              top = bodyBottom - tocContentHeight;
+            }
+
+            var maxHeight = Math.max(0, Math.min(viewportHeight - top, bodyBottom - top));
             layout.style.setProperty('--toc-top', top + 'px');
-            var maxHeight = Math.max(0, rect.bottom - top - 24);
             layout.style.setProperty('--toc-max-height', maxHeight + 'px');
           };
 
@@ -468,8 +477,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770566890439"></script>
-  <script src="/js/neural-network.js?v=1770566890439"></script>
-  <script src="/js/scroll-animations.js?v=1770566890439"></script>
+  <script src="/js/main.js?v=1770569030857"></script>
+  <script src="/js/neural-network.js?v=1770569030857"></script>
+  <script src="/js/scroll-animations.js?v=1770569030857"></script>
 </body>
 </html>

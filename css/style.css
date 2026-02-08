@@ -106,6 +106,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide main scrollbars while keeping scroll */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 /* 全屏首页模式（由首页脚本按屏幕条件切换） */
 :root.fullpage-enabled,
 :root.fullpage-enabled body {
@@ -828,13 +841,13 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 16px;
+  padding: 0;
+  width: 48px;
   height: 48px;
-  min-width: 48px;
   background: rgba(63, 74, 69, 0.06);
   border: 1px solid rgba(63, 74, 69, 0.1);
   border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
   cursor: pointer;
   transition: none;
@@ -888,9 +901,9 @@ a:hover {
   padding: 0;
   border-radius: var(--radius-lg);
   justify-content: center;
-  background: transparent;
+  background: rgba(63, 74, 69, 0.04);
   box-shadow: none;
-  border: none;
+  border: 1px solid rgba(63, 74, 69, 0.1);
 }
 
 .post-toc-toggle[aria-expanded="false"] .toc-toggle-label {
@@ -1183,10 +1196,17 @@ a:hover {
   top: var(--toc-top);
   right: var(--toc-right);
   width: var(--toc-width);
-  max-height: min(calc(100vh - var(--toc-top) - 24px), var(--toc-max-height, 9999px));
+  max-height: var(--toc-max-height, calc(100vh - var(--toc-top)));
   overflow: auto;
   transition: opacity 0.25s ease, transform 0.35s ease;
   overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.post-toc::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .post-layout.toc-hidden .toc-content {
