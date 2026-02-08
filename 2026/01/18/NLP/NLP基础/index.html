@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770564093994">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770564093994">
+  <link rel="stylesheet" href="/css/style.css?v=1770564285614">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770564285614">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -190,18 +190,112 @@
         (function() {
           var toggle = document.querySelector('[data-toc-toggle]');
           var layout = document.querySelector('[data-post-layout]');
-          if (!toggle || !layout) return;
+          var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
+          var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
 
-          var setState = function(hidden) {
-            layout.classList.toggle('toc-hidden', hidden);
-            toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-            toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸式阅读');
+          var normalize = function(text) {
+            return (text || '').trim().replace(/\s+/g, ' ');
           };
 
-          toggle.addEventListener('click', function() {
-            var hidden = !layout.classList.contains('toc-hidden');
-            setState(hidden);
-          });
+          var slugify = function(text) {
+            var slug = normalize(text)
+              .toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^\w\u4e00-\u9fa5\-]/g, '')
+              .replace(/\-+/g, '-')
+              .replace(/^\-+|\-+$/g, '');
+            return slug;
+          };
+
+          if (headings.length) {
+            headings.forEach(function(heading, index) {
+              if (!heading.id) {
+                var base = slugify(heading.textContent) || ('section-' + (index + 1));
+                var id = base;
+                var i = 1;
+                while (document.getElementById(id)) {
+                  id = base + '-' + (i++);
+                }
+                heading.id = id;
+              }
+            });
+          }
+
+          if (tocLinks.length && headings.length) {
+            var headingMap = {};
+            headings.forEach(function(heading) {
+              var key = normalize(heading.textContent);
+              if (key && !headingMap[key]) headingMap[key] = heading;
+            });
+
+            tocLinks.forEach(function(link) {
+              var label = normalize(link.textContent);
+              if (label) link.setAttribute('title', label);
+
+              var href = link.getAttribute('href');
+              if (!href || href.charAt(0) !== '#') return;
+              var targetId = decodeURIComponent(href.slice(1));
+              var target = document.getElementById(targetId);
+              if (!target && label && headingMap[label]) {
+                link.setAttribute('href', '#' + headingMap[label].id);
+              }
+            });
+
+            tocLinks.forEach(function(link) {
+              link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                if (!href || href.charAt(0) !== '#') return;
+                var targetId = decodeURIComponent(href.slice(1));
+                var target = document.getElementById(targetId);
+                if (!target) return;
+                e.preventDefault();
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                history.pushState(null, '', '#' + targetId);
+              });
+            });
+
+            if ('IntersectionObserver' in window) {
+              var linkById = {};
+              tocLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href && href.charAt(0) === '#') {
+                  linkById[decodeURIComponent(href.slice(1))] = link;
+                }
+              });
+
+              var activeId = null;
+              var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    activeId = entry.target.id;
+                  }
+                });
+                if (activeId && linkById[activeId]) {
+                  tocLinks.forEach(function(link) {
+                    link.classList.toggle('is-active', linkById[activeId] === link);
+                  });
+                }
+              }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.1 });
+
+              headings.forEach(function(heading) {
+                observer.observe(heading);
+              });
+            }
+          }
+
+          if (toggle && layout) {
+            var setState = function(hidden) {
+              layout.classList.toggle('toc-hidden', hidden);
+              toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+              toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸式阅读');
+            };
+
+            toggle.addEventListener('click', function() {
+              var hidden = !layout.classList.contains('toc-hidden');
+              setState(hidden);
+            });
+          }
         })();
       </script>
     
@@ -212,16 +306,11 @@
     <!-- Post Navigation -->
     <nav class="post-nav">
       
-        <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item prev">
-          <div class="nav-label">← 上一篇</div>
-          <div class="nav-title">萌宠</div>
-        </a>
-      
 
       
-        <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item next">
+        <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item next">
           <div class="nav-label">下一篇 →</div>
-          <div class="nav-title">目标检测</div>
+          <div class="nav-title">萌宠</div>
         </a>
       
     </nav>
@@ -348,8 +437,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770564093994"></script>
-  <script src="/js/neural-network.js?v=1770564093994"></script>
-  <script src="/js/scroll-animations.js?v=1770564093994"></script>
+  <script src="/js/main.js?v=1770564285614"></script>
+  <script src="/js/neural-network.js?v=1770564285614"></script>
+  <script src="/js/scroll-animations.js?v=1770564285614"></script>
 </body>
 </html>
