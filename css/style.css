@@ -997,7 +997,7 @@ a:hover {
 
 .post-body p {
   margin-bottom: var(--spacing-lg);
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .post-body a {
@@ -1021,80 +1021,136 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-.post-body code {
-  padding: 2px 8px;
+.post-body :not(pre) > code {
+  padding: 2px 6px;
   background: var(--bg-tertiary);
   color: var(--primary-dark);
   border-radius: var(--radius-sm);
-  font-size: 0.875em;
+  font-size: 0.9em;
   font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  border: 1px solid var(--border-color);
 }
 
 .post-body pre {
   padding: var(--spacing-lg);
-  background: var(--text-primary);
-  color: #f7fafc;
-  border-radius: var(--radius-md);
-  overflow-x: hidden;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  background: var(--dark);
+  color: #f5f7f6;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  white-space: pre;
   margin: var(--spacing-lg) 0;
   box-shadow: var(--shadow-md);
+  line-height: 1.6;
+  font-size: 0.92rem;
 }
 
 .post-body pre code {
   padding: 0;
   background: transparent;
   color: inherit;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .post-body blockquote {
   padding: var(--spacing-md) var(--spacing-lg);
   margin: var(--spacing-lg) 0;
-  border-left: 4px solid var(--primary);
-  background: var(--gradient-subtle);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: 3px solid var(--primary);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
   color: var(--text-secondary);
+  box-shadow: inset 0 0 0 1px var(--border-color);
+}
+
+.post-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.post-body blockquote cite {
+  display: block;
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
 }
 
 .post-body ul,
 .post-body ol {
-  padding-left: var(--spacing-xl);
+  padding-left: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
 }
 
 .post-body li {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   line-height: 1.8;
+}
+
+.post-body ul li::marker,
+.post-body ol li::marker {
+  color: var(--text-tertiary);
 }
 
 .post-body table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: var(--spacing-lg) 0;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  table-layout: fixed;
+  table-layout: auto;
   word-break: break-word;
+  border: 1px solid var(--border-color);
+  display: block;
+  overflow-x: auto;
+  background: var(--bg-primary);
 }
 
 .post-body th,
 .post-body td {
   padding: var(--spacing-md);
-  border: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   text-align: left;
+  min-width: 120px;
 }
 
 .post-body th {
-  background: var(--primary);
-  color: white;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .post-body tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.post-body tr:last-child td {
+  border-bottom: none;
+}
+
+.post-body hr {
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+  margin: var(--spacing-xl) 0;
+}
+
+/* Math / Formula blocks */
+.post-body .katex-display,
+.post-body .MathJax_Display,
+.post-body .mjx-container[display="true"] {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
   background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.post-body .katex,
+.post-body .mjx-container {
+  font-size: 1em;
 }
 
 /* Table of Contents */
