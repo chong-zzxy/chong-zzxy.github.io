@@ -3776,11 +3776,25 @@ a:focus-visible {
 }
 
 .resume-entry-body {
-  background: var(--card-bg);
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.62));
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) calc(var(--spacing-xl) + 12px);
   box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.resume-entry-body::before {
+  content: '';
+  position: absolute;
+  left: var(--spacing-lg);
+  top: var(--spacing-lg);
+  bottom: var(--spacing-lg);
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--primary), rgba(132, 165, 157, 0.2));
+  opacity: 0.9;
 }
 
 .resume-entry-header {
@@ -3807,20 +3821,28 @@ a:focus-visible {
   margin-bottom: var(--spacing-sm);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.04em;
+  flex-wrap: wrap;
 }
 
 .resume-entry-period {
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  background: var(--primary-alpha-10);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 700;
   letter-spacing: 0.06em;
 }
 
 .resume-entry-divider {
-  color: var(--border-color);
+  display: none;
 }
 
 .resume-entry-company {
   color: var(--text-secondary);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .resume-entry-desc {
@@ -3867,11 +3889,24 @@ a:focus-visible {
 }
 
 .resume-project {
-  background: var(--card-bg);
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.resume-project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.8;
 }
 
 .resume-project-header {
@@ -3909,7 +3944,7 @@ a:focus-visible {
 }
 
 .resume-project-desc {
-  margin: 0;
+  margin: var(--spacing-sm) 0 0;
   color: var(--text-secondary);
   font-size: 0.98rem;
   line-height: 1.75;
@@ -3944,6 +3979,15 @@ a:focus-visible {
     width: 84px;
     height: 118px;
     border-radius: 20px;
+  }
+
+  .resume-entry-body {
+    padding-left: var(--spacing-xl);
+  }
+
+  .resume-entry-body::before {
+    left: var(--spacing-md);
+    width: 3px;
   }
 }
 
