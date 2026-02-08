@@ -830,11 +830,12 @@ a:hover {
   gap: 8px;
   padding: 0 16px;
   min-height: 48px;
-  background: linear-gradient(135deg, rgba(63, 74, 69, 0.12), rgba(94, 106, 99, 0.06));
-  border: none;
-  border-radius: 999px;
+  min-width: 48px;
+  background: rgba(63, 74, 69, 0.08);
+  border: 1px solid rgba(63, 74, 69, 0.12);
+  border-radius: var(--radius-lg);
   font-size: 0.875rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: none;
   justify-content: center;
@@ -881,10 +882,10 @@ a:hover {
 }
 
 .post-toc-toggle[aria-expanded="false"] {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-lg);
   justify-content: center;
   background: transparent;
   box-shadow: none;
@@ -1173,7 +1174,7 @@ a:hover {
   top: var(--toc-top);
   right: var(--toc-right);
   width: var(--toc-width);
-  max-height: calc(100vh - var(--toc-top) - 24px);
+  max-height: min(calc(100vh - var(--toc-top) - 24px), var(--toc-max-height, 9999px));
   overflow: auto;
   transition: opacity 0.25s ease, transform 0.35s ease;
   overscroll-behavior: contain;
