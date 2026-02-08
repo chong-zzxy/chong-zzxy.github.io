@@ -939,6 +939,7 @@ a:hover {
   display: grid;
   --toc-width: 280px;
   --toc-top: 100px;
+  --content-wide: 960px;
   --toc-right: max(var(--spacing-lg), calc((100vw - var(--container-max-width)) / 2 + var(--spacing-lg)));
   grid-template-columns: minmax(0, 1fr) var(--toc-width);
   gap: var(--spacing-2xl);
@@ -949,6 +950,9 @@ a:hover {
 
 .post-layout.toc-hidden {
   --toc-width: 0px;
+  --toc-right: max(var(--spacing-lg), calc((100vw - var(--content-wide)) / 2 + var(--spacing-lg)));
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .post-layout.toc-hidden .post-toc {
@@ -958,7 +962,9 @@ a:hover {
 }
 
 .post-layout.toc-hidden .post-body {
-  max-width: 100%;
+  max-width: var(--content-wide);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-body {
