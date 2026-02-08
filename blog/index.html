@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770562775407">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770562775407">
+  <link rel="stylesheet" href="/css/style.css?v=1770562980674">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770562980674">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -98,7 +98,7 @@
       <div class="post-list">
         
           
-          <article class="post-card post-card-minimal" data-cat="LIFE">
+          <article class="post-card post-card-minimal is-clickable" data-cat="LIFE" data-href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" role="link" tabindex="0">
             <time class="post-date-min" datetime="2026-01-18T14:15:08.377Z">
               2026-01-18
             </time>
@@ -117,7 +117,7 @@
           </article>
         
           
-          <article class="post-card post-card-minimal" data-cat="NLP">
+          <article class="post-card post-card-minimal is-clickable" data-cat="NLP" data-href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/" role="link" tabindex="0">
             <time class="post-date-min" datetime="2026-01-18T14:15:08.377Z">
               2026-01-18
             </time>
@@ -136,7 +136,7 @@
           </article>
         
           
-          <article class="post-card post-card-minimal" data-cat="CV">
+          <article class="post-card post-card-minimal is-clickable" data-cat="CV" data-href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" role="link" tabindex="0">
             <time class="post-date-min" datetime="2026-01-18T14:15:08.377Z">
               2026-01-18
             </time>
@@ -155,7 +155,7 @@
           </article>
         
           
-          <article class="post-card post-card-minimal" data-cat="CV">
+          <article class="post-card post-card-minimal is-clickable" data-cat="CV" data-href="/2026/01/18/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" role="link" tabindex="0">
             <time class="post-date-min" datetime="2026-01-18T14:15:08.376Z">
               2026-01-18
             </time>
@@ -178,6 +178,28 @@
       <!-- 分页 -->
       
     </div>
+
+    <script>
+      // Make entire post card clickable (exclude inner links)
+      (function() {
+        var cards = document.querySelectorAll('.post-card.is-clickable[data-href]');
+        cards.forEach(function(card) {
+          card.addEventListener('click', function(e) {
+            if (e.target.closest('a')) return;
+            var href = card.getAttribute('data-href');
+            if (href) window.location.href = href;
+          });
+          card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              if (e.target.closest('a')) return;
+              e.preventDefault();
+              var href = card.getAttribute('data-href');
+              if (href) window.location.href = href;
+            }
+          });
+        });
+      })();
+    </script>
 
     <!-- 侧边栏 -->
     <aside class="blog-sidebar">
@@ -550,8 +572,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770562775407"></script>
-  <script src="/js/neural-network.js?v=1770562775407"></script>
-  <script src="/js/scroll-animations.js?v=1770562775407"></script>
+  <script src="/js/main.js?v=1770562980674"></script>
+  <script src="/js/neural-network.js?v=1770562980674"></script>
+  <script src="/js/scroll-animations.js?v=1770562980674"></script>
 </body>
 </html>

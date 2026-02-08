@@ -2369,6 +2369,15 @@ a:focus-visible {
   padding-bottom: 24px;
 }
 
+.post-card.is-clickable {
+  cursor: pointer;
+}
+
+.post-card.is-clickable:focus-visible {
+  outline: 2px solid var(--blog-accent);
+  outline-offset: 4px;
+}
+
 .post-card:hover {
   transform: none;
   box-shadow: none;
