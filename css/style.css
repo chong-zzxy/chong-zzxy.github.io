@@ -3725,27 +3725,29 @@ a:focus-visible {
 }
 
 .resume-edu-degree {
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-primary);
-  font-size: 0.98rem;
+  font-size: 1.04rem;
+  letter-spacing: 0.01em;
 }
 
 .resume-edu-period {
   color: var(--text-tertiary);
-  font-size: 0.875rem;
+  font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .resume-edu-major {
   color: var(--text-secondary);
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.92rem;
   margin-bottom: 2px;
 }
 
 .resume-edu-school {
   color: var(--text-tertiary);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
 }
 
 .resume-section + .resume-section {
@@ -3753,8 +3755,8 @@ a:focus-visible {
 }
 
 .resume-section-title {
-  font-size: 0.875rem;
-  letter-spacing: 0.22em;
+  font-size: 0.86rem;
+  letter-spacing: 0.18em;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-primary);
