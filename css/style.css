@@ -842,7 +842,8 @@ a:hover {
   text-align: center;
   position: fixed;
   bottom: calc(var(--spacing-xl) + 60px);
-  right: var(--spacing-xl);
+  right: calc(var(--spacing-xl) + 24px);
+  transform: translateX(-50%);
   z-index: 3;
   box-shadow: 0 6px 20px rgba(43, 47, 45, 0.12);
   backdrop-filter: blur(6px);
@@ -907,6 +908,14 @@ a:hover {
 .post-toc-toggle[aria-expanded="false"] .toc-toggle-icon {
   opacity: 1;
   transform: scale(1);
+}
+
+.post-toc-toggle[aria-expanded="true"] .toc-toggle-icon {
+  display: none;
+}
+
+.post-toc-toggle[aria-expanded="true"] {
+  gap: 0;
 }
 
 .post-toc-toggle:focus-visible {
@@ -1599,7 +1608,7 @@ a:focus-visible {
   .post-toc-toggle {
     position: fixed;
     bottom: calc(var(--spacing-lg) + 56px);
-    right: var(--spacing-lg);
+    right: calc(var(--spacing-lg) + 24px);
   }
 }
 
