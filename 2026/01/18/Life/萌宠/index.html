@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770566418368">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770566418368">
+  <link rel="stylesheet" href="/css/style.css?v=1770566547873">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770566547873">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -137,8 +137,8 @@
           var updateTocOffset = function() {
             if (!layout) return;
             var rect = layout.getBoundingClientRect();
-            var headerOffset = header ? header.getBoundingClientRect().height + 16 : 100;
-            var top = Math.max(headerOffset, rect.top);
+            var headerOffset = header ? header.getBoundingClientRect().height : 0;
+            var top = rect.top > headerOffset ? rect.top : headerOffset;
             layout.style.setProperty('--toc-top', top + 'px');
             var maxHeight = Math.max(0, rect.bottom - top - 24);
             layout.style.setProperty('--toc-max-height', maxHeight + 'px');
@@ -403,8 +403,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770566418368"></script>
-  <script src="/js/neural-network.js?v=1770566418368"></script>
-  <script src="/js/scroll-animations.js?v=1770566418368"></script>
+  <script src="/js/main.js?v=1770566547873"></script>
+  <script src="/js/neural-network.js?v=1770566547873"></script>
+  <script src="/js/scroll-animations.js?v=1770566547873"></script>
 </body>
 </html>
