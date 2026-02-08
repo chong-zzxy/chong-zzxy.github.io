@@ -4843,7 +4843,7 @@ a:focus-visible {
   margin-bottom: var(--spacing-lg);
 }
 
-:root.fullpage-enabled .about-intro {
+:root.fullpage-enabled .resume-intro {
   padding: var(--spacing-lg);
 }
 
@@ -5245,7 +5245,7 @@ a:focus-visible {
 }
 
 /* 个人简介 */
-.about-intro {
+.resume-intro {
   background: var(--bg-secondary);
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
@@ -5342,7 +5342,7 @@ a:focus-visible {
   text-align: center;
 }
 
-.about-intro .blog-themes {
+.resume-intro .blog-themes {
   text-align: left;
   margin-top: var(--spacing-lg);
 }
@@ -5354,7 +5354,7 @@ a:focus-visible {
   color: var(--text-primary);
 }
 
-.about-intro .themes-title {
+.resume-intro .themes-title {
   font-size: 1.25rem;
   margin-bottom: var(--spacing-md);
 }
@@ -5366,7 +5366,7 @@ a:focus-visible {
   justify-content: center;
 }
 
-.about-intro .themes-grid {
+.resume-intro .themes-grid {
   justify-content: flex-start;
 }
 
@@ -5379,7 +5379,7 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.about-intro .theme-card {
+.resume-intro .theme-card {
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
@@ -6524,7 +6524,7 @@ a:focus-visible {
     gap: var(--spacing-lg);
   }
 
-  :root.fullpage-enabled .about-intro {
+  :root.fullpage-enabled .resume-intro {
     padding: var(--spacing-lg);
   }
 
