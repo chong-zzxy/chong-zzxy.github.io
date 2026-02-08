@@ -838,9 +838,9 @@ a:hover {
   transition: none;
   justify-content: center;
   text-align: center;
-  position: absolute;
-  top: -12px;
-  right: 0;
+  position: fixed;
+  top: calc(var(--toc-top) - 12px);
+  right: var(--toc-right);
   z-index: 3;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(6px);
@@ -936,6 +936,8 @@ a:hover {
 .post-layout {
   display: grid;
   --toc-width: 280px;
+  --toc-top: 100px;
+  --toc-right: max(var(--spacing-lg), calc((100vw - var(--container-max-width)) / 2 + var(--spacing-lg)));
   grid-template-columns: minmax(0, 1fr) var(--toc-width);
   gap: var(--spacing-2xl);
   align-items: start;
@@ -945,7 +947,6 @@ a:hover {
 
 .post-layout.toc-hidden {
   --toc-width: 0px;
-  padding-top: 48px;
 }
 
 .post-layout.toc-hidden .post-toc {
@@ -1098,10 +1099,14 @@ a:hover {
 
 /* Table of Contents */
 .post-toc {
-  position: sticky;
-  top: 100px;
+  position: fixed;
+  top: var(--toc-top);
+  right: var(--toc-right);
+  width: var(--toc-width);
+  max-height: calc(100vh - var(--toc-top) - 24px);
+  overflow: auto;
   transition: opacity 0.25s ease, transform 0.35s ease;
-  overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 .post-layout.toc-hidden .toc-content {
@@ -1514,7 +1519,16 @@ a:focus-visible {
 
   .post-toc {
     position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
     margin-top: var(--spacing-xl);
+  }
+
+  .post-toc-toggle {
+    position: static;
+    margin-bottom: var(--spacing-md);
+    justify-self: end;
   }
 }
 
