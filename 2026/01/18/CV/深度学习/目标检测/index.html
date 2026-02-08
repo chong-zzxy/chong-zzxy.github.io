@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770564285614">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770564285614">
+  <link rel="stylesheet" href="/css/style.css?v=1770564597608">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770564597608">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -103,6 +103,12 @@
   <!-- Post Content -->
   <div class="container">
     <div class="post-layout" data-post-layout>
+      
+        <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸式阅读" data-toc-toggle>
+          <span class="toc-toggle-label">沉浸式阅读</span>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+        </button>
+      
       <div class="post-body">
         <h1 id="目标检测："><a href="#目标检测：" class="headerlink" title="目标检测："></a>目标检测：</h1><blockquote>
 <h4 id="目标检测是在图片中对-可变数量-的目标进行查找和分类"><a href="#目标检测是在图片中对-可变数量-的目标进行查找和分类" class="headerlink" title="目标检测是在图片中对 可变数量 的目标进行查找和分类"></a>目标检测是在图片中对 <em><u>可变数量</u></em> 的目标进行查找和分类</h4></blockquote>
@@ -348,13 +354,7 @@
       
         <aside class="post-toc">
           <div class="toc-wrapper">
-            <div class="toc-header">
-              <h3 class="toc-title">目录</h3>
-              <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸式阅读" data-toc-toggle>
-                <span class="toc-toggle-label">沉浸式阅读</span>
-                <span class="toc-toggle-icon" aria-hidden="true">✦</span>
-              </button>
-            </div>
+            <h3 class="toc-title">目录</h3>
             <div class="toc-content">
               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="toc-text">目标检测：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%98%AF%E5%9C%A8%E5%9B%BE%E7%89%87%E4%B8%AD%E5%AF%B9-%E5%8F%AF%E5%8F%98%E6%95%B0%E9%87%8F-%E7%9A%84%E7%9B%AE%E6%A0%87%E8%BF%9B%E8%A1%8C%E6%9F%A5%E6%89%BE%E5%92%8C%E5%88%86%E7%B1%BB"><span class="toc-text">目标检测是在图片中对 可变数量 的目标进行查找和分类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-VS-%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB"><span class="toc-text">目标检测 VS 图像分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-VS-%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2"><span class="toc-text">目标检测 VS 目标分割</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">算法基本流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">深度学习目标检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#One-stage%EF%BC%88YOLO%E5%92%8CSSD%E7%B3%BB%E5%88%97%EF%BC%89"><span class="toc-text">One-stage（YOLO和SSD系列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-stage%EF%BC%88Faster-RCNN%E7%B3%BB%E5%88%97-%EF%BC%89"><span class="toc-text">Two-stage（Faster RCNN系列 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BC%A0%E7%BB%9F%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">常用传统目标检测方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Two-stage"><span class="toc-text">Two-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">基本流程：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">常见算法：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="toc-text">核心组件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91%EF%BC%9A"><span class="toc-text">改进方向：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#One-stage"><span class="toc-text">One-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">基本介绍：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%EF%BC%9A-1"><span class="toc-text">基本流程：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%EF%BC%9A-1"><span class="toc-text">常见算法：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6-1"><span class="toc-text">核心组件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#One-stage-VS-Two-stage"><span class="toc-text">One-stage VS Two-stage</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SSD%E7%B3%BB%E5%88%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="toc-text">SSD系列算法原理介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">算法介绍：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BB%E5%B9%B2%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">主干网络介绍：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
             </div>
@@ -620,8 +620,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770564285614"></script>
-  <script src="/js/neural-network.js?v=1770564285614"></script>
-  <script src="/js/scroll-animations.js?v=1770564285614"></script>
+  <script src="/js/main.js?v=1770564597608"></script>
+  <script src="/js/neural-network.js?v=1770564597608"></script>
+  <script src="/js/scroll-animations.js?v=1770564597608"></script>
 </body>
 </html>
