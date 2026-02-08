@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770565049578">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770565049578">
+  <link rel="stylesheet" href="/css/style.css?v=1770565139098">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770565139098">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -192,6 +192,30 @@
           var layout = document.querySelector('[data-post-layout]');
           var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
           var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
+          var header = document.querySelector('.header');
+
+          var updateTocOffset = function() {
+            if (!layout) return;
+            var rect = layout.getBoundingClientRect();
+            var headerOffset = header ? header.getBoundingClientRect().height + 16 : 100;
+            var top = Math.max(headerOffset, rect.top);
+            layout.style.setProperty('--toc-top', top + 'px');
+          };
+
+          if (layout) {
+            var ticking = false;
+            var onScroll = function() {
+              if (ticking) return;
+              ticking = true;
+              window.requestAnimationFrame(function() {
+                updateTocOffset();
+                ticking = false;
+              });
+            };
+            updateTocOffset();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateTocOffset);
+          }
 
           var normalize = function(text) {
             return (text || '').trim().replace(/\s+/g, ' ');
@@ -306,16 +330,11 @@
     <!-- Post Navigation -->
     <nav class="post-nav">
       
-        <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item prev">
-          <div class="nav-label">← 上一篇</div>
-          <div class="nav-title">萌宠</div>
-        </a>
-      
 
       
-        <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item next">
+        <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item next">
           <div class="nav-label">下一篇 →</div>
-          <div class="nav-title">目标检测</div>
+          <div class="nav-title">萌宠</div>
         </a>
       
     </nav>
@@ -442,8 +461,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770565049578"></script>
-  <script src="/js/neural-network.js?v=1770565049578"></script>
-  <script src="/js/scroll-animations.js?v=1770565049578"></script>
+  <script src="/js/main.js?v=1770565139098"></script>
+  <script src="/js/neural-network.js?v=1770565139098"></script>
+  <script src="/js/scroll-animations.js?v=1770565139098"></script>
 </body>
 </html>
