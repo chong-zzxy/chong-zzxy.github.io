@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770563591079">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770563591079">
+  <link rel="stylesheet" href="/css/style.css?v=1770564093994">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770564093994">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -101,12 +101,6 @@
           
         </div>
 
-        
-          <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸式阅读" data-toc-toggle>
-            <span class="toc-toggle-label">沉浸式阅读</span>
-            <span class="toc-toggle-dot" aria-hidden="true"></span>
-          </button>
-        
       </div>
     </div>
   </header>
@@ -422,7 +416,13 @@ GRAY = (RED+BLUE+GREEN)/3
       
         <aside class="post-toc">
           <div class="toc-wrapper">
-            <h3 class="toc-title">目录</h3>
+            <div class="toc-header">
+              <h3 class="toc-title">目录</h3>
+              <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸式阅读" data-toc-toggle>
+                <span class="toc-toggle-label">沉浸式阅读</span>
+                <span class="toc-toggle-icon" aria-hidden="true">✦</span>
+              </button>
+            </div>
             <div class="toc-content">
               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="toc-text">图像处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-text">一、图像处理—仿射变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E6%94%BE%E5%A4%A7%E5%92%8C%E7%BC%A9%E5%B0%8F"><span class="toc-text">二、图像处理—放大和缩小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%82%B9%E8%BF%90%E7%AE%97"><span class="toc-text">三、图像处理—点运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">四、图像处理—逻辑运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E4%BA%8C%E5%80%BC%E5%BD%A2%E6%80%81%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-text">五、图像处理—二值形态学运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96"><span class="toc-text">六、图像处理—直方图均衡化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%A9%BA%E9%97%B4%E5%9F%9F%E5%B9%B3%E6%BB%91%E6%BB%A4%E6%B3%A2"><span class="toc-text">七、图像处理—空间域平滑滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%A9%BA%E9%97%B4%E5%9F%9F%E9%94%90%E5%8C%96%E6%BB%A4%E6%B3%A2"><span class="toc-text">八、图像处理—空间域锐化滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94RBG%E5%9B%BE%E5%83%8F%E5%92%8C%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%83%8F"><span class="toc-text">九、图像处理—RBG图像和灰度图像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RGB%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%83%BD%E8%A1%A8%E7%A4%BA%E8%87%AA%E7%84%B6%E7%95%8C%E6%89%80%E6%9C%89%E7%9A%84%E9%A2%9C%E8%89%B2"><span class="toc-text">RGB颜色空间不能表示自然界所有的颜色</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
             </div>
@@ -589,8 +589,8 @@ GRAY = (RED+BLUE+GREEN)/3
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770563591079"></script>
-  <script src="/js/neural-network.js?v=1770563591079"></script>
-  <script src="/js/scroll-animations.js?v=1770563591079"></script>
+  <script src="/js/main.js?v=1770564093994"></script>
+  <script src="/js/neural-network.js?v=1770564093994"></script>
+  <script src="/js/scroll-animations.js?v=1770564093994"></script>
 </body>
 </html>

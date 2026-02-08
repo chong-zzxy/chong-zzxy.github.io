@@ -836,6 +836,8 @@ a:hover {
   color: var(--text-secondary);
   cursor: pointer;
   transition: none;
+  justify-content: center;
+  text-align: center;
 }
 
 .post-toc-toggle .toc-toggle-label {
@@ -843,13 +845,12 @@ a:hover {
   letter-spacing: 0.02em;
 }
 
-.post-toc-toggle .toc-toggle-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--primary);
+.post-toc-toggle .toc-toggle-icon {
+  font-size: 0.9rem;
+  color: var(--primary);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .post-toc-toggle[aria-expanded="false"] {
@@ -872,8 +873,9 @@ a:hover {
   border: 0;
 }
 
-.post-toc-toggle[aria-expanded="false"] .toc-toggle-dot {
+.post-toc-toggle[aria-expanded="false"] .toc-toggle-icon {
   opacity: 1;
+  transform: scale(1);
 }
 
 .post-toc-toggle:focus-visible {
@@ -916,21 +918,39 @@ a:hover {
   grid-template-columns: minmax(0, 1fr) var(--toc-width);
   gap: var(--spacing-2xl);
   align-items: start;
-  transition: grid-template-columns 0.35s ease;
+  transition: grid-template-columns 0.35s ease, padding-top 0.35s ease;
+  position: relative;
 }
 
 .post-layout.toc-hidden {
   --toc-width: 0px;
+  padding-top: 56px;
 }
 
 .post-layout.toc-hidden .post-toc {
-  opacity: 0;
-  transform: translateX(16px);
-  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  width: 100%;
+  z-index: 2;
 }
 
 .post-layout.toc-hidden .post-body {
   max-width: 100%;
+}
+
+.post-layout.toc-hidden .toc-wrapper {
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.post-layout.toc-hidden .toc-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .post-body {
@@ -1079,6 +1099,20 @@ a:hover {
   overflow: hidden;
 }
 
+.post-layout.toc-hidden .toc-content {
+  display: none;
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
 .toc-wrapper {
   padding: var(--spacing-lg);
   background: var(--bg-primary);
@@ -1088,9 +1122,7 @@ a:hover {
 
 .toc-title {
   font-size: 1.125rem;
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--primary);
+  margin: 0;
 }
 
 .toc-content ol {
