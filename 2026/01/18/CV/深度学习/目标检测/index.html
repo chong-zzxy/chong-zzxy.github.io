@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770562980674">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770562980674">
+  <link rel="stylesheet" href="/css/style.css?v=1770563185929">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770563185929">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -93,6 +93,12 @@
             </a>
           
         </div>
+
+        
+          <button class="post-toc-toggle" type="button" aria-expanded="true" data-toc-toggle>
+            隐藏目录
+          </button>
+        
       </div>
     </div>
   </header>
@@ -101,7 +107,7 @@
 
   <!-- Post Content -->
   <div class="container">
-    <div class="post-layout">
+    <div class="post-layout" data-post-layout>
       <div class="post-body">
         <h1 id="目标检测："><a href="#目标检测：" class="headerlink" title="目标检测："></a>目标检测：</h1><blockquote>
 <h4 id="目标检测是在图片中对-可变数量-的目标进行查找和分类"><a href="#目标检测是在图片中对-可变数量-的目标进行查找和分类" class="headerlink" title="目标检测是在图片中对 可变数量 的目标进行查找和分类"></a>目标检测是在图片中对 <em><u>可变数量</u></em> 的目标进行查找和分类</h4></blockquote>
@@ -356,6 +362,27 @@
       
     </div>
 
+    
+      <script>
+        (function() {
+          var toggle = document.querySelector('[data-toc-toggle]');
+          var layout = document.querySelector('[data-post-layout]');
+          if (!toggle || !layout) return;
+
+          var setState = function(hidden) {
+            layout.classList.toggle('toc-hidden', hidden);
+            toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+            toggle.textContent = hidden ? '显示目录' : '隐藏目录';
+          };
+
+          toggle.addEventListener('click', function() {
+            var hidden = !layout.classList.contains('toc-hidden');
+            setState(hidden);
+          });
+        })();
+      </script>
+    
+
     <!-- Post Tags -->
     
 
@@ -498,8 +525,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770562980674"></script>
-  <script src="/js/neural-network.js?v=1770562980674"></script>
-  <script src="/js/scroll-animations.js?v=1770562980674"></script>
+  <script src="/js/main.js?v=1770563185929"></script>
+  <script src="/js/neural-network.js?v=1770563185929"></script>
+  <script src="/js/scroll-animations.js?v=1770563185929"></script>
 </body>
 </html>

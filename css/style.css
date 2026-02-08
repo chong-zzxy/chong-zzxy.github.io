@@ -824,6 +824,25 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
+.post-toc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: none;
+}
+
+.post-toc-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .post-category-link {
   color: var(--primary);
   font-weight: 500;
@@ -858,6 +877,18 @@ a:hover {
   grid-template-columns: 1fr 280px;
   gap: var(--spacing-2xl);
   align-items: start;
+}
+
+.post-layout.toc-hidden {
+  grid-template-columns: 1fr;
+}
+
+.post-layout.toc-hidden .post-toc {
+  display: none;
+}
+
+.post-layout.toc-hidden .post-body {
+  max-width: 100%;
 }
 
 .post-body {
