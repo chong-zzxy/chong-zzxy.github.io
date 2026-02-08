@@ -3404,6 +3404,10 @@ a:focus-visible {
   padding: var(--spacing-2xl) var(--spacing-lg);
   position: relative;
   z-index: 2;
+  --resume-font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --resume-font-serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", serif;
+  font-family: var(--resume-font-sans);
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 .resume-shell {
@@ -3477,26 +3481,28 @@ a:focus-visible {
   align-items: baseline;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
-  font-size: 2rem;
-  line-height: 1.1;
+  font-family: var(--resume-font-serif);
+  font-size: 2.25rem;
+  line-height: 1.05;
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .resume-name-cn {
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-primary);
 }
 
 .resume-name-en {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-tertiary);
-  font-size: 1.125rem;
-  letter-spacing: 0.04em;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
 }
 
 .resume-headline {
   margin: var(--spacing-sm) 0 0;
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-secondary);
 }
 
@@ -3591,8 +3597,9 @@ a:focus-visible {
 }
 
 .resume-block-title {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--text-tertiary);
   margin: 0 0 var(--spacing-md);
@@ -3653,6 +3660,8 @@ a:focus-visible {
   font-weight: 900;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
 }
 
 .resume-skill-list {
@@ -3671,7 +3680,8 @@ a:focus-visible {
 .resume-skill-name {
   color: var(--text-secondary);
   font-weight: 700;
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
 }
 
 .resume-skill-dots {
@@ -3717,11 +3727,14 @@ a:focus-visible {
 .resume-edu-degree {
   font-weight: 900;
   color: var(--text-primary);
+  font-size: 0.98rem;
 }
 
 .resume-edu-period {
   color: var(--text-tertiary);
   font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
 }
 
 .resume-edu-major {
@@ -3740,8 +3753,9 @@ a:focus-visible {
 }
 
 .resume-section-title {
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
+  font-size: 0.875rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--text-primary);
   margin: 0 0 var(--spacing-lg);
@@ -3777,9 +3791,9 @@ a:focus-visible {
 }
 
 .resume-entry-role {
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-primary);
-  font-size: 1.125rem;
+  font-size: 1.2rem;
 }
 
 .resume-entry-meta {
@@ -3787,8 +3801,10 @@ a:focus-visible {
   align-items: baseline;
   gap: var(--spacing-sm);
   color: var(--text-tertiary);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   margin-bottom: var(--spacing-sm);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
 }
 
 .resume-entry-period {
@@ -3808,6 +3824,8 @@ a:focus-visible {
 .resume-entry-desc {
   margin: 0;
   color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
 
 .resume-bullets {
@@ -3823,6 +3841,8 @@ a:focus-visible {
   position: relative;
   padding-left: 1.25rem;
   color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 .resume-bullets li::before {
@@ -3863,8 +3883,8 @@ a:focus-visible {
 
 .resume-project-name {
   margin: 0;
-  font-size: 1.125rem;
-  font-weight: 900;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--text-primary);
 }
 
@@ -3875,9 +3895,9 @@ a:focus-visible {
 }
 
 .resume-tag {
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: var(--radius-full);
@@ -3889,6 +3909,8 @@ a:focus-visible {
 .resume-project-desc {
   margin: 0;
   color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
 
 @media (max-width: 1024px) {
