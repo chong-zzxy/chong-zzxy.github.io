@@ -7,8 +7,8 @@
   <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770563312971">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770563312971">
+  <link rel="stylesheet" href="/css/style.css?v=1770563591079">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770563591079">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -95,8 +95,9 @@
         </div>
 
         
-          <button class="post-toc-toggle" type="button" aria-expanded="true" data-toc-toggle>
-            隐藏目录
+          <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸式阅读" data-toc-toggle>
+            <span class="toc-toggle-label">沉浸式阅读</span>
+            <span class="toc-toggle-dot" aria-hidden="true"></span>
           </button>
         
       </div>
@@ -194,7 +195,7 @@
           var setState = function(hidden) {
             layout.classList.toggle('toc-hidden', hidden);
             toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-            toggle.textContent = hidden ? '显示目录' : '隐藏目录';
+            toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸式阅读');
           };
 
           toggle.addEventListener('click', function() {
@@ -347,8 +348,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770563312971"></script>
-  <script src="/js/neural-network.js?v=1770563312971"></script>
-  <script src="/js/scroll-animations.js?v=1770563312971"></script>
+  <script src="/js/main.js?v=1770563591079"></script>
+  <script src="/js/neural-network.js?v=1770563591079"></script>
+  <script src="/js/scroll-animations.js?v=1770563591079"></script>
 </body>
 </html>

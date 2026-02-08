@@ -827,7 +827,7 @@ a:hover {
 .post-toc-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
@@ -836,6 +836,44 @@ a:hover {
   color: var(--text-secondary);
   cursor: pointer;
   transition: none;
+}
+
+.post-toc-toggle .toc-toggle-label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.post-toc-toggle .toc-toggle-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.post-toc-toggle[aria-expanded="false"] {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 999px;
+  justify-content: center;
+}
+
+.post-toc-toggle[aria-expanded="false"] .toc-toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.post-toc-toggle[aria-expanded="false"] .toc-toggle-dot {
+  opacity: 1;
 }
 
 .post-toc-toggle:focus-visible {
@@ -874,17 +912,21 @@ a:hover {
 
 .post-layout {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  --toc-width: 280px;
+  grid-template-columns: minmax(0, 1fr) var(--toc-width);
   gap: var(--spacing-2xl);
   align-items: start;
+  transition: grid-template-columns 0.35s ease;
 }
 
 .post-layout.toc-hidden {
-  grid-template-columns: 1fr;
+  --toc-width: 0px;
 }
 
 .post-layout.toc-hidden .post-toc {
-  display: none;
+  opacity: 0;
+  transform: translateX(16px);
+  pointer-events: none;
 }
 
 .post-layout.toc-hidden .post-body {
@@ -897,6 +939,7 @@ a:hover {
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
+  transition: max-width 0.35s ease, transform 0.35s ease;
 }
 
 /* Post Content Styles */
@@ -1032,6 +1075,8 @@ a:hover {
 .post-toc {
   position: sticky;
   top: 100px;
+  transition: opacity 0.25s ease, transform 0.35s ease;
+  overflow: hidden;
 }
 
 .toc-wrapper {
