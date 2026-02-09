@@ -7,8 +7,8 @@
   <meta name="description" content="吾家有布偶">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770615434388">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770615434388">
+  <link rel="stylesheet" href="/css/style.css?v=1770618486125">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770618486125">
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="theme-green">
@@ -419,6 +419,54 @@
 
   const photos = [{"image":"/img/gallery/Madame-Nian/20230331_1155.jpg","title":"20230331 初识","description":"好小一只，好怕钻进犄角旮旯找不到，还是躲进被窝里，吃我一计泰山陨石坠"},{"image":"/img/gallery/Madame-Nian/20230401_0137.jpg","title":"20230401 爱吃 贪吃","description":null},{"image":"/img/gallery/Madame-Nian/20230415_200102.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230611_161953.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230618_151515.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230619_184230.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230621_183940.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230720_184128.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230922_130018.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20231028_1133.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20240505_0056.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20240617_215932.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241028_113303.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241104_185358.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241208_225117.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250203_103958.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250702_201510.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250910_2238.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251012_022647.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251013_222358.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251019_022730.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20260124_2052.jpg","title":null,"description":null}];
   let currentIndex = 0;
+  let uiTimer = null;
+
+  const ratioPresets = [
+    { label: '1:1', value: 1 },
+    { label: '4:3', value: 4 / 3 },
+    { label: '3:4', value: 3 / 4 },
+    { label: '16:9', value: 16 / 9 },
+    { label: '9:16', value: 9 / 16 },
+    { label: '3:2', value: 3 / 2 },
+    { label: '2:3', value: 2 / 3 }
+  ];
+
+  function pickClosestRatio(width, height) {
+    if (!width || !height) return '4:3';
+    const ratio = width / height;
+    let closest = ratioPresets[0];
+    let minDiff = Math.abs(ratio - closest.value);
+
+    for (let i = 1; i < ratioPresets.length; i++) {
+      const diff = Math.abs(ratio - ratioPresets[i].value);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = ratioPresets[i];
+      }
+    }
+
+    return closest.label;
+  }
+
+  function applyImageRatio(img) {
+    const photoItem = img.closest('.photo-item');
+    if (!photoItem) return;
+    const ratioLabel = pickClosestRatio(img.naturalWidth, img.naturalHeight);
+    photoItem.setAttribute('data-ratio', ratioLabel);
+  }
+
+  function initPhotoRatios() {
+    const images = document.querySelectorAll('.photo-image');
+    images.forEach(function(img) {
+      if (img.complete && img.naturalWidth) {
+        applyImageRatio(img);
+      } else {
+        img.addEventListener('load', function() {
+          applyImageRatio(img);
+        }, { once: true });
+      }
+    });
+  }
 
   // 提取图片主色调
   function extractDominantColor(img, callback) {
@@ -497,12 +545,20 @@
     updateLightbox(index);
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    lightbox.classList.add('lightbox--quiet');
+    showLightboxUI();
   }
 
   // 关闭灯箱
   function closeLightbox() {
     lightbox.classList.remove('active');
+    lightbox.classList.remove('lightbox--quiet');
+    lightbox.classList.remove('lightbox--show-ui');
     document.body.style.overflow = '';
+    if (uiTimer) {
+      clearTimeout(uiTimer);
+      uiTimer = null;
+    }
   }
 
   // 上一张
@@ -517,18 +573,25 @@
     updateLightbox(currentIndex);
   }
 
+  function showLightboxUI() {
+    if (!lightbox.classList.contains('active')) return;
+    lightbox.classList.add('lightbox--show-ui');
+    if (uiTimer) clearTimeout(uiTimer);
+    uiTimer = setTimeout(function() {
+      lightbox.classList.remove('lightbox--show-ui');
+    }, 2200);
+  }
+
+  initPhotoRatios();
+
   // 绑定事件 - 点击图片打开灯箱
-  console.log('初始化相册，照片数量:', photos.length);
   const wrappers = document.querySelectorAll('.photo-wrapper');
-  console.log('找到的 photo-wrapper 数量:', wrappers.length);
 
   wrappers.forEach(function(wrapper) {
     const photoItem = wrapper.closest('.photo-item');
     const index = parseInt(photoItem.getAttribute('data-index'));
-    console.log('绑定第', index, '张图片');
 
-    wrapper.addEventListener('click', function(e) {
-      console.log('点击了第', index, '张图片');
+    wrapper.addEventListener('click', function() {
       openLightbox(index);
     });
   });
@@ -540,10 +603,14 @@
   // 点击遮罩关闭
   document.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
 
+  lightbox.addEventListener('mousemove', showLightboxUI);
+  lightbox.addEventListener('touchstart', showLightboxUI, { passive: true });
+
   // 键盘控制
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('active')) return;
 
+    showLightboxUI();
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') prevImage();
     if (e.key === 'ArrowRight') nextImage();
@@ -671,8 +738,8 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770615434388"></script>
-  <script src="/js/neural-network.js?v=1770615434388"></script>
-  <script src="/js/scroll-animations.js?v=1770615434388"></script>
+  <script src="/js/main.js?v=1770618486125"></script>
+  <script src="/js/neural-network.js?v=1770618486125"></script>
+  <script src="/js/scroll-animations.js?v=1770618486125"></script>
 </body>
 </html>
