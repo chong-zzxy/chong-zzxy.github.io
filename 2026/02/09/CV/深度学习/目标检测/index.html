@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目标检测 | 星唯向导</title>
+  <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
+  <link rel="icon" href="/img/favicon.svg">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1770615434390">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770615434390">
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="theme-green">
+  <!-- Navigation -->
+  <header class="header">
+  <nav class="nav-container">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <img src="/img/avatar.svg" alt="星唯向导" class="avatar-mini">
+        <span class="site-name">星唯向导</span>
+      </a>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+      
+        <a href="/"
+           class="nav-item ">
+          Home
+        </a>
+      
+        <a href="/blog/"
+           class="nav-item ">
+          Blog
+        </a>
+      
+        <a href="/gallery/"
+           class="nav-item ">
+          Gallery
+        </a>
+      
+        <a href="/resume/"
+           class="nav-item ">
+          Resume
+        </a>
+      
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+        </svg>
+      </button>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <article class="post-detail">
+  <!-- Post Header -->
+  <header class="post-header">
+    <div class="container">
+      <h1 class="post-title-main">目标检测</h1>
+
+      <div class="post-meta-main">
+        <div class="meta-left">
+          <time class="post-date" datetime="2026-02-09T02:15:10.260Z">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+            </svg>
+            2026年02月09日
+          </time>
+
+          
+
+          
+            <a href="/categories/CV/" class="post-category-link">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+              </svg>
+              CV
+            </a>
+          
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!-- Post Content -->
+  <div class="container">
+    <div class="post-layout" data-post-layout>
+      
+        <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸" data-toc-toggle>
+          <span class="toc-toggle-label">沉浸</span>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+        </button>
+      
+      <div class="post-body">
+        <h1 id="目标检测："><a href="#目标检测：" class="headerlink" title="目标检测："></a>目标检测：</h1><blockquote>
+<h4 id="目标检测是在图片中对-可变数量-的目标进行查找和分类"><a href="#目标检测是在图片中对-可变数量-的目标进行查找和分类" class="headerlink" title="目标检测是在图片中对 可变数量 的目标进行查找和分类"></a>目标检测是在图片中对 <em><u>可变数量</u></em> 的目标进行查找和分类</h4></blockquote>
+<ul>
+<li><p>目标种类与数量问题</p>
+</li>
+<li><p>目标尺度问题</p>
+</li>
+<li><p>外在环境干扰问题</p>
+</li>
+<li><blockquote>
+<p>形态 + 视角</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<h1 id="目标检测-VS-图像分类"><a href="#目标检测-VS-图像分类" class="headerlink" title="目标检测 VS 图像分类"></a>目标检测 VS 图像分类</h1></blockquote>
+<p><img src="/./images/image-20210421203857249.png" alt="image-20210421203857249"></p>
+<p>位置 + 分类 （不同颜色不同类 + 置信值）</p>
+<blockquote>
+<h1 id="目标检测-VS-目标分割"><a href="#目标检测-VS-目标分割" class="headerlink" title="目标检测 VS 目标分割"></a>目标检测 VS 目标分割</h1></blockquote>
+<p><img src="/./images/image-20210421204205130.png" alt="image-20210421204205130"></p>
+<p>​		c 语义分割   		d 实例分割</p>
+<p>上采样，反卷积 </p>
+<blockquote>
+<h1 id="算法基本流程"><a href="#算法基本流程" class="headerlink" title="算法基本流程"></a>算法基本流程</h1></blockquote>
+<p><img src="/./images/image-20210421205641514.png" alt="image-20210421205641514"></p>
+<p><strong>NMS：非极大值抑制</strong></p>
+<p>低层次：颜色、纹理、形状</p>
+<p>中层次</p>
+<p>高层次：语义</p>
+<blockquote>
+<h1 id="深度学习目标检测方法"><a href="#深度学习目标检测方法" class="headerlink" title="深度学习目标检测方法"></a>深度学习目标检测方法</h1><h3 id="One-stage（YOLO和SSD系列）"><a href="#One-stage（YOLO和SSD系列）" class="headerlink" title="One-stage（YOLO和SSD系列）"></a>One-stage（YOLO和SSD系列）</h3><h3 id="Two-stage（Faster-RCNN系列-）"><a href="#Two-stage（Faster-RCNN系列-）" class="headerlink" title="Two-stage（Faster RCNN系列 ）"></a>Two-stage（Faster RCNN系列 ）</h3></blockquote>
+<p><img src="/./images/image-20210421210259742.png" alt="image-20210421210259742"></p>
+<h5 id="常用传统目标检测方法"><a href="#常用传统目标检测方法" class="headerlink" title="常用传统目标检测方法"></a>常用传统目标检测方法</h5><ol>
+<li><p>Viola-Jones（人脸检测）</p>
+<ul>
+<li>Haar特征抽取<ul>
+<li>Haar—–差分（value &#x3D; 白 - 黑）</li>
+<li><img src="./images/image-20210624151806046.png" alt="image-20210624151806046" style="zoom: 50%;" /></li>
+</ul>
+</li>
+<li>训练人脸分类器（Adaboost算法）<ul>
+<li>初始化样本的权重w，样本权重之和为1</li>
+<li>训练弱化分类器</li>
+<li>更新样本权重</li>
+<li>循环第2步</li>
+<li>结合做个分类器结果，进行投票</li>
+</ul>
+</li>
+<li>滑动窗口（大小、步长&#x3D;&gt;&gt;大量冗余候选框&#x3D;&gt;&gt;性能下降）</li>
+</ul>
+</li>
+<li><p>HOG + SVM（行人检测、Opencv实现）</p>
+<ul>
+<li>提取HOG特征<ul>
+<li>灰度化 + Gamma变换（值进行根号求解）</li>
+<li>计算梯度map</li>
+<li>图像划分成小的cell，统计每个cell梯度直方图</li>
+<li>多个cell组成一个block，特征归一化</li>
+<li>多个block串联，并归一化</li>
+</ul>
+</li>
+<li>训练SVM分类器（最大分类间隔面） </li>
+<li>利用滑动窗口提取目标区域，进行分类判断</li>
+<li>NMS</li>
+<li>输出检测结果</li>
+</ul>
+</li>
+<li><p>DPM（物体检测）</p>
+<blockquote>
+<p>HOG的扩展，利用SVM训练得到物体的梯度</p>
+</blockquote>
+<ul>
+<li>DPM特征抽取<ul>
+<li>有符号梯度</li>
+<li>无符号梯度</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./images/image-20210624155645328.png" alt="image-20210624155645328"></p>
+<ul>
+<li>计算DPM特征图</li>
+<li>计算相应图</li>
+<li>Latent SNM分类器训练</li>
+<li>检测识别</li>
+</ul>
+</li>
+<li><p>NMS（非极大值抑制算法）</p>
+<ul>
+<li><p>目的：为了消除多余的框，找到最佳的物体检测位置</p>
+</li>
+<li><p>思想：选取那些领域里分数最高的窗口，同时抑制那些分数低的窗口</p>
+</li>
+<li><p>Soft-NMS</p>
+</li>
+<li><p>相邻区域内的检测框的分数进行调整而非彻底抑制，从而提高了高检测率情况下的准确率</p>
+</li>
+<li><p>在低检索率时仍能对物体检测性能有明显提升</p>
+</li>
+<li><p><img src="/./images/image-20210624161524271.png" alt="image-20210624161524271"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="Two-stage"><a href="#Two-stage" class="headerlink" title="Two-stage"></a>Two-stage</h5><h6 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h6><ul>
+<li>CNN卷积特征</li>
+<li>R.Girshick et al.，2014提出R-CNN到faster RCNN</li>
+<li>端到端的目标检测（RPN网络）</li>
+<li>准确率高、速度相对one-stage慢</li>
+</ul>
+<h6 id="基本流程："><a href="#基本流程：" class="headerlink" title="基本流程："></a>基本流程：</h6><p><img src="/./images/image-20210625091526621.png" alt="image-20210625091526621"></p>
+<h6 id="常见算法："><a href="#常见算法：" class="headerlink" title="常见算法："></a>常见算法：</h6><p><img src="/./images/image-20210625092126244.png" alt="image-20210625092126244"></p>
+<h6 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h6><ol>
+<li><p>CNN网络（主干网络）</p>
+<ul>
+<li>从简到繁再到简的卷积神经网</li>
+<li>多尺度特征融合的网络</li>
+<li>更轻量级的CNN网络</li>
+</ul>
+</li>
+<li><p>RPN网络</p>
+<ul>
+<li>区域推荐（Anchor机制）<ul>
+<li>feature map &#x3D; n * c * w * h</li>
+<li>锚点-候选区域的中心点-一个Anchor</li>
+<li>9个不同尺度的区域</li>
+<li>候选区域 &#x3D; w * h * 9（以9为例）</li>
+<li>IOU</li>
+</ul>
+</li>
+<li>ROI Pooling<ul>
+<li>输入：特征图、rois（1 * 5 * 1 * 1）已经ROI参数</li>
+<li>输出：固定尺寸的feature map</li>
+</ul>
+</li>
+<li>分类和回归</li>
+<li><img src="./images/image-20210625093505845.png" alt="image-20210625093505845" style="zoom:67%;" /></li>
+</ul>
+</li>
+</ol>
+<h6 id="改进方向："><a href="#改进方向：" class="headerlink" title="改进方向："></a>改进方向：</h6><ul>
+<li>更好的网络特征</li>
+<li>更准确的RPN</li>
+<li>更完善的ROI分类</li>
+<li>样本后处理</li>
+<li>更大的mini-Batch</li>
+</ul>
+<h5 id="One-stage"><a href="#One-stage" class="headerlink" title="One-stage"></a>One-stage</h5><h6 id="基本介绍："><a href="#基本介绍：" class="headerlink" title="基本介绍："></a>基本介绍：</h6><ul>
+<li>使用CNN卷积特征</li>
+<li>直接回归物体的类别概率和位置坐标值（无region proposal）</li>
+<li>准确率低、速度相对two-stage快</li>
+</ul>
+<h6 id="基本流程：-1"><a href="#基本流程：-1" class="headerlink" title="基本流程："></a>基本流程：</h6><p><img src="/./images/image-20210625095705486.png" alt="image-20210625095705486"></p>
+<h6 id="常见算法：-1"><a href="#常见算法：-1" class="headerlink" title="常见算法："></a>常见算法：</h6><p><img src="/./images/image-20210625095907242.png" alt="image-20210625095907242"></p>
+<h6 id="核心组件-1"><a href="#核心组件-1" class="headerlink" title="核心组件"></a>核心组件</h6><ul>
+<li><p>CNN网络（主干网络）核心组件</p>
+<ul>
+<li><p>从简到繁再到简的卷积神经网</p>
+</li>
+<li><p>多尺度特征融合的网络</p>
+</li>
+<li><p>更轻量级的CNN网络</p>
+</li>
+</ul>
+</li>
+<li><p>回归网络</p>
+<ul>
+<li>区域回归（置信度、位置、类别）</li>
+<li>Anchor机制（SSD）</li>
+<li><img src="/./images/image-20210625101159231.png" alt="image-20210625101159231"></li>
+<li><img src="/./images/image-20210625101210679.png" alt="image-20210625101210679"></li>
+</ul>
+</li>
+</ul>
+<p>回归预测网络过程（Yolo）</p>
+<p><img src="/./images/image-20210625105817098.png" alt="Yolo"></p>
+<h6 id="One-stage-VS-Two-stage"><a href="#One-stage-VS-Two-stage" class="headerlink" title="One-stage VS Two-stage"></a>One-stage VS Two-stage</h6><table>
+<thead>
+<tr>
+<th>One-stage</th>
+<th>Two-stage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>优点：</td>
+<td>优点：</td>
+</tr>
+<tr>
+<td><strong>速度快</strong></td>
+<td>**精度高（定位、检出率） **</td>
+</tr>
+<tr>
+<td>避免背景错误，产生false positives</td>
+<td>Anchor机制</td>
+</tr>
+<tr>
+<td>学到物体泛化特征</td>
+<td>共享计算量</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>缺点：</td>
+<td>缺点：</td>
+</tr>
+<tr>
+<td>精度低（定位、检出率）</td>
+<td><strong>速度慢</strong></td>
+</tr>
+<tr>
+<td><strong>小物体的检测效果不好</strong></td>
+<td>训练时间长</td>
+</tr>
+<tr>
+<td></td>
+<td>误报高</td>
+</tr>
+</tbody></table>
+<h5 id="SSD系列算法原理介绍"><a href="#SSD系列算法原理介绍" class="headerlink" title="SSD系列算法原理介绍"></a>SSD系列算法原理介绍</h5><h6 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h6><p>Single Shot MultiBox Detector（one-stage方法）</p>
+<ul>
+<li>Wei Liu在ECCV 2016提出</li>
+<li>直接回归目标类别和位置</li>
+<li>不同尺度的特征图上进行预测</li>
+<li>端到端的训练</li>
+<li>图像的分辨率比较低，也能保证检测的精度</li>
+</ul>
+<p><img src="/./images/image-20210626153841326.png" alt="image-20210626153841326"></p>
+<ul>
+<li>主干网络：VGGNet</li>
+<li>多尺度Feature Map预测</li>
+<li>Default bounding boxes的类别分数、偏移量</li>
+</ul>
+<h6 id="主干网络介绍："><a href="#主干网络介绍：" class="headerlink" title="主干网络介绍："></a>主干网络介绍：</h6><ul>
+<li>VGG、ResNet、MobileNets等，各种卷积神经网</li>
+<li>将VGG最后两个FC改成卷积，并增加4个卷积层</li>
+</ul>
+
+      </div>
+
+      
+        <aside class="post-toc">
+          <div class="toc-wrapper">
+            <h3 class="toc-title">目录</h3>
+            <div class="toc-content">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="toc-text">目标检测：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%98%AF%E5%9C%A8%E5%9B%BE%E7%89%87%E4%B8%AD%E5%AF%B9-%E5%8F%AF%E5%8F%98%E6%95%B0%E9%87%8F-%E7%9A%84%E7%9B%AE%E6%A0%87%E8%BF%9B%E8%A1%8C%E6%9F%A5%E6%89%BE%E5%92%8C%E5%88%86%E7%B1%BB"><span class="toc-text">目标检测是在图片中对 可变数量 的目标进行查找和分类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-VS-%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB"><span class="toc-text">目标检测 VS 图像分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-VS-%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2"><span class="toc-text">目标检测 VS 目标分割</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">算法基本流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">深度学习目标检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#One-stage%EF%BC%88YOLO%E5%92%8CSSD%E7%B3%BB%E5%88%97%EF%BC%89"><span class="toc-text">One-stage（YOLO和SSD系列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-stage%EF%BC%88Faster-RCNN%E7%B3%BB%E5%88%97-%EF%BC%89"><span class="toc-text">Two-stage（Faster RCNN系列 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BC%A0%E7%BB%9F%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">常用传统目标检测方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Two-stage"><span class="toc-text">Two-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">基本流程：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">常见算法：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="toc-text">核心组件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91%EF%BC%9A"><span class="toc-text">改进方向：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#One-stage"><span class="toc-text">One-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">基本介绍：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%EF%BC%9A-1"><span class="toc-text">基本流程：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%EF%BC%9A-1"><span class="toc-text">常见算法：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6-1"><span class="toc-text">核心组件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#One-stage-VS-Two-stage"><span class="toc-text">One-stage VS Two-stage</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SSD%E7%B3%BB%E5%88%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="toc-text">SSD系列算法原理介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">算法介绍：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BB%E5%B9%B2%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">主干网络介绍：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+            </div>
+          </div>
+        </aside>
+      
+    </div>
+
+    
+      <script>
+        (function() {
+          var toggle = document.querySelector('[data-toc-toggle]');
+          var layout = document.querySelector('[data-post-layout]');
+          var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
+          var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
+          var postBody = document.querySelector('.post-body');
+          var toc = document.querySelector('.post-toc');
+
+          var updateTocOffset = function() {
+            if (!layout || !postBody || !toc) return;
+            var bodyRect = postBody.getBoundingClientRect();
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+            var bodyTop = bodyRect.top;
+            var bodyBottom = bodyRect.bottom;
+            var tocContentHeight = toc.scrollHeight;
+
+            var top = bodyTop > 0 ? bodyTop : 0;
+            if (bodyBottom <= viewportHeight && (bodyBottom - tocContentHeight) < top) {
+              top = bodyBottom - tocContentHeight;
+            }
+
+            var maxHeight = Math.max(0, Math.min(viewportHeight - top, bodyBottom - top));
+            layout.style.setProperty('--toc-top', top + 'px');
+            layout.style.setProperty('--toc-max-height', maxHeight + 'px');
+          };
+
+          if (layout) {
+            var ticking = false;
+            var onScroll = function() {
+              if (ticking) return;
+              ticking = true;
+              window.requestAnimationFrame(function() {
+                updateTocOffset();
+                ticking = false;
+              });
+            };
+            updateTocOffset();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateTocOffset);
+          }
+
+          var normalize = function(text) {
+            return (text || '').trim().replace(/\s+/g, ' ');
+          };
+
+          var slugify = function(text) {
+            var slug = normalize(text)
+              .toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^\w\u4e00-\u9fa5\-]/g, '')
+              .replace(/\-+/g, '-')
+              .replace(/^\-+|\-+$/g, '');
+            return slug;
+          };
+
+          if (headings.length) {
+            headings.forEach(function(heading, index) {
+              if (!heading.id) {
+                var base = slugify(heading.textContent) || ('section-' + (index + 1));
+                var id = base;
+                var i = 1;
+                while (document.getElementById(id)) {
+                  id = base + '-' + (i++);
+                }
+                heading.id = id;
+              }
+            });
+          }
+
+          if (tocLinks.length && headings.length) {
+            var headingMap = {};
+            headings.forEach(function(heading) {
+              var key = normalize(heading.textContent);
+              if (key && !headingMap[key]) headingMap[key] = heading;
+            });
+
+            tocLinks.forEach(function(link) {
+              var label = normalize(link.textContent);
+              if (label) link.setAttribute('title', label);
+
+              var href = link.getAttribute('href');
+              if (!href || href.charAt(0) !== '#') return;
+              var targetId = decodeURIComponent(href.slice(1));
+              var target = document.getElementById(targetId);
+              if (!target && label && headingMap[label]) {
+                link.setAttribute('href', '#' + headingMap[label].id);
+              }
+            });
+
+            tocLinks.forEach(function(link) {
+              link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                if (!href || href.charAt(0) !== '#') return;
+                var targetId = decodeURIComponent(href.slice(1));
+                var target = document.getElementById(targetId);
+                if (!target) return;
+                e.preventDefault();
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                history.pushState(null, '', '#' + targetId);
+              });
+            });
+
+            if ('IntersectionObserver' in window) {
+              var linkById = {};
+              tocLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href && href.charAt(0) === '#') {
+                  linkById[decodeURIComponent(href.slice(1))] = link;
+                }
+              });
+
+              var activeId = null;
+              var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    activeId = entry.target.id;
+                  }
+                });
+                if (activeId && linkById[activeId]) {
+                  tocLinks.forEach(function(link) {
+                    link.classList.toggle('is-active', linkById[activeId] === link);
+                  });
+                }
+              }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.1 });
+
+              headings.forEach(function(heading) {
+                observer.observe(heading);
+              });
+            }
+          }
+
+          if (toggle && layout) {
+            var setState = function(hidden) {
+              layout.classList.toggle('toc-hidden', hidden);
+              toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+              toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸');
+            };
+
+            toggle.addEventListener('click', function() {
+              var hidden = !layout.classList.contains('toc-hidden');
+              setState(hidden);
+            });
+          }
+        })();
+      </script>
+    
+
+    <!-- Post Tags -->
+    
+
+    <!-- Post Navigation -->
+    <nav class="post-nav">
+      
+        <a href="/2026/02/09/NLP/NLP%E5%9F%BA%E7%A1%80/" class="post-nav-item prev">
+          <div class="nav-label">← 上一篇</div>
+          <div class="nav-title">自然语言处理-NLP基础</div>
+        </a>
+      
+
+      
+        <a href="/2026/02/09/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="post-nav-item next">
+          <div class="nav-label">下一篇 →</div>
+          <div class="nav-title">图像处理</div>
+        </a>
+      
+    </nav>
+  </div>
+</article>
+
+  </main>
+
+  <!-- Footer (隐藏在首页与简历页) -->
+  
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>© 2024 Caochong. All rights reserved.</p>
+        
+      </div>
+
+      <div class="footer-social">
+        <p class="footer-social-title">联系方式：</p>
+        <div class="footer-social-links">
+          
+            <a href="https://github.com/chong-zzxy"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub"
+               class="footer-social-link"
+               title="GitHub">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              
+            </a>
+          
+            <a href="https://space.bilibili.com/271039719"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="BiliBili"
+               class="footer-social-link"
+               title="BiliBili">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/>
+                </svg>
+              
+            </a>
+          
+            <a href="mailto:441046702@qq.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Email"
+               class="footer-social-link"
+               title="Email">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-powered">
+      <p>
+        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+        | Theme by <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener">Caochong</a>
+      </p>
+    </div>
+
+    <!-- 访问统计 -->
+    
+      <div class="footer-stats" id="site-stats">
+        <span id="busuanzi_container_site_pv" style="display:none">
+          👀 本站访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <span class="stats-separator" style="display:none"> | </span>
+        <span id="busuanzi_container_site_uv" style="display:none">
+          👤 访客数 <span id="busuanzi_value_site_uv"></span> 人
+        </span>
+        <span id="stats-loading" style="color: var(--text-secondary); font-size: 0.85rem;">
+          📊 正在加载访问统计...
+        </span>
+      </div>
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <script>
+        // 监听不蒜子加载完成
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            var pv = document.getElementById('busuanzi_container_site_pv');
+            var uv = document.getElementById('busuanzi_container_site_uv');
+            var loading = document.getElementById('stats-loading');
+
+            if (pv && pv.style.display === 'none' && document.getElementById('busuanzi_value_site_pv').textContent) {
+              pv.style.display = 'inline-block';
+              document.querySelector('.stats-separator').style.display = 'inline-block';
+              uv.style.display = 'inline-block';
+              if (loading) loading.style.display = 'none';
+            }
+          }, 1000);
+
+          // 如果 3 秒后还没加载，显示提示
+          setTimeout(function() {
+            var loading = document.getElementById('stats-loading');
+            var pv = document.getElementById('busuanzi_container_site_pv');
+            if (loading && pv && pv.style.display === 'none') {
+              loading.textContent = '📊 访问统计（加载中...）';
+            }
+          }, 3000);
+        });
+      </script>
+    
+  </div>
+</footer>
+
+  
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script src="/js/main.js?v=1770615434390"></script>
+  <script src="/js/neural-network.js?v=1770615434390"></script>
+  <script src="/js/scroll-animations.js?v=1770615434390"></script>
+</body>
+</html>

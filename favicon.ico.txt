@@ -1,0 +1,5 @@
+需要将 SVG 转换为 ICO 格式。可以使用在线工具：
+1. 访问 https://convertio.co/zh/svg-ico/
+2. 上传 source/img/favicon.svg
+3. 转换为 32x32 的 ICO
+4. 下载并保存为 source/favicon.ico

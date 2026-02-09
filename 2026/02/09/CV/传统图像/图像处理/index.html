@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图像处理 | 星唯向导</title>
+  <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
+  <link rel="icon" href="/img/favicon.svg">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1770615434390">
+  <link rel="stylesheet" href="/css/theme-green.css?v=1770615434390">
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="theme-green">
+  <!-- Navigation -->
+  <header class="header">
+  <nav class="nav-container">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <img src="/img/avatar.svg" alt="星唯向导" class="avatar-mini">
+        <span class="site-name">星唯向导</span>
+      </a>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+      
+        <a href="/"
+           class="nav-item ">
+          Home
+        </a>
+      
+        <a href="/blog/"
+           class="nav-item ">
+          Blog
+        </a>
+      
+        <a href="/gallery/"
+           class="nav-item ">
+          Gallery
+        </a>
+      
+        <a href="/resume/"
+           class="nav-item ">
+          Resume
+        </a>
+      
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+        </svg>
+      </button>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <article class="post-detail">
+  <!-- Post Header -->
+  <header class="post-header">
+    <div class="container">
+      <h1 class="post-title-main">图像处理</h1>
+
+      <div class="post-meta-main">
+        <div class="meta-left">
+          <time class="post-date" datetime="2026-02-09T02:15:10.259Z">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+            </svg>
+            2026年02月09日
+          </time>
+
+          
+
+          
+            <a href="/categories/CV/" class="post-category-link">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+              </svg>
+              CV
+            </a>
+          
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!-- Post Content -->
+  <div class="container">
+    <div class="post-layout" data-post-layout>
+      
+        <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸" data-toc-toggle>
+          <span class="toc-toggle-label">沉浸</span>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+        </button>
+      
+      <div class="post-body">
+        <h1 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h1><blockquote>
+<p>网址：<a target="_blank" rel="noopener" href="http://www.chenjianqu.com/">http://www.chenjianqu.com/</a></p>
+</blockquote>
+<h5 id="一、图像处理—仿射变换"><a href="#一、图像处理—仿射变换" class="headerlink" title="一、图像处理—仿射变换"></a>一、图像处理—仿射变换</h5><ul>
+<li><p>图像平移：X和Y方向移动</p>
+</li>
+<li><p>镜像变换：</p>
+<ul>
+<li>图像的水平镜像：x&#x3D;x0, y&#x3D;N-y0+1 实际使用时-1</li>
+<li>图像的垂直镜像：y&#x3D;y0, x&#x3D;M-x0+1 实际使用时-1</li>
+</ul>
+</li>
+</ul>
+<h5 id="二、图像处理—放大和缩小"><a href="#二、图像处理—放大和缩小" class="headerlink" title="二、图像处理—放大和缩小"></a>二、图像处理—放大和缩小</h5><ol>
+<li><p>图像缩小：通过减少像素个数来实现的</p>
+<ul>
+<li>根据缩小的尺寸，从原图像中选择合适的像素点，使图像缩小后可以保持原有图像的特征。</li>
+<li>算法：等间隔采样、局部均值。</li>
+</ul>
+</li>
+<li><p>图像放大</p>
+<ul>
+<li><p>要将该图像放大两倍，可以有很多种算法，最简单的方法为邻域插值，即将每一个原像素原封不动地复制映射到扩展后对应四个像素中：这种方法在放大图像的同时保留了所有的原图像的所有信息，但是会产生锯齿现象。</p>
+<p>双线性插值的效果对于放大的图像而言较领域插值来得平滑，但是却使得图像变得模糊而且仍然会有一部分锯齿现象。</p>
+<p>双三次插值更好比双线性插值更好。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="三、图像处理—点运算"><a href="#三、图像处理—点运算" class="headerlink" title="三、图像处理—点运算"></a>三、图像处理—点运算</h5><blockquote>
+<p>图像的点运算就是对图像中的每一个像素点进行计算，为像素点和像素点之间的运算。<br>函数表示形式为 :B(x,y)&#x3D;f[A(x,y)]，其中f为映射函数。点运算有时候被称为灰度变换。</p>
+</blockquote>
+<ol>
+<li><p>线性点运算：线性点运算的函数形式可用线性方程来描述，即：G(i,j)&#x3D;T[f(i,j)]&#x3D;af(i,j)+b</p>
+<ul>
+<li><p>当a&gt;1 时，输出图像的对比度增大；a&lt;1时对比度减小。</p>
+<p>当a&#x3D;1，把！&#x3D;0时，图像仅亮度发生变化。</p>
+<p>当a&#x3D;-1,b&#x3D;255时，输出图像的灰度会反转。</p>
+</li>
+</ul>
+</li>
+<li><p>对数变换</p>
+<ul>
+<li>能够对图像中低灰度细节进行增强</li>
+<li>反对数变换的作用是压缩灰度值较低的区间，扩展高灰度值的区间。</li>
+</ul>
+</li>
+<li><p>伽马变换</p>
+<ul>
+<li><p>伽马变换又称指数变换或幂变换，公式：out&#x3D;c*(src+e)^r</p>
+</li>
+<li><p>r&gt;1, 较亮的区域灰度被拉伸，较暗的区域灰度被压缩的更暗，图像整体变暗；</p>
+<p>r&lt;1, 较亮的区域灰度被压缩，较暗的区域灰度被拉伸的较亮，图像整体变亮；</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="四、图像处理—逻辑运算"><a href="#四、图像处理—逻辑运算" class="headerlink" title="四、图像处理—逻辑运算"></a>四、图像处理—逻辑运算</h5><ol>
+<li><p>对图像求反</p>
+<ul>
+<li>对于黑白图像来说，黑变白 百变黑</li>
+<li>对于灰度图像来说，将255减去原像素值即为求反。</li>
+<li>应用：<ul>
+<li>求取图像的阴影面积</li>
+<li>求取图像的补图像</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>与运算</p>
+<ul>
+<li>当两个图像对应的像素同时为真时，结果为真。</li>
+<li>应用： 主要用于求两幅二值图像的相交部分。</li>
+</ul>
+</li>
+<li><p>或运算</p>
+<ul>
+<li>当两个图像对应的像素有一个为真时，结果为真。</li>
+<li>应用：主要用于求两幅二值图像的合并。</li>
+</ul>
+</li>
+<li><p>异或运算</p>
+<ul>
+<li>当两个图像对应的像素相同时，结果为真；反之为假。</li>
+<li>应用：<ul>
+<li>得到两幅图像中不想交的部分</li>
+<li>绘制区别于背景的，可恢复的图像</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="五、图像处理—二值形态学运算"><a href="#五、图像处理—二值形态学运算" class="headerlink" title="五、图像处理—二值形态学运算"></a>五、图像处理—二值形态学运算</h5><blockquote>
+<p>其基本的运算包括：腐蚀和膨胀、开运算和闭运算、骨架抽取、极限腐蚀、击中击不中变换、形态学梯度、Top-hat变换、颗粒分析、流域变换等。</p>
+</blockquote>
+<ol>
+<li><p>腐蚀</p>
+<ul>
+<li><p>腐蚀操作会收缩（细化）图像中物体的轮廓，可以用来断开（分离）物体间的连接，消除离散点，代价是导致物体的面积比原来的面积要小。</p>
+</li>
+<li><p>\1. 用结构元素，扫描图像的每一个像素</p>
+<p>\2. 用结构元素与其覆盖的二值图像做“与”操作</p>
+<p>\3. 如果都为1，结果图像的该像素为1。否则为0</p>
+</li>
+<li><p>也就是查找被处理图像中能不能找到和结构元素相同的矩阵。如果存在那么中心点所对应的点就为1，否则为0.</p>
+</li>
+</ul>
+</li>
+<li><p>膨胀</p>
+<ul>
+<li><p>膨胀操作会扩大（粗化）图像中物体的轮廓，可以用来弥补（填充）物体间的孔洞，强化离散点，代价是导致物体的面积比原来的面积要大。</p>
+</li>
+<li><p>\1. 用结构元素，扫描图像的每一个像素</p>
+<p>\2. 用结构元素与其覆盖的二值图像做“与”操作</p>
+<p>\3. 如果都为0，结果图像的该像素为0。否则为1</p>
+</li>
+<li><p>在结构元素覆盖范围下，只要有一个像素符和结构元素像素相同，那么中心点对应点就为1，否则为0.</p>
+</li>
+</ul>
+</li>
+<li><p>闭运算</p>
+<ul>
+<li><p><strong>闭运算是使用同一结构元对图像进行先膨胀后腐蚀的操作，可以用来弥合较窄的间断和细长的沟壑，消除物体间小的孔洞，填补轮廓线中的断裂。</strong></p>
+<p>闭运算&#x3D;先进行膨胀运算，在进行腐蚀运算</p>
+</li>
+</ul>
+</li>
+<li><p>开运算</p>
+<ul>
+<li><p>开运算是使用同一结构元对图像进行先腐蚀后膨胀的操作，可以用来平滑物体的轮廓，断开物体间较窄的连接，消除物体边沿尖锐的突出部分。</p>
+<p>开运算 &#x3D; 先腐蚀运算，再膨胀运算。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="六、图像处理—直方图均衡化"><a href="#六、图像处理—直方图均衡化" class="headerlink" title="六、图像处理—直方图均衡化"></a>六、图像处理—直方图均衡化</h5><blockquote>
+<p>是通过拉伸像素强度分布范围来增强图像对比度的一种方法。</p>
+<p>是图像处理领域中利用图像直方图对对比度进行调整的方法。</p>
+</blockquote>
+<blockquote>
+<p>直方图均衡化是通过调整图像的灰阶分布，使得在0~255灰阶上的分布更加均衡，提高了图像的对比度，达到改善图像主观视觉效果的目的。对比度较低的图像适合使用直方图均衡化方法来增强图像细节。</p>
+<p>这种方法通常用来<strong>增加许多图像的全局对比度</strong>，尤其是当图像的有用数据的对比度相当接近的时候。通过这种方法，亮度可以更好地在直方图上分布。</p>
+<p>这样就可以用于增强局部的对比度而不影响整体的对比度，直方图均衡化通过有效地扩展常用的亮度来实现这种功能。这种方法对于背景和前景都太亮或者太暗的图像非常有用。</p>
+</blockquote>
+<ul>
+<li><p>优势：它是一个相当直观的技术并且是可逆操作，如果已知均衡化函数，那么就可以恢复原始的直方图，并且计算量也不大。</p>
+</li>
+<li><p>一个缺点是它对处理的数据不加选择，它可能会增加背景噪声的对比度并且降低有用信号的对比度。</p>
+</li>
+<li><p>算法步骤：</p>
+<ol>
+<li><p>统计原始图像各灰度级的像素数目ni,0≤i&lt;L，L是图像中所有的灰度值（通常为256）</p>
+</li>
+<li><p>图像中灰度为i的像素的出现概率是:px(i)&#x3D;p(x&#x3D;i)&#x3D;ni&#x2F;n,n是图像中所有的像素数，px(i)实际上是像素值为i的图像的直方图，归一化到[0, 1]；</p>
+</li>
+<li><p>px的累积分布函数,是图像的累计归一化直方图</p>
+</li>
+<li><p>直方图均衡化计算公式, cdfmin为累积分布函数最小值，M和N分别代表了图像的长宽像素个数，而L则是灰度级数(如图像为8位深度，则灰度级别共有2^8&#x3D;256级数，这也是最常见的灰度级数)，v为原始图像中为v的像素值</p>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="七、图像处理—空间域平滑滤波"><a href="#七、图像处理—空间域平滑滤波" class="headerlink" title="七、图像处理—空间域平滑滤波"></a>七、图像处理—空间域平滑滤波</h5><ol>
+<li><p>空间域和频域的概念</p>
+<ul>
+<li>空间域　英文： spatial domain。 释义： 又称图像空间(image space)。由图像像元组成的空间。在图像空间中以长度(距离)为自变量直接对像元值进行处理称为空间域处理。</li>
+<li>频率域。 英文： spatial frequency domain。 释义： 以频率(即波数)为自变量描述图像的特征,可以将一幅图像像元值在空间上的变化分解为具有不同振幅、空间频率和相位的简振函数的线性叠加,图像中各种频率成分的组成和分布称为空间频谱。这种对图像的频率特征进行分解、处理和分析称为频率域处理或波数域处理。</li>
+</ul>
+</li>
+<li><p>图像滤波</p>
+<ul>
+<li>在尽量保留图像细节特征的条件下对目标图像的噪声进行抑制。</li>
+<li>（滤波就是要去除没用的信息，保留有用的信息，可能是低频，也可能是高频）。</li>
+<li>目的：<ul>
+<li>是抽出对象的特征作为图像识别的特征模式;</li>
+<li>适应图像处理的要求，消除图像数字化时所混入的噪声。</li>
+</ul>
+</li>
+<li>可分为：<ul>
+<li>空间域滤波：通过图像卷积运算实现</li>
+<li>可频域滤波：通过傅里叶变换实现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>图像卷积</p>
+<ul>
+<li>卷积运算：可看作是加权求和的过程，使用到的图像区域中的每个像素分别于卷积核(权矩阵)的每个元素对应相乘，所有乘积之和作为区域中心像素的新值。</li>
+<li>卷积核：卷积时使用到的权用一个矩阵表示，该矩阵是一个权矩阵。不同的卷积核对应不同的滤波器。</li>
+<li>边界问题：当处理图像边界像素时，卷积核与图像使用区域不能匹配，卷积核的中心与边界像素点对应，卷积运算将出现问题。<ul>
+<li>解决办法：1.复制边界，2.忽略边界，3.设定边界值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常用空间滤波器</p>
+<ul>
+<li><p>空间域滤波</p>
+<ul>
+<li>空间平滑滤波器：均值滤波、加权均值滤波、阈值平均滤波、中值滤波、高斯滤波等</li>
+<li>空间锐化滤波器</li>
+</ul>
+</li>
+<li><blockquote>
+<p><strong>平滑滤波</strong>用于模糊处理和降低噪声。</p>
+<p>模糊处理常用于预处理任务中，如在目标提取之前去除图像中的一些琐碎细节，以及桥接直线或曲线的缝隙。通过线性或非线性平滑滤波也可降低噪声。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>阈值平均滤波</p>
+<ul>
+<li>阈值平均滤波就是在平均滤波的基础上加上阈值的约束</li>
+<li>即当像素点与图像均值的差小于设定的阈值时，输出像素点等于原像素点，否则求其对该像素点进行求模板均值。</li>
+</ul>
+</li>
+</ol>
+<h5 id="八、图像处理—空间域锐化滤波"><a href="#八、图像处理—空间域锐化滤波" class="headerlink" title="八、图像处理—空间域锐化滤波"></a>八、图像处理—空间域锐化滤波</h5><ol>
+<li><p>锐化滤波</p>
+<ul>
+<li><p>与平滑滤波的积分运算或平均运算相反，锐化滤波对图像求导，或者说求差分</p>
+</li>
+<li><p>将图像的低频部分减弱或去除，保留图像的高频部分，即图像的边缘信息。</p>
+<p>图像的边缘、轮廓一般位于灰度突变的地方，也就是图像的高频部分</p>
+<p><strong>通常用灰度差分提取边缘轮廓</strong>。</p>
+</li>
+<li><p>常见的锐化滤波的方法有通过一阶微分算子和二阶微分算子进行卷积运算</p>
+</li>
+</ul>
+</li>
+<li><p>一阶_Robert算子</p>
+</li>
+<li><p>一阶_Sobel算子</p>
+</li>
+<li><p>一阶_Prewitt算子</p>
+</li>
+<li><p>二阶_拉普拉斯算子</p>
+</li>
+<li><p>一阶微分算子和二阶微分算子的对比</p>
+<ul>
+<li>二阶导数增强域不是频率最高的部分（边缘），而有一定偏差，并且增强幅度并不如一阶导数。</li>
+<li>如果求绝对值，图像负y轴部分翻正，会产生双边缘</li>
+</ul>
+<blockquote>
+<p><strong>Laplace算子</strong> 做锐化滤波的特点</p>
+<p>1.对噪声敏感</p>
+<p>2.产生双边源</p>
+<p>3.缓慢区域产生暗背景</p>
+</blockquote>
+</li>
+<li><p>图像锐化</p>
+<ul>
+<li>各种算子进行滤波处理得到边缘图像</li>
+<li>想要的是增强后的图像，只需要<strong>将锐化得到的图像与原图线性相加即可</strong></li>
+</ul>
+</li>
+</ol>
+<h5 id="九、图像处理—RBG图像和灰度图像"><a href="#九、图像处理—RBG图像和灰度图像" class="headerlink" title="九、图像处理—RBG图像和灰度图像"></a>九、图像处理—RBG图像和灰度图像</h5><ol>
+<li><p>色度图</p>
+<ul>
+<li><p>明度、色调和饱和度称为颜色视觉三特性</p>
+</li>
+<li><p>国际照明委员会（CIE）1931年制定了一个色度图，用组成某一颜色的三基色比例来规定这一颜色，即用三种基色相加的比例来表示某一颜色，并可写成方程式：**(Color)&#x3D;R(R)+G(G)+B(B)**</p>
+<p>式中，（C）代表某一种颜色，（R）、（G）、（B）是红、绿、蓝三基色</p>
+<p>R、G、B是每种颜色的比例系数，它们的和等于1，即R+G+B&#x3D;1，“C”是指匹配即在视觉上颜色相同，如某一蓝绿色可以表达为：(C)&#x3D;0.06(R)+0.31(G)+0.63(B)</p>
+</li>
+<li><p>色度图如下</p>
+<p><strong>X</strong> <strong>轴色度坐标相当于红基色的比例</strong> </p>
+<p><strong>Y</strong> <strong>轴色度坐标相当于绿基色的比例</strong> </p>
+<p>图中没有Z轴色度坐标（即蓝基色所占的比例）。</p>
+</li>
+<li><h5 id="RGB颜色空间不能表示自然界所有的颜色"><a href="#RGB颜色空间不能表示自然界所有的颜色" class="headerlink" title="RGB颜色空间不能表示自然界所有的颜色"></a>RGB颜色空间不能表示自然界所有的颜色</h5></li>
+</ul>
+</li>
+<li><p>灰度图像</p>
+<ul>
+<li>灰度数字图像是每个像素只有一个采样颜色的图像。这类图像通常显示为从最暗黑色到最亮的白色的灰度，尽管理论上这个采样可以任何颜色的不同深浅，甚至可以是不同亮度上的不同颜色。灰度图像与黑白图像不同，在计算机图像领域中黑白图像只有黑白两种颜色，灰度图像在黑色与白色之间还有许多级的颜色深度。</li>
+</ul>
+</li>
+<li><p>RBG转灰度方法</p>
+<ol>
+<li><pre><code>很著名的心理学公式：
+Gray = R*0.299 + G*0.587 + B*0.114
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. ```</span><br><span class="line">   实际应用时，希望避免低速的浮点运算，所以需要整数算法。</span><br><span class="line">   注意到系数都是3位精度的没有，我们可以将它们缩放1000倍来实现整数运算算法</span><br><span class="line">   Gray = (R*299 + G*587 + B*114 + 500) / 1000</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><pre><code>Gray = (R*19595 + G*38469 + B*7472) &gt;&gt; 16
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. ```</span><br><span class="line">   这一种是 Adobe Photoshop 里的公式 Adobe RGB (1998) [gamma=2.20]</span><br><span class="line">   Gray = (R^2.2 * 0.2973 + G^2.2 * 0.6274 + B^2.2 * 0.0753)^(1/2.2)</span><br><span class="line">   该方法运行速度慢，但是效果很好。</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><pre><code>平均值方法
+GRAY = (RED+BLUE+GREEN)/3
+（GRAY,GRAY,GRAY）替代（RED,GREEN,BLUE）
+但是这样做的精度比较低，图像转化为灰度效果不是太好
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+
+      </div>
+
+      
+        <aside class="post-toc">
+          <div class="toc-wrapper">
+            <h3 class="toc-title">目录</h3>
+            <div class="toc-content">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="toc-text">图像处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-text">一、图像处理—仿射变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E6%94%BE%E5%A4%A7%E5%92%8C%E7%BC%A9%E5%B0%8F"><span class="toc-text">二、图像处理—放大和缩小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%82%B9%E8%BF%90%E7%AE%97"><span class="toc-text">三、图像处理—点运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">四、图像处理—逻辑运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E4%BA%8C%E5%80%BC%E5%BD%A2%E6%80%81%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-text">五、图像处理—二值形态学运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96"><span class="toc-text">六、图像处理—直方图均衡化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%A9%BA%E9%97%B4%E5%9F%9F%E5%B9%B3%E6%BB%91%E6%BB%A4%E6%B3%A2"><span class="toc-text">七、图像处理—空间域平滑滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E7%A9%BA%E9%97%B4%E5%9F%9F%E9%94%90%E5%8C%96%E6%BB%A4%E6%B3%A2"><span class="toc-text">八、图像处理—空间域锐化滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94RBG%E5%9B%BE%E5%83%8F%E5%92%8C%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%83%8F"><span class="toc-text">九、图像处理—RBG图像和灰度图像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RGB%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%83%BD%E8%A1%A8%E7%A4%BA%E8%87%AA%E7%84%B6%E7%95%8C%E6%89%80%E6%9C%89%E7%9A%84%E9%A2%9C%E8%89%B2"><span class="toc-text">RGB颜色空间不能表示自然界所有的颜色</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            </div>
+          </div>
+        </aside>
+      
+    </div>
+
+    
+      <script>
+        (function() {
+          var toggle = document.querySelector('[data-toc-toggle]');
+          var layout = document.querySelector('[data-post-layout]');
+          var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
+          var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
+          var postBody = document.querySelector('.post-body');
+          var toc = document.querySelector('.post-toc');
+
+          var updateTocOffset = function() {
+            if (!layout || !postBody || !toc) return;
+            var bodyRect = postBody.getBoundingClientRect();
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+            var bodyTop = bodyRect.top;
+            var bodyBottom = bodyRect.bottom;
+            var tocContentHeight = toc.scrollHeight;
+
+            var top = bodyTop > 0 ? bodyTop : 0;
+            if (bodyBottom <= viewportHeight && (bodyBottom - tocContentHeight) < top) {
+              top = bodyBottom - tocContentHeight;
+            }
+
+            var maxHeight = Math.max(0, Math.min(viewportHeight - top, bodyBottom - top));
+            layout.style.setProperty('--toc-top', top + 'px');
+            layout.style.setProperty('--toc-max-height', maxHeight + 'px');
+          };
+
+          if (layout) {
+            var ticking = false;
+            var onScroll = function() {
+              if (ticking) return;
+              ticking = true;
+              window.requestAnimationFrame(function() {
+                updateTocOffset();
+                ticking = false;
+              });
+            };
+            updateTocOffset();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateTocOffset);
+          }
+
+          var normalize = function(text) {
+            return (text || '').trim().replace(/\s+/g, ' ');
+          };
+
+          var slugify = function(text) {
+            var slug = normalize(text)
+              .toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^\w\u4e00-\u9fa5\-]/g, '')
+              .replace(/\-+/g, '-')
+              .replace(/^\-+|\-+$/g, '');
+            return slug;
+          };
+
+          if (headings.length) {
+            headings.forEach(function(heading, index) {
+              if (!heading.id) {
+                var base = slugify(heading.textContent) || ('section-' + (index + 1));
+                var id = base;
+                var i = 1;
+                while (document.getElementById(id)) {
+                  id = base + '-' + (i++);
+                }
+                heading.id = id;
+              }
+            });
+          }
+
+          if (tocLinks.length && headings.length) {
+            var headingMap = {};
+            headings.forEach(function(heading) {
+              var key = normalize(heading.textContent);
+              if (key && !headingMap[key]) headingMap[key] = heading;
+            });
+
+            tocLinks.forEach(function(link) {
+              var label = normalize(link.textContent);
+              if (label) link.setAttribute('title', label);
+
+              var href = link.getAttribute('href');
+              if (!href || href.charAt(0) !== '#') return;
+              var targetId = decodeURIComponent(href.slice(1));
+              var target = document.getElementById(targetId);
+              if (!target && label && headingMap[label]) {
+                link.setAttribute('href', '#' + headingMap[label].id);
+              }
+            });
+
+            tocLinks.forEach(function(link) {
+              link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                if (!href || href.charAt(0) !== '#') return;
+                var targetId = decodeURIComponent(href.slice(1));
+                var target = document.getElementById(targetId);
+                if (!target) return;
+                e.preventDefault();
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                history.pushState(null, '', '#' + targetId);
+              });
+            });
+
+            if ('IntersectionObserver' in window) {
+              var linkById = {};
+              tocLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href && href.charAt(0) === '#') {
+                  linkById[decodeURIComponent(href.slice(1))] = link;
+                }
+              });
+
+              var activeId = null;
+              var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    activeId = entry.target.id;
+                  }
+                });
+                if (activeId && linkById[activeId]) {
+                  tocLinks.forEach(function(link) {
+                    link.classList.toggle('is-active', linkById[activeId] === link);
+                  });
+                }
+              }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.1 });
+
+              headings.forEach(function(heading) {
+                observer.observe(heading);
+              });
+            }
+          }
+
+          if (toggle && layout) {
+            var setState = function(hidden) {
+              layout.classList.toggle('toc-hidden', hidden);
+              toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+              toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸');
+            };
+
+            toggle.addEventListener('click', function() {
+              var hidden = !layout.classList.contains('toc-hidden');
+              setState(hidden);
+            });
+          }
+        })();
+      </script>
+    
+
+    <!-- Post Tags -->
+    
+
+    <!-- Post Navigation -->
+    <nav class="post-nav">
+      
+        <a href="/2026/02/09/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item prev">
+          <div class="nav-label">← 上一篇</div>
+          <div class="nav-title">目标检测</div>
+        </a>
+      
+
+      
+    </nav>
+  </div>
+</article>
+
+  </main>
+
+  <!-- Footer (隐藏在首页与简历页) -->
+  
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>© 2024 Caochong. All rights reserved.</p>
+        
+      </div>
+
+      <div class="footer-social">
+        <p class="footer-social-title">联系方式：</p>
+        <div class="footer-social-links">
+          
+            <a href="https://github.com/chong-zzxy"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub"
+               class="footer-social-link"
+               title="GitHub">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              
+            </a>
+          
+            <a href="https://space.bilibili.com/271039719"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="BiliBili"
+               class="footer-social-link"
+               title="BiliBili">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/>
+                </svg>
+              
+            </a>
+          
+            <a href="mailto:441046702@qq.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Email"
+               class="footer-social-link"
+               title="Email">
+              
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-powered">
+      <p>
+        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+        | Theme by <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener">Caochong</a>
+      </p>
+    </div>
+
+    <!-- 访问统计 -->
+    
+      <div class="footer-stats" id="site-stats">
+        <span id="busuanzi_container_site_pv" style="display:none">
+          👀 本站访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <span class="stats-separator" style="display:none"> | </span>
+        <span id="busuanzi_container_site_uv" style="display:none">
+          👤 访客数 <span id="busuanzi_value_site_uv"></span> 人
+        </span>
+        <span id="stats-loading" style="color: var(--text-secondary); font-size: 0.85rem;">
+          📊 正在加载访问统计...
+        </span>
+      </div>
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <script>
+        // 监听不蒜子加载完成
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            var pv = document.getElementById('busuanzi_container_site_pv');
+            var uv = document.getElementById('busuanzi_container_site_uv');
+            var loading = document.getElementById('stats-loading');
+
+            if (pv && pv.style.display === 'none' && document.getElementById('busuanzi_value_site_pv').textContent) {
+              pv.style.display = 'inline-block';
+              document.querySelector('.stats-separator').style.display = 'inline-block';
+              uv.style.display = 'inline-block';
+              if (loading) loading.style.display = 'none';
+            }
+          }, 1000);
+
+          // 如果 3 秒后还没加载，显示提示
+          setTimeout(function() {
+            var loading = document.getElementById('stats-loading');
+            var pv = document.getElementById('busuanzi_container_site_pv');
+            if (loading && pv && pv.style.display === 'none') {
+              loading.textContent = '📊 访问统计（加载中...）';
+            }
+          }, 3000);
+        });
+      </script>
+    
+  </div>
+</footer>
+
+  
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script src="/js/main.js?v=1770615434390"></script>
+  <script src="/js/neural-network.js?v=1770615434390"></script>
+  <script src="/js/scroll-animations.js?v=1770615434390"></script>
+</body>
+</html>
