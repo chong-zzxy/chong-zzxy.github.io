@@ -375,52 +375,73 @@
 
       
         <div class="site-footer-stats" id="site-footer-stats">
-          <span id="busuanzi_container_site_pv" style="display:none">
+          <span data-stats-reset="20260406">
             访问量
-            <strong id="busuanzi_value_site_pv"></strong>
+            <strong id="site_stats_pv">0</strong>
           </span>
-          <span id="busuanzi_container_site_uv" style="display:none">
+          <span>
             访客
-            <strong id="busuanzi_value_site_uv"></strong>
+            <strong id="site_stats_uv">0</strong>
           </span>
-          <span class="site-footer-stats-loading" id="site-footer-stats-loading">访问统计加载中</span>
         </div>
       
     </div>
   </div>
 
   
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script>
       (function() {
-        function syncBusuanziState() {
-          var pvContainer = document.getElementById('busuanzi_container_site_pv');
-          var uvContainer = document.getElementById('busuanzi_container_site_uv');
-          var pvValue = document.getElementById('busuanzi_value_site_pv');
-          var uvValue = document.getElementById('busuanzi_value_site_uv');
-          var loading = document.getElementById('site-footer-stats-loading');
+        var statsRoot = document.getElementById('site-footer-stats');
+        if (!statsRoot) return;
 
-          var hasPv = pvValue && pvValue.textContent && pvValue.textContent.trim();
-          var hasUv = uvValue && uvValue.textContent && uvValue.textContent.trim();
+        var pvEl = document.getElementById('site_stats_pv');
+        var uvEl = document.getElementById('site_stats_uv');
+        var resetCarrier = statsRoot.querySelector('[data-stats-reset]');
+        var resetKey = resetCarrier ? String(resetCarrier.getAttribute('data-stats-reset') || '').trim() : '';
+        if (!resetKey) resetKey = '20260406';
 
-          if (pvContainer) pvContainer.style.display = hasPv ? 'inline-flex' : 'none';
-          if (uvContainer) uvContainer.style.display = hasUv ? 'inline-flex' : 'none';
+        var pvKey = 'chong_site_pv_' + resetKey;
+        var uvKey = 'chong_site_uv_' + resetKey;
+        var sessionKey = 'chong_site_session_' + resetKey;
 
-          if (loading && (hasPv || hasUv)) {
-            loading.style.display = 'none';
+        function readCounter(key) {
+          try {
+            var raw = window.localStorage.getItem(key);
+            var val = parseInt(raw || '0', 10);
+            return Number.isFinite(val) && val > 0 ? val : 0;
+          } catch (error) {
+            return 0;
           }
         }
 
-        window.addEventListener('load', function() {
-          setTimeout(syncBusuanziState, 900);
-          setTimeout(syncBusuanziState, 2200);
-          setTimeout(function() {
-            var loading = document.getElementById('site-footer-stats-loading');
-            if (loading && loading.style.display !== 'none') {
-              loading.textContent = '访问统计暂不可用';
-            }
-          }, 4200);
-        });
+        function writeCounter(key, value) {
+          try {
+            window.localStorage.setItem(key, String(Math.max(0, value | 0)));
+          } catch (error) {
+          }
+        }
+
+        var pv = readCounter(pvKey) + 1;
+        writeCounter(pvKey, pv);
+
+        var uv = readCounter(uvKey);
+        var isNewSession = false;
+        try {
+          if (!window.sessionStorage.getItem(sessionKey)) {
+            window.sessionStorage.setItem(sessionKey, '1');
+            isNewSession = true;
+          }
+        } catch (error) {
+          isNewSession = true;
+        }
+
+        if (isNewSession) {
+          uv += 1;
+          writeCounter(uvKey, uv);
+        }
+
+        if (pvEl) pvEl.textContent = String(pv);
+        if (uvEl) uvEl.textContent = String(uv);
       })();
     </script>
   
