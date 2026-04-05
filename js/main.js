@@ -11,9 +11,24 @@
   // ====================
   const themeToggle = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
+  const safeStorage = {
+    get(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch (error) {
+        return null;
+      }
+    },
+    set(key, value) {
+      try {
+        window.localStorage.setItem(key, value);
+      } catch (error) {
+      }
+    }
+  };
 
   // 从 localStorage 读取主题设置
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = safeStorage.get('theme') || 'light';
   if (savedTheme === 'dark') {
     htmlElement.classList.add('dark');
   }
@@ -24,9 +39,9 @@
 
       // 保存设置到 localStorage
       if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
+        safeStorage.set('theme', 'dark');
       } else {
-        localStorage.setItem('theme', 'light');
+        safeStorage.set('theme', 'light');
       }
     });
   }
@@ -344,7 +359,4 @@
     }
   });
 
-  console.log('%c✨ Caochong Theme %cv1.0.0',
-    'color: #317EFB; font-size: 20px; font-weight: bold;',
-    'color: #60a5fa; font-size: 14px;');
 })();

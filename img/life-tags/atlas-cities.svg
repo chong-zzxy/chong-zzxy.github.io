@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g" x1="120" y1="36" x2="1510" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A5A68"/>
+      <stop offset="1" stop-color="#62A3B1"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1210 160) rotate(123) scale(620 760)">
+      <stop stop-color="#DAF7FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#DAF7FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g opacity="0.28" fill="#E6FBFF">
+    <rect x="980" y="310" width="56" height="210" rx="8"/>
+    <rect x="1060" y="260" width="64" height="260" rx="8"/>
+    <rect x="1150" y="334" width="52" height="186" rx="8"/>
+    <rect x="1222" y="284" width="70" height="236" rx="8"/>
+    <rect x="1320" y="368" width="48" height="152" rx="8"/>
+  </g>
+  <g opacity="0.22" stroke="#E6FBFF" stroke-width="3">
+    <path d="M180 660C300 600 450 610 590 670"/>
+    <path d="M240 726C380 676 530 684 700 740"/>
+  </g>
+  <text x="88" y="744" fill="#F2FDFF" fill-opacity="0.95" font-size="84" letter-spacing="3" font-family="Avenir, Helvetica, Arial, sans-serif">CITY FOOTPRINTS</text>
+  <text x="90" y="804" fill="#E7FCFF" fill-opacity="0.77" font-size="28" letter-spacing="6" font-family="Avenir, Helvetica, Arial, sans-serif">HOME · STUDY · WORK · TRAVEL</text>
+</svg>

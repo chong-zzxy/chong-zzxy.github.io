@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g" x1="100" y1="40" x2="1540" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6A4C39"/>
+      <stop offset="1" stop-color="#B88D6A"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1210 190) rotate(124) scale(620 760)">
+      <stop stop-color="#FFE9D8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFE9D8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g opacity="0.28" fill="#FFF1E5">
+    <path d="M1220 220L1248 278L1312 286L1266 330L1278 392L1220 362L1162 392L1174 330L1128 286L1192 278L1220 220Z"/>
+    <path d="M1340 300L1358 338L1400 344L1370 376L1378 418L1340 396L1302 418L1310 376L1280 344L1322 338L1340 300Z"/>
+  </g>
+  <g opacity="0.22" stroke="#FFF1E5" stroke-width="2">
+    <path d="M230 620H860"/>
+    <path d="M230 666H760"/>
+    <path d="M230 712H820"/>
+  </g>
+  <text x="88" y="744" fill="#FFF7F0" fill-opacity="0.95" font-size="84" letter-spacing="3" font-family="Avenir, Helvetica, Arial, sans-serif">WISHLIST LOG</text>
+  <text x="90" y="804" fill="#FFF2E8" fill-opacity="0.78" font-size="28" letter-spacing="6" font-family="Avenir, Helvetica, Arial, sans-serif">PLANS · DREAMS · NEXT STEPS</text>
+</svg>

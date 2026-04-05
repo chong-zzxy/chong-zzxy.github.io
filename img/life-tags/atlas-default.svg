@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g" x1="100" y1="40" x2="1530" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D4F63"/>
+      <stop offset="1" stop-color="#7BA2B8"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1210 190) rotate(122) scale(620 760)">
+      <stop stop-color="#E1F5FF" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#E1F5FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g opacity="0.22" stroke="#ECF9FF" stroke-width="2">
+    <circle cx="1180" cy="250" r="86"/>
+    <circle cx="1300" cy="190" r="42"/>
+    <circle cx="1390" cy="300" r="30"/>
+  </g>
+  <text x="88" y="744" fill="#F4FCFF" fill-opacity="0.95" font-size="84" letter-spacing="3" font-family="Avenir, Helvetica, Arial, sans-serif">LIFE ATLAS</text>
+  <text x="90" y="804" fill="#ECF9FF" fill-opacity="0.78" font-size="28" letter-spacing="6" font-family="Avenir, Helvetica, Arial, sans-serif">MEMORY · THOUGHTS · MOMENTS</text>
+</svg>

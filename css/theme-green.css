@@ -24,6 +24,23 @@
   --bg-secondary: #F1EEEA;      /* 浅米色 */
   --bg-tertiary: #E7E2DC;       /* 浅灰米色 */
 
+  /* 全站背景层级（与主样式统一） */
+  --site-bg-start: #f2f5f4;
+  --site-bg-mid: #f5f8f7;
+  --site-bg-end: #f9fcfb;
+  --site-bg-glow-accent: rgba(63, 74, 69, 0.1);
+  --site-bg-glow-warm: rgba(140, 143, 148, 0.09);
+  --site-surface-bg: rgba(255, 255, 255, 0.9);
+  --site-surface-bg-strong: rgba(255, 255, 255, 0.95);
+  --site-surface-border: rgba(63, 74, 69, 0.14);
+  --site-surface-border-soft: rgba(63, 74, 69, 0.09);
+  --site-surface-shadow: 0 10px 24px rgba(43, 47, 45, 0.08);
+  --site-surface-header-bg: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.76) 0%,
+    rgba(246, 249, 247, 0.95) 100%
+  );
+
   /* 卡片背景 */
   --card-bg: rgba(255, 255, 255, 0.9);
   --card-bg-hover: rgba(255, 255, 255, 0.97);
@@ -58,6 +75,7 @@
 }
 
 /* 暗色模式 */
+:root.dark,
 body.dark-mode {
   --primary: #5E6A63;
   --bg-primary: #171918;
@@ -68,6 +86,21 @@ body.dark-mode {
   --text-primary: #EEF0EE;
   --text-secondary: #C7CECA;
   --text-tertiary: #9AA29D;
+  --site-bg-start: #141918;
+  --site-bg-mid: #171d1b;
+  --site-bg-end: #1d2522;
+  --site-bg-glow-accent: rgba(94, 106, 99, 0.2);
+  --site-bg-glow-warm: rgba(140, 143, 148, 0.16);
+  --site-surface-bg: rgba(31, 35, 33, 0.84);
+  --site-surface-bg-strong: rgba(31, 35, 33, 0.92);
+  --site-surface-border: rgba(154, 162, 157, 0.24);
+  --site-surface-border-soft: rgba(154, 162, 157, 0.16);
+  --site-surface-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+  --site-surface-header-bg: linear-gradient(
+    145deg,
+    rgba(45, 53, 49, 0.74) 0%,
+    rgba(32, 38, 35, 0.92) 100%
+  );
 }
 
 /* ============================================
@@ -84,19 +117,19 @@ body::before {
   background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(63, 74, 69, 0.03) 0px,
+      rgba(63, 74, 69, 0.012) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(63, 74, 69, 0.03) 3px
+      rgba(63, 74, 69, 0.012) 3px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(63, 74, 69, 0.03) 0px,
+      rgba(63, 74, 69, 0.012) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(63, 74, 69, 0.03) 3px
+      rgba(63, 74, 69, 0.012) 3px
     );
-  opacity: 0.15;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 1;
 }
@@ -110,8 +143,8 @@ body::after {
   width: 100%;
   height: 100%;
   background:
-    url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
-  opacity: 0.3;
+    url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+  opacity: 0.08;
   pointer-events: none;
   z-index: 1;
 }

@@ -4,34 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>星唯向导</title>
-  <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
+  <meta name="description" content="圈地自萌的个人记录｜有技术，也有生活">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770569030858">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770569030858">
+  <link rel="stylesheet" href="/css/style.css?v=20260406">
+  <link rel="stylesheet" href="/css/theme-green.css?v=20260406">
   
     <script>
       (function() {
         try {
-          if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-          }
-          var w = window.innerWidth || 0;
-          var h = window.innerHeight || 0;
-          var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          var pointerCoarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-          var enable = !prefersReducedMotion && !pointerCoarse && w >= 1024 && h >= 700;
-          if (enable) {
-            document.documentElement.classList.add('fullpage-enabled');
-            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-          }
-          document.documentElement.dataset.homeMode = enable ? 'fullpage' : 'scroll';
+          document.documentElement.classList.remove('fullpage-enabled');
+          document.documentElement.classList.remove('fullpage-ready');
+          document.documentElement.dataset.homeMode = 'scroll';
         } catch (e) {}
       })();
     </script>
   
 <meta name="generator" content="Hexo 7.1.1"></head>
-<body class="theme-green">
+<body class="theme-green is-home">
   <!-- Navigation -->
   <header class="header">
   <nav class="nav-container">
@@ -87,1180 +77,3430 @@
 
   <!-- Main Content -->
   <main class="main-container">
-    <!-- 全屏滚动首页 -->
-<div id="fullpage-wrapper" class="fullpage-container" data-current="0">
+    
 
-  <!-- Section 1: Hero -->
-  <section class="fullpage-section hero-section" id="section-hero" data-index="0">
-    <!-- 粒子背景 -->
-    <canvas id="particles-canvas" class="particles-bg"></canvas>
+<div class="home-editorial">
+  <section class="editorial-hero editorial-screen editorial-screen-hero">
+    <div class="editorial-hero-shell" data-reveal>
+      <div class="editorial-hero-content" data-hero-card data-stage-anchor>
+        <div class="editorial-hero-copy">
+          <h1 class="editorial-title" data-title-stage>
+            <span class="title-line title-line-main">
+              <span class="title-word" data-title-word>这里是</span>
+              <span class="title-word" data-title-word>圈地自萌的</span>
+              <span class="title-word" data-title-word>个人记录</span>
+            </span>
+            <span class="title-line title-line-sub">
+              <span class="title-word" data-title-word>想到哪句就写哪句，</span>
+              <span class="title-word" data-title-word>有技术也有生活，</span>
+              <span class="title-word" data-title-word>慢慢生长</span>
+            </span>
+            <span class="hero-scout" aria-hidden="true">
+              <span class="hero-scout-shadow"></span>
+              <span class="hero-scout-cargo" data-scout-cargo></span>
+              <span class="hero-scout-eraser" data-scout-eraser></span>
+              <span class="hero-scout-prop" data-scout-prop></span>
+              <svg class="hero-scout-svg" viewBox="0 0 60 86" role="presentation" focusable="false">
+                <g class="scout-figure">
+                  <circle class="scout-head-fill" cx="30" cy="10.5" r="4.8"></circle>
+                  <ellipse class="scout-shoulder-core" cx="30" cy="24.6" rx="7.6" ry="2.8"></ellipse>
+                  <ellipse class="scout-torso-core" cx="30" cy="32.8" rx="5.2" ry="10.8"></ellipse>
+                  <path class="scout-brow" d="M26.2 8.9 L28.4 8.4 M31.6 8.4 L33.8 8.9"></path>
+                  <path class="scout-hair" d="M24.2 8.4 C25.6 3.5, 34.4 3.5, 35.8 8.4"></path>
+                  <path class="scout-horn scout-horn-left" d="M24.8 6.9 L21.6 4.1 L24.4 8.4"></path>
+                  <path class="scout-horn scout-horn-right" d="M35.2 6.9 L38.4 4.1 L35.6 8.4"></path>
+                  <path class="scout-visor" d="M25.8 10.5 L34.2 10.5"></path>
+                  <path class="scout-jaw" d="M26.4 14 L30 15.4 L33.6 14"></path>
+                  <path class="scout-mustache" d="M27 12.8 L24.6 13.4 M33 12.8 L35.4 13.4"></path>
+                  <circle class="scout-head" cx="30" cy="10.5" r="6"></circle>
+                  <line class="scout-neck" x1="30" y1="16.5" x2="30" y2="20.5"></line>
+                  <line class="scout-body" x1="30" y1="20.5" x2="30" y2="44"></line>
 
-    <!-- 流体梯度色块 -->
-    <div class="fluid-blob fluid-blob-1"></div>
-    <div class="fluid-blob fluid-blob-2"></div>
-    <div class="fluid-blob fluid-blob-3"></div>
+                  <g class="scout-arm scout-arm-left">
+                    <line class="scout-segment scout-upper-arm scout-upper-arm-left" x1="30" y1="24" x2="23.5" y2="31.5"></line>
+                    <line class="scout-segment scout-lower-arm scout-lower-arm-left" x1="23.5" y1="31.5" x2="19" y2="40"></line>
+                    <circle class="scout-bicep scout-bicep-left" cx="24.4" cy="30.6" r="1.8"></circle>
+                    <circle class="scout-bracelet scout-bracelet-left" cx="19.2" cy="39.5" r="1.4"></circle>
+                  </g>
+                  <g class="scout-arm scout-arm-right">
+                    <line class="scout-segment scout-upper-arm scout-upper-arm-right" x1="30" y1="24" x2="36.5" y2="31.5"></line>
+                    <line class="scout-segment scout-lower-arm scout-lower-arm-right" x1="36.5" y1="31.5" x2="41" y2="40"></line>
+                    <circle class="scout-bicep scout-bicep-right" cx="35.6" cy="30.6" r="1.8"></circle>
+                    <circle class="scout-bracelet scout-bracelet-right" cx="40.8" cy="39.5" r="1.4"></circle>
+                  </g>
 
-    <div class="hero-content">
-      <div class="hero-avatar-container">
-        <img src="/img/avatar.svg" alt="星唯向导" class="hero-avatar">
-        <div class="avatar-ring"></div>
-        <div class="avatar-ring-2"></div>
-      </div>
+                  <g class="scout-leg scout-leg-left">
+                    <line class="scout-segment scout-upper-leg scout-upper-leg-left" x1="30" y1="44" x2="24.5" y2="58"></line>
+                    <line class="scout-segment scout-lower-leg scout-lower-leg-left" x1="24.5" y1="58" x2="21" y2="74"></line>
+                    <circle class="scout-calf scout-calf-left" cx="23.4" cy="61" r="1.9"></circle>
+                    <circle class="scout-boot scout-boot-left" cx="20.8" cy="74.4" r="1.8"></circle>
+                  </g>
+                  <g class="scout-leg scout-leg-right">
+                    <line class="scout-segment scout-upper-leg scout-upper-leg-right" x1="30" y1="44" x2="35.5" y2="58"></line>
+                    <line class="scout-segment scout-lower-leg scout-lower-leg-right" x1="35.5" y1="58" x2="39" y2="74"></line>
+                    <circle class="scout-calf scout-calf-right" cx="36.6" cy="61" r="1.9"></circle>
+                    <circle class="scout-boot scout-boot-right" cx="39.2" cy="74.4" r="1.8"></circle>
+                  </g>
+                  <path class="scout-waist-skirt" d="M25 44.2 C27.2 46.2, 32.8 46.2, 35 44.2"></path>
+                  <path class="scout-scarf" d="M23.8 21.4 C27.4 23.3, 32.6 23.3, 36.2 21.4"></path>
+                </g>
+              </svg>
+            </span>
+            <span class="hero-scout hero-scout-rival" data-rival-scout aria-hidden="true">
+              <span class="hero-scout-shadow"></span>
+              <span class="hero-scout-prop" data-rival-prop></span>
+              <svg class="hero-scout-svg" viewBox="0 0 60 86" role="presentation" focusable="false">
+                <g class="scout-figure">
+                  <circle class="scout-head-fill" cx="30" cy="10.5" r="4.8"></circle>
+                  <ellipse class="scout-shoulder-core" cx="30" cy="24.6" rx="7.6" ry="2.8"></ellipse>
+                  <ellipse class="scout-torso-core" cx="30" cy="32.8" rx="5.2" ry="10.8"></ellipse>
+                  <path class="scout-brow" d="M26.2 8.9 L28.4 8.4 M31.6 8.4 L33.8 8.9"></path>
+                  <path class="scout-hair" d="M24.2 8.4 C25.6 3.5, 34.4 3.5, 35.8 8.4"></path>
+                  <path class="scout-horn scout-horn-left" d="M24.8 6.9 L21.6 4.1 L24.4 8.4"></path>
+                  <path class="scout-horn scout-horn-right" d="M35.2 6.9 L38.4 4.1 L35.6 8.4"></path>
+                  <path class="scout-visor" d="M25.8 10.5 L34.2 10.5"></path>
+                  <path class="scout-jaw" d="M26.4 14 L30 15.4 L33.6 14"></path>
+                  <path class="scout-mustache" d="M27 12.8 L24.6 13.4 M33 12.8 L35.4 13.4"></path>
+                  <circle class="scout-head" cx="30" cy="10.5" r="6"></circle>
+                  <line class="scout-neck" x1="30" y1="16.5" x2="30" y2="20.5"></line>
+                  <line class="scout-body" x1="30" y1="20.5" x2="30" y2="44"></line>
 
-      <h1 class="hero-title">
-        <span class="greeting">Hi, I'm </span>
-        <span class="name">星唯向导</span>
-      </h1>
+                  <g class="scout-arm scout-arm-left">
+                    <line class="scout-segment scout-upper-arm scout-upper-arm-left" x1="30" y1="24" x2="23.5" y2="31.5"></line>
+                    <line class="scout-segment scout-lower-arm scout-lower-arm-left" x1="23.5" y1="31.5" x2="19" y2="40"></line>
+                    <circle class="scout-bicep scout-bicep-left" cx="24.4" cy="30.6" r="1.8"></circle>
+                    <circle class="scout-bracelet scout-bracelet-left" cx="19.2" cy="39.5" r="1.4"></circle>
+                  </g>
+                  <g class="scout-arm scout-arm-right">
+                    <line class="scout-segment scout-upper-arm scout-upper-arm-right" x1="30" y1="24" x2="36.5" y2="31.5"></line>
+                    <line class="scout-segment scout-lower-arm scout-lower-arm-right" x1="36.5" y1="31.5" x2="41" y2="40"></line>
+                    <circle class="scout-bicep scout-bicep-right" cx="35.6" cy="30.6" r="1.8"></circle>
+                    <circle class="scout-bracelet scout-bracelet-right" cx="40.8" cy="39.5" r="1.4"></circle>
+                  </g>
 
-      <div class="typewriter-container">
-        <span class="typewriter-text" id="typewriter"></span>
-        <span class="typewriter-cursor">_</span>
-      </div>
-
-      <div class="hero-social">
-        
-          <a href="https://github.com/chong-zzxy"
-             class="hero-social-link"
-             target="_blank"
-             rel="noopener noreferrer">
-            <span>GitHub</span>
-          </a>
-        
-          <a href="https://space.bilibili.com/271039719"
-             class="hero-social-link"
-             target="_blank"
-             rel="noopener noreferrer">
-            <span>BiliBili</span>
-          </a>
-        
-          <a href="mailto:441046702@qq.com"
-             class="hero-social-link"
-             target="_blank"
-             rel="noopener noreferrer">
-            <span>Email</span>
-          </a>
-        
-      </div>
-    </div>
-
-    <div class="scroll-hint">
-      <div class="scroll-arrow"></div>
-      <span>Scroll to explore</span>
-    </div>
-  </section>
-
-  <!-- Section 2: Resume/Summary -->
-  <section class="fullpage-section summary-section" id="section-summary" data-index="1">
-    <div class="section-container section-scroll">
-      <h2 class="section-title-fp" data-aos="fade-up">
-        <span class="title-icon">📊</span>
-        <span class="title-text">Resume & Blog</span>
-      </h2>
-
-      <div class="summary-content">
-        <!-- 个人简介 -->
-        <div class="resume-intro" data-aos="fade-right">
-          <h3 class="intro-title">Who I Am</h3>
-          <p class="intro-text">
-            AI算法工程师 | 计算机视觉 &amp; 自然语言处理
+                  <g class="scout-leg scout-leg-left">
+                    <line class="scout-segment scout-upper-leg scout-upper-leg-left" x1="30" y1="44" x2="24.5" y2="58"></line>
+                    <line class="scout-segment scout-lower-leg scout-lower-leg-left" x1="24.5" y1="58" x2="21" y2="74"></line>
+                    <circle class="scout-calf scout-calf-left" cx="23.4" cy="61" r="1.9"></circle>
+                    <circle class="scout-boot scout-boot-left" cx="20.8" cy="74.4" r="1.8"></circle>
+                  </g>
+                  <g class="scout-leg scout-leg-right">
+                    <line class="scout-segment scout-upper-leg scout-upper-leg-right" x1="30" y1="44" x2="35.5" y2="58"></line>
+                    <line class="scout-segment scout-lower-leg scout-lower-leg-right" x1="35.5" y1="58" x2="39" y2="74"></line>
+                    <circle class="scout-calf scout-calf-right" cx="36.6" cy="61" r="1.9"></circle>
+                    <circle class="scout-boot scout-boot-right" cx="39.2" cy="74.4" r="1.8"></circle>
+                  </g>
+                  <path class="scout-waist-skirt" d="M25 44.2 C27.2 46.2, 32.8 46.2, 35 44.2"></path>
+                  <path class="scout-scarf" d="M23.8 21.4 C27.4 23.3, 32.6 23.3, 36.2 21.4"></path>
+                </g>
+              </svg>
+            </span>
+          </h1>
+          <p class="editorial-subtitle" data-pretext-text data-pretext-mode="interactive" data-stage-anchor>
+            这里不追热点，也不做统一模板。
+            只是把技术、生活和偶尔闪过的灵感，认真留下来。
           </p>
-          <p class="intro-text">
-            专注于深度学习、计算机视觉和自然语言处理领域，热衷于探索AI技术的实际应用。
-            在这里分享技术见解、项目经验和学习心得。
-          </p>
-          <div class="intro-tags">
-            <span class="tag">🧠 Deep Learning</span>
-            <span class="tag">👁️ Computer Vision</span>
-            <span class="tag">💬 NLP</span>
-            <span class="tag">🐍 Python</span>
-          </div>
-
-          <!-- 博客主题（放在 Who I Am 区域内） -->
-          <div class="blog-themes" data-aos="fade-up">
-            <h3 class="themes-title">Blog Themes</h3>
-            <div class="themes-grid">
-              
-                  <div class="theme-card">
-                    <span class="theme-name">CV</span>
-                  </div>
-              
-                  <div class="theme-card">
-                    <span class="theme-name">NLP</span>
-                  </div>
-              
-                  <div class="theme-card">
-                    <span class="theme-name">Python</span>
-                  </div>
-              
-                  <div class="theme-card">
-                    <span class="theme-name">Life</span>
-                  </div>
-              
-            </div>
-          </div>
         </div>
-
-        <!-- 博客统计 -->
-        <div class="blog-stats" data-aos="fade-left">
-          <div class="stat-item">
-            <div class="stat-value" data-count="4">0</div>
-            <div class="stat-label">Articles</div>
-            <div class="stat-icon">📝</div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-value" data-count="3">0</div>
-            <div class="stat-label">Categories</div>
-            <div class="stat-icon">📁</div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-value" data-count="0">0</div>
-            <div class="stat-label">Tags</div>
-            <div class="stat-icon">🏷️</div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-value" data-count="5">0</div>
-            <div class="stat-label">Years</div>
-            <div class="stat-icon">⏱️</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section 3: Featured Posts -->
-  <section class="fullpage-section featured-section" id="section-featured" data-index="2">
-    <div class="section-container section-scroll">
-      <h2 class="section-title-fp" data-aos="fade-up">
-        <span class="title-icon">⭐</span>
-        <span class="title-text">Featured Posts</span>
-      </h2>
-
-      <div class="featured-slider-wrapper" data-aos="fade-up" data-aos-delay="200">
-        <button class="slider-nav prev" aria-label="Previous">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-          </svg>
-        </button>
-
-        <div class="featured-slider">
-          <div class="featured-track">
-            
-              <article class="featured-card">
-                
-                  <div class="featured-cover featured-cover-placeholder">
-                    <div class="placeholder-gradient"></div>
-                  </div>
-                
-
-                <div class="featured-content">
-                  <div class="featured-meta">
-                    
-                      <span class="featured-category">
-                        Life
-                      </span>
-                    
-                    <time class="featured-date">
-                      Jan 18, 2026
-                    </time>
-                  </div>
-
-                  <h3 class="featured-title">
-                    <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/">萌宠</a>
-                  </h3>
-
-                  
-
-                  <div class="featured-footer">
-                    <span class="read-time">
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                      </svg>
-                      0 min
-                    </span>
-                    <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="read-more">
-                      Read More
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            
-              <article class="featured-card">
-                
-                  <div class="featured-cover featured-cover-placeholder">
-                    <div class="placeholder-gradient"></div>
-                  </div>
-                
-
-                <div class="featured-content">
-                  <div class="featured-meta">
-                    
-                      <span class="featured-category">
-                        NLP
-                      </span>
-                    
-                    <time class="featured-date">
-                      Jan 18, 2026
-                    </time>
-                  </div>
-
-                  <h3 class="featured-title">
-                    <a href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/">自然语言处理-NLP基础</a>
-                  </h3>
-
-                  
-
-                  <div class="featured-footer">
-                    <span class="read-time">
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                      </svg>
-                      5 min
-                    </span>
-                    <a href="/2026/01/18/NLP/NLP%E5%9F%BA%E7%A1%80/" class="read-more">
-                      Read More
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            
-              <article class="featured-card">
-                
-                  <div class="featured-cover featured-cover-placeholder">
-                    <div class="placeholder-gradient"></div>
-                  </div>
-                
-
-                <div class="featured-content">
-                  <div class="featured-meta">
-                    
-                      <span class="featured-category">
-                        CV
-                      </span>
-                    
-                    <time class="featured-date">
-                      Jan 18, 2026
-                    </time>
-                  </div>
-
-                  <h3 class="featured-title">
-                    <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
-                  </h3>
-
-                  
-
-                  <div class="featured-footer">
-                    <span class="read-time">
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                      </svg>
-                      5 min
-                    </span>
-                    <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="read-more">
-                      Read More
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            
-              <article class="featured-card">
-                
-                  <div class="featured-cover featured-cover-placeholder">
-                    <div class="placeholder-gradient"></div>
-                  </div>
-                
-
-                <div class="featured-content">
-                  <div class="featured-meta">
-                    
-                      <span class="featured-category">
-                        CV
-                      </span>
-                    
-                    <time class="featured-date">
-                      Jan 18, 2026
-                    </time>
-                  </div>
-
-                  <h3 class="featured-title">
-                    <a href="/2026/01/18/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a>
-                  </h3>
-
-                  
-
-                  <div class="featured-footer">
-                    <span class="read-time">
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                      </svg>
-                      13 min
-                    </span>
-                    <a href="/2026/01/18/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="read-more">
-                      Read More
-                      <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            
-          </div>
-        </div>
-
-        <button class="slider-nav next" aria-label="Next">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="view-all-posts" data-aos="fade-up" data-aos-delay="400">
-        <a href="/blog/" class="btn-primary">
-          View All Posts
-          <svg viewBox="0 0 24 24" width="18" height="18">
-            <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Photography Gallery -->
-  <section class="fullpage-section gallery-section" id="section-gallery" data-index="3">
-    <div class="section-scroll gallery-body">
-      
-      <!-- 顶部标题 -->
-      <div class="gallery-header">
-        <div class="gallery-kicker" data-aos="fade-up">
-          <span class="gallery-serial">01</span>
-          <span class="gallery-kicker-text">COLLECTION / 2026</span>
-        </div>
-        <h2 class="section-title-fp" data-aos="fade-up" data-aos-delay="40">
-          <span class="title-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 7h3l2-2h6l2 2h3v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z"/>
-              <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </span>
-          <span class="title-text">PHOTOGRAPHY</span>
-        </h2>
-        <span class="gallery-header-line" aria-hidden="true"></span>
-        <!-- subtitle removed: keep header clean and reduce visual noise on large displays -->
-      </div>
-
-      <!-- 图片展示 -->
-      <div class="gallery-scroll-wrapper">
-        <div class="gallery-grid">
-        
-          <a href="/gallery/Madame-Nian.html"
-             class="gallery-item"
-             data-aos="fade-up"
-             data-aos-delay="0">
-            
-              <img src="/img/gallery/Madame-Nian/cover.jpg" alt="粘粘星球" loading="lazy">
-            
-            
-              <div class="gallery-overlay">
-                <div class="gallery-info">
-                  <div class="gallery-title">粘粘星球</div>
-                  
-                    <div class="gallery-desc">吾家有布偶</div>
-                  
-                  
-                    <div class="gallery-count">22 Photos</div>
-                  
-                </div>
-              </div>
-            
-          </a>
-        
-          <a href="/gallery/test.html"
-             class="gallery-item"
-             data-aos="fade-up"
-             data-aos-delay="80">
-            
-              <img src="/img/gallery/Madame-Nian/20241028_113303.jpg" alt="粘粘星球" loading="lazy">
-            
-            
-              <div class="gallery-overlay">
-                <div class="gallery-info">
-                  <div class="gallery-title">粘粘星球</div>
-                  
-                    <div class="gallery-desc">吾家有布偶</div>
-                  
-                  
-                    <div class="gallery-count">22 Photos</div>
-                  
-                </div>
-              </div>
-            
-          </a>
-        
-          <a href="/gallery/"
-             class="gallery-item gallery-item-viewall"
-             data-aos="fade-up"
-             data-aos-delay="160">
-            
-              <img src="/img/gallery/Madame-Nian/20230619_184230.jpg" alt="粘粘星球" loading="lazy">
-            
-            
-              <span class="gallery-tag">EXPLORE ALL ALBUMS →</span>
-            
-          </a>
-        
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Section 5: Guestbook & Info -->
-  <section class="fullpage-section guestbook-section" id="section-guestbook" data-index="4">
-    <div class="section-container section-scroll">
-      <h2 class="section-title-fp" data-aos="fade-up">
-        <span class="title-icon">💬</span>
-        <span class="title-text">留言板 & 联系我</span>
-      </h2>
-
-      <div class="guestbook-layout">
-        <!-- 留言板 -->
-        <div class="guestbook-card" data-aos="fade-right">
-          <h3 class="guestbook-title">留言板</h3>
-          <form class="guestbook-form" id="home-guestbook-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="home-guest-name">昵称<span class="required">*</span></label>
-                <input type="text" id="home-guest-name" class="form-input" placeholder="请输入你的昵称" required>
-              </div>
-              <div class="form-group">
-                <label for="home-guest-email">邮箱</label>
-                <input type="email" id="home-guest-email" class="form-input" placeholder="your@email.com (可选)">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="home-guest-website">网站</label>
-              <input type="url" id="home-guest-website" class="form-input" placeholder="https:// (可选)">
-            </div>
-            <div class="form-group">
-              <label for="home-guest-message">留言内容<span class="required">*</span></label>
-              <textarea id="home-guest-message" class="form-textarea" rows="5" placeholder="说点什么吧..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">提交留言</button>
-          </form>
-        </div>
-
-        <!-- 访问信息 / 版权 / 联系方式 -->
-        <div class="guestbook-card guestbook-info" data-aos="fade-left">
-          <h3 class="guestbook-title">访问信息</h3>
+        <div class="editorial-metrics" data-stage-anchor>
+          <span>文章 <strong>4</strong></span>
+          <span>分类 <strong>3</strong></span>
+          <span>记录 <strong>5+</strong> 年</span>
           
-            <div class="guestbook-stats">
-              <span id="busuanzi_container_site_pv" style="display:none">
-                👀 本站访问量 <strong id="busuanzi_value_site_pv"></strong>
-              </span>
-              <span class="stats-divider" style="display:none"> · </span>
-              <span id="busuanzi_container_site_uv" style="display:none">
-                👤 访客数 <strong id="busuanzi_value_site_uv"></strong>
-              </span>
-              <span id="stats-loading">📊 统计加载中...</span>
-            </div>
+            <span>最近更新 <strong>2026-04-04</strong></span>
           
-
-          <h3 class="guestbook-title">联系方式</h3>
-          <div class="guestbook-contact">
-            
-              <a href="https://github.com/chong-zzxy"
-                 class="guestbook-contact-link"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 title="GitHub">
-                
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                
-              </a>
-            
-              <a href="https://space.bilibili.com/271039719"
-                 class="guestbook-contact-link"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 title="BiliBili">
-                
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/>
-                  </svg>
-                
-              </a>
-            
-              <a href="mailto:441046702@qq.com"
-                 class="guestbook-contact-link"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 title="Email">
-                
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                  </svg>
-                
-              </a>
-            
-          </div>
-
-          <div class="guestbook-copyright">
-            <div>© 2024 Caochong. All rights reserved.</div>
-            <div>
-              <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> ·
-              <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener">Caochong Theme</a>
+        </div>
+        
+          <div class="editorial-contact-inline" data-stage-anchor>
+            <span class="editorial-contact-label">联系</span>
+            <div class="editorial-contact-links">
+              
+                <a href="https://github.com/chong-zzxy"
+                   class="editorial-contact-link"
+                   target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;>
+                  <span>GitHub</span>
+                </a>
+              
+                <a href="https://space.bilibili.com/271039719"
+                   class="editorial-contact-link"
+                   target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;>
+                  <span>BiliBili</span>
+                </a>
+              
+                <a href="mailto:441046702@qq.com"
+                   class="editorial-contact-link"
+                   target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;>
+                  <span>Email</span>
+                </a>
+              
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- Section Navigation Dots -->
-  <nav class="section-nav">
-    <button class="nav-dot active" data-section="0" aria-label="Go to Hero"></button>
-    <button class="nav-dot" data-section="1" aria-label="Go to Summary"></button>
-    <button class="nav-dot" data-section="2" aria-label="Go to Featured"></button>
-    <button class="nav-dot" data-section="3" aria-label="Go to Gallery"></button>
-    <button class="nav-dot" data-section="4" aria-label="Go to Guestbook"></button>
-  </nav>
+  <section class="editorial-lower editorial-screen editorial-screen-lower" data-reveal>
+    <div class="editorial-lower-shell">
+      <section class="editorial-lower-fusion">
+        <section class="editorial-identity">
+          <div class="identity-card identity-card-merged" data-stage-anchor>
+            <div class="identity-notes identity-notes-main">
+              <div class="identity-inline-head">
+                <img src="/img/avatar.svg" alt="星唯向导" class="identity-avatar" loading="lazy">
+                <div class="identity-inline-meta">
+                  <p class="identity-label">Identity</p>
+                  <div class="identity-inline-lines">
+                    <span class="identity-inline-line identity-inline-name">星唯向导</span>
+                    
+                      
+                        <span class="identity-inline-line">星是惟一的向导</span>
+                      
+                        <span class="identity-inline-line">在年轻的飞奔里，你是迎面而来的风</span>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="identity-tag-editor" data-tag-editor>
+                <div class="identity-tag-toolbar">
+                  <p class="identity-note-intro" data-copy-fx="zipper">把此刻喜欢的一句话留下来，慢慢就会形成自己的注脚。</p>
+                  <button
+                    type="button"
+                    class="identity-tag-toggle"
+                    data-tag-toggle
+                    aria-controls="identity-tag-panel"
+                    aria-expanded="false">
+                    留下一句
+                  </button>
+                </div>
+                <div class="identity-tag-panel" data-tag-panel id="identity-tag-panel">
+                  <input
+                    type="text"
+                    class="identity-tag-input"
+                    data-tag-input
+                    maxlength="40"
+                    placeholder="例如：今天也在认真热爱">
+                  <button type="button" class="identity-tag-add" data-tag-add>添加</button>
+                </div>
+              </div>
+              <div class="identity-tag-faves" data-tag-faves>
+                <span class="identity-tag-faves-label">Vibe Coding喜欢的</span>
+                <div class="identity-tag-faves-list" data-tag-faves-list></div>
+              </div>
+              <div class="identity-tag-list" data-tag-list></div>
+            </div>
+          </div>
+        </section>
+        <div class="editorial-fusion-divider" aria-hidden="true"></div>
+        <div class="editorial-footer-slot" data-home-footer-slot></div>
+      </section>
+    </div>
+  </section>
 
 </div>
 
-<!-- 全屏滚动脚本 -->
 <script>
-(function() {
-  'use strict';
+  (function() {
+    var root = document.querySelector('.home-editorial');
+    if (!root) return;
 
-  const FULLPAGE_CLASS = 'fullpage-enabled';
+    var reveals = root.querySelectorAll('[data-reveal]');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function shouldEnableFullpage() {
-    const w = window.innerWidth || 0;
-    const h = window.innerHeight || 0;
-    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-    const pointerCoarse = window.matchMedia?.('(pointer: coarse)')?.matches;
-
-    // 桌面大屏启用全屏切屏；移动端/平板/矮屏降级为正常滚动
-    if (prefersReducedMotion) return false;
-    if (pointerCoarse) return false;
-    if (w < 1024) return false;
-    if (h < 700) return false;
-    return true;
-  }
-
-  // 全屏滚动控制
-  const FullPageScroll = {
-    currentSection: 0,
-    totalSections: 5,
-    isScrolling: false,
-    touchStartY: 0,
-    enabled: false,
-    _handlers: null,
-    _navDotHandlers: null,
-    _arrowHandlers: null,
-    _aosFallbackApplied: false,
-
-    init() {
-      this.initTypewriter();
-      this.initStats();
-      this.initFeaturedSlider();
-      this.initGalleryFilters();
-      this.updateNavigation();
-    },
-
-    getSection(index) {
-      return document.querySelector(`.fullpage-section[data-index="${index}"]`);
-    },
-
-    getScrollContainer(section) {
-      return section?.querySelector('.section-scroll');
-    },
-
-    canScroll(container, deltaY) {
-      if (!container) return false;
-      const scrollHeight = container.scrollHeight;
-      const clientHeight = container.clientHeight;
-      if (scrollHeight <= clientHeight + 1) return false;
-      const scrollTop = container.scrollTop;
-      const atTop = scrollTop <= 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-      if (deltaY > 0 && !atBottom) return true;
-      if (deltaY < 0 && !atTop) return true;
-      return false;
-    },
-
-    refreshAOS() {
-      if (window.AOS) {
-        if (typeof window.AOS.refreshHard === 'function') {
-          window.AOS.refreshHard();
-        } else if (typeof window.AOS.refresh === 'function') {
-          window.AOS.refresh();
-        }
-        return;
-      }
-
-      if (this._aosFallbackApplied) return;
-      this._aosFallbackApplied = true;
-      document.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
-    },
-
-    enable() {
-      if (this.enabled) return;
-      this.enabled = true;
-      this.bindEvents();
-      this.syncContainer();
-      this.updateNavigation();
-      this.refreshAOS();
-    },
-
-    disable() {
-      if (!this.enabled) return;
-      this.enabled = false;
-      this.unbindEvents();
-      this.currentSection = 0;
-      this.isScrolling = false;
-      this.syncContainer();
-      this.updateNavigation();
-      this.refreshAOS();
-    },
-
-    syncContainer() {
-      const container = document.getElementById('fullpage-wrapper');
-      container?.setAttribute('data-current', String(this.currentSection));
-    },
-
-    bindEvents() {
-      if (this._handlers) return;
-
-      this._handlers = {
-        wheel: this.handleWheel.bind(this),
-        touchstart: this.handleTouchStart.bind(this),
-        touchmove: this.handleTouchMove.bind(this),
-        keydown: this.handleKeydown.bind(this)
-      };
-
-      // 鼠标滚轮
-      document.addEventListener('wheel', this._handlers.wheel, { passive: false });
-
-      // 触摸事件
-      document.addEventListener('touchstart', this._handlers.touchstart, { passive: true });
-      document.addEventListener('touchmove', this._handlers.touchmove, { passive: false });
-
-      // 键盘导航
-      document.addEventListener('keydown', this._handlers.keydown);
-
-      // 导航点
-      this._navDotHandlers = [];
-      document.querySelectorAll('.nav-dot').forEach(dot => {
-        const handler = () => {
-          const section = parseInt(dot.dataset.section, 10);
-          this.goToSection(section);
-        };
-        dot.addEventListener('click', handler);
-        this._navDotHandlers.push({ dot, handler });
-      });
-
-      // 箭头按钮
-      this._arrowHandlers = {
-        up: () => this.previousSection(),
-        down: () => this.nextSection()
-      };
-      document.querySelector('.arrow-up')?.addEventListener('click', this._arrowHandlers.up);
-      document.querySelector('.arrow-down')?.addEventListener('click', this._arrowHandlers.down);
-    },
-
-    unbindEvents() {
-      if (!this._handlers) return;
-
-      document.removeEventListener('wheel', this._handlers.wheel);
-      document.removeEventListener('touchstart', this._handlers.touchstart);
-      document.removeEventListener('touchmove', this._handlers.touchmove);
-      document.removeEventListener('keydown', this._handlers.keydown);
-
-      (this._navDotHandlers || []).forEach(({ dot, handler }) => {
-        dot.removeEventListener('click', handler);
-      });
-      this._navDotHandlers = null;
-
-      if (this._arrowHandlers) {
-        document.querySelector('.arrow-up')?.removeEventListener('click', this._arrowHandlers.up);
-        document.querySelector('.arrow-down')?.removeEventListener('click', this._arrowHandlers.down);
-        this._arrowHandlers = null;
-      }
-
-      this._handlers = null;
-    },
-
-    handleWheel(e) {
-      if (this.isScrolling) return;
-
-      e.preventDefault();
-
-      if (e.deltaY > 0) {
-        this.nextSection();
-      } else {
-        this.previousSection();
-      }
-    },
-
-    handleTouchStart(e) {
-      this.touchStartY = e.touches[0].clientY;
-    },
-
-    handleTouchMove(e) {
-      if (this.isScrolling) return;
-
-      const touchEndY = e.touches[0].clientY;
-      const diff = this.touchStartY - touchEndY;
-
-      if (Math.abs(diff) > 50) {
-        e.preventDefault();
-        if (diff > 0) {
-          this.nextSection();
-        } else {
-          this.previousSection();
-        }
-      }
-    },
-
-    handleKeydown(e) {
-      if (this.isScrolling) return;
-
-      switch(e.key) {
-        case 'ArrowDown':
-        case 'PageDown':
-          e.preventDefault();
-          this.nextSection();
-          break;
-        case 'ArrowUp':
-        case 'PageUp':
-          e.preventDefault();
-          this.previousSection();
-          break;
-        case 'Home':
-          e.preventDefault();
-          this.goToSection(0);
-          break;
-        case 'End':
-          e.preventDefault();
-          this.goToSection(this.totalSections - 1);
-          break;
-      }
-    },
-
-    nextSection() {
-      if (this.currentSection < this.totalSections - 1) {
-        this.goToSection(this.currentSection + 1);
-      }
-    },
-
-    previousSection() {
-      if (this.currentSection > 0) {
-        this.goToSection(this.currentSection - 1);
-      }
-    },
-
-    goToSection(index) {
-      if (index === this.currentSection || this.isScrolling) return;
-
-      const currentSection = this.getSection(this.currentSection);
-      const scrollContainer = this.getScrollContainer(currentSection);
-      if (scrollContainer) {
-        scrollContainer.scrollTop = 0;
-      }
-
-      this.isScrolling = true;
-      this.currentSection = index;
-
-      // 使用CSS data属性控制transform
-      const container = document.getElementById('fullpage-wrapper');
-      container.setAttribute('data-current', index);
-
-      this.updateNavigation();
-      this.refreshAOS();
-
-      setTimeout(() => {
-        this.isScrolling = false;
-      }, 1000);
-    },
-
-    updateNavigation() {
-      // 更新导航点
-      document.querySelectorAll('.nav-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === this.currentSection);
-      });
-
-      // 更新箭头显示
-      const arrowUp = document.querySelector('.arrow-up');
-      const arrowDown = document.querySelector('.arrow-down');
-
-      if (arrowUp) arrowUp.style.opacity = this.currentSection === 0 ? '0.3' : '1';
-      if (arrowDown) arrowDown.style.opacity = this.currentSection === this.totalSections - 1 ? '0.3' : '1';
-
-    },
-
-    // 打字机效果
-    initTypewriter() {
-      const texts = [
-        'AI Algorithm Engineer',
-        'Deep Learning Enthusiast',
-        'Computer Vision & NLP',
-        'Lifelong Learner'
-      ];
-
-      let textIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-      const typewriter = document.getElementById('typewriter');
-
-      function type() {
-        const currentText = texts[textIndex];
-
-        if (isDeleting) {
-          typewriter.textContent = currentText.substring(0, charIndex - 1);
-          charIndex--;
-        } else {
-          typewriter.textContent = currentText.substring(0, charIndex + 1);
-          charIndex++;
-        }
-
-        let typeSpeed = isDeleting ? 50 : 100;
-
-        if (!isDeleting && charIndex === currentText.length) {
-          typeSpeed = 2000;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          textIndex = (textIndex + 1) % texts.length;
-          typeSpeed = 500;
-        }
-
-        setTimeout(type, typeSpeed);
-      }
-
-      type();
-    },
-
-    // 统计数字动画
-    initStats() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      reveals.forEach(function(el) { el.classList.add('is-visible'); });
+    } else {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            const statValues = entry.target.querySelectorAll('.stat-value');
-            statValues.forEach(el => {
-              const target = parseInt(el.dataset.count);
-              animateValue(el, 0, target, 1500);
-            });
+            entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
         });
-      });
+      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
 
-      const summarySection = document.querySelector('.summary-section');
-      if (summarySection) observer.observe(summarySection);
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
 
-      function animateValue(el, start, end, duration) {
-        const range = end - start;
-        const increment = range / (duration / 16);
-        let current = start;
+    var footerSlot = root.querySelector('[data-home-footer-slot]');
+    function mountHomeFooter() {
+      if (!footerSlot) return;
+      var homeFooter = document.querySelector('body.is-home .footer.site-footer');
+      if (!homeFooter) return;
+      homeFooter.classList.add('site-footer-inline');
+      if (homeFooter.parentNode !== footerSlot) {
+        footerSlot.appendChild(homeFooter);
+      }
+    }
 
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= end) {
-            el.textContent = end;
-            clearInterval(timer);
-          } else {
-            el.textContent = Math.floor(current);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', mountHomeFooter);
+    } else {
+      mountHomeFooter();
+    }
+    window.addEventListener('load', mountHomeFooter);
+
+    var heroCard = root.querySelector('[data-hero-card]');
+    var heroSection = root.querySelector('.editorial-hero');
+    var lowerSection = root.querySelector('.editorial-lower');
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (heroSection && lowerSection) {
+      var screenSections = [heroSection, lowerSection];
+      var currentScreen = 0;
+      var isScreenSwitching = false;
+      var screenLockTimer = null;
+      var snapTimer = null;
+      var touchStartY = null;
+      var touchStartX = null;
+      var touchTracking = false;
+      var screenSwitchDuration = reduceMotion ? 120 : 760;
+
+      function clampScreen(index) {
+        return Math.min(screenSections.length - 1, Math.max(0, index));
+      }
+
+      function sectionPageY(index) {
+        var rect = screenSections[index].getBoundingClientRect();
+        return Math.round(window.pageYOffset + rect.top);
+      }
+
+      function setActiveScreen(index) {
+        currentScreen = clampScreen(index);
+        root.dataset.screenIndex = String(currentScreen);
+        for (var i = 0; i < screenSections.length; i++) {
+          screenSections[i].classList.toggle('is-screen-active', i === currentScreen);
+        }
+      }
+
+      function lockScreenSwitch(duration) {
+        isScreenSwitching = true;
+        if (screenLockTimer) {
+          window.clearTimeout(screenLockTimer);
+        }
+        screenLockTimer = window.setTimeout(function() {
+          isScreenSwitching = false;
+        }, duration || screenSwitchDuration);
+      }
+
+      function nearestScreenByViewport() {
+        var viewportAnchor = window.pageYOffset + window.innerHeight * 0.46;
+        var nearest = 0;
+        var bestDistance = Number.POSITIVE_INFINITY;
+        for (var i = 0; i < screenSections.length; i++) {
+          var rect = screenSections[i].getBoundingClientRect();
+          var center = window.pageYOffset + rect.top + rect.height * 0.5;
+          var distance = Math.abs(center - viewportAnchor);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            nearest = i;
           }
-        }, 16);
-      }
-    },
-
-    // 精选文章滑块
-    initFeaturedSlider() {
-      const track = document.querySelector('.featured-track');
-      const prevBtn = document.querySelector('.slider-nav.prev');
-      const nextBtn = document.querySelector('.slider-nav.next');
-      const cards = document.querySelectorAll('.featured-card');
-
-      if (!track || cards.length === 0) return;
-
-      let currentIndex = 0;
-      const cardsToShow = window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
-      const maxIndex = Math.max(0, cards.length - cardsToShow);
-
-      function updateSlider() {
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 24;
-        const offset = -(currentIndex * (cardWidth + gap));
-        track.style.transform = `translateX(${offset}px)`;
-
-        prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
-        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
+        }
+        return nearest;
       }
 
-      prevBtn?.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlider();
+      function jumpToScreen(index, instant) {
+        var next = clampScreen(index);
+        if (next === currentScreen && !instant) return false;
+        lockScreenSwitch(screenSwitchDuration + 120);
+        setActiveScreen(next);
+        window.scrollTo({
+          top: sectionPageY(next),
+          behavior: instant || reduceMotion ? 'auto' : 'smooth'
+        });
+        return true;
+      }
+
+      function handleScreenDirection(deltaY) {
+        if (Math.abs(deltaY) < 10) return false;
+        if (deltaY > 0 && currentScreen < screenSections.length - 1) {
+          return jumpToScreen(currentScreen + 1, false);
         }
-      });
-
-      nextBtn?.addEventListener('click', () => {
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          updateSlider();
+        if (deltaY < 0 && currentScreen > 0) {
+          return jumpToScreen(currentScreen - 1, false);
         }
+        return false;
+      }
+
+      function scheduleScreenSnap() {
+        if (snapTimer) {
+          window.clearTimeout(snapTimer);
+        }
+        snapTimer = window.setTimeout(function() {
+          if (isScreenSwitching) return;
+          var nearest = nearestScreenByViewport();
+          setActiveScreen(nearest);
+          var targetTop = sectionPageY(nearest);
+          if (Math.abs(window.pageYOffset - targetTop) > 12) {
+            jumpToScreen(nearest, false);
+          }
+        }, reduceMotion ? 60 : 120);
+      }
+
+      function isTextEditingContext(target) {
+        var active = document.activeElement;
+        var activeTag = active && active.tagName ? active.tagName.toLowerCase() : '';
+        if (
+          activeTag === 'input' ||
+          activeTag === 'textarea' ||
+          activeTag === 'select' ||
+          (active && active.isContentEditable)
+        ) {
+          return true;
+        }
+        return Boolean(target && target.closest && target.closest('[data-tag-editor], .identity-tag-panel, .identity-tag-input'));
+      }
+
+      function onScreenWheel(event) {
+        if (isTextEditingContext(event.target)) {
+          return;
+        }
+        if (isScreenSwitching) {
+          event.preventDefault();
+          return;
+        }
+        if (handleScreenDirection(event.deltaY)) {
+          event.preventDefault();
+        }
+      }
+
+      function onScreenTouchStart(event) {
+        if (isTextEditingContext(event.target)) return;
+        if (!event.touches || event.touches.length !== 1) return;
+        touchStartY = event.touches[0].clientY;
+        touchStartX = event.touches[0].clientX;
+        touchTracking = true;
+      }
+
+      function onScreenTouchEnd(event) {
+        if (isTextEditingContext(event.target)) return;
+        if (!touchTracking || !event.changedTouches || !event.changedTouches.length) return;
+        var touch = event.changedTouches[0];
+        var deltaY = touchStartY - touch.clientY;
+        var deltaX = Math.abs(touchStartX - touch.clientX);
+        touchStartY = null;
+        touchStartX = null;
+        touchTracking = false;
+        if (deltaX > 90 || Math.abs(deltaY) < 48 || isScreenSwitching) return;
+        handleScreenDirection(deltaY);
+      }
+
+      function onScreenKeydown(event) {
+        var active = document.activeElement;
+        var tagName = active && active.tagName ? active.tagName.toLowerCase() : '';
+        if (tagName === 'input' || tagName === 'textarea' || (active && active.isContentEditable)) return;
+        if (isScreenSwitching) return;
+        if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
+          if (currentScreen < screenSections.length - 1) {
+            event.preventDefault();
+            jumpToScreen(currentScreen + 1, false);
+          }
+        } else if (event.key === 'ArrowUp' || event.key === 'PageUp') {
+          if (currentScreen > 0) {
+            event.preventDefault();
+            jumpToScreen(currentScreen - 1, false);
+          }
+        }
+      }
+
+      root.classList.add('is-screen-mode');
+      setActiveScreen(nearestScreenByViewport());
+      window.setTimeout(function() {
+        jumpToScreen(currentScreen, true);
+      }, 26);
+
+      window.addEventListener('wheel', onScreenWheel, { passive: false });
+      window.addEventListener('touchstart', onScreenTouchStart, { passive: true });
+      window.addEventListener('touchend', onScreenTouchEnd, { passive: true });
+      window.addEventListener('keydown', onScreenKeydown);
+      window.addEventListener('scroll', function() {
+        if (isScreenSwitching) return;
+        setActiveScreen(nearestScreenByViewport());
+        scheduleScreenSnap();
+      }, { passive: true });
+      window.addEventListener('resize', function() {
+        jumpToScreen(currentScreen, true);
+      });
+    }
+
+    if (heroCard && heroSection && canHover && !reduceMotion) {
+      var rafId = null;
+      var targetX = 0;
+      var targetY = 0;
+      var currentX = 0;
+      var currentY = 0;
+      var heroInteractTimer = null;
+
+      function clamp(num, min, max) {
+        return Math.min(max, Math.max(min, num));
+      }
+
+      function renderTilt() {
+        currentX += (targetX - currentX) * 0.14;
+        currentY += (targetY - currentY) * 0.14;
+
+        heroCard.style.setProperty('--hero-tilt-x', (-currentY * 2.25).toFixed(2) + 'deg');
+        heroCard.style.setProperty('--hero-tilt-y', (currentX * 3.1).toFixed(2) + 'deg');
+        heroCard.style.setProperty('--hero-glow-x', ((currentX + 1) * 50).toFixed(2) + '%');
+        heroCard.style.setProperty('--hero-glow-y', ((currentY + 1) * 50).toFixed(2) + '%');
+
+        if (Math.abs(targetX - currentX) > 0.002 || Math.abs(targetY - currentY) > 0.002) {
+          rafId = window.requestAnimationFrame(renderTilt);
+        } else {
+          rafId = null;
+        }
+      }
+
+      function enqueueTilt() {
+        if (rafId === null) {
+          rafId = window.requestAnimationFrame(renderTilt);
+        }
+      }
+
+      function markHeroInteracting() {
+        heroCard.classList.add('is-interacting');
+        if (heroInteractTimer) {
+          window.clearTimeout(heroInteractTimer);
+        }
+        heroInteractTimer = window.setTimeout(function() {
+          heroCard.classList.remove('is-interacting');
+        }, 760);
+      }
+
+      heroSection.addEventListener('pointermove', function(event) {
+        var rect = heroCard.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width;
+        var y = (event.clientY - rect.top) / rect.height;
+        targetX = clamp((x - 0.5) * 2, -1, 1);
+        targetY = clamp((y - 0.5) * 2, -1, 1);
+        markHeroInteracting();
+        enqueueTilt();
       });
 
-      window.addEventListener('resize', () => {
-        currentIndex = 0;
-        updateSlider();
-      });
+      function resetTilt() {
+        targetX = 0;
+        targetY = 0;
+        if (heroInteractTimer) {
+          window.clearTimeout(heroInteractTimer);
+        }
+        heroCard.classList.remove('is-interacting');
+        enqueueTilt();
+      }
 
-      updateSlider();
-    },
+      heroSection.addEventListener('pointerleave', resetTilt);
+      heroSection.addEventListener('pointercancel', resetTilt);
+    }
 
-    // 画廊过滤器
-    initGalleryFilters() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const galleryItems = document.querySelectorAll('.gallery-item');
+    var pretextTargets = Array.prototype.slice.call(root.querySelectorAll('[data-pretext-text]'));
+    if (pretextTargets.length) {
+      var pretextModulePromise = null;
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filter = btn.dataset.filter;
+      function clampPretext(num, min, max) {
+        return Math.min(max, Math.max(min, num));
+      }
 
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      function fontSpecFromComputed(style) {
+        return [
+          style.fontStyle || 'normal',
+          style.fontWeight || '400',
+          style.fontSize || '16px',
+          style.fontFamily || 'sans-serif'
+        ].join(' ');
+      }
 
-          galleryItems.forEach(item => {
-            if (filter === '*' || item.classList.contains(filter.substring(1))) {
-              item.style.display = 'block';
-              setTimeout(() => item.style.opacity = '1', 10);
+      function loadPretextModule() {
+        if (pretextModulePromise) {
+          return pretextModulePromise;
+        }
+        pretextModulePromise = (async function() {
+          try {
+            return await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext/+esm');
+          } catch (primaryError) {
+            try {
+              return await import('https://esm.sh/@chenglou/pretext');
+            } catch (secondaryError) {
+              return null;
+            }
+          }
+        })();
+        return pretextModulePromise;
+      }
+
+      function initPretextTarget(targetEl, mode) {
+        var baseText = (targetEl.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!baseText) return;
+
+        var linesWrap = document.createElement('span');
+        linesWrap.className = 'pretext-lines';
+        targetEl.textContent = '';
+        targetEl.appendChild(linesWrap);
+
+        if (mode !== 'interactive') {
+          targetEl.classList.add('pretext-static');
+        }
+
+        (async function() {
+          var pretextApi = null;
+          var prepared = null;
+          var lineHeight = 24;
+          var baseWidth = 0;
+          var targetFactor = 1;
+          var currentFactor = 1;
+          var rafId = null;
+          var resizeObserver = null;
+          var fallbackMode = false;
+
+          function renderFallback() {
+            if (fallbackMode) return;
+            fallbackMode = true;
+            linesWrap.textContent = baseText;
+          }
+
+          function renderLines(lines) {
+            linesWrap.innerHTML = '';
+            for (var i = 0; i < lines.length; i++) {
+              var line = document.createElement('span');
+              line.className = 'pretext-line';
+              line.style.setProperty('--line-index', String(i));
+              line.textContent = lines[i].text;
+              linesWrap.appendChild(line);
+            }
+          }
+
+          function layoutNow() {
+            if (!pretextApi || !prepared || fallbackMode) return;
+
+            var width = Math.max(220, Math.round(baseWidth * currentFactor));
+            var result = pretextApi.layoutWithLines(prepared, width, lineHeight);
+            if (!result || !Array.isArray(result.lines) || !result.lines.length) {
+              renderFallback();
+              return;
+            }
+            renderLines(result.lines);
+          }
+
+          function animateLayout() {
+            currentFactor += (targetFactor - currentFactor) * 0.16;
+            layoutNow();
+            if (Math.abs(targetFactor - currentFactor) > 0.002) {
+              rafId = window.requestAnimationFrame(animateLayout);
             } else {
-              item.style.opacity = '0';
-              setTimeout(() => item.style.display = 'none', 300);
+              rafId = null;
+            }
+          }
+
+          function requestLayout() {
+            if (rafId === null) {
+              rafId = window.requestAnimationFrame(animateLayout);
+            }
+          }
+
+          function recomputeBaseWidth() {
+            baseWidth = Math.max(220, targetEl.clientWidth);
+            currentFactor = 1;
+            targetFactor = 1;
+            layoutNow();
+          }
+
+          pretextApi = await loadPretextModule();
+          if (!pretextApi || !pretextApi.prepareWithSegments || !pretextApi.layoutWithLines) {
+            renderFallback();
+            return;
+          }
+
+          if (document.fonts && document.fonts.ready) {
+            try {
+              await document.fonts.ready;
+            } catch (error) {
+            }
+          }
+
+          var style = window.getComputedStyle(targetEl);
+          var parsedLineHeight = parseFloat(style.lineHeight);
+          var parsedFontSize = parseFloat(style.fontSize);
+          lineHeight = Number.isFinite(parsedLineHeight)
+            ? parsedLineHeight
+            : (Number.isFinite(parsedFontSize) ? parsedFontSize * 1.78 : 24);
+
+          try {
+            prepared = pretextApi.prepareWithSegments(baseText, fontSpecFromComputed(style));
+          } catch (error) {
+            renderFallback();
+            return;
+          }
+
+          targetEl.classList.add('pretext-enabled');
+          recomputeBaseWidth();
+
+          if ('ResizeObserver' in window) {
+            resizeObserver = new ResizeObserver(recomputeBaseWidth);
+            resizeObserver.observe(targetEl);
+          } else {
+            window.addEventListener('resize', recomputeBaseWidth);
+          }
+
+          if (mode === 'interactive' && heroSection && canHover && !reduceMotion) {
+            heroSection.addEventListener('pointermove', function(event) {
+              var rect = heroSection.getBoundingClientRect();
+              if (!rect.width) return;
+              var ratioX = clampPretext((event.clientX - rect.left) / rect.width, 0, 1);
+              targetFactor = 0.97 + ratioX * 0.06;
+              requestLayout();
+            });
+            heroSection.addEventListener('pointerleave', function() {
+              targetFactor = 1;
+              requestLayout();
+            });
+            heroSection.addEventListener('pointercancel', function() {
+              targetFactor = 1;
+              requestLayout();
+            });
+          }
+        })();
+      }
+
+      pretextTargets.forEach(function(targetEl) {
+        var modeAttr = String(targetEl.getAttribute('data-pretext-mode') || '').toLowerCase();
+        initPretextTarget(targetEl, modeAttr === 'interactive' ? 'interactive' : 'static');
+      });
+    }
+
+    var zipperCopyTargets = Array.prototype.slice.call(root.querySelectorAll('[data-copy-fx="zipper"]'));
+    if (zipperCopyTargets.length) {
+      zipperCopyTargets.forEach(function(targetEl) {
+        var baseText = (targetEl.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!baseText) return;
+
+        var zipperWrap = document.createElement('span');
+        zipperWrap.className = 'zipper-copy';
+        zipperWrap.setAttribute('aria-label', baseText);
+
+        Array.from(baseText).forEach(function(ch, index) {
+          var charEl = document.createElement('span');
+          charEl.className = 'zipper-copy-char';
+
+          if (/[，。！？；：,.!?;:、\s]/.test(ch)) {
+            charEl.classList.add('is-neutral');
+          } else if (index % 2 === 0) {
+            charEl.classList.add('is-upper');
+          } else {
+            charEl.classList.add('is-lower');
+          }
+
+          charEl.textContent = ch;
+          zipperWrap.appendChild(charEl);
+        });
+
+        var pullEl = document.createElement('span');
+        pullEl.className = 'zipper-copy-pull';
+        pullEl.setAttribute('aria-hidden', 'true');
+        pullEl.textContent = '◍';
+        zipperWrap.appendChild(pullEl);
+
+        targetEl.textContent = '';
+        targetEl.appendChild(zipperWrap);
+        targetEl.classList.add('is-zipper-ready');
+
+        if (reduceMotion) {
+          zipperWrap.classList.add('is-zipped');
+          return;
+        }
+
+        window.requestAnimationFrame(function() {
+          zipperWrap.classList.add('is-zipped');
+        });
+
+        function toggleZipperLoop() {
+          var delay = zipperWrap.classList.contains('is-open')
+            ? 1800 + Math.random() * 1400
+            : 2600 + Math.random() * 2200;
+
+          window.setTimeout(function() {
+            zipperWrap.classList.toggle('is-open');
+            toggleZipperLoop();
+          }, delay);
+        }
+
+        window.setTimeout(function() {
+          toggleZipperLoop();
+        }, 1200 + Math.random() * 900);
+      });
+    }
+
+    var titleStage = root.querySelector('[data-title-stage]');
+    if (titleStage && !reduceMotion) {
+      (function() {
+        var scoutEl = titleStage.querySelector('.hero-scout:not(.hero-scout-rival)');
+        var cargoEl = titleStage.querySelector('[data-scout-cargo]');
+        var propEl = titleStage.querySelector('[data-scout-prop]');
+        var rivalEl = titleStage.querySelector('[data-rival-scout]');
+        var rivalPropEl = titleStage.querySelector('[data-rival-prop]');
+        var titleWords = Array.prototype.slice.call(titleStage.querySelectorAll('[data-title-word]'));
+        var stageAnchors = Array.prototype.slice.call(root.querySelectorAll('[data-stage-anchor]'));
+        if (!scoutEl || titleWords.length < 2) return;
+
+        var stageTargets = [];
+        var scoutPos = { x: 0, y: 0 };
+        var rivalPos = { x: -140, y: -120 };
+        var stageBounds = { width: 0, height: 0 };
+        var movementId = 0;
+        var lastAutoScrollAt = 0;
+        var hasEntrancePlayed = false;
+        var resizeObserver = null;
+        var actionLibrary = [];
+        var actionCursor = 0;
+        var ACTION_LIBRARY_SIZE = 240;
+        var baseSeed = ((Date.now() & 0xfffffff) ^ (titleWords.length * 7919)) >>> 0;
+        var improvRand = createRng((baseSeed ^ 0x9e3779b9) >>> 0);
+        var GLOBAL_PACE = 2.42;
+        var GLOBAL_HOLD_SCALE = 2.36;
+        var GLOBAL_CYCLE_SCALE = 1.92;
+        var carryState = null;
+        var currentWords = titleWords.map(function(wordEl) {
+          return normalizeText(wordEl.textContent);
+        });
+        var logicalTemplates = createLogicalTemplates(currentWords);
+        var activeTemplateIndex = findTemplateIndexByWords(currentWords);
+
+        var tempoProfiles = [
+          { id: 'slow', min: 0.42, max: 0.62, holdMin: 280, holdMax: 520, agile: 0.04 },
+          { id: 'steady', min: 0.5, max: 0.72, holdMin: 230, holdMax: 430, agile: 0.12 },
+          { id: 'wave', min: 0.54, max: 0.78, holdMin: 200, holdMax: 360, agile: 0.2 },
+          { id: 'story', min: 0.46, max: 0.7, holdMin: 260, holdMax: 470, agile: 0.16 },
+          { id: 'agile', min: 0.62, max: 0.86, holdMin: 170, holdMax: 320, agile: 0.26 }
+        ];
+
+        var motionVariants = {
+          walk: [
+            { id: 'w1', speed: 0.9, bob: 2.2, stride: 0.66, sway: 0.28, cycle: 1.44, settle: 108 },
+            { id: 'w2', speed: 0.84, bob: 2.6, stride: 0.72, sway: 0.32, cycle: 1.52, settle: 120 },
+            { id: 'w3', speed: 0.96, bob: 1.9, stride: 0.6, sway: 0.24, cycle: 1.36, settle: 98 }
+          ],
+          run: [
+            { id: 'r1', speed: 0.9, bob: 3.7, stride: 0.94, sway: 0.58, cycle: 1.26, settle: 102 },
+            { id: 'r2', speed: 0.82, bob: 4.4, stride: 1.08, sway: 0.76, cycle: 1.12, settle: 94 },
+            { id: 'r3', speed: 1.0, bob: 3.2, stride: 0.86, sway: 0.48, cycle: 1.34, settle: 110 },
+            { id: 'r4', speed: 0.74, bob: 4.9, stride: 1.14, sway: 0.84, cycle: 1.02, settle: 84 }
+          ],
+          push: [
+            { id: 'p1', speed: 0.92, bob: 2.6, push: 1.18, sway: 0.2, cycle: 1.16, settle: 138 },
+            { id: 'p2', speed: 0.98, bob: 2.3, push: 1.36, sway: 0.16, cycle: 1.08, settle: 130 },
+            { id: 'p3', speed: 0.86, bob: 3.0, push: 1.08, sway: 0.22, cycle: 1.22, settle: 150 }
+          ],
+          jump: [
+            { id: 'j1', speed: 0.9, jump: 0.98, takeoff: 0.4, drift: 1.02, cycle: 1.14, settle: 176 },
+            { id: 'j2', speed: 0.82, jump: 1.18, takeoff: 0.35, drift: 1.32, cycle: 1.04, settle: 192 },
+            { id: 'j3', speed: 0.98, jump: 0.9, takeoff: 0.43, drift: 0.9, cycle: 1.2, settle: 164 }
+          ],
+          climb: [
+            { id: 'c1', speed: 0.92, climb: 1.0, sway: 1.02, cycle: 1.16, settle: 154 },
+            { id: 'c2', speed: 0.84, climb: 1.14, sway: 1.22, cycle: 1.08, settle: 170 },
+            { id: 'c3', speed: 0.98, climb: 0.9, sway: 0.92, cycle: 1.24, settle: 140 }
+          ],
+          vault: [
+            { id: 'v1', speed: 0.82, jump: 1.16, takeoff: 0.33, drift: 1.72, cycle: 1.04, settle: 202 },
+            { id: 'v2', speed: 0.76, jump: 1.26, takeoff: 0.31, drift: 2.02, cycle: 0.98, settle: 218 },
+            { id: 'v3', speed: 0.88, jump: 1.08, takeoff: 0.35, drift: 1.54, cycle: 1.1, settle: 186 }
+          ],
+          hop: [
+            { id: 'h1', speed: 0.86, jump: 0.62, takeoff: 0.45, drift: 0.72, cycle: 1.1, settle: 112 },
+            { id: 'h2', speed: 0.94, jump: 0.56, takeoff: 0.47, drift: 0.62, cycle: 1.16, settle: 104 },
+            { id: 'h3', speed: 0.8, jump: 0.7, takeoff: 0.43, drift: 0.78, cycle: 1.04, settle: 120 }
+          ]
+        };
+
+        var sportPlays = [
+          { key: 'basketball', mode: 'sport-basketball', icon: '🏀', pulse: 'push', hold: 320, linger: 220 },
+          { key: 'soccer', mode: 'sport-soccer', icon: '⚽', pulse: 'push', hold: 320, linger: 220 },
+          { key: 'cycling', mode: 'sport-cycling', icon: '🚲', pulse: 'jump', hold: 360, linger: 260 },
+          { key: 'badminton', mode: 'sport-badminton', icon: '🏸', pulse: 'climb', hold: 340, linger: 240 },
+          { key: 'swimming', mode: 'sport-swimming', icon: '🏊', pulse: 'climb', hold: 350, linger: 250 },
+          { key: 'toy-yoyo', mode: 'sport-toy', icon: '🪀', pulse: 'touch', hold: 300, linger: 220 },
+          { key: 'toy-cube', mode: 'sport-toy', icon: '🧩', pulse: 'touch', hold: 300, linger: 220 }
+        ];
+
+        var duelPlays = [
+          {
+            key: 'spar',
+            icon: '🥊',
+            rivalIcon: '🥊',
+            mainAttack: 'duel-strike',
+            rivalAttack: 'duel-strike',
+            defend: 'duel-guard',
+            hold: 276,
+            rounds: 5,
+            linger: 280,
+            pulse: 'push'
+          },
+          {
+            key: 'kick',
+            icon: '⚽',
+            rivalIcon: '🧤',
+            mainAttack: 'duel-kick',
+            rivalAttack: 'duel-kick',
+            defend: 'duel-guard',
+            hold: 290,
+            rounds: 5,
+            linger: 300,
+            pulse: 'jump'
+          },
+          {
+            key: 'rally',
+            icon: '🏸',
+            rivalIcon: '🏸',
+            mainAttack: 'sport-badminton',
+            rivalAttack: 'sport-badminton',
+            defend: 'duel-guard',
+            hold: 268,
+            rounds: 6,
+            linger: 260,
+            pulse: 'climb'
+          }
+        ];
+
+        var duelExchangePatterns = [
+          { attack: 'duel-strike', defend: 'duel-guard', recover: 'recover', lunge: 11, recoil: 9, beat: 0.92 },
+          { attack: 'duel-kick', defend: 'crouch', recover: 'recover', lunge: 14, recoil: 11, beat: 1.08 },
+          { attack: 'duel-strike', defend: 'hop', recover: 'duel-guard', lunge: 10, recoil: 8, beat: 0.88 },
+          { attack: 'push', defend: 'duel-guard', recover: 'stumble', lunge: 9, recoil: 12, beat: 0.96 },
+          { attack: 'run', defend: 'duel-guard', recover: 'recover', lunge: 12, recoil: 9, beat: 0.9 },
+          { attack: 'duel-kick', defend: 'duel-guard', recover: 'crouch', lunge: 15, recoil: 12, beat: 1.12 }
+        ];
+
+        var scoutAvatarKeys = ['classic', 'orc', 'titan', 'heroine', 'cyber', 'wanderer'];
+        var activeScoutAvatar = '';
+        var activeRivalAvatar = '';
+
+        function easeInOut(t) {
+          return t < 0.5
+            ? 4 * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function clamp(value, min, max) {
+          return Math.min(max, Math.max(min, value));
+        }
+
+        function randInt(rand, min, max) {
+          return Math.floor(rand() * (max - min + 1)) + min;
+        }
+
+        function pick(arr, rand) {
+          return arr[Math.floor(rand() * arr.length)];
+        }
+
+        function createRng(seed) {
+          var t = seed >>> 0;
+          return function() {
+            t += 0x6D2B79F5;
+            var r = Math.imul(t ^ (t >>> 15), t | 1);
+            r ^= r + Math.imul(r ^ (r >>> 7), r | 61);
+            return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+
+        function shuffleInPlace(list, rand) {
+          for (var i = list.length - 1; i > 0; i--) {
+            var j = Math.floor(rand() * (i + 1));
+            var temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+          }
+        }
+
+        function wait(ms) {
+          return new Promise(function(resolve) {
+            window.setTimeout(resolve, ms);
+          });
+        }
+
+        function pickAvatarKey(excludeKey) {
+          var pool = [];
+          for (var i = 0; i < scoutAvatarKeys.length; i++) {
+            if (scoutAvatarKeys[i] !== excludeKey) {
+              pool.push(scoutAvatarKeys[i]);
+            }
+          }
+          if (!pool.length) {
+            pool = scoutAvatarKeys.slice();
+          }
+          return pool[Math.floor(improvRand() * pool.length)] || 'classic';
+        }
+
+        function applyAvatar(targetEl, avatarKey) {
+          if (!targetEl || !avatarKey) return '';
+          if (targetEl.dataset.avatar === avatarKey) return avatarKey;
+          targetEl.dataset.avatar = avatarKey;
+          targetEl.classList.remove('is-avatar-shift');
+          void targetEl.offsetWidth;
+          targetEl.classList.add('is-avatar-shift');
+          window.setTimeout(function() {
+            targetEl.classList.remove('is-avatar-shift');
+          }, 420);
+          return avatarKey;
+        }
+
+        function refreshRivalAvatar(force, avoidKey) {
+          if (!rivalEl) return;
+          var avoid = avoidKey || activeScoutAvatar || '';
+          var next = activeRivalAvatar;
+          if (!next || force || next === avoid) {
+            next = pickAvatarKey(avoid);
+          }
+          activeRivalAvatar = applyAvatar(rivalEl, next) || activeRivalAvatar || next;
+        }
+
+        function refreshScoutAvatar(force) {
+          if (!scoutEl) return;
+          var next = activeScoutAvatar;
+          if (!next || force) {
+            next = pickAvatarKey(force ? activeScoutAvatar : '');
+          }
+          activeScoutAvatar = applyAvatar(scoutEl, next) || activeScoutAvatar || next;
+          if (rivalEl && (!activeRivalAvatar || activeRivalAvatar === activeScoutAvatar)) {
+            refreshRivalAvatar(true, activeScoutAvatar);
+          }
+        }
+
+        function updateScoutTransform() {
+          scoutEl.style.transform = 'translate(' + scoutPos.x.toFixed(2) + 'px, ' + scoutPos.y.toFixed(2) + 'px)';
+        }
+
+        function updateRivalTransform() {
+          if (!rivalEl) return;
+          rivalEl.style.transform = 'translate(' + rivalPos.x.toFixed(2) + 'px, ' + rivalPos.y.toFixed(2) + 'px)';
+        }
+
+        function clearRivalProp() {
+          if (!rivalPropEl) return;
+          rivalPropEl.classList.remove('is-visible');
+          rivalPropEl.textContent = '';
+          delete rivalPropEl.dataset.propType;
+        }
+
+        function showRivalProp(icon, type) {
+          if (!rivalPropEl) return;
+          rivalPropEl.textContent = icon || '🥊';
+          rivalPropEl.dataset.propType = type || 'duel';
+          rivalPropEl.classList.add('is-visible');
+        }
+
+        function setRivalVisible(visible) {
+          if (!rivalEl) return;
+          rivalEl.classList.toggle('is-active', Boolean(visible));
+        }
+
+        function setSummonState(mainSummoning, rivalSummoning) {
+          scoutEl.classList.toggle('is-summoning', Boolean(mainSummoning));
+          if (rivalEl) {
+            rivalEl.classList.toggle('is-materializing', Boolean(rivalSummoning));
+          }
+        }
+
+        function hideRival() {
+          if (!rivalEl) return;
+          clearRivalProp();
+          setSummonState(false, false);
+          rivalEl.dataset.mode = 'walk';
+          setRivalVisible(false);
+        }
+
+        function clampStageX(value) {
+          var width = stageBounds.width || 0;
+          if (!width) return value;
+          return clamp(value, -28, width - 10);
+        }
+
+        function clampStageY(value) {
+          var height = stageBounds.height || 0;
+          if (!height) return value;
+          return clamp(value, -28, height - 12);
+        }
+
+        function normalizeText(value) {
+          return (value || '').replace(/\s+/g, ' ').trim();
+        }
+
+        function createLogicalTemplates(seedWords) {
+          var templates = [];
+          var signatures = Object.create(null);
+          var baseTemplates = seedWords.length === 6
+            ? [
+              ['这里是', '圈地自萌的', '个人记录', '想到哪句就写哪句，', '有技术也有生活，', '慢慢生长'],
+              ['这里是', '写给未来的', '小型档案', '工作与日常并行，', '灵感和方法同路，', '慢慢沉淀'],
+              ['这是', '不设边界的', '长期现场', '想装点啥就装点啥，', '不追求统一模板，', '慢慢成形'],
+              ['这里是', '给自己留的', '安静角落', '记录问题也记录欢喜，', '技术之外还有生活，', '慢慢展开'],
+              ['这是', '持续更新的', '个人坐标', '想到哪句就写哪句，', '把真实片段留下，', '慢慢发芽']
+            ]
+            : [];
+
+          function addTemplate(words) {
+            if (!words || words.length !== seedWords.length) return;
+            var normalized = words.map(normalizeText);
+            var signature = normalized.join('|');
+            if (!signature || signatures[signature]) return;
+            signatures[signature] = true;
+            templates.push(normalized);
+          }
+
+          addTemplate(seedWords);
+          baseTemplates.forEach(addTemplate);
+
+          if (templates.length < 2 && seedWords.length) {
+            var fallback = seedWords.slice();
+            fallback[fallback.length - 1] = normalizeText(fallback[fallback.length - 1]) || '慢慢生长';
+            addTemplate(fallback);
+          }
+
+          return templates.length ? templates : [seedWords.slice()];
+        }
+
+        function findTemplateIndexByWords(words) {
+          var signature = words.map(normalizeText).join('|');
+          for (var i = 0; i < logicalTemplates.length; i++) {
+            if (logicalTemplates[i].join('|') === signature) {
+              return i;
+            }
+          }
+          return 0;
+        }
+
+        function getWordRow(index) {
+          var target = stageTargets[index];
+          if (target && target.type === 'word' && typeof target.row === 'number') {
+            return target.row;
+          }
+          return index < Math.ceil(titleWords.length / 2) ? 0 : 1;
+        }
+
+        function getRowWordIndices(row) {
+          var indices = [];
+          for (var i = 0; i < titleWords.length; i++) {
+            if (getWordRow(i) === row) {
+              indices.push(i);
+            }
+          }
+          return indices;
+        }
+
+        function pickTemplateForRow(row, keyIndex) {
+          var rowIndices = getRowWordIndices(row);
+          if (!rowIndices.length) return -1;
+
+          var candidates = [];
+          for (var i = 0; i < logicalTemplates.length; i++) {
+            var tpl = logicalTemplates[i];
+            var rowChanged = rowIndices.some(function(wordIndex) {
+              return normalizeText(tpl[wordIndex]) !== currentWords[wordIndex];
+            });
+            if (!rowChanged) continue;
+            if (typeof keyIndex === 'number' && normalizeText(tpl[keyIndex]) === currentWords[keyIndex]) {
+              continue;
+            }
+            candidates.push(i);
+          }
+
+          if (!candidates.length) return -1;
+          return candidates[Math.floor(improvRand() * candidates.length)];
+        }
+
+        function pickTemplateForIndex(index) {
+          var candidates = [];
+          for (var i = 0; i < logicalTemplates.length; i++) {
+            if (normalizeText(logicalTemplates[i][index]) !== currentWords[index]) {
+              candidates.push(i);
+            }
+          }
+          if (!candidates.length) return -1;
+          return candidates[Math.floor(improvRand() * candidates.length)];
+        }
+
+        function rewriteWordAt(index, nextText) {
+          var wordEl = titleWords[index];
+          var cleaned = normalizeText(nextText);
+          if (!wordEl || !cleaned || currentWords[index] === cleaned) return false;
+
+          wordEl.classList.remove('word-erasing');
+          wordEl.classList.remove('word-written', 'word-punct', 'word-swapped');
+          wordEl.textContent = cleaned;
+          currentWords[index] = cleaned;
+          wordEl.classList.remove('word-rewritten');
+          void wordEl.offsetWidth;
+          wordEl.classList.add('word-rewritten');
+          window.setTimeout(function() {
+            wordEl.classList.remove('word-rewritten');
+          }, 620);
+          return true;
+        }
+
+        function applyTemplateToRow(templateIndex, row) {
+          if (templateIndex < 0 || !logicalTemplates[templateIndex]) return;
+          var rowIndices = getRowWordIndices(row);
+          if (!rowIndices.length) return;
+          for (var i = 0; i < rowIndices.length; i++) {
+            var wordIndex = rowIndices[i];
+            rewriteWordAt(wordIndex, logicalTemplates[templateIndex][wordIndex]);
+          }
+          activeTemplateIndex = templateIndex;
+        }
+
+        function applyTemplateToWord(templateIndex, wordIndex) {
+          if (templateIndex < 0 || !logicalTemplates[templateIndex]) return;
+          if (rewriteWordAt(wordIndex, logicalTemplates[templateIndex][wordIndex])) {
+            activeTemplateIndex = templateIndex;
+          }
+        }
+
+        function hasInteractivePunctuation(text) {
+          return /[，。！？、,.!?;:：；]/.test(normalizeText(text));
+        }
+
+        function syncTemplateIndexFromCurrentWords() {
+          var idx = findTemplateIndexByWords(currentWords);
+          if (idx >= 0) {
+            activeTemplateIndex = idx;
+          }
+        }
+
+        function flashWordClass(wordEl, className, duration) {
+          if (!wordEl || !className) return;
+          wordEl.classList.remove(className);
+          void wordEl.offsetWidth;
+          wordEl.classList.add(className);
+          window.setTimeout(function() {
+            wordEl.classList.remove(className);
+          }, duration || 620);
+        }
+
+        function swapWordTexts(indexA, indexB) {
+          if (indexA === indexB) return false;
+          var wordA = titleWords[indexA];
+          var wordB = titleWords[indexB];
+          if (!wordA || !wordB) return false;
+
+          var textA = normalizeText(currentWords[indexA]);
+          var textB = normalizeText(currentWords[indexB]);
+          if (!textA || !textB) return false;
+
+          wordA.textContent = textB;
+          wordB.textContent = textA;
+          currentWords[indexA] = textB;
+          currentWords[indexB] = textA;
+
+          flashWordClass(wordA, 'word-swapped', 680);
+          flashWordClass(wordB, 'word-swapped', 680);
+          syncTemplateIndexFromCurrentWords();
+          return true;
+        }
+
+        async function handwriteWordAt(index, nextText, loopId) {
+          var wordEl = titleWords[index];
+          var cleaned = normalizeText(nextText);
+          if (!wordEl || !cleaned || currentWords[index] === cleaned) return false;
+
+          wordEl.classList.remove('word-erasing');
+          wordEl.classList.remove('word-rewritten', 'word-swapped', 'word-punct');
+          wordEl.classList.add('word-written');
+          wordEl.textContent = '';
+
+          var glyphs = cleaned.split('');
+          for (var i = 0; i < glyphs.length; i++) {
+            if (loopId !== movementId) {
+              wordEl.classList.remove('word-written');
+              return false;
+            }
+            wordEl.textContent += glyphs[i];
+            await wait(Math.round((42 + i * 6) * GLOBAL_PACE));
+          }
+
+          currentWords[index] = cleaned;
+          wordEl.classList.remove('word-written');
+          flashWordClass(wordEl, 'word-rewritten', 620);
+          return true;
+        }
+
+        async function applyTemplateWithHandwrite(templateIndex, row, targetIndex, loopId) {
+          if (templateIndex < 0 || !logicalTemplates[templateIndex]) return false;
+          var rowIndices = getRowWordIndices(row);
+          if (!rowIndices.length) return false;
+
+          var template = logicalTemplates[templateIndex];
+          var targetInRow = rowIndices.indexOf(targetIndex) >= 0;
+
+          for (var i = 0; i < rowIndices.length; i++) {
+            var wordIndex = rowIndices[i];
+            if (targetInRow && wordIndex === targetIndex) continue;
+            rewriteWordAt(wordIndex, template[wordIndex]);
+          }
+
+          if (targetInRow) {
+            await handwriteWordAt(targetIndex, template[targetIndex], loopId);
+          } else {
+            rewriteWordAt(targetIndex, template[targetIndex]);
+          }
+
+          activeTemplateIndex = templateIndex;
+          return true;
+        }
+
+        function clearCarryVisual() {
+          if (carryState && carryState.sourceEl) {
+            carryState.sourceEl.classList.remove('word-lifted');
+          }
+          carryState = null;
+          scoutEl.classList.remove('is-carrying');
+          if (cargoEl) {
+            cargoEl.textContent = '';
+            cargoEl.classList.remove('is-visible');
+          }
+          if (propEl) {
+            propEl.textContent = '';
+            propEl.classList.remove('is-visible');
+            delete propEl.dataset.propType;
+          }
+        }
+
+        function startCarry(wordEl) {
+          if (!wordEl) return;
+          clearCarryVisual();
+          var carriedText = (wordEl.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!carriedText) return;
+          carryState = {
+            text: carriedText,
+            sourceEl: wordEl
+          };
+          wordEl.classList.add('word-lifted');
+          scoutEl.classList.add('is-carrying');
+          if (cargoEl) {
+            cargoEl.textContent = carriedText;
+            cargoEl.classList.add('is-visible');
+          }
+        }
+
+        function showScoutProp(play) {
+          if (!propEl || !play) return;
+          var propType = play.key || 'toy';
+          propEl.dataset.propType = propType;
+          if (play.context) {
+            propEl.dataset.propContext = play.context;
+          } else {
+            delete propEl.dataset.propContext;
+          }
+          var useCustomEntranceVisual = (
+            propType === 'parachute' ||
+            propType === 'glider' ||
+            propType === 'bungee' ||
+            propType === 'plane'
+          ) && play.context !== 'entrance';
+          if (
+            useCustomEntranceVisual
+          ) {
+            propEl.textContent = play.icon || '';
+            propEl.dataset.propVisual = 'custom';
+          } else {
+            propEl.textContent = play.icon || '🪀';
+            delete propEl.dataset.propVisual;
+          }
+          propEl.classList.add('is-visible');
+        }
+
+        function clearScoutProp() {
+          if (!propEl) return;
+          propEl.classList.remove('is-visible');
+          propEl.textContent = '';
+          delete propEl.dataset.propType;
+          delete propEl.dataset.propVisual;
+          delete propEl.dataset.propContext;
+        }
+
+        function pickSportPlay() {
+          if (!sportPlays.length) return null;
+          return sportPlays[Math.floor(improvRand() * sportPlays.length)];
+        }
+
+        function pickDuelPlay() {
+          if (!duelPlays.length) return null;
+          return duelPlays[Math.floor(improvRand() * duelPlays.length)];
+        }
+
+        function measureStageTargets() {
+          var stageRect = titleStage.getBoundingClientRect();
+          if (!stageRect.width || !stageRect.height) return false;
+
+          var nextTargets = [];
+          var rowTops = [];
+          var maxAnchorBottom = stageRect.height;
+
+          titleWords.forEach(function(word, index) {
+            var rect = word.getBoundingClientRect();
+            var row = -1;
+            for (var r = 0; r < rowTops.length; r++) {
+              if (Math.abs(rect.top - rowTops[r]) <= 18) {
+                row = r;
+                break;
+              }
+            }
+            if (row === -1) {
+              row = rowTops.length;
+              rowTops.push(rect.top);
+            }
+            nextTargets.push({
+              id: 'word-' + index,
+              type: 'word',
+              index: index,
+              row: row,
+              el: word,
+              x: rect.left - stageRect.left + rect.width / 2,
+              y: rect.top - stageRect.top + rect.height * 0.6,
+              h: rect.height
+            });
+          });
+
+          stageAnchors.forEach(function(anchor, index) {
+            if (!anchor || !anchor.getBoundingClientRect) return;
+            var rect = anchor.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+            maxAnchorBottom = Math.max(maxAnchorBottom, rect.bottom - stageRect.top);
+
+            var role = 'metric';
+            if (anchor.classList.contains('editorial-kicker')) {
+              role = 'kicker';
+            } else if (anchor.classList.contains('editorial-subtitle')) {
+              role = 'subtitle';
+            } else if (anchor.classList.contains('editorial-hero-content')) {
+              role = 'card';
+            } else if (anchor.classList.contains('editorial-metrics')) {
+              role = 'metrics-wrap';
+            } else if (anchor.classList.contains('identity-card')) {
+              role = 'identity';
+            }
+
+            var yFactor = 0.76;
+            if (role === 'kicker') {
+              yFactor = 1.04;
+            } else if (role === 'subtitle') {
+              yFactor = 0.82;
+            } else if (role === 'card') {
+              yFactor = 0.58;
+            } else if (role === 'metrics-wrap') {
+              yFactor = 0.68;
+            } else if (role === 'identity') {
+              yFactor = 0.62;
+            }
+
+            nextTargets.push({
+              id: 'anchor-' + index,
+              type: 'anchor',
+              role: role,
+              el: anchor,
+              x: rect.left - stageRect.left + rect.width / 2,
+              y: rect.top - stageRect.top + rect.height * yFactor,
+              h: rect.height
+            });
+          });
+
+          var stageHost = heroCard && heroCard.getBoundingClientRect
+            ? heroCard.getBoundingClientRect()
+            : stageRect;
+          if (!stageHost.width || !stageHost.height) {
+            stageHost = stageRect;
+          }
+
+          stageBounds.width = stageRect.width;
+          stageBounds.height = Math.max(
+            stageRect.height,
+            stageHost.top - stageRect.top + stageHost.height + 36,
+            maxAnchorBottom + 34
+          );
+
+          var roamCandidates = [
+            { x: 0.05, y: 0.12 }, { x: 0.5, y: 0.08 }, { x: 0.95, y: 0.12 },
+            { x: 0.14, y: 0.34 }, { x: 0.86, y: 0.32 },
+            { x: 0.12, y: 0.56 }, { x: 0.5, y: 0.54 }, { x: 0.9, y: 0.58 },
+            { x: 0.08, y: 0.76 }, { x: 0.24, y: 0.86 }, { x: 0.52, y: 0.86 }, { x: 0.82, y: 0.84 }, { x: 0.94, y: 0.74 }
+          ];
+
+          function canPlaceRoamPoint(px, py, minDistance) {
+            for (var i = 0; i < nextTargets.length; i++) {
+              var target = nextTargets[i];
+              if (!target) continue;
+              var dx = target.x - px;
+              var dy = target.y - py;
+              var limit = target.type === 'word' ? minDistance : minDistance * 0.74;
+              if (Math.hypot(dx, dy) < limit) return false;
+            }
+            return true;
+          }
+
+          var roamCount = 0;
+          for (var rc = 0; rc < roamCandidates.length; rc++) {
+            var candidate = roamCandidates[rc];
+            var rx = stageHost.left - stageRect.left + stageHost.width * candidate.x;
+            var ry = stageHost.top - stageRect.top + stageHost.height * candidate.y;
+            if (rx < -44 || rx > stageRect.width + 44) continue;
+            if (ry < -32 || ry > stageBounds.height + 24) continue;
+            if (!canPlaceRoamPoint(rx, ry, 72)) continue;
+
+            nextTargets.push({
+              id: 'roam-' + roamCount,
+              type: 'roam',
+              role: 'blank',
+              x: rx,
+              y: ry,
+              h: 20
+            });
+            roamCount += 1;
+          }
+
+          if (roamCount < 3) {
+            var fallbackRoams = [
+              { x: stageHost.left - stageRect.left + stageHost.width * 0.08, y: stageHost.top - stageRect.top + stageHost.height * 0.84 },
+              { x: stageHost.left - stageRect.left + stageHost.width * 0.9, y: stageHost.top - stageRect.top + stageHost.height * 0.82 },
+              { x: stageHost.left - stageRect.left + stageHost.width * 0.5, y: stageHost.top - stageRect.top + stageHost.height * 0.9 }
+            ];
+
+            for (var fr = 0; fr < fallbackRoams.length && roamCount < 3; fr++) {
+              var fallback = fallbackRoams[fr];
+              if (!canPlaceRoamPoint(fallback.x, fallback.y, 52)) continue;
+              nextTargets.push({
+                id: 'roam-' + roamCount,
+                type: 'roam',
+                role: 'blank',
+                x: fallback.x,
+                y: fallback.y,
+                h: 20
+              });
+              roamCount += 1;
+            }
+          }
+
+          stageTargets = nextTargets;
+          if (!stageTargets.length) return false;
+
+          scoutPos.x = stageTargets[0].x - 24;
+          scoutPos.y = stageTargets[0].y - stageTargets[0].h * 0.9;
+          updateScoutTransform();
+          if (rivalEl) {
+            rivalPos.x = clampStageX(scoutPos.x - 44);
+            rivalPos.y = clampStageY(scoutPos.y + 4);
+            updateRivalTransform();
+            hideRival();
+          }
+          return true;
+        }
+
+        function getDistanceInfo(fromTarget, toTarget) {
+          var dx = toTarget.x - fromTarget.x;
+          var dy = toTarget.y - fromTarget.y;
+          return {
+            dx: dx,
+            dy: dy,
+            distance: Math.hypot(dx, dy)
+          };
+        }
+
+        function nearestWordIndexForTarget(targetIndex) {
+          var target = stageTargets[targetIndex];
+          if (!target) return 0;
+          var bestIndex = 0;
+          var bestScore = Number.POSITIVE_INFINITY;
+          for (var i = 0; i < titleWords.length; i++) {
+            var wordTarget = stageTargets[i];
+            if (!wordTarget || wordTarget.type !== 'word') continue;
+            var delta = getDistanceInfo(target, wordTarget);
+            var score = delta.distance + Math.abs(delta.dx) * 0.18;
+            if (score < bestScore) {
+              bestScore = score;
+              bestIndex = i;
+            }
+          }
+          return bestIndex;
+        }
+
+        function getRoamIndices() {
+          var indices = [];
+          for (var i = 0; i < stageTargets.length; i++) {
+            if (stageTargets[i] && stageTargets[i].type === 'roam') {
+              indices.push(i);
+            }
+          }
+          return indices;
+        }
+
+        function findNearbyAnchorIndex(currentIndex, rand, maxDistance) {
+          var wordCount = titleWords.length;
+          var currentTarget = stageTargets[currentIndex];
+          if (!currentTarget) return -1;
+
+          var limit = maxDistance || 240;
+          var candidates = [];
+          for (var i = wordCount; i < stageTargets.length; i++) {
+            var anchor = stageTargets[i];
+            if (!anchor || anchor.type !== 'anchor') continue;
+            if (i === currentIndex) continue;
+            var delta = getDistanceInfo(currentTarget, anchor);
+            if (delta.distance > limit) continue;
+            if (Math.abs(delta.dy) > limit * 0.78) continue;
+            candidates.push({
+              index: i,
+              score: delta.distance + Math.abs(delta.dx) * 0.15
+            });
+          }
+
+          if (!candidates.length) return -1;
+          candidates.sort(function(a, b) { return a.score - b.score; });
+          var pickLimit = Math.min(3, candidates.length);
+          return candidates[Math.floor(rand() * pickLimit)].index;
+        }
+
+        function findNearbyRoamIndex(currentIndex, rand, maxDistance) {
+          var currentTarget = stageTargets[currentIndex];
+          if (!currentTarget) return -1;
+
+          var limit = maxDistance || 320;
+          var candidates = [];
+          for (var i = 0; i < stageTargets.length; i++) {
+            var roam = stageTargets[i];
+            if (!roam || roam.type !== 'roam') continue;
+            if (i === currentIndex) continue;
+            var delta = getDistanceInfo(currentTarget, roam);
+            if (delta.distance > limit) continue;
+            candidates.push({
+              index: i,
+              score: delta.distance + Math.abs(delta.dy) * 0.08
+            });
+          }
+
+          if (!candidates.length) return -1;
+          candidates.sort(function(a, b) { return a.score - b.score; });
+          var pickLimit = Math.min(4, candidates.length);
+          return candidates[Math.floor(rand() * pickLimit)].index;
+        }
+
+        function chooseNeighborRoamIndex(currentIndex, rand) {
+          var roamIndices = getRoamIndices();
+          if (!roamIndices.length) return -1;
+
+          var currentTarget = stageTargets[currentIndex];
+          if (!currentTarget) return roamIndices[0];
+
+          var candidates = [];
+          for (var i = 0; i < roamIndices.length; i++) {
+            var index = roamIndices[i];
+            if (index === currentIndex) continue;
+            var roam = stageTargets[index];
+            if (!roam) continue;
+            var delta = getDistanceInfo(currentTarget, roam);
+            candidates.push({
+              index: index,
+              score: delta.distance + Math.abs(delta.dx) * 0.06
+            });
+          }
+
+          if (!candidates.length) return roamIndices[0];
+          candidates.sort(function(a, b) { return a.score - b.score; });
+          var pickLimit = Math.min(5, candidates.length);
+          return candidates[Math.floor(rand() * pickLimit)].index;
+        }
+
+        function chooseNeighborWordIndex(currentWord, rand) {
+          var currentTarget = stageTargets[currentWord];
+          if (!currentTarget || currentTarget.type !== 'word') return clamp(currentWord, 0, titleWords.length - 1);
+
+          var rowIndices = getRowWordIndices(currentTarget.row);
+          if (!rowIndices.length) return currentWord;
+
+          var pos = rowIndices.indexOf(currentWord);
+          if (pos < 0) return currentWord;
+
+          var roll = rand();
+          if (roll < 0.22) return currentWord;
+
+          if (roll < 0.88 && rowIndices.length > 1) {
+            var dir = rand() < 0.5 ? -1 : 1;
+            var nextPos = clamp(pos + dir, 0, rowIndices.length - 1);
+            if (nextPos === pos) {
+              nextPos = clamp(pos - dir, 0, rowIndices.length - 1);
+            }
+            return rowIndices[nextPos];
+          }
+
+          if (roll < 0.96 && rowIndices.length > 2) {
+            var jumpDir = rand() < 0.5 ? -1 : 1;
+            var jumpPos = clamp(pos + jumpDir * 2, 0, rowIndices.length - 1);
+            if (jumpPos === pos) {
+              jumpPos = clamp(pos + jumpDir, 0, rowIndices.length - 1);
+            }
+            return rowIndices[jumpPos];
+          }
+
+          var otherRow = currentTarget.row === 0 ? 1 : 0;
+          var otherRowIndices = getRowWordIndices(otherRow);
+          if (!otherRowIndices.length) return currentWord;
+
+          var bestIndex = otherRowIndices[0];
+          var bestDx = Number.POSITIVE_INFINITY;
+          for (var i = 0; i < otherRowIndices.length; i++) {
+            var candidate = stageTargets[otherRowIndices[i]];
+            if (!candidate) continue;
+            var dx = Math.abs(candidate.x - currentTarget.x);
+            if (dx < bestDx) {
+              bestDx = dx;
+              bestIndex = otherRowIndices[i];
+            }
+          }
+          return bestIndex;
+        }
+
+        function constrainTargetStep(currentIndex, proposedIndex) {
+          if (currentIndex === proposedIndex) return proposedIndex;
+          var fromTarget = stageTargets[currentIndex];
+          var toTarget = stageTargets[proposedIndex];
+          if (!fromTarget || !toTarget) return proposedIndex;
+
+          var movement = getDistanceInfo(fromTarget, toTarget);
+          if (movement.distance <= 236) return proposedIndex;
+          if ((fromTarget.type === 'roam' || toTarget.type === 'roam') && movement.distance <= 360) {
+            return proposedIndex;
+          }
+
+          var bestIndex = -1;
+          var bestScore = Number.POSITIVE_INFINITY;
+          for (var i = 0; i < stageTargets.length; i++) {
+            if (i === currentIndex) continue;
+            if (i === proposedIndex) continue;
+            var mid = stageTargets[i];
+            if (!mid) continue;
+            if (mid.type === 'anchor') continue;
+
+            var legA = getDistanceInfo(fromTarget, mid).distance;
+            var legLimit = mid.type === 'roam' ? 248 : 196;
+            if (legA > legLimit) continue;
+            var legB = getDistanceInfo(mid, toTarget).distance;
+            if (legB >= movement.distance) continue;
+
+            var rowPenalty = 0;
+            if (fromTarget.type === 'word' && typeof fromTarget.row === 'number' && mid.row !== fromTarget.row) {
+              rowPenalty = 16;
+            } else if (mid.type === 'roam') {
+              rowPenalty = 10;
+            }
+            var score = legA * 0.78 + legB * 0.34 + rowPenalty;
+            if (score < bestScore) {
+              bestScore = score;
+              bestIndex = i;
+            }
+          }
+
+          return bestIndex >= 0 ? bestIndex : proposedIndex;
+        }
+
+        function chooseMotion(distance, deltaY, lastMotion, profile, rand, targetType) {
+          var roll = rand();
+          var vertical = Math.abs(deltaY);
+          if (vertical >= 86 && distance <= 360) {
+            return roll < 0.82 ? 'climb' : 'walk';
+          }
+
+          if (targetType === 'roam') {
+            if (distance >= 380) {
+              if (roll < 0.3) return 'run';
+              if (roll < 0.58) return 'jump';
+              if (roll < 0.84) return 'walk';
+              return 'hop';
+            }
+            if (distance >= 250) {
+              if (roll < 0.42) return 'run';
+              if (roll < 0.72) return 'walk';
+              if (roll < 0.9) return 'hop';
+              return 'jump';
+            }
+            if (distance >= 150) {
+              if (roll < 0.34) return 'run';
+              if (roll < 0.84) return 'walk';
+              return 'hop';
+            }
+            if (roll < 0.16) return 'push';
+            if (roll < 0.9) return 'walk';
+            return 'run';
+          }
+
+          if (targetType === 'anchor' && vertical > 98) {
+            if (distance > 380 && roll < 0.18) return 'jump';
+            if (roll < 0.64) return 'climb';
+            if (roll < 0.9) return 'walk';
+            return 'run';
+          }
+
+          if (distance >= 420) {
+            if (roll < 0.22 + profile.agile * 0.1) return 'vault';
+            if (roll < 0.62) return 'jump';
+            if (roll < 0.84) return 'run';
+            return 'climb';
+          }
+
+          if (distance >= 320) {
+            if (roll < 0.48) return 'run';
+            if (roll < 0.78) return 'walk';
+            return 'climb';
+          }
+
+          if (distance >= 220) {
+            if (vertical > 66 && roll < 0.28) return 'climb';
+            if (roll < 0.36) return 'run';
+            if (roll < 0.8) return 'walk';
+            if (roll < 0.94) return 'push';
+            return 'run';
+          }
+
+          if (distance >= 140) {
+            if (roll < 0.24) return 'run';
+            if (roll < 0.78) return 'walk';
+            if (roll < 0.92) return 'push';
+            return 'run';
+          }
+
+          if (lastMotion === 'push' && roll < 0.46) return 'walk';
+          if (roll < 0.22) return 'push';
+          if (roll < 0.9) return 'walk';
+          return 'run';
+        }
+
+        function chooseTargetIndex(current, rand, index, length) {
+          var targetCount = stageTargets.length;
+          if (!targetCount) return 0;
+
+          var currentTarget = stageTargets[current] || stageTargets[0];
+          if (!currentTarget) return 0;
+
+          if (currentTarget.type === 'word') {
+            var roamChance = (index % 3 === 1 ? 0.52 : 0.36);
+            if (rand() < roamChance) {
+              var nearbyRoam = findNearbyRoamIndex(current, rand, 320);
+              if (nearbyRoam >= 0) {
+                return nearbyRoam;
+              }
+            }
+
+            var anchorChance = (index % 4 === 2 ? 0.26 : 0.14);
+            if (rand() < anchorChance) {
+              var nearbyAnchor = findNearbyAnchorIndex(current, rand, 520);
+              if (nearbyAnchor >= 0) {
+                return nearbyAnchor;
+              }
+            }
+            return chooseNeighborWordIndex(currentTarget.index, rand);
+          }
+
+          if (currentTarget.type === 'anchor') {
+            if (rand() < 0.44) {
+              var roamFromAnchor = findNearbyRoamIndex(current, rand, 360);
+              if (roamFromAnchor >= 0) {
+                return roamFromAnchor;
+              }
+            }
+            if (rand() < 0.18) {
+              var nextAnchor = findNearbyAnchorIndex(current, rand, 420);
+              if (nextAnchor >= 0) {
+                return nextAnchor;
+              }
+            }
+            if (index === length - 1) return 0;
+            return nearestWordIndexForTarget(current);
+          }
+
+          if (currentTarget.type === 'roam') {
+            if (rand() < 0.62) {
+              var roamNeighbor = chooseNeighborRoamIndex(current, rand);
+              if (roamNeighbor >= 0) {
+                return roamNeighbor;
+              }
+            }
+            if (rand() < 0.28) {
+              var anchorFromRoam = findNearbyAnchorIndex(current, rand, 300);
+              if (anchorFromRoam >= 0) {
+                return anchorFromRoam;
+              }
+            }
+            return nearestWordIndexForTarget(current);
+          }
+
+          if (index === length - 1) return 0;
+          return nearestWordIndexForTarget(current);
+        }
+
+        function chooseAction(currentTarget, nextTarget, motion, profile, rand, movement, stepIndex, stepCount) {
+          if (!nextTarget) return 'touch';
+          if (nextTarget.type === 'roam') {
+            var roamRoll = rand();
+            if (motion === 'walk' || motion === 'run' || motion === 'hop' || motion === 'jump') {
+              if (roamRoll < 0.04) return 'duel_play';
+              if (roamRoll < 0.24) return 'sport_play';
+            }
+            if (roamRoll < 0.92) return 'inspect';
+            if (rand() < 0.4) return 'lookback';
+            return 'touch';
+          }
+
+          if (nextTarget.type === 'anchor') {
+            if (
+              nextTarget.role === 'card' ||
+              nextTarget.role === 'metrics-wrap' ||
+              nextTarget.role === 'identity'
+            ) {
+              if (rand() < 0.04) return 'duel_play';
+            }
+            if (rand() < 0.16) return 'lookback';
+            return rand() < 0.68 ? 'inspect' : 'tap';
+          }
+
+          var sameRow = Boolean(
+            currentTarget &&
+            currentTarget.type === 'word' &&
+            nextTarget.type === 'word' &&
+            typeof currentTarget.row === 'number' &&
+            currentTarget.row === nextTarget.row
+          );
+          var distance = movement ? movement.distance : 0;
+          var vertical = movement ? Math.abs(movement.dy) : 0;
+          var nextWordText = nextTarget && nextTarget.type === 'word'
+            ? (currentWords[nextTarget.index] || (nextTarget.el ? nextTarget.el.textContent : ''))
+            : '';
+          var punctuated = hasInteractivePunctuation(nextWordText);
+
+          if (
+            currentTarget &&
+            currentTarget.type === 'word' &&
+            nextTarget.type === 'word' &&
+            currentTarget.index !== nextTarget.index &&
+            sameRow &&
+            (motion === 'walk' || motion === 'run' || motion === 'push') &&
+            rand() < (0.1 + profile.agile * 0.08)
+          ) {
+            return 'swap';
+          }
+
+          if (
+            currentTarget &&
+            currentTarget.type === 'word' &&
+            nextTarget.type === 'word' &&
+            currentTarget.index !== nextTarget.index &&
+            sameRow &&
+            (motion === 'walk' || motion === 'run' || motion === 'push') &&
+            rand() < (0.22 + profile.agile * 0.16)
+          ) {
+            return 'carry';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            sameRow &&
+            (motion === 'walk' || motion === 'push') &&
+            rand() < (0.16 + profile.agile * 0.08)
+          ) {
+            return 'push_align';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            punctuated &&
+            rand() < 0.18
+          ) {
+            return 'punct';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            vertical > 34 &&
+            distance < 260 &&
+            rand() < 0.2
+          ) {
+            return 'reach_word';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            motion === 'walk' &&
+            distance > 168 &&
+            distance < 320 &&
+            rand() < (0.14 + profile.agile * 0.08)
+          ) {
+            return 'straddle';
+          }
+
+          if (
+            (motion === 'walk' || motion === 'run') &&
+            distance > 112 &&
+            rand() < (0.08 + profile.agile * 0.05)
+          ) {
+            return 'stumble';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            motion !== 'jump' &&
+            motion !== 'vault' &&
+            rand() < (0.05 + profile.agile * 0.04)
+          ) {
+            return 'erase_write';
+          }
+
+          if (nextTarget.type === 'word' && rand() < 0.12) {
+            return 'inspect_word';
+          }
+
+          if (nextTarget.type === 'word' && rand() < 0.08) {
+            return 'think';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            (motion === 'walk' || motion === 'run' || motion === 'hop') &&
+            rand() < (0.02 + profile.agile * 0.03)
+          ) {
+            return 'sport_play';
+          }
+
+          if (
+            nextTarget.type === 'word' &&
+            normalizeText(nextWordText).length >= 3 &&
+            rand() < 0.06
+          ) {
+            return 'sit';
+          }
+
+          if (stepIndex >= stepCount - 2 && rand() < 0.14) {
+            return 'lookback';
+          }
+
+          return motion === 'push' ? 'nudge' : 'touch';
+        }
+
+        function buildRoutineSignature(steps) {
+          return steps.map(function(step) {
+            return [
+              step.target,
+              step.motion,
+              step.variant.id,
+              step.action,
+              Math.round(step.tempo * 100),
+              step.hold
+            ].join(':');
+          }).join('|');
+        }
+
+        function buildRoutine(rand, routineId) {
+          var profile = pick(tempoProfiles, rand);
+          var currentTarget = randInt(rand, 0, titleWords.length - 1);
+          var lastMotion = 'walk';
+          var length = randInt(rand, 4, 7);
+          var steps = [];
+
+          for (var i = 0; i < length; i++) {
+            var nextTargetIndex = chooseTargetIndex(currentTarget, rand, i, length);
+            nextTargetIndex = constrainTargetStep(currentTarget, nextTargetIndex);
+            var fromTarget = stageTargets[currentTarget];
+            var nextTarget = stageTargets[nextTargetIndex];
+            if (!fromTarget || !nextTarget) continue;
+
+            var movement = getDistanceInfo(fromTarget, nextTarget);
+            var motion = chooseMotion(
+              movement.distance,
+              movement.dy,
+              lastMotion,
+              profile,
+              rand,
+              nextTarget.type
+            );
+            var variant = pick(motionVariants[motion], rand);
+            var wave = Math.sin(((i + 1) / (length + 1)) * Math.PI);
+            var tempo = clamp(
+              profile.min + (profile.max - profile.min) * rand() + (wave - 0.5) * 0.14,
+              0.4,
+              0.9
+            );
+            var holdMin = Math.max(90, profile.holdMin + Math.round((variant.settle - 120) * 0.34));
+            var holdMax = Math.max(holdMin + 40, profile.holdMax + Math.round((variant.settle - 120) * 0.54));
+            var hold = Math.round(randInt(rand, holdMin, holdMax) * GLOBAL_HOLD_SCALE);
+            var action = chooseAction(fromTarget, nextTarget, motion, profile, rand, movement, i, length);
+
+            steps.push({
+              target: nextTargetIndex,
+              motion: motion,
+              variant: variant,
+              tempo: tempo,
+              hold: hold,
+              distance: movement.distance,
+              action: action
+            });
+
+            currentTarget = nextTargetIndex;
+            lastMotion = motion;
+          }
+
+          return {
+            id: routineId,
+            profile: profile.id,
+            steps: steps
+          };
+        }
+
+        function buildActionLibrary() {
+          actionLibrary = [];
+          actionCursor = 0;
+
+          var rand = createRng(baseSeed ^ stageTargets.length ^ (movementId * 31));
+          var signatures = Object.create(null);
+          var attempts = 0;
+
+          while (actionLibrary.length < ACTION_LIBRARY_SIZE && attempts < ACTION_LIBRARY_SIZE * 26) {
+            attempts += 1;
+            var routine = buildRoutine(rand, actionLibrary.length + 1);
+            if (!routine.steps.length) continue;
+            var signature = buildRoutineSignature(routine.steps);
+            if (signatures[signature]) continue;
+            signatures[signature] = true;
+            actionLibrary.push(routine);
+          }
+
+          if (!actionLibrary.length) {
+            var anchorTarget = stageTargets.length > titleWords.length ? titleWords.length : 0;
+            actionLibrary.push({
+              id: 1,
+              profile: 'steady',
+              steps: [
+                { target: 0, motion: 'walk', variant: motionVariants.walk[0], tempo: 0.68, hold: 280, distance: 90, action: 'touch' },
+                { target: 1, motion: 'run', variant: motionVariants.run[0], tempo: 0.78, hold: 320, distance: 150, action: 'carry' },
+                { target: anchorTarget, motion: 'walk', variant: motionVariants.walk[1], tempo: 0.64, hold: 300, distance: 190, action: 'inspect' }
+              ]
+            });
+          }
+
+          shuffleInPlace(actionLibrary, rand);
+          scoutEl.dataset.librarySize = String(actionLibrary.length);
+        }
+
+        function nextRoutine() {
+          if (!actionLibrary.length) return null;
+          if (actionCursor >= actionLibrary.length) {
+            actionCursor = 0;
+            var reshuffleRand = createRng((Date.now() ^ (movementId * 131) ^ actionLibrary.length) >>> 0);
+            shuffleInPlace(actionLibrary, reshuffleRand);
+          }
+          var routine = actionLibrary[actionCursor++];
+          scoutEl.dataset.routine = String(routine.id);
+          scoutEl.dataset.profile = routine.profile;
+          return routine;
+        }
+
+        function applyStepTuning(step, fromX, toX) {
+          var cycle = clamp((0.44 / step.tempo) * step.variant.cycle * GLOBAL_CYCLE_SCALE, 0.42, 1.28);
+          scoutEl.style.setProperty('--scout-cycle', cycle.toFixed(3) + 's');
+          scoutEl.style.setProperty('--scout-push-cycle', (cycle * 0.96).toFixed(3) + 's');
+          scoutEl.style.setProperty('--scout-climb-cycle', (cycle * 1.24).toFixed(3) + 's');
+          scoutEl.style.setProperty('--scout-walk-cycle', (cycle * 1.24).toFixed(3) + 's');
+          scoutEl.style.setProperty('--scout-idle-cycle', (cycle * 1.54).toFixed(3) + 's');
+          scoutEl.dataset.facing = toX >= fromX ? 'right' : 'left';
+
+          var mode = step.motion;
+          if (mode === 'run' && (step.tempo < 0.82 || (step.distance || 0) < 220)) {
+            mode = 'walk';
+          }
+          if (step.action === 'straddle' && (mode === 'walk' || mode === 'run')) {
+            mode = 'hop';
+          }
+          if (step.action === 'stumble' && (mode === 'walk' || mode === 'run')) {
+            mode = 'stumble';
+          }
+          if (step.action === 'carry' && carryState) {
+            mode = 'carry';
+          }
+          scoutEl.dataset.mode = mode;
+        }
+
+        function animateMove(step, loopId) {
+          return new Promise(function(resolve) {
+            var nextPoint = stageTargets[step.target];
+            if (!nextPoint) {
+              resolve();
+              return;
+            }
+
+            var fromX = scoutPos.x;
+            var fromY = scoutPos.y;
+            var toX = nextPoint.x;
+            var toY = nextPoint.y - nextPoint.h * (step.motion === 'climb' ? 1.08 : 0.94);
+
+            if (nextPoint.type === 'anchor') {
+              if (nextPoint.role === 'kicker') {
+                toY = nextPoint.y - nextPoint.h * 0.92;
+              } else if (nextPoint.role === 'subtitle') {
+                toY = nextPoint.y - nextPoint.h * 0.98;
+              } else {
+                toY = nextPoint.y - nextPoint.h * 0.9;
+              }
+            }
+
+            var distance = Math.hypot(toX - fromX, toY - fromY);
+            var duration = clamp(distance * 2.52 * step.variant.speed / step.tempo * GLOBAL_PACE, 680, 3080);
+            var jumpHeight = clamp((17 + distance * 0.2) * (step.variant.jump || 0.8), 12, 58);
+            var climbLift = clamp((6 + distance * 0.08) * (step.variant.climb || 1), 5, 24);
+            var strideScale = step.variant.stride || 1;
+            var strideCount = Math.max(1, Math.round(distance / 58 * strideScale));
+            var walkStepCount = Math.max(1, Math.round(distance / 35));
+            var isStraddle = step.action === 'straddle' && step.motion === 'walk';
+            var isStumble = step.action === 'stumble' && (step.motion === 'walk' || step.motion === 'run');
+            var startAt = performance.now();
+            var finished = false;
+            var anticipation = 0;
+
+            if (step.motion === 'jump' || step.motion === 'vault') {
+              duration *= 1.24;
+              anticipation = Math.round((72 + distance * 0.09) * GLOBAL_PACE);
+            } else if (step.motion === 'hop') {
+              duration *= 1.1;
+              anticipation = Math.round((52 + distance * 0.06) * GLOBAL_PACE);
+            } else if (step.motion === 'climb') {
+              duration *= 1.18;
+              anticipation = Math.round((66 + Math.abs(toY - fromY) * 0.16) * GLOBAL_PACE);
+            } else if (step.motion === 'push') {
+              duration *= 1.1;
+            } else if (step.motion === 'walk') {
+              duration *= 1.34;
+            }
+
+            function frame(now) {
+              if (finished) return;
+              if (loopId !== movementId) {
+                finished = true;
+                resolve();
+                return;
+              }
+
+              var t = Math.min(1, (now - startAt) / duration);
+              var eased = easeInOut(t);
+              var xLinear = fromX + (toX - fromX) * eased;
+              var yLinear = fromY + (toY - fromY) * eased;
+              var xOffset = 0;
+              var yOffset = 0;
+
+              if (step.motion === 'jump' || step.motion === 'vault' || step.motion === 'hop') {
+                var takeoff = clamp(step.variant.takeoff || 0.4, 0.24, 0.58);
+                if (t < takeoff) {
+                  var takeoffT = t / takeoff;
+                  yOffset = jumpHeight * Math.sin(takeoffT * Math.PI * 0.5);
+                } else {
+                  var landingT = (t - takeoff) / (1 - takeoff);
+                  yOffset = jumpHeight * Math.cos(landingT * Math.PI * 0.5);
+                  yOffset *= (1 - landingT * 0.08);
+                }
+                xOffset = Math.sin(t * Math.PI) * (step.variant.drift || 0.8);
+                if (t > 0.9) {
+                  yOffset -= Math.pow((t - 0.9) / 0.1, 2) * 2.6;
+                }
+              } else if (step.motion === 'climb') {
+                yOffset = climbLift * Math.sin(t * Math.PI);
+                xOffset = Math.sin(t * Math.PI * 2) * (step.variant.sway || 1);
+              } else {
+                if (step.motion === 'walk') {
+                  var phaseTotal = t * walkStepCount;
+                  var wholeStep = Math.floor(phaseTotal);
+                  var phase = phaseTotal - wholeStep;
+                  var stanceRatio = 0.64;
+                  var stepLocalProgress;
+                  if (phase < stanceRatio) {
+                    var stanceT = phase / stanceRatio;
+                    var stanceEase = 1 - Math.pow(1 - stanceT, 1.7);
+                    stepLocalProgress = stanceEase * 0.62;
+                  } else {
+                    var swingT = (phase - stanceRatio) / (1 - stanceRatio);
+                    stepLocalProgress = 0.62 + easeInOut(swingT) * 0.38;
+                  }
+                  var steppedProgress = clamp((wholeStep + stepLocalProgress) / walkStepCount, 0, 1);
+                  var walkEased = easeInOut(steppedProgress);
+                  var swingLift = phase < stanceRatio
+                    ? 0
+                    : Math.sin(((phase - stanceRatio) / (1 - stanceRatio)) * Math.PI);
+                  var shoulderRoll = Math.sin((phaseTotal + 0.16) * Math.PI * 2);
+                  var bodySettle = Math.abs(Math.sin(phaseTotal * Math.PI));
+
+                  xLinear = fromX + (toX - fromX) * walkEased;
+                  yLinear = fromY + (toY - fromY) * walkEased;
+                  yOffset = step.variant.bob * 0.2 + swingLift * (2.26 + step.variant.bob * 0.26) + bodySettle * 0.3;
+                  xOffset = shoulderRoll * (step.variant.sway || 0.3) * 0.36;
+
+                  if (isStraddle) {
+                    var bridgeArc = Math.sin(t * Math.PI);
+                    yOffset += bridgeArc * 1.26;
+                    xOffset += Math.sin(phaseTotal * Math.PI) * 0.18;
+                  }
+                } else {
+                  yOffset = step.variant.bob * 1.02 * Math.abs(Math.sin(t * Math.PI * strideCount));
+                }
+
+                if (step.motion === 'push') {
+                  xOffset = -Math.sign(toX - fromX || 1) * Math.sin(Math.min(1, t * 1.6) * Math.PI) * step.variant.push;
+                } else if (step.motion !== 'walk') {
+                  xOffset = Math.sin(t * Math.PI * strideCount) * (step.variant.sway || 0);
+                }
+
+                if (isStumble) {
+                  var wobbleEnvelope = Math.max(0, 1 - Math.abs(t - 0.5) / 0.5);
+                  var wobble = Math.sin(t * Math.PI * 4.8) * wobbleEnvelope;
+                  xOffset += wobble * 0.82;
+                  yOffset -= Math.abs(wobble) * 0.3;
+                  if (t < 0.42) {
+                    scoutEl.dataset.mode = 'stumble';
+                  } else if (t < 0.84) {
+                    scoutEl.dataset.mode = 'recover';
+                  } else if (loopId === movementId) {
+                    scoutEl.dataset.mode = step.motion === 'run' ? 'run' : 'walk';
+                  }
+                }
+              }
+
+              scoutPos.x = xLinear + xOffset;
+              scoutPos.y = yLinear - yOffset;
+              updateScoutTransform();
+
+              if (t < 1) {
+                window.requestAnimationFrame(frame);
+              } else {
+                finished = true;
+                if (step.motion === 'jump' || step.motion === 'vault' || step.motion === 'climb' || step.motion === 'hop') {
+                  scoutEl.dataset.mode = 'land';
+                  window.setTimeout(function() {
+                    if (loopId !== movementId) return;
+                    scoutEl.dataset.mode = 'recover';
+                    window.setTimeout(function() {
+                      if (loopId === movementId) {
+                        scoutEl.dataset.mode = 'walk';
+                      }
+                    }, Math.round(90 * GLOBAL_PACE));
+                  }, Math.round(step.variant.settle * GLOBAL_PACE));
+                } else {
+                  scoutEl.dataset.mode = step.action === 'carry' && carryState ? 'carry' : 'walk';
+                }
+                resolve();
+              }
+            }
+
+            function startFrame() {
+              if (loopId !== movementId) {
+                resolve();
+                return;
+              }
+              applyStepTuning(step, fromX, toX);
+              startAt = performance.now();
+              window.requestAnimationFrame(frame);
+            }
+
+            if (anticipation > 0) {
+              scoutEl.dataset.mode = 'crouch';
+              window.setTimeout(startFrame, anticipation);
+            } else {
+              startFrame();
             }
           });
-        });
-      });
-    }
-  };
+        }
 
-  // 粒子背景（仅在启用全屏模式时运行，避免移动端性能问题）
-  let particlesRafId = null;
-  let particlesResizeHandler = null;
+        function pulseWord(wordEl, motion) {
+          if (!wordEl) return;
+          var cls = 'word-touched';
+          if (motion === 'jump' || motion === 'vault') {
+            cls = 'word-jumped';
+          } else if (motion === 'climb') {
+            cls = 'word-climbed';
+          } else if (motion === 'push') {
+            cls = 'word-pushed';
+          } else if (motion === 'carry') {
+            cls = 'word-carried';
+          }
 
-  function stopParticles() {
-    if (particlesRafId) {
-      cancelAnimationFrame(particlesRafId);
-      particlesRafId = null;
-    }
-    if (particlesResizeHandler) {
-      window.removeEventListener('resize', particlesResizeHandler);
-      particlesResizeHandler = null;
-    }
-    const canvas = document.getElementById('particles-canvas');
-    const ctx = canvas?.getContext?.('2d');
-    if (canvas && ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  }
+          wordEl.classList.remove(
+            'word-pushed',
+            'word-jumped',
+            'word-climbed',
+            'word-touched',
+            'word-carried',
+            'word-swapped',
+            'word-punct'
+          );
+          void wordEl.offsetWidth;
+          wordEl.classList.add(cls);
+          window.setTimeout(function() {
+            wordEl.classList.remove(cls);
+          }, 420);
+        }
 
-  function startParticles() {
-    const canvas = document.getElementById('particles-canvas');
-    if (!canvas) return;
-    if (particlesRafId) return;
+        function pulseAnchor(anchorEl, action) {
+          if (!anchorEl) return;
+          var cls = action === 'inspect' ? 'anchor-inspected' : 'anchor-touched';
+          anchorEl.classList.remove('anchor-touched', 'anchor-inspected');
+          void anchorEl.offsetWidth;
+          anchorEl.classList.add(cls);
+          window.setTimeout(function() {
+            anchorEl.classList.remove(cls);
+          }, 560);
+        }
 
-    const ctx = canvas.getContext('2d');
+        async function performLookback(loopId) {
+          if (loopId !== movementId) return;
+          var originalFacing = scoutEl.dataset.facing === 'left' ? 'left' : 'right';
+          scoutEl.dataset.mode = 'lookback';
+          scoutEl.dataset.facing = originalFacing === 'left' ? 'right' : 'left';
+          await wait(Math.round(170 * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+          scoutEl.dataset.facing = originalFacing;
+          scoutEl.dataset.mode = 'walk';
+        }
 
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-
-    const particles = [];
-    const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 18000));
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 2 + 1;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(49, 126, 251, 0.45)';
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-      });
-
-      // 连线（双循环，避免 slice 带来的额外分配）
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const p1 = particles[i];
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(49, 126, 251, ${0.18 * (1 - distance / 100)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
+        async function performRoutineWrap(loopId) {
+          if (loopId !== movementId) return;
+          scoutEl.dataset.mode = 'clap';
+          await wait(Math.round(178 * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+          scoutEl.dataset.mode = 'nod';
+          await wait(Math.round(152 * GLOBAL_PACE));
+          if (loopId === movementId) {
+            scoutEl.dataset.mode = 'walk';
           }
         }
+
+        async function performEntranceShow(loopId) {
+          if (loopId !== movementId || !stageTargets.length) return;
+
+          hideRival();
+          clearCarryVisual();
+          refreshScoutAvatar(true);
+          if (rivalEl && improvRand() < 0.8) {
+            refreshRivalAvatar(true, activeScoutAvatar);
+          }
+
+          var landingTarget = stageTargets[0];
+          if (!landingTarget) return;
+
+          var endX = clampStageX(landingTarget.x - 24);
+          var endY = clampStageY(landingTarget.y - landingTarget.h * 0.92);
+          var stageWidth = stageBounds.width || (titleStage ? titleStage.clientWidth : 0) || 760;
+          var stageHeight = stageBounds.height || (titleStage ? titleStage.clientHeight : 0) || 420;
+          var entranceXMin = -190;
+          var entranceXMax = stageWidth + 170;
+          var entranceYMin = -240;
+          var entranceYMax = stageHeight + 32;
+          function lerp(a, b, t) {
+            return a + (b - a) * t;
+          }
+
+          var entrancePlays = [
+            { key: 'parachute', mode: 'entrance-parachute', icon: '🪂', minDur: 1020, maxDur: 1320 },
+            { key: 'glider', mode: 'entrance-glider', icon: '🪁', minDur: 980, maxDur: 1260 },
+            { key: 'bungee', mode: 'entrance-bungee', icon: '🪢', minDur: 900, maxDur: 1180 },
+            { key: 'plane', mode: 'entrance-plane', icon: '✈️', minDur: 980, maxDur: 1260 }
+          ];
+
+          var play = pick(entrancePlays, improvRand);
+          var sideFromRight = improvRand() < 0.5;
+          var startX = endX + (improvRand() - 0.5) * 110;
+          var startY = -148;
+
+          if (play.key === 'glider') {
+            startX = sideFromRight ? stageWidth + 132 : -132;
+            startY = clampStageY(endY - 96 - improvRand() * 28);
+          } else if (play.key === 'bungee') {
+            startX = endX + (improvRand() - 0.5) * 58;
+            startY = -168;
+          } else if (play.key === 'plane') {
+            startX = sideFromRight ? stageWidth + 168 : -168;
+            startY = clampStageY(endY - 108 - improvRand() * 24);
+          }
+
+          scoutPos.x = clamp(startX, entranceXMin, entranceXMax);
+          scoutPos.y = clamp(startY, entranceYMin, entranceYMax);
+          scoutEl.dataset.facing = scoutPos.x > endX ? 'left' : 'right';
+          scoutEl.dataset.mode = play.mode;
+          showScoutProp({ icon: play.icon, key: play.key, context: 'entrance' });
+          updateScoutTransform();
+
+          var duration = Math.round(randInt(improvRand, play.minDur, play.maxDur) * GLOBAL_PACE);
+          await new Promise(function(resolve) {
+            var started = performance.now();
+
+            function frame(now) {
+              if (loopId !== movementId) {
+                clearScoutProp();
+                resolve();
+                return;
+              }
+
+              var t = clamp((now - started) / duration, 0, 1);
+              var eased = easeInOut(t);
+              var x = scoutPos.x;
+              var y = scoutPos.y;
+
+              if (play.key === 'parachute') {
+                var drop = Math.pow(t, 0.82);
+                x = lerp(startX, endX, eased) + Math.sin(t * Math.PI * 2.6) * 10 * (1 - t * 0.54);
+                y = lerp(startY, endY, drop);
+              } else if (play.key === 'glider') {
+                var glide = 0.22 + eased * 0.78;
+                x = lerp(startX, endX, eased);
+                y = lerp(startY, endY, glide) - Math.sin(t * Math.PI) * 12 * (1 - t * 0.36);
+              } else if (play.key === 'bungee') {
+                var dive = 1 - Math.pow(1 - t, 2.16);
+                var rebound = Math.sin(t * Math.PI * 4.4) * 16 * (1 - t);
+                x = startX + Math.sin(t * Math.PI * 2.2) * 4 * (1 - t * 0.52);
+                y = lerp(startY, endY, dive) + rebound;
+              } else {
+                x = lerp(startX, endX, eased);
+                y = lerp(startY, endY, 0.42 + eased * 0.58) - Math.sin(t * Math.PI) * 6.2 * (1 - t * 0.4);
+              }
+
+              scoutPos.x = clamp(x, entranceXMin, entranceXMax);
+              scoutPos.y = clamp(y, entranceYMin, entranceYMax);
+              scoutEl.dataset.facing = scoutPos.x > endX ? 'left' : 'right';
+              updateScoutTransform();
+
+              if (t < 1) {
+                window.requestAnimationFrame(frame);
+              } else {
+                resolve();
+              }
+            }
+
+            window.requestAnimationFrame(frame);
+          });
+
+          if (loopId !== movementId) return;
+
+          scoutPos.x = endX;
+          scoutPos.y = endY;
+          updateScoutTransform();
+          scoutEl.dataset.mode = 'land';
+          await wait(Math.round(150 * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+
+          if (landingTarget.type === 'word' && titleWords[landingTarget.index] && improvRand() < 0.72) {
+            pulseWord(titleWords[landingTarget.index], 'jump');
+          }
+
+          await wait(Math.round(randInt(improvRand, 126, 228) * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+
+          scoutEl.dataset.mode = 'walk';
+          clearScoutProp();
+          await wait(Math.round(92 * GLOBAL_PACE));
+        }
+
+        async function performSportPlay(targetWord, loopId) {
+          var play = pickSportPlay();
+          if (!play) return;
+          var propLinger = Math.round((play.linger || 220) * GLOBAL_PACE);
+
+          hideRival();
+          showScoutProp(play);
+          scoutEl.dataset.mode = play.mode;
+          if (targetWord) {
+            pulseWord(targetWord, play.pulse || 'touch');
+          }
+          await wait(Math.round(play.hold * GLOBAL_HOLD_SCALE));
+          if (loopId !== movementId) return;
+
+          if (targetWord && improvRand() < 0.62) {
+            pulseWord(targetWord, play.pulse || 'touch');
+            await wait(Math.round((play.hold * 0.52) * GLOBAL_HOLD_SCALE));
+            if (loopId !== movementId) return;
+          }
+
+          if (targetWord && improvRand() < 0.28) {
+            pulseWord(targetWord, play.pulse || 'touch');
+            await wait(Math.round((play.hold * 0.42) * GLOBAL_HOLD_SCALE));
+            if (loopId !== movementId) return;
+          }
+
+          if (improvRand() < 0.28) {
+            await performLookback(loopId);
+            if (loopId !== movementId) return;
+          }
+
+          if (loopId === movementId) {
+            scoutEl.dataset.mode = 'walk';
+          }
+          await wait(propLinger);
+          if (loopId !== movementId) return;
+          clearScoutProp();
+        }
+
+        function animateDuelSummonSplit(originX, originY, mainX, rivalX, duelY, loopId) {
+          return new Promise(function(resolve) {
+            var duration = Math.round(randInt(improvRand, 172, 268) * GLOBAL_PACE);
+            var started = performance.now();
+            var arc = Math.max(8, Math.abs(mainX - rivalX) * 0.16);
+
+            function frame(now) {
+              if (loopId !== movementId) {
+                resolve();
+                return;
+              }
+
+              var t = clamp((now - started) / duration, 0, 1);
+              var eased = easeInOut(t);
+              var splitWave = Math.sin(t * Math.PI * 3.2) * (1 - t) * 2.8;
+
+              scoutPos.x = clampStageX(originX + (mainX - originX) * eased + splitWave);
+              rivalPos.x = clampStageX(originX + (rivalX - originX) * eased - splitWave);
+              scoutPos.y = clampStageY(originY - Math.sin(t * Math.PI) * arc * 0.2 + (duelY - originY) * eased);
+              rivalPos.y = clampStageY(originY - Math.sin(t * Math.PI) * arc * 0.28 + (duelY - originY) * eased);
+
+              scoutEl.dataset.facing = scoutPos.x <= rivalPos.x ? 'right' : 'left';
+              rivalEl.dataset.facing = scoutPos.x <= rivalPos.x ? 'left' : 'right';
+              updateScoutTransform();
+              updateRivalTransform();
+
+              if (t < 1) {
+                window.requestAnimationFrame(frame);
+              } else {
+                resolve();
+              }
+            }
+
+            window.requestAnimationFrame(frame);
+          });
+        }
+
+        async function performDuelPlay(target, loopId) {
+          var play = pickDuelPlay();
+          if (!play) {
+            await performSportPlay(target && target.type === 'word' ? titleWords[target.index] : null, loopId);
+            return;
+          }
+
+          if (!rivalEl) {
+            await performSportPlay(target && target.type === 'word' ? titleWords[target.index] : null, loopId);
+            return;
+          }
+
+          var targetWord = target && target.type === 'word' ? titleWords[target.index] : null;
+          var baseX = target && typeof target.x === 'number'
+            ? target.x
+            : (scoutPos.x + 24);
+          var baseY = target && typeof target.y === 'number'
+            ? target.y - (target.h || 20) * 0.92
+            : scoutPos.y;
+          var spread = randInt(improvRand, 34, 52);
+          var mainOnLeft = improvRand() < 0.5;
+          var originX = clampStageX(baseX + (improvRand() - 0.5) * 8);
+          var originY = clampStageY(baseY + (improvRand() - 0.5) * 6);
+          var mainX = clampStageX(baseX + (mainOnLeft ? -spread : spread));
+          var rivalX = clampStageX(baseX + (mainOnLeft ? spread : -spread));
+          var duelY = clampStageY(baseY + (improvRand() - 0.5) * 8);
+          var duelLinger = Math.round((play.linger || 280) * GLOBAL_PACE);
+          var direction = mainOnLeft ? 1 : -1;
+
+          if (improvRand() < 0.36) {
+            refreshScoutAvatar(true);
+          }
+          refreshRivalAvatar(true, activeScoutAvatar);
+
+          scoutPos.x = originX;
+          scoutPos.y = originY;
+          rivalPos.x = originX;
+          rivalPos.y = originY;
+          updateScoutTransform();
+          updateRivalTransform();
+
+          scoutEl.dataset.facing = mainOnLeft ? 'right' : 'left';
+          rivalEl.dataset.facing = scoutEl.dataset.facing;
+          setRivalVisible(true);
+          setSummonState(true, true);
+          showScoutProp({ icon: play.icon || '🥊', key: 'duel' });
+          showRivalProp(play.rivalIcon || play.icon || '🥊', 'duel');
+          scoutEl.dataset.mode = 'crouch';
+          rivalEl.dataset.mode = 'recover';
+
+          await wait(Math.round(randInt(improvRand, 96, 148) * GLOBAL_PACE));
+          if (loopId !== movementId) {
+            setSummonState(false, false);
+            return;
+          }
+
+          await animateDuelSummonSplit(originX, originY, mainX, rivalX, duelY, loopId);
+          if (loopId !== movementId) {
+            setSummonState(false, false);
+            return;
+          }
+
+          setSummonState(false, false);
+          scoutEl.dataset.mode = 'duel-guard';
+          rivalEl.dataset.mode = 'duel-guard';
+          await wait(Math.round(randInt(improvRand, 74, 118) * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+
+          var rounds = randInt(improvRand, Math.max(4, (play.rounds || 5) - 1), (play.rounds || 5) + 1);
+          var mainInitiative = improvRand() < 0.56;
+
+          for (var round = 0; round < rounds; round++) {
+            if (loopId !== movementId) {
+              setSummonState(false, false);
+              return;
+            }
+
+            if (round > 0 && improvRand() < 0.64) {
+              mainInitiative = !mainInitiative;
+            }
+
+            var exchange = pick(duelExchangePatterns, improvRand);
+            var lunge = exchange.lunge * direction * (mainInitiative ? 1 : -1);
+            var rise = Math.abs(lunge) * 0.08;
+            var strikeHold = Math.round((play.hold * exchange.beat + randInt(improvRand, -18, 26)) * GLOBAL_HOLD_SCALE);
+
+            if (mainInitiative) {
+              scoutEl.dataset.mode = exchange.attack || play.mainAttack || 'duel-strike';
+              rivalEl.dataset.mode = exchange.defend || play.defend || 'duel-guard';
+            } else {
+              scoutEl.dataset.mode = exchange.defend || play.defend || 'duel-guard';
+              rivalEl.dataset.mode = exchange.attack || play.rivalAttack || 'duel-strike';
+            }
+
+            scoutPos.x = clampStageX(mainX + lunge + (improvRand() - 0.5) * 3.2);
+            rivalPos.x = clampStageX(rivalX - lunge * 0.9 + (improvRand() - 0.5) * 3.2);
+            scoutPos.y = clampStageY(duelY - rise + (improvRand() - 0.5) * 2.4);
+            rivalPos.y = clampStageY(duelY - rise + (improvRand() - 0.5) * 2.4);
+            updateScoutTransform();
+            updateRivalTransform();
+
+            if (targetWord && (round === 0 || improvRand() < 0.82)) {
+              pulseWord(targetWord, play.pulse || 'push');
+            }
+            await wait(strikeHold);
+            if (loopId !== movementId) {
+              setSummonState(false, false);
+              return;
+            }
+
+            var shouldCounter = round < rounds - 1 && improvRand() < 0.74;
+            if (!shouldCounter) continue;
+
+            var recoil = exchange.recoil * direction * (mainInitiative ? -1 : 1);
+            var counterMode = exchange.attack === 'duel-kick' ? 'duel-strike' : 'duel-kick';
+
+            if (mainInitiative) {
+              scoutEl.dataset.mode = exchange.recover || 'recover';
+              rivalEl.dataset.mode = counterMode;
+            } else {
+              scoutEl.dataset.mode = counterMode;
+              rivalEl.dataset.mode = exchange.recover || 'recover';
+            }
+
+            scoutPos.x = clampStageX(mainX + recoil + (improvRand() - 0.5) * 2.8);
+            rivalPos.x = clampStageX(rivalX - recoil * 0.9 + (improvRand() - 0.5) * 2.8);
+            scoutPos.y = clampStageY(duelY + (improvRand() - 0.5) * 1.8);
+            rivalPos.y = clampStageY(duelY + (improvRand() - 0.5) * 1.8);
+            updateScoutTransform();
+            updateRivalTransform();
+
+            if (targetWord && improvRand() < 0.72) {
+              pulseWord(targetWord, play.pulse || 'push');
+            }
+
+            await wait(Math.round((play.hold * 0.54 + randInt(improvRand, -12, 20)) * GLOBAL_HOLD_SCALE));
+            if (loopId !== movementId) {
+              setSummonState(false, false);
+              return;
+            }
+
+            mainInitiative = !mainInitiative;
+          }
+
+          scoutPos.x = clampStageX(mainX + (improvRand() - 0.5) * 3.2);
+          rivalPos.x = clampStageX(rivalX + (improvRand() - 0.5) * 3.2);
+          scoutPos.y = clampStageY(duelY + (improvRand() - 0.5) * 1.8);
+          rivalPos.y = clampStageY(duelY + (improvRand() - 0.5) * 1.8);
+          updateScoutTransform();
+          updateRivalTransform();
+
+          scoutEl.dataset.mode = 'recover';
+          rivalEl.dataset.mode = 'recover';
+          await wait(Math.round(132 * GLOBAL_PACE));
+          if (loopId !== movementId) return;
+
+          scoutEl.dataset.mode = 'walk';
+          rivalEl.dataset.mode = 'walk';
+          await wait(duelLinger);
+          if (loopId !== movementId) return;
+
+          if (improvRand() < 0.22) {
+            await performLookback(loopId);
+            if (loopId !== movementId) return;
+          }
+
+          hideRival();
+          if (loopId === movementId) {
+            scoutEl.dataset.mode = 'walk';
+          }
+          clearScoutProp();
+        }
+
+        async function performScrollPlay(target, loopId) {
+          hideRival();
+
+          showScoutProp({ icon: '🖱️', key: 'scroll' });
+          scoutEl.dataset.mode = 'scroll';
+
+          var targetWord = target && target.type === 'word' ? titleWords[target.index] : null;
+          var doc = document.documentElement;
+          var now = Date.now();
+          var canAutoScroll = now - lastAutoScrollAt > 7600;
+          var maxScrollable = Math.max(0, doc.scrollHeight - window.innerHeight);
+          var steps = randInt(improvRand, 2, 3);
+
+          for (var i = 0; i < steps; i++) {
+            if (loopId !== movementId) return;
+            if (targetWord && improvRand() < 0.62) {
+              pulseWord(targetWord, 'touch');
+            }
+
+            if (canAutoScroll && window.scrollY < maxScrollable - 16) {
+              var scrollStep = Math.round(Math.max(76, window.innerHeight * 0.12));
+              window.scrollBy({ top: scrollStep, behavior: 'smooth' });
+              lastAutoScrollAt = Date.now();
+            }
+            await wait(Math.round((152 + i * 26) * GLOBAL_HOLD_SCALE));
+            if (loopId !== movementId) return;
+          }
+
+          scoutEl.dataset.mode = 'walk';
+          clearScoutProp();
+        }
+
+        async function performStepInteraction(step, target, previousTarget, loopId) {
+          if (!target) return;
+
+          if (step.action !== 'duel_play') {
+            hideRival();
+          }
+
+          if (step.action === 'lookback') {
+            clearCarryVisual();
+            await performLookback(loopId);
+            return;
+          }
+
+          if (
+            step.action === 'carry' &&
+            carryState &&
+            previousTarget &&
+            previousTarget.type === 'word' &&
+            target.type === 'word' &&
+            previousTarget.index !== target.index
+          ) {
+            var sourceRow = getWordRow(previousTarget.index);
+            var targetRow = getWordRow(target.index);
+            var targetWord = titleWords[target.index];
+
+            if (sourceRow === targetRow) {
+              var carryTemplate = pickTemplateForRow(targetRow, target.index);
+              if (carryTemplate < 0) {
+                carryTemplate = pickTemplateForIndex(target.index);
+              }
+              if (carryTemplate >= 0) {
+                if (typeof targetWord !== 'undefined') {
+                  pulseWord(targetWord, 'carry');
+                }
+                applyTemplateToRow(carryTemplate, targetRow);
+              } else if (targetWord) {
+                pulseWord(targetWord, 'carry');
+              }
+            } else if (targetWord) {
+              pulseWord(targetWord, 'carry');
+            }
+
+            clearCarryVisual();
+            scoutEl.dataset.mode = 'inspect';
+            await wait(Math.round(120 * GLOBAL_HOLD_SCALE));
+            if (loopId === movementId && improvRand() < 0.46) {
+              await performLookback(loopId);
+            }
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          clearCarryVisual();
+
+          if (
+            step.action === 'swap' &&
+            target.type === 'word' &&
+            previousTarget &&
+            previousTarget.type === 'word' &&
+            previousTarget.index !== target.index &&
+            previousTarget.row === target.row
+          ) {
+            scoutEl.dataset.mode = 'carry';
+            startCarry(titleWords[previousTarget.index]);
+            await wait(Math.round(132 * GLOBAL_PACE));
+            if (loopId !== movementId) {
+              clearCarryVisual();
+              return;
+            }
+
+            swapWordTexts(previousTarget.index, target.index);
+            clearCarryVisual();
+            pulseWord(titleWords[target.index], 'carry');
+            await wait(Math.round(128 * GLOBAL_PACE));
+            if (loopId === movementId && improvRand() < 0.62) {
+              await performLookback(loopId);
+            }
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'push_align' && target.type === 'word') {
+            var pushWordEl = titleWords[target.index];
+            scoutEl.dataset.mode = 'push';
+            pulseWord(pushWordEl, 'push');
+            await wait(Math.round(168 * GLOBAL_PACE));
+            if (loopId !== movementId) return;
+
+            var pushRow = getWordRow(target.index);
+            var alignTemplate = pickTemplateForRow(pushRow, target.index);
+            if (alignTemplate >= 0) {
+              applyTemplateToRow(alignTemplate, pushRow);
+            } else if (pushWordEl) {
+              flashWordClass(pushWordEl, 'word-pushed', 520);
+            }
+
+            await wait(Math.round(112 * GLOBAL_PACE));
+            if (loopId === movementId && improvRand() < 0.4) {
+              await performLookback(loopId);
+            }
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if ((step.action === 'erase_write' || step.action === 'erase') && target.type === 'word') {
+            var wordEl = titleWords[target.index];
+            if (!wordEl) return;
+            scoutEl.dataset.mode = 'erase';
+            wordEl.classList.remove('word-rewritten');
+            wordEl.classList.add('word-erasing');
+            await wait(Math.round(380 * GLOBAL_PACE));
+            if (loopId !== movementId) return;
+
+            var wordRow = getWordRow(target.index);
+            var eraseTemplate = pickTemplateForRow(wordRow, target.index);
+            if (eraseTemplate >= 0) {
+              await applyTemplateWithHandwrite(eraseTemplate, wordRow, target.index, loopId);
+            } else {
+              eraseTemplate = pickTemplateForIndex(target.index);
+              if (eraseTemplate >= 0) {
+                if (await handwriteWordAt(target.index, logicalTemplates[eraseTemplate][target.index], loopId)) {
+                  activeTemplateIndex = eraseTemplate;
+                }
+              }
+            }
+
+            wordEl.classList.remove('word-erasing');
+            await wait(Math.round(180 * GLOBAL_PACE));
+            if (loopId === movementId && improvRand() < 0.54) {
+              await performLookback(loopId);
+            }
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'punct' && target.type === 'word') {
+            var punctWord = titleWords[target.index];
+            scoutEl.dataset.mode = 'flick';
+            flashWordClass(punctWord, 'word-punct', 620);
+            pulseWord(punctWord, 'touch');
+            await wait(Math.round(212 * GLOBAL_PACE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'reach_word' && target.type === 'word') {
+            scoutEl.dataset.mode = 'reach';
+            pulseWord(titleWords[target.index], 'climb');
+            await wait(Math.round(182 * GLOBAL_PACE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'inspect_word' && target.type === 'word') {
+            scoutEl.dataset.mode = 'inspect';
+            pulseWord(titleWords[target.index], 'touch');
+            await wait(Math.round(170 * GLOBAL_HOLD_SCALE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'think') {
+            scoutEl.dataset.mode = 'think';
+            await wait(Math.round(212 * GLOBAL_HOLD_SCALE));
+            if (target.type === 'word') {
+              pulseWord(titleWords[target.index], 'touch');
+            }
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'sit' && target.type === 'word') {
+            scoutEl.dataset.mode = 'sit';
+            pulseWord(titleWords[target.index], 'touch');
+            await wait(Math.round(248 * GLOBAL_HOLD_SCALE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (step.action === 'sport_play') {
+            await performSportPlay(target.type === 'word' ? titleWords[target.index] : null, loopId);
+            return;
+          }
+
+          if (step.action === 'duel_play') {
+            await performDuelPlay(target, loopId);
+            return;
+          }
+
+          if (step.action === 'scroll_play') {
+            await performScrollPlay(target, loopId);
+            return;
+          }
+
+          if (step.action === 'stumble') {
+            scoutEl.dataset.mode = 'recover';
+            await wait(Math.round(120 * GLOBAL_PACE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (target.type === 'anchor') {
+            scoutEl.dataset.mode = 'inspect';
+            pulseAnchor(target.el, step.action);
+            await wait(Math.round((step.action === 'inspect' ? 180 : 120) * GLOBAL_HOLD_SCALE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (target.type === 'roam') {
+            scoutEl.dataset.mode = step.motion === 'run' ? 'run' : 'inspect';
+            await wait(Math.round((step.action === 'inspect' ? 190 : 120) * GLOBAL_HOLD_SCALE));
+            if (loopId === movementId) scoutEl.dataset.mode = 'walk';
+            return;
+          }
+
+          if (target.type === 'word') {
+            var motionClass = step.action === 'straddle' ? 'jump' : step.motion;
+            pulseWord(titleWords[target.index], motionClass);
+          }
+        }
+
+        async function runChoreography(loopId) {
+          if (!stageTargets.length) return;
+
+          var currentTarget = 0;
+          scoutEl.dataset.mode = 'walk';
+
+          while (movementId === loopId) {
+            var routine = nextRoutine();
+            if (!routine || !routine.steps.length) return;
+            if (improvRand() < 0.1) {
+              refreshScoutAvatar(true);
+              if (rivalEl && improvRand() < 0.62) {
+                refreshRivalAvatar(true, activeScoutAvatar);
+              }
+            }
+
+            for (var i = 0; i < routine.steps.length; i++) {
+              if (movementId !== loopId) return;
+
+              var step = routine.steps[i];
+              var target = stageTargets[step.target];
+              var previousTarget = stageTargets[currentTarget] || stageTargets[0];
+              if (!target) continue;
+
+              if (
+                step.action === 'carry' &&
+                previousTarget &&
+                previousTarget.type === 'word' &&
+                target.type === 'word' &&
+                previousTarget.row === target.row &&
+                previousTarget.index !== target.index
+              ) {
+                startCarry(titleWords[previousTarget.index]);
+              } else {
+                clearCarryVisual();
+              }
+
+              await animateMove(step, loopId);
+              if (movementId !== loopId) return;
+
+              await performStepInteraction(step, target, previousTarget, loopId);
+              if (movementId !== loopId) return;
+
+              currentTarget = step.target;
+              await wait(step.hold);
+            }
+
+            if (movementId !== loopId) return;
+            if (improvRand() < 0.42) {
+              await performRoutineWrap(loopId);
+              if (movementId !== loopId) return;
+            }
+
+            if (stageTargets[0]) {
+              clearCarryVisual();
+              var settleTarget = constrainTargetStep(currentTarget, 0);
+              var settleDistance = getDistanceInfo(
+                stageTargets[currentTarget] || stageTargets[0],
+                stageTargets[settleTarget] || stageTargets[0]
+              ).distance;
+              await animateMove({
+                target: settleTarget,
+                motion: 'walk',
+                variant: motionVariants.walk[0],
+                tempo: 0.74,
+                hold: 260,
+                distance: settleDistance,
+                action: 'touch'
+              }, loopId);
+              await wait(220);
+              currentTarget = settleTarget;
+            }
+          }
+        }
+
+        async function startChoreographyLoop(loopId) {
+          if (loopId !== movementId) return;
+
+          if (!hasEntrancePlayed) {
+            await performEntranceShow(loopId);
+            if (loopId !== movementId) return;
+            hasEntrancePlayed = true;
+          }
+
+          if (loopId !== movementId) return;
+          runChoreography(loopId);
+        }
+
+        function restartChoreography() {
+          movementId += 1;
+          clearCarryVisual();
+          hideRival();
+          refreshScoutAvatar(true);
+          refreshRivalAvatar(true, activeScoutAvatar);
+          if (!measureStageTargets()) return;
+          buildActionLibrary();
+          var loopId = movementId;
+          startChoreographyLoop(loopId);
+        }
+
+        restartChoreography();
+
+        if ('ResizeObserver' in window) {
+          resizeObserver = new ResizeObserver(function() {
+            restartChoreography();
+          });
+          resizeObserver.observe(titleStage);
+          stageAnchors.forEach(function(anchor) {
+            if (anchor !== titleStage) {
+              resizeObserver.observe(anchor);
+            }
+          });
+        } else {
+          window.addEventListener('resize', function() {
+            restartChoreography();
+          });
+        }
+      })();
+    }
+
+    var tagList = root.querySelector('[data-tag-list]');
+    var tagEditor = root.querySelector('[data-tag-editor]');
+    var tagPanel = root.querySelector('[data-tag-panel]');
+    var tagToggle = root.querySelector('[data-tag-toggle]');
+    var tagFaves = root.querySelector('[data-tag-faves]');
+    var tagFavesList = root.querySelector('[data-tag-faves-list]');
+    var tagInput = root.querySelector('[data-tag-input]');
+    var tagAddBtn = root.querySelector('[data-tag-add]');
+    var boardTitles = [
+      '脑洞便签区',
+      '灵感慢递站',
+      '碎碎念收藏夹',
+      '今日小宇宙',
+      '想到哪写到哪'
+    ];
+    var storageKey = 'chong_home_manual_tags_v1';
+    var pinnedTags = [
+      '慢一点，但不停。',
+      '把生活写进代码，把代码还给生活。'
+    ];
+    var defaultTags = pinnedTags.slice();
+
+    function normalizeTag(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function saveTags(tags) {
+      try {
+        window.localStorage.setItem(storageKey, JSON.stringify(tags));
+      } catch (error) {
       }
-
-      particlesRafId = requestAnimationFrame(animate);
     }
 
-    particlesRafId = requestAnimationFrame(animate);
-
-    particlesResizeHandler = () => {
-      resize();
-    };
-    window.addEventListener('resize', particlesResizeHandler);
-  }
-
-  function debounce(fn, wait) {
-    let t;
-    return function(...args) {
-      clearTimeout(t);
-      t = setTimeout(() => fn.apply(this, args), wait);
-    };
-  }
-
-  let lastFullpageEnabled = null;
-  const applyFullpageMode = debounce(() => {
-    const enable = shouldEnableFullpage();
-    if (enable === lastFullpageEnabled) return;
-    lastFullpageEnabled = enable;
-
-    document.documentElement.classList.toggle(FULLPAGE_CLASS, enable);
-    document.documentElement.dataset.homeMode = enable ? 'fullpage' : 'scroll';
-
-    if (enable) {
-      document.documentElement.classList.remove('fullpage-ready');
-      FullPageScroll.enable();
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      requestAnimationFrame(() => {
-        document.documentElement.classList.add('fullpage-ready');
-      });
-      startParticles();
-    } else {
-      document.documentElement.classList.remove('fullpage-ready');
-      FullPageScroll.disable();
-      stopParticles();
+    function loadTags() {
+      try {
+        var raw = window.localStorage.getItem(storageKey);
+        if (!raw) return defaultTags.slice();
+        var parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) return defaultTags.slice();
+        var cleaned = parsed.map(normalizeTag).filter(Boolean).slice(0, 16);
+        if (!cleaned.length) return defaultTags.slice();
+        var merged = pinnedTags.concat(cleaned.filter(function(tag) {
+          return pinnedTags.indexOf(tag) === -1;
+        }));
+        return merged.slice(0, 16);
+      } catch (error) {
+        return defaultTags.slice();
+      }
     }
-  }, 100);
 
-  // 初始化
-  document.addEventListener('DOMContentLoaded', () => {
-    FullPageScroll.init();
-    applyFullpageMode();
-  });
+    var tagsState = loadTags();
 
-  window.addEventListener('resize', applyFullpageMode);
-  window.addEventListener('orientationchange', applyFullpageMode);
-})();
-</script>
+    if (tagList && boardTitles.length) {
+      var boardTitle = boardTitles[Math.floor(Math.random() * boardTitles.length)];
+      tagList.style.setProperty('--board-title', '"' + boardTitle + '"');
+    }
 
-<!-- 不蒜子访问统计 -->
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script>
-    // 监听不蒜子加载完成
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var pv = document.getElementById('busuanzi_container_site_pv');
-        var uv = document.getElementById('busuanzi_container_site_uv');
-        var divider = document.querySelector('.stats-divider');
-        var loading = document.getElementById('stats-loading');
-
-        if (pv && document.getElementById('busuanzi_value_site_pv')?.textContent) {
-          pv.style.display = 'flex';
-          divider.style.display = 'block';
-          uv.style.display = 'flex';
-          if (loading) loading.style.display = 'none';
+    function renderTags() {
+      if (tagList) {
+        tagList.innerHTML = '';
+      }
+      if (tagFavesList) {
+        tagFavesList.innerHTML = '';
+      }
+      var normalCount = 0;
+      tagsState.forEach(function(tag, index) {
+        var isPinned = pinnedTags.indexOf(tag) !== -1;
+        if (isPinned) {
+          if (tagFavesList) {
+            var fave = document.createElement('span');
+            fave.className = 'identity-tag-faves-item';
+            fave.textContent = tag;
+            tagFavesList.appendChild(fave);
+          }
+          return;
         }
-      }, 1000);
+        if (!tagList) return;
+        normalCount += 1;
 
-      // 如果 3 秒后还没加载，更新提示
-      setTimeout(function() {
-        var loading = document.getElementById('stats-loading');
-        var pv = document.getElementById('busuanzi_container_site_pv');
-        if (loading && pv && pv.style.display === 'none') {
-          loading.textContent = '📊 统计加载中...';
+        var item = document.createElement('div');
+        item.className = 'identity-tag-item';
+        if (index % 2 === 0) {
+          item.classList.add('is-quiet');
         }
-      }, 3000);
-    });
-  </script>
+        if (tag.length >= 22) {
+          item.classList.add('is-wide');
+        } else if (tag.length <= 9) {
+          item.classList.add('is-compact');
+        }
 
+        var text = document.createElement('span');
+        text.className = 'identity-tag-text';
+        text.textContent = tag;
+        item.appendChild(text);
 
-<!-- AOS 动画库 (可选) -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 100
+        var remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'identity-tag-remove';
+        remove.setAttribute('aria-label', '删除标签');
+        remove.textContent = '×';
+        remove.addEventListener('click', function() {
+          tagsState.splice(index, 1);
+          if (!tagsState.length) {
+            tagsState = defaultTags.slice();
+          }
+          saveTags(tagsState);
+          renderTags();
+        });
+
+        item.appendChild(remove);
+        tagList.appendChild(item);
+      });
+
+      if (tagFaves) {
+        tagFaves.hidden = !(tagFavesList && tagFavesList.children.length);
+      }
+      if (tagList && !normalCount) {
+        var empty = document.createElement('p');
+        empty.className = 'identity-tag-empty';
+        empty.textContent = '继续添加你喜欢的句子。';
+        tagList.appendChild(empty);
+      }
+    }
+    renderTags();
+
+    function setTagEditorExpanded(expanded, focusInput) {
+      if (!tagEditor) return;
+      tagEditor.classList.toggle('is-expanded', expanded);
+      if (tagToggle) {
+        tagToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      }
+      if (expanded && focusInput && tagInput) {
+        window.setTimeout(function() {
+          tagInput.focus();
+        }, 24);
+      }
+    }
+
+    if (tagEditor && tagPanel && tagToggle && tagInput) {
+      tagEditor.classList.add('is-collapsible');
+      setTagEditorExpanded(false, false);
+
+      tagToggle.addEventListener('click', function() {
+        var next = !tagEditor.classList.contains('is-expanded');
+        setTagEditorExpanded(next, next);
+      });
+
+      tagInput.addEventListener('focus', function() {
+        setTagEditorExpanded(true, false);
+      });
+
+      tagInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          if (!normalizeTag(tagInput.value)) {
+            setTagEditorExpanded(false, false);
+            tagToggle.focus();
+          }
+        }
+      });
+
+      document.addEventListener('pointerdown', function(event) {
+        if (!tagEditor.classList.contains('is-expanded')) return;
+        if (tagEditor.contains(event.target)) return;
+        if (normalizeTag(tagInput.value)) return;
+        setTagEditorExpanded(false, false);
       });
     }
-  });
+
+    function handleAddTag() {
+      if (!tagInput) return;
+      var value = normalizeTag(tagInput.value);
+      if (!value) return;
+      if (tagsState.indexOf(value) !== -1) {
+        tagInput.value = '';
+        return;
+      }
+      var maxTags = 16;
+      var maxCustomTags = Math.max(0, maxTags - pinnedTags.length);
+      var customTags = tagsState.filter(function(tag) {
+        return pinnedTags.indexOf(tag) === -1;
+      });
+      if (customTags.length >= maxCustomTags) {
+        customTags = customTags.slice(1);
+      }
+      customTags.push(value);
+      tagsState = pinnedTags.concat(customTags).slice(0, maxTags);
+      saveTags(tagsState);
+      renderTags();
+      tagInput.value = '';
+      if (tagEditor && tagEditor.classList.contains('is-collapsible')) {
+        setTagEditorExpanded(true, true);
+      } else {
+        tagInput.focus();
+      }
+    }
+
+    if (tagAddBtn) {
+      tagAddBtn.addEventListener('click', handleAddTag);
+    }
+
+    if (tagInput) {
+      tagInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          handleAddTag();
+        }
+      });
+    }
+  })();
 </script>
 
   </main>
 
-  <!-- Footer (隐藏在首页与简历页) -->
+  <!-- Footer (仅在简历页隐藏) -->
+  
+    <footer class="footer site-footer site-footer-home">
+  
+  <div class="site-footer-shell site-footer-shell-home">
+    
+
+    <div class="site-footer-meta site-footer-meta-home">
+      <p class="site-footer-powered">
+        <span>Powered by</span>
+        <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a>
+        <span class="site-footer-divider">·</span>
+        <span>Theme</span>
+        <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener noreferrer">Caochong</a>
+      </p>
+
+      <p class="site-footer-copyright">© 2024 Caochong. All rights reserved.</p>
+
+      
+
+      
+        <div class="site-footer-stats" id="site-footer-stats">
+          <span id="busuanzi_container_site_pv" style="display:none">
+            访问量
+            <strong id="busuanzi_value_site_pv"></strong>
+          </span>
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客
+            <strong id="busuanzi_value_site_uv"></strong>
+          </span>
+          <span class="site-footer-stats-loading" id="site-footer-stats-loading">访问统计加载中</span>
+        </div>
+      
+    </div>
+  </div>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+      (function() {
+        function syncBusuanziState() {
+          var pvContainer = document.getElementById('busuanzi_container_site_pv');
+          var uvContainer = document.getElementById('busuanzi_container_site_uv');
+          var pvValue = document.getElementById('busuanzi_value_site_pv');
+          var uvValue = document.getElementById('busuanzi_value_site_uv');
+          var loading = document.getElementById('site-footer-stats-loading');
+
+          var hasPv = pvValue && pvValue.textContent && pvValue.textContent.trim();
+          var hasUv = uvValue && uvValue.textContent && uvValue.textContent.trim();
+
+          if (pvContainer) pvContainer.style.display = hasPv ? 'inline-flex' : 'none';
+          if (uvContainer) uvContainer.style.display = hasUv ? 'inline-flex' : 'none';
+
+          if (loading && (hasPv || hasUv)) {
+            loading.style.display = 'none';
+          }
+        }
+
+        window.addEventListener('load', function() {
+          setTimeout(syncBusuanziState, 900);
+          setTimeout(syncBusuanziState, 2200);
+          setTimeout(function() {
+            var loading = document.getElementById('site-footer-stats-loading');
+            if (loading && loading.style.display !== 'none') {
+              loading.textContent = '访问统计暂不可用';
+            }
+          }, 4200);
+        });
+      })();
+    </script>
+  
+</footer>
+
   
 
   <!-- Back to Top -->
@@ -1270,8 +3510,7 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770569030858"></script>
-  <script src="/js/neural-network.js?v=1770569030858"></script>
-  <script src="/js/scroll-animations.js?v=1770569030858"></script>
+  <script src="/js/main.js?v=20260406"></script>
+  <script src="/js/scroll-animations.js?v=20260406"></script>
 </body>
 </html>

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自然语言处理-NLP基础 | 星唯向导</title>
-  <meta name="description" content="AI算法工程师 | 计算机视觉 &amp; 自然语言处理">
+  <meta name="description" content="圈地自萌的个人记录｜有技术，也有生活">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770569030857">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770569030857">
+  <link rel="stylesheet" href="/css/style.css?v=20260406">
+  <link rel="stylesheet" href="/css/theme-green.css?v=20260406">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -67,21 +67,31 @@
 
   <!-- Main Content -->
   <main class="main-container">
-    <article class="post-detail">
+    
+
+<article class="post-detail post-detail-refined">
   <!-- Post Header -->
   <header class="post-header">
     <div class="container">
       <h1 class="post-title-main">自然语言处理-NLP基础</h1>
+      
 
       <div class="post-meta-main">
         <div class="meta-left">
-          <time class="post-date" datetime="2026-01-18T14:15:08.377Z">
+          <time class="post-date" datetime="2022-01-10T04:00:00.000Z">
             <svg viewBox="0 0 24 24" width="16" height="16">
               <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
             </svg>
-            2026年01月18日
+            2022年01月10日
           </time>
 
+          
+            <span class="post-updated">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z"/>
+              </svg>
+              更新于 2026年04月06日
+            </span>
           
 
           
@@ -92,6 +102,13 @@
               NLP
             </a>
           
+
+          <span class="post-reading-main">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm.5-12h-1.5v5l4.2 2.5.8-1.2-3.5-2.1V8z"/>
+            </svg>
+            约 2 分钟阅读
+          </span>
         </div>
 
       </div>
@@ -115,7 +132,7 @@
 <p><strong>应用：</strong>情感分析、聊天机器人、语音识别、机器翻译</p>
 <p><strong>预料预处理（中）：</strong>中文分词(Chinese Word Segmentation)<code>-&gt;</code>词性标注(Parts of Speech)<code>-&gt;</code>命名实体识别(NER)<code>-&gt;</code>去除停用词</p>
 <p><strong>预料预处理（英）：</strong>分词(tokenization)<code>-&gt;</code>词干提取(stemming)<code>-&gt;</code>词形还原(lemmatization)<code>-&gt;</code>词性标注(pos tags)<code>-&gt;</code>命名实体识别(ner-&gt;&#96;分块(chunking)</p>
-<p><img src="/img/image-20231225113255562.png" alt="image-20231225113255562"></p>
+<p><img src="/img/nlp/image-20231225113255562.png" alt="image-20231225113255562"></p>
 <h3 id="1-1、自然语言理解-NLU-NLI"><a href="#1-1、自然语言理解-NLU-NLI" class="headerlink" title="1.1、自然语言理解 - NLU | NLI"></a>1.1、自然语言理解 - NLU | NLI</h3><p>自然语言理解就是希望机器像人一样，具备正常人的语言理解能力</p>
 <p> <strong>NLU</strong>至今还远不如人类，有很多难点（语言的多样性、歧义性、鲁棒性、知识依赖、上下文）。</p>
 <ol>
@@ -140,7 +157,7 @@
 <p><strong>中英文分词区别：</strong>分词方式不同，中文更难；英文单词有多种形态，需要词性还原和词干提取；中文分词需要考虑粒度问题。</p>
 <p><strong>中文分词的3大难点：</strong>没有统一的标准；歧义词如何切分；新词的识别。</p>
 <p><strong>3个典型的分词方式：</strong>基于词典匹配；基于统计；基于深度学习。</p>
-<h3 id="2-2、词干提取-STEMMING-词形还原-LEMMATISATION"><a href="#2-2、词干提取-STEMMING-词形还原-LEMMATISATION" class="headerlink" title="2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION"></a>2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION</h3><p>词干提取时英文预料预处理的一个步骤，预料预处理是NLP的第一步。</p>
+<h3 id="2-2、词干提取-STEMMING-词形还原-LEMMATISATION"><a href="#2-2、词干提取-STEMMING-词形还原-LEMMATISATION" class="headerlink" title="2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION"></a>2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION</h3><p>词干提取是英文语料预处理的一个步骤，语料预处理是NLP的第一步。</p>
 <table>
 <thead>
 <tr>
@@ -149,15 +166,15 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="img/image-20231225134313816.png" style="zoom: 25%;" ></td>
-<td align="left">词干提取时英文预料预处理的一个步骤，预料预处理是NLP的第一步。</td>
+<td align="center"><img src="/img/nlp/image-20231225134313816.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图1" /></td>
+<td align="left">词干提取是英文语料预处理的一个步骤，语料预处理是NLP的第一步。</td>
 </tr>
 <tr>
-<td align="center"><img src="img/image-20231225135205727.png" alt="image-20231225135205727" style="zoom:25%;" /></td>
+<td align="center"><img src="/img/nlp/image-20231225135205727.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图2" /></td>
 <td align="left"><strong>1、词干提取 - STEMMING</strong><br />去除单词的前后缀得到词根的过程；<br />前后缀：【名词复数】【进行式】【过去分词】…<br /></td>
 </tr>
 <tr>
-<td align="center"><img src="img/image-20231225135158099.png" alt="image-20231225135158099" style="zoom:25%;" /></td>
+<td align="center"><img src="/img/nlp/image-20231225135158099.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图3" /></td>
 <td align="left"><strong>2、词形还原 - Lemmatisation</strong><br />基于词典，将单词的复杂形态转变为最基础的形态</td>
 </tr>
 </tbody></table>
@@ -169,7 +186,7 @@
 <p><strong>常见方法：</strong>基于规则、基于统计、基于规则+统计、基于深度学习</p>
 <p>词性标注工具：Jieba、SnowNLP、THULAC、StanfordCoreNLP、HanLP、NLTK、SpaCy</p>
 <h3 id="2-4、命名实体识别-NER"><a href="#2-4、命名实体识别-NER" class="headerlink" title="2.4、命名实体识别 - NER"></a>2.4、命名实体识别 - NER</h3><p>命名实体识别，识别文本中具有特定意义的实体，主要包括人名、地名、机构名、专有名词等。</p>
-<p><img src="/img/image-20231225141238507.png" alt="image-20231225141238507"></p>
+<p><img src="/img/nlp/image-20231225141238507.png" alt="image-20231225141238507"></p>
 
       </div>
 
@@ -341,14 +358,14 @@
     <!-- Post Navigation -->
     <nav class="post-nav">
       
-        <a href="/2026/01/18/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item prev">
+        <a href="/2023/01/10/Life/%E8%90%8C%E5%AE%A0/" class="post-nav-item prev">
           <div class="nav-label">← 上一篇</div>
           <div class="nav-title">萌宠</div>
         </a>
       
 
       
-        <a href="/2026/01/18/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item next">
+        <a href="/2022/01/10/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item next">
           <div class="nav-label">下一篇 →</div>
           <div class="nav-title">目标检测</div>
         </a>
@@ -359,113 +376,119 @@
 
   </main>
 
-  <!-- Footer (隐藏在首页与简历页) -->
+  <!-- Footer (仅在简历页隐藏) -->
   
-    <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <div class="footer-info">
-        <p>© 2024 Caochong. All rights reserved.</p>
-        
-      </div>
-
-      <div class="footer-social">
-        <p class="footer-social-title">联系方式：</p>
-        <div class="footer-social-links">
+    <footer class="footer site-footer">
+  
+  <div class="site-footer-shell">
+    
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <strong class="site-footer-name">星唯向导</strong>
           
-            <a href="https://github.com/chong-zzxy"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="GitHub"
-               class="footer-social-link"
-               title="GitHub">
-              
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              
-            </a>
+            <span class="site-footer-dot" aria-hidden="true">·</span>
           
-            <a href="https://space.bilibili.com/271039719"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="BiliBili"
-               class="footer-social-link"
-               title="BiliBili">
-              
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/>
-                </svg>
-              
-            </a>
           
-            <a href="mailto:441046702@qq.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Email"
-               class="footer-social-link"
-               title="Email">
+            <span class="site-footer-brief site-footer-brief-poem">
               
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
+                <span class="site-footer-brief-line">星是惟一的向导</span>
               
-            </a>
+                <span class="site-footer-brief-line">在年轻的飞奔里，你是迎面而来的风</span>
+              
+            </span>
           
         </div>
-      </div>
-    </div>
 
-    <div class="footer-powered">
-      <p>
-        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
-        | Theme by <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener">Caochong</a>
+        
+          <section class="site-footer-social" aria-label="社交链接">
+            
+              <a href="https://github.com/chong-zzxy"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>GitHub</span>
+              </a>
+            
+              <a href="https://space.bilibili.com/271039719"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>BiliBili</span>
+              </a>
+            
+              <a href="mailto:441046702@qq.com"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>Email</span>
+              </a>
+            
+          </section>
+        
+      </div>
+    
+
+    <div class="site-footer-meta">
+      <p class="site-footer-powered">
+        <span>Powered by</span>
+        <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a>
+        <span class="site-footer-divider">·</span>
+        <span>Theme</span>
+        <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener noreferrer">Caochong</a>
       </p>
+
+      <p class="site-footer-copyright">© 2024 Caochong. All rights reserved.</p>
+
+      
+
+      
+        <div class="site-footer-stats" id="site-footer-stats">
+          <span id="busuanzi_container_site_pv" style="display:none">
+            访问量
+            <strong id="busuanzi_value_site_pv"></strong>
+          </span>
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客
+            <strong id="busuanzi_value_site_uv"></strong>
+          </span>
+          <span class="site-footer-stats-loading" id="site-footer-stats-loading">访问统计加载中</span>
+        </div>
+      
     </div>
-
-    <!-- 访问统计 -->
-    
-      <div class="footer-stats" id="site-stats">
-        <span id="busuanzi_container_site_pv" style="display:none">
-          👀 本站访问量 <span id="busuanzi_value_site_pv"></span> 次
-        </span>
-        <span class="stats-separator" style="display:none"> | </span>
-        <span id="busuanzi_container_site_uv" style="display:none">
-          👤 访客数 <span id="busuanzi_value_site_uv"></span> 人
-        </span>
-        <span id="stats-loading" style="color: var(--text-secondary); font-size: 0.85rem;">
-          📊 正在加载访问统计...
-        </span>
-      </div>
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <script>
-        // 监听不蒜子加载完成
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            var pv = document.getElementById('busuanzi_container_site_pv');
-            var uv = document.getElementById('busuanzi_container_site_uv');
-            var loading = document.getElementById('stats-loading');
-
-            if (pv && pv.style.display === 'none' && document.getElementById('busuanzi_value_site_pv').textContent) {
-              pv.style.display = 'inline-block';
-              document.querySelector('.stats-separator').style.display = 'inline-block';
-              uv.style.display = 'inline-block';
-              if (loading) loading.style.display = 'none';
-            }
-          }, 1000);
-
-          // 如果 3 秒后还没加载，显示提示
-          setTimeout(function() {
-            var loading = document.getElementById('stats-loading');
-            var pv = document.getElementById('busuanzi_container_site_pv');
-            if (loading && pv && pv.style.display === 'none') {
-              loading.textContent = '📊 访问统计（加载中...）';
-            }
-          }, 3000);
-        });
-      </script>
-    
   </div>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+      (function() {
+        function syncBusuanziState() {
+          var pvContainer = document.getElementById('busuanzi_container_site_pv');
+          var uvContainer = document.getElementById('busuanzi_container_site_uv');
+          var pvValue = document.getElementById('busuanzi_value_site_pv');
+          var uvValue = document.getElementById('busuanzi_value_site_uv');
+          var loading = document.getElementById('site-footer-stats-loading');
+
+          var hasPv = pvValue && pvValue.textContent && pvValue.textContent.trim();
+          var hasUv = uvValue && uvValue.textContent && uvValue.textContent.trim();
+
+          if (pvContainer) pvContainer.style.display = hasPv ? 'inline-flex' : 'none';
+          if (uvContainer) uvContainer.style.display = hasUv ? 'inline-flex' : 'none';
+
+          if (loading && (hasPv || hasUv)) {
+            loading.style.display = 'none';
+          }
+        }
+
+        window.addEventListener('load', function() {
+          setTimeout(syncBusuanziState, 900);
+          setTimeout(syncBusuanziState, 2200);
+          setTimeout(function() {
+            var loading = document.getElementById('site-footer-stats-loading');
+            if (loading && loading.style.display !== 'none') {
+              loading.textContent = '访问统计暂不可用';
+            }
+          }, 4200);
+        });
+      })();
+    </script>
+  
 </footer>
 
   
@@ -477,8 +500,7 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770569030857"></script>
-  <script src="/js/neural-network.js?v=1770569030857"></script>
-  <script src="/js/scroll-animations.js?v=1770569030857"></script>
+  <script src="/js/main.js?v=20260406"></script>
+  <script src="/js/scroll-animations.js?v=20260406"></script>
 </body>
 </html>

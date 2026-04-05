@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g" x1="120" y1="50" x2="1500" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#235C7E"/>
+      <stop offset="1" stop-color="#6FB4D9"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1200 170) rotate(122) scale(630 760)">
+      <stop stop-color="#DDF3FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#DDF3FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g opacity="0.26" stroke="#EAF7FF" stroke-width="3">
+    <path d="M250 610L430 450L610 560L790 350L970 430"/>
+    <circle cx="250" cy="610" r="9" fill="#EAF7FF"/>
+    <circle cx="430" cy="450" r="9" fill="#EAF7FF"/>
+    <circle cx="610" cy="560" r="9" fill="#EAF7FF"/>
+    <circle cx="790" cy="350" r="9" fill="#EAF7FF"/>
+    <circle cx="970" cy="430" r="9" fill="#EAF7FF"/>
+  </g>
+  <g opacity="0.2" stroke="#EAF7FF" stroke-width="2">
+    <path d="M1120 260H1400"/>
+    <path d="M1120 304H1360"/>
+    <path d="M1120 348H1320"/>
+  </g>
+  <text x="88" y="744" fill="#F4FCFF" fill-opacity="0.95" font-size="84" letter-spacing="3" font-family="Avenir, Helvetica, Arial, sans-serif">PERSONAL RECORDS</text>
+  <text x="90" y="804" fill="#ECFAFF" fill-opacity="0.78" font-size="28" letter-spacing="6" font-family="Avenir, Helvetica, Arial, sans-serif">RIDE · HIKE · RUN</text>
+</svg>

@@ -7,8 +7,8 @@
   <meta name="description" content="吾家有布偶">
   <link rel="icon" href="/img/favicon.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=1770569030856">
-  <link rel="stylesheet" href="/css/theme-green.css?v=1770569030856">
+  <link rel="stylesheet" href="/css/style.css?v=20260406">
+  <link rel="stylesheet" href="/css/theme-green.css?v=20260406">
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 <body class="theme-green">
@@ -67,8 +67,10 @@
 
   <!-- Main Content -->
   <main class="main-container">
-    <!-- 相册详情页 -->
-<div class="album-detail-container">
+    
+
+<!-- 相册详情页 -->
+<div class="album-detail-container album-detail-immersive">
   <!-- 相册头部 -->
   <div class="album-detail-header">
     <nav class="breadcrumb">
@@ -102,260 +104,412 @@
         </span>
       
 
-      
-        <span class="meta-item">
-          <svg viewBox="0 0 24 24" width="18" height="18">
-            <path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-          </svg>
-          共 22 张照片
-        </span>
-      
+      <span class="meta-item">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+        </svg>
+        共 21 张照片
+      </span>
     </div>
   </div>
 
-  <!-- 照片网格 (瀑布流) -->
+  <!-- 照片网格 -->
   
     <div class="photos-grid" id="photos-grid">
       
-        <div class="photo-item" data-index="0">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="0">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230331 初识">
             <img src="/img/gallery/Madame-Nian/20230331_1155.jpg"
                  alt="20230331 初识"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#01</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230331 初识</h3>
             
-              <div class="photo-overlay">
-                <div class="photo-info">
-                  
-                    <h3 class="photo-title">20230331 初识</h3>
-                  
-                  
-                    <p class="photo-description">好小一只，好怕钻进犄角旮旯找不到，还是躲进被窝里，吃我一计泰山陨石坠</p>
-                  
-                </div>
-              </div>
+              <p class="photo-caption-description">好小一只，好怕钻进犄角旮旯找不到，还是躲进被窝里，吃我一计泰山陨石坠</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="1">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="1">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230401 爱吃小猫">
             <img src="/img/gallery/Madame-Nian/20230401_0137.jpg"
-                 alt="20230401 爱吃 贪吃"
+                 alt="20230401 爱吃小猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#02</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230401 爱吃小猫</h3>
             
-              <div class="photo-overlay">
-                <div class="photo-info">
-                  
-                    <h3 class="photo-title">20230401 爱吃 贪吃</h3>
-                  
-                  
-                </div>
-              </div>
+              <p class="photo-caption-description">罐头比脸大，埋头苦吃</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="2">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="2">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230415 皮皮猫">
             <img src="/img/gallery/Madame-Nian/20230415_200102.jpg"
-                 alt="粘粘星球"
+                 alt="20230415 皮皮猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#03</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230415 皮皮猫</h3>
+            
+              <p class="photo-caption-description">可恶臭小猫，阻止我装成一个文化人</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="3">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="3">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230611 妩媚小猫">
             <img src="/img/gallery/Madame-Nian/20230611_161953.jpg"
-                 alt="粘粘星球"
+                 alt="20230611 妩媚小猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#04</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230611 妩媚小猫</h3>
+            
+              <p class="photo-caption-description">啊啊啊啊啊啊，好娇媚啊</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="4">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="4">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230618 傻（伞）猫">
             <img src="/img/gallery/Madame-Nian/20230618_151515.jpg"
-                 alt="粘粘星球"
+                 alt="20230618 傻（伞）猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#05</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230618 傻（伞）猫</h3>
+            
+              <p class="photo-caption-description">就爱钻个伞，怎么这么可爱呢</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="5">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="5">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230619 偷税（水）猫">
             <img src="/img/gallery/Madame-Nian/20230619_184230.jpg"
-                 alt="粘粘星球"
+                 alt="20230619 偷税（水）猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#06</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230619 偷税（水）猫</h3>
+            
+              <p class="photo-caption-description">亲，这是我喝的白开水，不是什么国窖啊喂</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="6">
-          <div class="photo-wrapper">
-            <img src="/img/gallery/Madame-Nian/20230621_183940.jpg"
-                 alt="粘粘星球"
-                 loading="lazy"
-                 class="photo-image">
-            
-          </div>
-        </div>
-      
-        <div class="photo-item" data-index="7">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="6">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230720 福（袋）猫">
             <img src="/img/gallery/Madame-Nian/20230720_184128.jpg"
-                 alt="粘粘星球"
+                 alt="20230720 福（袋）猫"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#07</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230720 福（袋）猫</h3>
+            
+              <p class="photo-caption-description">躲进喜糖袋里，沾沾喜气 hhhhh</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="8">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="7">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：20230922 表情喵">
             <img src="/img/gallery/Madame-Nian/20230922_130018.jpg"
-                 alt="粘粘星球"
+                 alt="20230922 表情喵"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#08</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">20230922 表情喵</h3>
+            
+              <p class="photo-caption-description">首个表情包 值得纪念一下</p>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="9">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="8">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 9">
             <img src="/img/gallery/Madame-Nian/20231028_1133.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 9"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#09</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 9</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="10">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="9">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 10">
             <img src="/img/gallery/Madame-Nian/20240505_0056.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 10"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#10</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 10</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="11">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="10">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 11">
             <img src="/img/gallery/Madame-Nian/20240617_215932.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 11"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#11</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 11</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="12">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="11">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 12">
             <img src="/img/gallery/Madame-Nian/20241028_113303.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 12"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#12</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 12</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="13">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="12">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 13">
             <img src="/img/gallery/Madame-Nian/20241104_185358.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 13"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#13</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 13</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="14">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="13">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 14">
             <img src="/img/gallery/Madame-Nian/20241208_225117.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 14"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#14</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 14</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="15">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="14">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 15">
             <img src="/img/gallery/Madame-Nian/20250203_103958.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 15"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#15</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 15</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="16">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="15">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 16">
             <img src="/img/gallery/Madame-Nian/20250702_201510.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 16"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#16</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 16</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="17">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="16">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 17">
             <img src="/img/gallery/Madame-Nian/20250910_2238.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 17"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#17</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 17</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="18">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="17">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 18">
             <img src="/img/gallery/Madame-Nian/20251012_022647.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 18"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#18</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 18</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="19">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="18">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 19">
             <img src="/img/gallery/Madame-Nian/20251013_222358.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 19"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#19</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 19</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="20">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="19">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 20">
             <img src="/img/gallery/Madame-Nian/20251019_022730.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 20"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#20</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 20</h3>
             
           </div>
-        </div>
+        </article>
       
-        <div class="photo-item" data-index="21">
-          <div class="photo-wrapper">
+        <article class="photo-item" data-index="20">
+          <button type="button" class="photo-wrapper" aria-label="查看图片：瞬间 21">
             <img src="/img/gallery/Madame-Nian/20260124_2052.jpg"
-                 alt="粘粘星球"
+                 alt="瞬间 21"
                  loading="lazy"
                  class="photo-image">
+            <div class="photo-overlay">
+              <span class="photo-order">#21</span>
+              <span class="photo-view-label">点击查看大图</span>
+            </div>
+          </button>
+
+          <div class="photo-caption">
+            <h3 class="photo-caption-title">瞬间 21</h3>
             
           </div>
-        </div>
+        </article>
       
     </div>
   
@@ -372,38 +526,199 @@
 </div>
 
 <!-- Lightbox 灯箱 -->
-<div class="lightbox" id="lightbox">
+<div class="lightbox lightbox-showcase" id="lightbox" aria-hidden="true">
   <div class="lightbox-overlay"></div>
-  <div class="lightbox-content">
-    <button class="lightbox-close" id="lightbox-close">
-      <svg viewBox="0 0 24 24" width="32" height="32">
-        <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-      </svg>
-    </button>
-
-    <button class="lightbox-prev" id="lightbox-prev">
-      <svg viewBox="0 0 24 24" width="40" height="40">
-        <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-      </svg>
-    </button>
-
-    <button class="lightbox-next" id="lightbox-next">
-      <svg viewBox="0 0 24 24" width="40" height="40">
-        <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-      </svg>
-    </button>
-
-    <div class="lightbox-image-wrapper">
-      <img src="" alt="" id="lightbox-image" class="lightbox-image">
-      <div class="lightbox-info">
-        <h3 class="lightbox-title" id="lightbox-title"></h3>
-        <p class="lightbox-description" id="lightbox-description"></p>
+  <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="图片预览">
+    <div class="lightbox-toolbar">
+      <div class="lightbox-toolbar-main">
+        <span class="lightbox-album-name">粘粘星球</span>
+        <span class="lightbox-counter" id="lightbox-counter">
+          <span id="current-index">1</span> / <span id="total-images">1</span>
+        </span>
       </div>
+
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="关闭预览">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+          <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
     </div>
 
-    <div class="lightbox-counter" id="lightbox-counter">
-      <span id="current-index">1</span> / <span id="total-images">1</span>
+    <div class="lightbox-stage">
+      <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="上一张">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+          <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-wrapper">
+        <img src="" alt="" id="lightbox-image" class="lightbox-image">
+      </div>
+
+      <button class="lightbox-next" id="lightbox-next" type="button" aria-label="下一张">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+          <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+      </button>
     </div>
+
+    <div class="lightbox-info" id="lightbox-info">
+      <h3 class="lightbox-title" id="lightbox-title"></h3>
+      <p class="lightbox-description" id="lightbox-description"></p>
+    </div>
+
+    
+      <div class="lightbox-thumbs" id="lightbox-thumbs">
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="0"
+                  aria-label="查看第 1 张：20230331 初识">
+            <img src="/img/gallery/Madame-Nian/20230331_1155.jpg" alt="20230331 初识" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="1"
+                  aria-label="查看第 2 张：20230401 爱吃小猫">
+            <img src="/img/gallery/Madame-Nian/20230401_0137.jpg" alt="20230401 爱吃小猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="2"
+                  aria-label="查看第 3 张：20230415 皮皮猫">
+            <img src="/img/gallery/Madame-Nian/20230415_200102.jpg" alt="20230415 皮皮猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="3"
+                  aria-label="查看第 4 张：20230611 妩媚小猫">
+            <img src="/img/gallery/Madame-Nian/20230611_161953.jpg" alt="20230611 妩媚小猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="4"
+                  aria-label="查看第 5 张：20230618 傻（伞）猫">
+            <img src="/img/gallery/Madame-Nian/20230618_151515.jpg" alt="20230618 傻（伞）猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="5"
+                  aria-label="查看第 6 张：20230619 偷税（水）猫">
+            <img src="/img/gallery/Madame-Nian/20230619_184230.jpg" alt="20230619 偷税（水）猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="6"
+                  aria-label="查看第 7 张：20230720 福（袋）猫">
+            <img src="/img/gallery/Madame-Nian/20230720_184128.jpg" alt="20230720 福（袋）猫" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="7"
+                  aria-label="查看第 8 张：20230922 表情喵">
+            <img src="/img/gallery/Madame-Nian/20230922_130018.jpg" alt="20230922 表情喵" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="8"
+                  aria-label="查看第 9 张：图片 9">
+            <img src="/img/gallery/Madame-Nian/20231028_1133.jpg" alt="图片 9" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="9"
+                  aria-label="查看第 10 张：图片 10">
+            <img src="/img/gallery/Madame-Nian/20240505_0056.jpg" alt="图片 10" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="10"
+                  aria-label="查看第 11 张：图片 11">
+            <img src="/img/gallery/Madame-Nian/20240617_215932.jpg" alt="图片 11" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="11"
+                  aria-label="查看第 12 张：图片 12">
+            <img src="/img/gallery/Madame-Nian/20241028_113303.jpg" alt="图片 12" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="12"
+                  aria-label="查看第 13 张：图片 13">
+            <img src="/img/gallery/Madame-Nian/20241104_185358.jpg" alt="图片 13" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="13"
+                  aria-label="查看第 14 张：图片 14">
+            <img src="/img/gallery/Madame-Nian/20241208_225117.jpg" alt="图片 14" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="14"
+                  aria-label="查看第 15 张：图片 15">
+            <img src="/img/gallery/Madame-Nian/20250203_103958.jpg" alt="图片 15" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="15"
+                  aria-label="查看第 16 张：图片 16">
+            <img src="/img/gallery/Madame-Nian/20250702_201510.jpg" alt="图片 16" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="16"
+                  aria-label="查看第 17 张：图片 17">
+            <img src="/img/gallery/Madame-Nian/20250910_2238.jpg" alt="图片 17" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="17"
+                  aria-label="查看第 18 张：图片 18">
+            <img src="/img/gallery/Madame-Nian/20251012_022647.jpg" alt="图片 18" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="18"
+                  aria-label="查看第 19 张：图片 19">
+            <img src="/img/gallery/Madame-Nian/20251013_222358.jpg" alt="图片 19" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="19"
+                  aria-label="查看第 20 张：图片 20">
+            <img src="/img/gallery/Madame-Nian/20251019_022730.jpg" alt="图片 20" loading="lazy">
+          </button>
+        
+          <button type="button"
+                  class="lightbox-thumb"
+                  data-lightbox-thumb="20"
+                  aria-label="查看第 21 张：图片 21">
+            <img src="/img/gallery/Madame-Nian/20260124_2052.jpg" alt="图片 21" loading="lazy">
+          </button>
+        
+      </div>
+    
   </div>
 </div>
 
@@ -411,34 +726,37 @@
 // Lightbox 功能
 (function() {
   const lightbox = document.getElementById('lightbox');
+  const lightboxOverlay = lightbox ? lightbox.querySelector('.lightbox-overlay') : null;
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxDescription = document.getElementById('lightbox-description');
+  const lightboxInfo = document.getElementById('lightbox-info');
   const currentIndexEl = document.getElementById('current-index');
   const totalImagesEl = document.getElementById('total-images');
+  const thumbButtons = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-thumb]'));
+  const albumTitle = "粘粘星球";
 
-  const photos = [{"image":"/img/gallery/Madame-Nian/20230331_1155.jpg","title":"20230331 初识","description":"好小一只，好怕钻进犄角旮旯找不到，还是躲进被窝里，吃我一计泰山陨石坠"},{"image":"/img/gallery/Madame-Nian/20230401_0137.jpg","title":"20230401 爱吃 贪吃","description":null},{"image":"/img/gallery/Madame-Nian/20230415_200102.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230611_161953.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230618_151515.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230619_184230.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230621_183940.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230720_184128.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20230922_130018.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20231028_1133.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20240505_0056.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20240617_215932.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241028_113303.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241104_185358.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20241208_225117.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250203_103958.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250702_201510.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20250910_2238.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251012_022647.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251013_222358.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20251019_022730.jpg","title":null,"description":null},{"image":"/img/gallery/Madame-Nian/20260124_2052.jpg","title":null,"description":null}];
+  const photos = [{"image":"/img/gallery/Madame-Nian/20230331_1155.jpg","title":"20230331 初识","description":"好小一只，好怕钻进犄角旮旯找不到，还是躲进被窝里，吃我一计泰山陨石坠"},{"image":"/img/gallery/Madame-Nian/20230401_0137.jpg","title":"20230401 爱吃小猫","description":"罐头比脸大，埋头苦吃"},{"image":"/img/gallery/Madame-Nian/20230415_200102.jpg","title":"20230415 皮皮猫","description":"可恶臭小猫，阻止我装成一个文化人"},{"image":"/img/gallery/Madame-Nian/20230611_161953.jpg","title":"20230611 妩媚小猫","description":"啊啊啊啊啊啊，好娇媚啊"},{"image":"/img/gallery/Madame-Nian/20230618_151515.jpg","title":"20230618 傻（伞）猫","description":"就爱钻个伞，怎么这么可爱呢"},{"image":"/img/gallery/Madame-Nian/20230619_184230.jpg","title":"20230619 偷税（水）猫","description":"亲，这是我喝的白开水，不是什么国窖啊喂"},{"image":"/img/gallery/Madame-Nian/20230720_184128.jpg","title":"20230720 福（袋）猫","description":"躲进喜糖袋里，沾沾喜气 hhhhh"},{"image":"/img/gallery/Madame-Nian/20230922_130018.jpg","title":"20230922 表情喵","description":"首个表情包 值得纪念一下"},{"image":"/img/gallery/Madame-Nian/20231028_1133.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20240505_0056.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20240617_215932.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20241028_113303.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20241104_185358.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20241208_225117.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20250203_103958.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20250702_201510.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20250910_2238.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20251012_022647.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20251013_222358.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20251019_022730.jpg","title":"","description":""},{"image":"/img/gallery/Madame-Nian/20260124_2052.jpg","title":"","description":""}];
+  if (!lightbox || !photos.length) return;
+
   let currentIndex = 0;
 
-  // 提取图片主色调
   function extractDominantColor(img, callback) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
+    canvas.width = 40;
+    canvas.height = 40;
 
-    // 使用小尺寸以提高性能
-    canvas.width = 50;
-    canvas.height = 50;
-
-    ctx.drawImage(img, 0, 0, 50, 50);
+    ctx.drawImage(img, 0, 0, 40, 40);
 
     try {
-      const imageData = ctx.getImageData(0, 0, 50, 50);
+      const imageData = ctx.getImageData(0, 0, 40, 40);
       const data = imageData.data;
-
-      let r = 0, g = 0, b = 0;
+      let r = 0;
+      let g = 0;
+      let b = 0;
       let count = 0;
 
-      // 采样像素并计算平均值
       for (let i = 0; i < data.length; i += 4) {
         r += data[i];
         g += data[i + 1];
@@ -446,90 +764,95 @@
         count++;
       }
 
-      r = Math.floor(r / count);
-      g = Math.floor(g / count);
-      b = Math.floor(b / count);
-
-      // 调整亮度 - 提高到 25% 以获得更明亮的效果
-      const factor = 0.25;
-      r = Math.floor(r * factor);
-      g = Math.floor(g * factor);
-      b = Math.floor(b * factor);
-
-      callback(`rgba(${r}, ${g}, ${b}, 0.85)`);
+      r = Math.floor((r / count) * 0.35);
+      g = Math.floor((g / count) * 0.35);
+      b = Math.floor((b / count) * 0.35);
+      callback(`rgba(${r}, ${g}, ${b}, 0.88)`);
     } catch (e) {
-      // 如果提取失败（如跨域图片），使用默认颜色
-      callback('rgba(0, 0, 0, 0.85)');
+      callback('rgba(14, 20, 28, 0.92)');
     }
   }
 
-  // 更新灯箱内容
+  function setThumbState(index) {
+    thumbButtons.forEach(function(btn) {
+      const isActive = Number(btn.getAttribute('data-lightbox-thumb')) === index;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-current', isActive ? 'true' : 'false');
+      if (isActive) {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  }
+
+  function preloadAround(index) {
+    [index - 1, index + 1].forEach(function(i) {
+      const target = (i + photos.length) % photos.length;
+      const preload = new Image();
+      preload.src = photos[target].image;
+    });
+  }
+
   function updateLightbox(index) {
     currentIndex = index;
     const photo = photos[index];
+    const titleText = (photo && photo.title) ? photo.title : (albumTitle + ' · ' + (index + 1));
+    const descText = (photo && photo.description) ? photo.description : '';
 
-    lightboxImage.src = photo.image;
-    lightboxImage.alt = photo.title || '粘粘星球';
-    lightboxTitle.textContent = photo.title || '';
-    lightboxDescription.textContent = photo.description || '';
+    lightboxImage.src = photo.image || '';
+    lightboxImage.alt = titleText;
+    lightboxTitle.textContent = titleText;
+    lightboxDescription.textContent = descText;
     currentIndexEl.textContent = index + 1;
     totalImagesEl.textContent = photos.length;
+    lightboxInfo.classList.toggle('is-empty', !descText);
+    setThumbState(index);
+    preloadAround(index);
 
-    // 显示/隐藏信息
-    if (photo.title || photo.description) {
-      document.querySelector('.lightbox-info').style.display = 'block';
-    } else {
-      document.querySelector('.lightbox-info').style.display = 'none';
-    }
-
-    // 当图片加载完成后，提取主色调并更新背景
     lightboxImage.onload = function() {
       extractDominantColor(lightboxImage, function(color) {
-        const overlay = document.querySelector('.lightbox-overlay');
-        // 使用径向渐变 + 透明度，营造更通透的氛围感
-        overlay.style.background = `radial-gradient(circle at center, ${color} 0%, rgba(0, 0, 0, 0.88) 60%, rgba(0, 0, 0, 0.92) 100%)`;
+        if (!lightboxOverlay) return;
+        lightboxOverlay.style.background =
+          'radial-gradient(90% 90% at 50% 42%, ' + color + ' 0%, rgba(7, 10, 14, 0.95) 72%, rgba(6, 8, 12, 0.98) 100%)';
       });
     };
   }
 
-  // 打开灯箱
   function openLightbox(index) {
     updateLightbox(index);
     lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
-  // 关闭灯箱
   function closeLightbox() {
     lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
-  // 上一张
   function prevImage() {
-    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-    updateLightbox(currentIndex);
+    const next = (currentIndex - 1 + photos.length) % photos.length;
+    updateLightbox(next);
   }
 
-  // 下一张
   function nextImage() {
-    currentIndex = (currentIndex + 1) % photos.length;
-    updateLightbox(currentIndex);
+    const next = (currentIndex + 1) % photos.length;
+    updateLightbox(next);
   }
 
-  // 绑定事件 - 点击图片打开灯箱
-  console.log('初始化相册，照片数量:', photos.length);
   const wrappers = document.querySelectorAll('.photo-wrapper');
-  console.log('找到的 photo-wrapper 数量:', wrappers.length);
-
   wrappers.forEach(function(wrapper) {
     const photoItem = wrapper.closest('.photo-item');
-    const index = parseInt(photoItem.getAttribute('data-index'));
-    console.log('绑定第', index, '张图片');
-
-    wrapper.addEventListener('click', function(e) {
-      console.log('点击了第', index, '张图片');
+    const index = Number(photoItem.getAttribute('data-index'));
+    wrapper.addEventListener('click', function() {
       openLightbox(index);
+    });
+  });
+
+  thumbButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const index = Number(button.getAttribute('data-lightbox-thumb'));
+      updateLightbox(index);
     });
   });
 
@@ -537,129 +860,143 @@
   document.getElementById('lightbox-prev').addEventListener('click', prevImage);
   document.getElementById('lightbox-next').addEventListener('click', nextImage);
 
-  // 点击遮罩关闭
-  document.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
+  if (lightboxOverlay) {
+    lightboxOverlay.addEventListener('click', closeLightbox);
+  }
 
-  // 键盘控制
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('active')) return;
-
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeLightbox();
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevImage();
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextImage();
+    }
   });
 })();
 </script>
 
   </main>
 
-  <!-- Footer (隐藏在首页与简历页) -->
+  <!-- Footer (仅在简历页隐藏) -->
   
-    <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <div class="footer-info">
-        <p>© 2024 Caochong. All rights reserved.</p>
-        
-      </div>
-
-      <div class="footer-social">
-        <p class="footer-social-title">联系方式：</p>
-        <div class="footer-social-links">
+    <footer class="footer site-footer">
+  
+  <div class="site-footer-shell">
+    
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <strong class="site-footer-name">星唯向导</strong>
           
-            <a href="https://github.com/chong-zzxy"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="GitHub"
-               class="footer-social-link"
-               title="GitHub">
-              
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              
-            </a>
+            <span class="site-footer-dot" aria-hidden="true">·</span>
           
-            <a href="https://space.bilibili.com/271039719"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="BiliBili"
-               class="footer-social-link"
-               title="BiliBili">
-              
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/>
-                </svg>
-              
-            </a>
           
-            <a href="mailto:441046702@qq.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Email"
-               class="footer-social-link"
-               title="Email">
+            <span class="site-footer-brief site-footer-brief-poem">
               
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
+                <span class="site-footer-brief-line">星是惟一的向导</span>
               
-            </a>
+                <span class="site-footer-brief-line">在年轻的飞奔里，你是迎面而来的风</span>
+              
+            </span>
           
         </div>
-      </div>
-    </div>
 
-    <div class="footer-powered">
-      <p>
-        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
-        | Theme by <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener">Caochong</a>
+        
+          <section class="site-footer-social" aria-label="社交链接">
+            
+              <a href="https://github.com/chong-zzxy"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>GitHub</span>
+              </a>
+            
+              <a href="https://space.bilibili.com/271039719"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>BiliBili</span>
+              </a>
+            
+              <a href="mailto:441046702@qq.com"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>Email</span>
+              </a>
+            
+          </section>
+        
+      </div>
+    
+
+    <div class="site-footer-meta">
+      <p class="site-footer-powered">
+        <span>Powered by</span>
+        <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a>
+        <span class="site-footer-divider">·</span>
+        <span>Theme</span>
+        <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener noreferrer">Caochong</a>
       </p>
+
+      <p class="site-footer-copyright">© 2024 Caochong. All rights reserved.</p>
+
+      
+
+      
+        <div class="site-footer-stats" id="site-footer-stats">
+          <span id="busuanzi_container_site_pv" style="display:none">
+            访问量
+            <strong id="busuanzi_value_site_pv"></strong>
+          </span>
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客
+            <strong id="busuanzi_value_site_uv"></strong>
+          </span>
+          <span class="site-footer-stats-loading" id="site-footer-stats-loading">访问统计加载中</span>
+        </div>
+      
     </div>
-
-    <!-- 访问统计 -->
-    
-      <div class="footer-stats" id="site-stats">
-        <span id="busuanzi_container_site_pv" style="display:none">
-          👀 本站访问量 <span id="busuanzi_value_site_pv"></span> 次
-        </span>
-        <span class="stats-separator" style="display:none"> | </span>
-        <span id="busuanzi_container_site_uv" style="display:none">
-          👤 访客数 <span id="busuanzi_value_site_uv"></span> 人
-        </span>
-        <span id="stats-loading" style="color: var(--text-secondary); font-size: 0.85rem;">
-          📊 正在加载访问统计...
-        </span>
-      </div>
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <script>
-        // 监听不蒜子加载完成
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            var pv = document.getElementById('busuanzi_container_site_pv');
-            var uv = document.getElementById('busuanzi_container_site_uv');
-            var loading = document.getElementById('stats-loading');
-
-            if (pv && pv.style.display === 'none' && document.getElementById('busuanzi_value_site_pv').textContent) {
-              pv.style.display = 'inline-block';
-              document.querySelector('.stats-separator').style.display = 'inline-block';
-              uv.style.display = 'inline-block';
-              if (loading) loading.style.display = 'none';
-            }
-          }, 1000);
-
-          // 如果 3 秒后还没加载，显示提示
-          setTimeout(function() {
-            var loading = document.getElementById('stats-loading');
-            var pv = document.getElementById('busuanzi_container_site_pv');
-            if (loading && pv && pv.style.display === 'none') {
-              loading.textContent = '📊 访问统计（加载中...）';
-            }
-          }, 3000);
-        });
-      </script>
-    
   </div>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+      (function() {
+        function syncBusuanziState() {
+          var pvContainer = document.getElementById('busuanzi_container_site_pv');
+          var uvContainer = document.getElementById('busuanzi_container_site_uv');
+          var pvValue = document.getElementById('busuanzi_value_site_pv');
+          var uvValue = document.getElementById('busuanzi_value_site_uv');
+          var loading = document.getElementById('site-footer-stats-loading');
+
+          var hasPv = pvValue && pvValue.textContent && pvValue.textContent.trim();
+          var hasUv = uvValue && uvValue.textContent && uvValue.textContent.trim();
+
+          if (pvContainer) pvContainer.style.display = hasPv ? 'inline-flex' : 'none';
+          if (uvContainer) uvContainer.style.display = hasUv ? 'inline-flex' : 'none';
+
+          if (loading && (hasPv || hasUv)) {
+            loading.style.display = 'none';
+          }
+        }
+
+        window.addEventListener('load', function() {
+          setTimeout(syncBusuanziState, 900);
+          setTimeout(syncBusuanziState, 2200);
+          setTimeout(function() {
+            var loading = document.getElementById('site-footer-stats-loading');
+            if (loading && loading.style.display !== 'none') {
+              loading.textContent = '访问统计暂不可用';
+            }
+          }, 4200);
+        });
+      })();
+    </script>
+  
 </footer>
 
   
@@ -671,8 +1008,7 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=1770569030856"></script>
-  <script src="/js/neural-network.js?v=1770569030856"></script>
-  <script src="/js/scroll-animations.js?v=1770569030856"></script>
+  <script src="/js/main.js?v=20260406"></script>
+  <script src="/js/scroll-animations.js?v=20260406"></script>
 </body>
 </html>

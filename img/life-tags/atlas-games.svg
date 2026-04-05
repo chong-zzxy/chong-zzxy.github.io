@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g" x1="110" y1="40" x2="1530" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A3768"/>
+      <stop offset="1" stop-color="#6D7FC2"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 190) rotate(122) scale(620 760)">
+      <stop stop-color="#D7E2FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#D7E2FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g opacity="0.28" stroke="#EAF0FF" stroke-width="10" stroke-linecap="round">
+    <path d="M1120 270H1280"/>
+    <path d="M1200 190V350"/>
+  </g>
+  <g opacity="0.28" fill="#EAF0FF">
+    <circle cx="430" cy="240" r="18"/>
+    <circle cx="500" cy="280" r="18"/>
+    <circle cx="500" cy="200" r="18"/>
+    <circle cx="570" cy="240" r="18"/>
+  </g>
+  <g opacity="0.2" stroke="#EAF0FF" stroke-width="2">
+    <path d="M220 650H760"/>
+    <path d="M220 694H680"/>
+    <path d="M220 738H820"/>
+  </g>
+  <text x="88" y="744" fill="#F5F8FF" fill-opacity="0.95" font-size="84" letter-spacing="3" font-family="Avenir, Helvetica, Arial, sans-serif">GAME MAP</text>
+  <text x="90" y="804" fill="#ECF2FF" fill-opacity="0.76" font-size="28" letter-spacing="6" font-family="Avenir, Helvetica, Arial, sans-serif">MOBILE · PC · CHALLENGE</text>
+</svg>

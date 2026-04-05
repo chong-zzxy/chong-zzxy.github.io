@@ -106,16 +106,85 @@ function performSearch(query) {
   return results;
 }
 
-// Highlight keywords in text
-function highlightKeywords(text, keywords) {
-  let highlightedText = text;
+// Append highlighted text nodes to avoid XSS from innerHTML interpolation
+function appendHighlightedText(container, text, keywords) {
+  const plainText = String(text || '');
+  if (!keywords || !keywords.length) {
+    container.appendChild(document.createTextNode(plainText));
+    return;
+  }
 
-  keywords.forEach(keyword => {
-    const regex = new RegExp(`(${escapeRegExp(keyword)})`, 'gi');
-    highlightedText = highlightedText.replace(regex, '<em>$1</em>');
-  });
+  const escapedKeywords = keywords
+    .map(escapeRegExp)
+    .filter(Boolean);
 
-  return highlightedText;
+  if (!escapedKeywords.length) {
+    container.appendChild(document.createTextNode(plainText));
+    return;
+  }
+
+  const matcher = new RegExp(`(${escapedKeywords.join('|')})`, 'gi');
+  let lastIndex = 0;
+  let match = null;
+
+  while ((match = matcher.exec(plainText)) !== null) {
+    if (match.index > lastIndex) {
+      container.appendChild(document.createTextNode(plainText.slice(lastIndex, match.index)));
+    }
+    const em = document.createElement('em');
+    em.textContent = match[0];
+    container.appendChild(em);
+    lastIndex = match.index + match[0].length;
+    if (match[0].length === 0) break;
+  }
+
+  if (lastIndex < plainText.length) {
+    container.appendChild(document.createTextNode(plainText.slice(lastIndex)));
+  }
+}
+
+function createMetaIcon(type) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '14');
+  svg.setAttribute('height', '14');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor');
+
+  if (type === 'category') {
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z');
+    svg.appendChild(path);
+  } else {
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', '3');
+    rect.setAttribute('y', '4');
+    rect.setAttribute('width', '18');
+    rect.setAttribute('height', '18');
+    rect.setAttribute('rx', '2');
+    rect.setAttribute('ry', '2');
+    const line1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line1.setAttribute('x1', '16');
+    line1.setAttribute('y1', '2');
+    line1.setAttribute('x2', '16');
+    line1.setAttribute('y2', '6');
+    const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line2.setAttribute('x1', '8');
+    line2.setAttribute('y1', '2');
+    line2.setAttribute('x2', '8');
+    line2.setAttribute('y2', '6');
+    const line3 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line3.setAttribute('x1', '3');
+    line3.setAttribute('y1', '10');
+    line3.setAttribute('x2', '21');
+    line3.setAttribute('y2', '10');
+    svg.appendChild(rect);
+    svg.appendChild(line1);
+    svg.appendChild(line2);
+    svg.appendChild(line3);
+  }
+
+  return svg;
 }
 
 // Escape special regex characters
@@ -163,45 +232,37 @@ function displayResults(results, query) {
     const li = document.createElement('li');
     li.className = 'search-result-item';
 
-    // Build category display
-    let categoryHTML = '';
+    const title = document.createElement('h3');
+    title.className = 'search-result-title';
+    const link = document.createElement('a');
+    link.setAttribute('href', post.url || '#');
+    appendHighlightedText(link, post.title || '未命名文章', keywords);
+    title.appendChild(link);
+
+    const meta = document.createElement('div');
+    meta.className = 'search-result-meta';
+
     if (post.categories && post.categories.length > 0) {
-      categoryHTML = `
-        <span class="search-result-category">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-          </svg>
-          ${post.categories[0]}
-        </span>
-      `;
+      const category = document.createElement('span');
+      category.className = 'search-result-category';
+      category.appendChild(createMetaIcon('category'));
+      category.appendChild(document.createTextNode(post.categories[0]));
+      meta.appendChild(category);
     }
 
-    // Build date display
-    const dateHTML = `
-      <span class="search-result-date">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        ${formatDate(post.date)}
-      </span>
-    `;
+    const date = document.createElement('span');
+    date.className = 'search-result-date';
+    date.appendChild(createMetaIcon('date'));
+    date.appendChild(document.createTextNode(formatDate(post.date)));
+    meta.appendChild(date);
 
-    li.innerHTML = `
-      <h3 class="search-result-title">
-        <a href="${post.url}">${highlightKeywords(post.title, keywords)}</a>
-      </h3>
-      <div class="search-result-meta">
-        ${categoryHTML}
-        ${dateHTML}
-      </div>
-      <div class="search-result-content">
-        ${highlightKeywords(result.matchedContent, keywords)}
-      </div>
-    `;
+    const content = document.createElement('div');
+    content.className = 'search-result-content';
+    appendHighlightedText(content, result.matchedContent, keywords);
 
+    li.appendChild(title);
+    li.appendChild(meta);
+    li.appendChild(content);
     resultsContainer.appendChild(li);
   });
 }
