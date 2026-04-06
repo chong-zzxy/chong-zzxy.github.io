@@ -273,18 +273,29 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.avatar-mini {
+.avatar-mini-frame {
+  display: block;
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-full);
-  border: 2px solid var(--primary);
-  box-shadow: 0 0 0 4px var(--primary-alpha-10);
-  transition: all var(--transition-base);
+  flex-shrink: 0;
+  border-radius: 10px;
+  transition: transform var(--transition-base);
 }
 
-.logo:hover .avatar-mini {
-  box-shadow: 0 0 0 6px var(--primary-alpha-20);
-  transform: scale(1.05);
+.avatar-mini-frame::before {
+  content: none;
+}
+
+.avatar-mini {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.logo:hover .avatar-mini-frame {
+  transform: translateY(-1px) scale(1.03);
 }
 
 .site-name {
