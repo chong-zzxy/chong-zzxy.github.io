@@ -1,5 +1,5 @@
 /**
- * Caochong Theme - Main JavaScript
+ * Xingwei Theme - Main JavaScript
  * 处理主题交互功能
  */
 
