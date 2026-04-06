@@ -14,6 +14,9 @@ class NeuralNetwork {
     this.particles = [];
     this.connections = [];
     this.mouse = { x: null, y: null, radius: 150 };
+    this.dpr = 1;
+    this.logicalWidth = 0;
+    this.logicalHeight = 0;
 
     // 统一绿色色系 - 避免杂色
     this.colors = {
@@ -36,22 +39,30 @@ class NeuralNetwork {
   }
 
   resizeCanvas() {
-    this.canvas.width = this.canvas.offsetWidth * window.devicePixelRatio;
-    this.canvas.height = this.canvas.offsetHeight * window.devicePixelRatio;
-    this.canvas.style.width = this.canvas.offsetWidth + 'px';
-    this.canvas.style.height = this.canvas.offsetHeight + 'px';
-    this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    const rect = this.canvas.getBoundingClientRect();
+    this.logicalWidth = Math.max(1, Math.round(rect.width));
+    this.logicalHeight = Math.max(1, Math.round(rect.height));
+    this.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+
+    this.canvas.width = this.logicalWidth * this.dpr;
+    this.canvas.height = this.logicalHeight * this.dpr;
+    this.canvas.style.width = this.logicalWidth + 'px';
+    this.canvas.style.height = this.logicalHeight + 'px';
+
+    // Reset transform before scaling to avoid accumulated scale on resize.
+    this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+    this.ctx.scale(this.dpr, this.dpr);
   }
 
   createParticles() {
     // 减少粒子数量，避免视觉噪音
-    const numParticles = Math.floor((this.canvas.width * this.canvas.height) / 25000);
+    const numParticles = Math.floor((this.logicalWidth * this.logicalHeight) / 25000);
     this.particles = [];
 
     for (let i = 0; i < numParticles; i++) {
       this.particles.push(new Particle(
-        Math.random() * this.canvas.width,
-        Math.random() * this.canvas.height,
+        Math.random() * this.logicalWidth,
+        Math.random() * this.logicalHeight,
         this.colors
       ));
     }
@@ -86,11 +97,11 @@ class NeuralNetwork {
   }
 
   animate() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
 
     // 更新和绘制粒子
     this.particles.forEach(particle => {
-      particle.update(this.mouse, this.parallaxOffset, this.canvas);
+      particle.update(this.mouse, this.parallaxOffset, this.logicalWidth, this.logicalHeight);
       particle.draw(this.ctx);
     });
 
@@ -153,14 +164,14 @@ class Particle {
     this.opacity = Math.random() * 0.3 + 0.15;
   }
 
-  update(mouse, parallax, canvas) {
+  update(mouse, parallax, stageWidth, stageHeight) {
     // 基础移动
     this.x += this.speedX;
     this.y += this.speedY;
 
     // 边界检测
-    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    if (this.x < 0 || this.x > stageWidth) this.speedX *= -1;
+    if (this.y < 0 || this.y > stageHeight) this.speedY *= -1;
 
     // Parallax 效果
     this.x += parallax.x * 0.05;

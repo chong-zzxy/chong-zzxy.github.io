@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>自然语言处理-NLP基础 | 星唯向导</title>
   <meta name="description" content="圈地自萌的个人记录｜有技术，也有生活">
+  
+    <meta name="keywords" content="AI, 计算机视觉, NLP, 深度学习, 机器学习, Python">
+  
+  <link rel="canonical" href="https://chong-zzxy.github.io/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="星唯向导">
+  <meta property="og:title" content="自然语言处理-NLP基础 | 星唯向导">
+  <meta property="og:description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <meta property="og:url" content="https://chong-zzxy.github.io/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/">
+  <meta property="og:image" content="https://chong-zzxy.github.io/img/avatar.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="自然语言处理-NLP基础 | 星唯向导">
+  <meta name="twitter:description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <meta name="twitter:image" content="https://chong-zzxy.github.io/img/avatar.svg">
   <link rel="icon" href="/img/favicon.svg">
   
   <link rel="stylesheet" href="/css/style.css?v=20260406">
@@ -277,8 +293,11 @@
             var headingMap = {};
             headings.forEach(function(heading) {
               var key = normalize(heading.textContent);
-              if (key && !headingMap[key]) headingMap[key] = heading;
+              if (!key) return;
+              if (!headingMap[key]) headingMap[key] = [];
+              headingMap[key].push(heading);
             });
+            var headingMapCursor = {};
 
             tocLinks.forEach(function(link) {
               var label = normalize(link.textContent);
@@ -288,8 +307,14 @@
               if (!href || href.charAt(0) !== '#') return;
               var targetId = decodeURIComponent(href.slice(1));
               var target = document.getElementById(targetId);
-              if (!target && label && headingMap[label]) {
-                link.setAttribute('href', '#' + headingMap[label].id);
+              if (!target && label && headingMap[label] && headingMap[label].length) {
+                var cursor = headingMapCursor[label] || 0;
+                var bucket = headingMap[label];
+                var mappedHeading = bucket[Math.min(cursor, bucket.length - 1)];
+                headingMapCursor[label] = cursor + 1;
+                if (mappedHeading && mappedHeading.id) {
+                  link.setAttribute('href', '#' + mappedHeading.id);
+                }
               }
             });
 

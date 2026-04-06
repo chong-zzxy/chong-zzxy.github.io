@@ -166,9 +166,28 @@
   // ====================
   // 外链新窗口打开
   // ====================
-  const links = document.querySelectorAll('a[href^="http"]');
+  const links = document.querySelectorAll('a[href]');
   links.forEach(function(link) {
-    if (!link.getAttribute('target')) {
+    const rawHref = link.getAttribute('href');
+    if (!rawHref) return;
+    if (
+      rawHref.startsWith('#') ||
+      rawHref.startsWith('mailto:') ||
+      rawHref.startsWith('tel:') ||
+      rawHref.startsWith('javascript:')
+    ) {
+      return;
+    }
+
+    let isExternal = false;
+    try {
+      const parsed = new URL(rawHref, window.location.href);
+      isExternal = parsed.origin !== window.location.origin;
+    } catch (error) {
+      isExternal = false;
+    }
+
+    if (isExternal && !link.getAttribute('target')) {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
     }

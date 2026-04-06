@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>星唯向导</title>
   <meta name="description" content="圈地自萌的个人记录｜有技术，也有生活">
+  
+    <meta name="keywords" content="AI, 计算机视觉, NLP, 深度学习, 机器学习, Python">
+  
+  <link rel="canonical" href="https://chong-zzxy.github.io/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="星唯向导">
+  <meta property="og:title" content="星唯向导">
+  <meta property="og:description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <meta property="og:url" content="https://chong-zzxy.github.io/blog/">
+  <meta property="og:image" content="https://chong-zzxy.github.io/img/avatar.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="星唯向导">
+  <meta name="twitter:description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <meta name="twitter:image" content="https://chong-zzxy.github.io/img/avatar.svg">
   <link rel="icon" href="/img/favicon.svg">
   
   <link rel="stylesheet" href="/css/style.css?v=20260406">
@@ -124,7 +140,7 @@
         
           
             
-            <article class="journal-card journal-card-featured is-clickable" data-href="/2023/01/10/Life/%E8%90%8C%E5%AE%A0/" data-title="萌宠" role="link" tabindex="0">
+            <article class="journal-card journal-card-featured is-clickable" data-href="/2023/01/10/Life/%E8%90%8C%E5%AE%A0/" data-title="萌宠">
               <div class="journal-feature-cover">
                 
                   <div class="journal-feature-placeholder">Featured</div>
@@ -150,7 +166,7 @@
 
           
             
-            <article class="journal-card is-clickable" data-href="/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/" data-title="自然语言处理-NLP基础" role="link" tabindex="0">
+            <article class="journal-card is-clickable" data-href="/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/" data-title="自然语言处理-NLP基础">
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">NLP</span>
@@ -166,7 +182,7 @@
             </article>
           
             
-            <article class="journal-card is-clickable" data-href="/2022/01/10/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" data-title="图像处理" role="link" tabindex="0">
+            <article class="journal-card is-clickable" data-href="/2022/01/10/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" data-title="图像处理">
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">CV</span>
@@ -182,7 +198,7 @@
             </article>
           
             
-            <article class="journal-card is-clickable" data-href="/2022/01/10/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" data-title="目标检测" role="link" tabindex="0">
+            <article class="journal-card is-clickable" data-href="/2022/01/10/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" data-title="目标检测">
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">CV</span>
@@ -377,15 +393,6 @@
       if (e.target.closest('a')) return;
       var href = card.getAttribute('data-href');
       if (href) window.location.href = href;
-    });
-
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target.closest('a')) return;
-        e.preventDefault();
-        var href = card.getAttribute('data-href');
-        if (href) window.location.href = href;
-      }
     });
   });
 
