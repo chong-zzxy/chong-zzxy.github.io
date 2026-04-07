@@ -10,6 +10,27 @@
 
 let searchData = [];
 let searchIndex = null;
+const defaultCategoryDisplayMap = {
+  CV: 'Computer Vision',
+  NLP: 'Natural Language Processing',
+  Life: '人间漫游'
+};
+const categoryDisplayMap = Object.assign(
+  {},
+  defaultCategoryDisplayMap,
+  (typeof window !== 'undefined' && window.__XW_CATEGORY_DISPLAY_MAP) || {}
+);
+
+function displayCategoryName(name) {
+  const raw = String(name || '').trim();
+  if (!raw) return '未分类';
+  return (
+    categoryDisplayMap[raw] ||
+    categoryDisplayMap[raw.toUpperCase()] ||
+    categoryDisplayMap[raw.toLowerCase()] ||
+    raw
+  );
+}
 
 // Load search data
 async function loadSearchData() {
@@ -246,7 +267,7 @@ function displayResults(results, query) {
       const category = document.createElement('span');
       category.className = 'search-result-category';
       category.appendChild(createMetaIcon('category'));
-      category.appendChild(document.createTextNode(post.categories[0]));
+      category.appendChild(document.createTextNode(displayCategoryName(post.categories[0])));
       meta.appendChild(category);
     }
 
