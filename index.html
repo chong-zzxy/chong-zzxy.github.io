@@ -3249,11 +3249,16 @@
       '想到哪写到哪'
     ];
     var storageKey = 'chong_home_manual_tags_v1';
+    var seedKey = 'chong_home_manual_tags_seed_v2';
     var pinnedTags = [
       '慢一点，但不停。',
       '把生活写进代码，把代码还给生活。'
     ];
-    var defaultTags = pinnedTags.slice();
+    var starterTags = [
+      '我与我周旋久，宁作我。',
+      '人生海海，潮落之后是潮起，你说那是消磨、笑柄、罪过，但那是我的英雄主义。'
+    ];
+    var defaultTags = pinnedTags.concat(starterTags);
 
     function normalizeTag(value) {
       return (value || '').replace(/\s+/g, ' ').trim();
@@ -3273,10 +3278,22 @@
         var parsed = JSON.parse(raw);
         if (!Array.isArray(parsed)) return defaultTags.slice();
         var cleaned = parsed.map(normalizeTag).filter(Boolean).slice(0, 16);
-        if (!cleaned.length) return defaultTags.slice();
-        var merged = pinnedTags.concat(cleaned.filter(function(tag) {
+        var custom = cleaned.filter(function(tag) {
           return pinnedTags.indexOf(tag) === -1;
-        }));
+        });
+        var seeded = window.localStorage.getItem(seedKey) === '1';
+        if (!seeded) {
+          starterTags.forEach(function(tag) {
+            if (custom.indexOf(tag) === -1) {
+              custom.push(tag);
+            }
+          });
+          window.localStorage.setItem(seedKey, '1');
+        }
+        if (!custom.length) {
+          custom = starterTags.slice();
+        }
+        var merged = pinnedTags.concat(custom);
         return merged.slice(0, 16);
       } catch (error) {
         return defaultTags.slice();
