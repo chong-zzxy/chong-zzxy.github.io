@@ -563,12 +563,17 @@
     <!-- Post Navigation -->
     <nav class="post-nav">
       
-        <a href="/2022/01/10/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="post-nav-item prev">
+        <a href="/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/" class="post-nav-item prev">
           <div class="nav-label">← 上一篇</div>
-          <div class="nav-title">图像处理</div>
+          <div class="nav-title">自然语言处理-NLP基础</div>
         </a>
       
 
+      
+        <a href="/2022/01/10/CV/%E4%BC%A0%E7%BB%9F%E5%9B%BE%E5%83%8F/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="post-nav-item next">
+          <div class="nav-label">下一篇 →</div>
+          <div class="nav-title">图像处理</div>
+        </a>
       
     </nav>
   </div>
@@ -639,76 +644,24 @@
       
 
       
-        <div class="site-footer-stats" id="site-footer-stats">
-          <span data-stats-reset="20260406">
+        <div class="site-footer-stats" id="site-footer-stats" data-provider="busuanzi">
+          
+          <span id="busuanzi_container_site_pv">
             访问量
-            <strong id="site_stats_pv">0</strong>
+            <strong id="busuanzi_value_site_pv">--</strong>
           </span>
-          <span>
+          <span id="busuanzi_container_site_uv">
             访客
-            <strong id="site_stats_uv">0</strong>
+            <strong id="busuanzi_value_site_uv">--</strong>
           </span>
+          
         </div>
       
     </div>
   </div>
 
   
-    <script>
-      (function() {
-        var statsRoot = document.getElementById('site-footer-stats');
-        if (!statsRoot) return;
-
-        var pvEl = document.getElementById('site_stats_pv');
-        var uvEl = document.getElementById('site_stats_uv');
-        var resetCarrier = statsRoot.querySelector('[data-stats-reset]');
-        var resetKey = resetCarrier ? String(resetCarrier.getAttribute('data-stats-reset') || '').trim() : '';
-        if (!resetKey) resetKey = '20260406';
-
-        var pvKey = 'chong_site_pv_' + resetKey;
-        var uvKey = 'chong_site_uv_' + resetKey;
-        var sessionKey = 'chong_site_session_' + resetKey;
-
-        function readCounter(key) {
-          try {
-            var raw = window.localStorage.getItem(key);
-            var val = parseInt(raw || '0', 10);
-            return Number.isFinite(val) && val > 0 ? val : 0;
-          } catch (error) {
-            return 0;
-          }
-        }
-
-        function writeCounter(key, value) {
-          try {
-            window.localStorage.setItem(key, String(Math.max(0, value | 0)));
-          } catch (error) {
-          }
-        }
-
-        var pv = readCounter(pvKey) + 1;
-        writeCounter(pvKey, pv);
-
-        var uv = readCounter(uvKey);
-        var isNewSession = false;
-        try {
-          if (!window.sessionStorage.getItem(sessionKey)) {
-            window.sessionStorage.setItem(sessionKey, '1');
-            isNewSession = true;
-          }
-        } catch (error) {
-          isNewSession = true;
-        }
-
-        if (isNewSession) {
-          uv += 1;
-          writeCounter(uvKey, uv);
-        }
-
-        if (pvEl) pvEl.textContent = String(pv);
-        if (uvEl) uvEl.textContent = String(uv);
-      })();
-    </script>
+    <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
 </footer>
 

@@ -115,40 +115,16 @@
 
             
               <p class="category-curation-latest">
-                最近更新 · 2022-01-10 · 图像处理
+                最近更新 · 2022-01-10 · 目标检测
               </p>
             
 
             
               <ul class="category-curation-list">
-                
-                  <li>图像处理</li>
                 
                   <li>目标检测</li>
                 
-              </ul>
-            
-          </a>
-        </article>
-      
-        <article class="category-curation-item">
-          <a href="/categories/Life/" class="category-curation-link">
-            <div class="category-curation-head">
-              <span class="category-curation-index">02</span>
-              <h2 class="category-curation-name">Life</h2>
-              <span class="category-curation-count">1 篇</span>
-            </div>
-
-            
-              <p class="category-curation-latest">
-                最近更新 · 2023-01-10 · 萌宠
-              </p>
-            
-
-            
-              <ul class="category-curation-list">
-                
-                  <li>萌宠</li>
+                  <li>图像处理</li>
                 
               </ul>
             
@@ -158,7 +134,7 @@
         <article class="category-curation-item">
           <a href="/categories/NLP/" class="category-curation-link">
             <div class="category-curation-head">
-              <span class="category-curation-index">03</span>
+              <span class="category-curation-index">02</span>
               <h2 class="category-curation-name">NLP</h2>
               <span class="category-curation-count">1 篇</span>
             </div>
@@ -173,6 +149,30 @@
               <ul class="category-curation-list">
                 
                   <li>自然语言处理-NLP基础</li>
+                
+              </ul>
+            
+          </a>
+        </article>
+      
+        <article class="category-curation-item">
+          <a href="/categories/Life/" class="category-curation-link">
+            <div class="category-curation-head">
+              <span class="category-curation-index">03</span>
+              <h2 class="category-curation-name">Life</h2>
+              <span class="category-curation-count">1 篇</span>
+            </div>
+
+            
+              <p class="category-curation-latest">
+                最近更新 · 2023-01-10 · 萌宠
+              </p>
+            
+
+            
+              <ul class="category-curation-list">
+                
+                  <li>萌宠</li>
                 
               </ul>
             
@@ -248,76 +248,24 @@
       
 
       
-        <div class="site-footer-stats" id="site-footer-stats">
-          <span data-stats-reset="20260406">
+        <div class="site-footer-stats" id="site-footer-stats" data-provider="busuanzi">
+          
+          <span id="busuanzi_container_site_pv">
             访问量
-            <strong id="site_stats_pv">0</strong>
+            <strong id="busuanzi_value_site_pv">--</strong>
           </span>
-          <span>
+          <span id="busuanzi_container_site_uv">
             访客
-            <strong id="site_stats_uv">0</strong>
+            <strong id="busuanzi_value_site_uv">--</strong>
           </span>
+          
         </div>
       
     </div>
   </div>
 
   
-    <script>
-      (function() {
-        var statsRoot = document.getElementById('site-footer-stats');
-        if (!statsRoot) return;
-
-        var pvEl = document.getElementById('site_stats_pv');
-        var uvEl = document.getElementById('site_stats_uv');
-        var resetCarrier = statsRoot.querySelector('[data-stats-reset]');
-        var resetKey = resetCarrier ? String(resetCarrier.getAttribute('data-stats-reset') || '').trim() : '';
-        if (!resetKey) resetKey = '20260406';
-
-        var pvKey = 'chong_site_pv_' + resetKey;
-        var uvKey = 'chong_site_uv_' + resetKey;
-        var sessionKey = 'chong_site_session_' + resetKey;
-
-        function readCounter(key) {
-          try {
-            var raw = window.localStorage.getItem(key);
-            var val = parseInt(raw || '0', 10);
-            return Number.isFinite(val) && val > 0 ? val : 0;
-          } catch (error) {
-            return 0;
-          }
-        }
-
-        function writeCounter(key, value) {
-          try {
-            window.localStorage.setItem(key, String(Math.max(0, value | 0)));
-          } catch (error) {
-          }
-        }
-
-        var pv = readCounter(pvKey) + 1;
-        writeCounter(pvKey, pv);
-
-        var uv = readCounter(uvKey);
-        var isNewSession = false;
-        try {
-          if (!window.sessionStorage.getItem(sessionKey)) {
-            window.sessionStorage.setItem(sessionKey, '1');
-            isNewSession = true;
-          }
-        } catch (error) {
-          isNewSession = true;
-        }
-
-        if (isNewSession) {
-          uv += 1;
-          writeCounter(uvKey, uv);
-        }
-
-        if (pvEl) pvEl.textContent = String(pv);
-        if (uvEl) uvEl.textContent = String(uv);
-      })();
-    </script>
+    <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
 </footer>
 
