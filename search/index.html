@@ -23,8 +23,8 @@
   <meta name="twitter:image" content="https://chong-zzxy.github.io/img/%E7%8E%8B%E5%AD%90.gif">
   <link rel="icon" href="/img/%E7%94%B7%E5%AD%A9%E5%84%BF.svg">
   
-  <link rel="stylesheet" href="/css/style.css?v=20260406">
-  <link rel="stylesheet" href="/css/theme-green.css?v=20260406">
+  <link rel="stylesheet" href="/css/style.css?v=20260414">
+  <link rel="stylesheet" href="/css/theme-green.css?v=20260414">
   
   <script>
     window.__XW_CATEGORY_DISPLAY_MAP = {"CV":"Computer Vision","NLP":"Natural Language Processing","Life":"人间漫游"};
@@ -116,6 +116,34 @@
     font-size: 1.1rem;
   }
 
+  .search-quick {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .search-quick a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid var(--site-surface-border-soft, var(--border-color));
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .search-quick a:hover {
+    color: var(--primary);
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border-color) 65%);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
   .search-container {
     background: var(--site-surface-bg-strong, var(--card-bg));
     border: 1px solid var(--site-surface-border-soft, var(--border-color));
@@ -156,6 +184,12 @@
     height: 24px;
     color: var(--text-secondary);
     pointer-events: none;
+  }
+
+  .search-input-hint {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
   }
 
   .search-stats {
@@ -266,31 +300,6 @@
     font-size: 1.1rem;
   }
 
-  .ai-search-placeholder {
-    background: linear-gradient(135deg, rgba(49, 126, 251, 0.05) 0%, rgba(96, 165, 250, 0.05) 100%);
-    border: 2px dashed var(--primary);
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .ai-search-placeholder h3 {
-    color: var(--primary);
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .ai-search-placeholder p {
-    color: var(--text-secondary);
-    margin: 0;
-    font-size: 0.95rem;
-  }
-
   @media (max-width: 768px) {
     .search-page {
       padding: 80px 15px 40px;
@@ -315,8 +324,14 @@
 
 <section class="search-page" aria-label="站内搜索">
   <div class="search-header">
-    <h1>🔍 Search</h1>
-    <p>探索博客中的所有内容</p>
+    <h1>站内检索</h1>
+    <p>快速定位文章、分类与关键词记录。</p>
+    <div class="search-quick">
+      <a href="/blog/">博客文章</a>
+      <a href="/blog/?view=category">分类导览</a>
+      <a href="/tags/">人生 Tags</a>
+      <a href="/archives/">时间归档</a>
+    </div>
   </div>
 
   <div class="search-container">
@@ -332,6 +347,7 @@
         <circle cx="11" cy="11" r="8"></circle>
         <path d="m21 21-4.35-4.35"></path>
       </svg>
+      <p class="search-input-hint">支持多关键词组合，例如：`目标检测 NLP`</p>
     </div>
 
     <div class="search-stats" id="search-stats">
@@ -350,13 +366,6 @@
       <p class="search-empty-text">未找到相关文章</p>
     </div>
 
-    <div class="ai-search-placeholder">
-      <h3>
-        <span>🤖</span>
-        <span>AI 智能问答</span>
-      </h3>
-      <p>未来将支持基于 AI 的智能搜索和问答功能，敬请期待...</p>
-    </div>
   </div>
 </section>
 
@@ -457,7 +466,7 @@
     </svg>
   </button>
 
-  <script src="/js/main.js?v=20260406"></script>
-  <script src="/js/scroll-animations.js?v=20260406"></script>
+  <script src="/js/main.js?v=20260414"></script>
+  <script src="/js/scroll-animations.js?v=20260414"></script>
 </body>
 </html>
