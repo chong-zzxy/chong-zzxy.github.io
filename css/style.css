@@ -14119,6 +14119,11 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   --memoir-gold: #a88652;
   --memoir-rose: #c47f84;
   --memoir-surface: rgba(255, 255, 255, 0.84);
+  --memoir-shell-width: min(1320px, calc(100vw - clamp(40px, 7vw, 168px)));
+  --memoir-shell-pad-inline: clamp(12px, 2.2vw, 24px);
+  --memoir-paper-pad-inline: clamp(18px, 3.2vw, 60px);
+  --memoir-content-offset: clamp(34px, 5.3vw, 92px);
+  --memoir-content-max: min(92ch, calc(100% - var(--memoir-content-offset) - clamp(12px, 2vw, 28px)));
   position: relative;
   background:
     radial-gradient(54% 44% at 96% -8%, rgba(108, 151, 177, 0.14) 0%, rgba(108, 151, 177, 0) 74%),
@@ -14129,6 +14134,13 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 .post-detail-refined.post-memoir > * {
   position: relative;
   z-index: 2;
+}
+
+.post-detail-refined.post-memoir > .container {
+  width: min(var(--memoir-shell-width), 100%);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: var(--memoir-shell-pad-inline);
 }
 
 .post-detail-refined.post-memoir .post-memoir-playground,
@@ -14621,10 +14633,12 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-header .container {
-  max-width: 1080px;
+  width: min(var(--memoir-shell-width), 100%);
+  max-width: none;
+  margin-inline: auto;
   position: relative;
   overflow: hidden;
-  padding: 0 clamp(10px, 2.2vw, 18px);
+  padding: 0 var(--memoir-shell-pad-inline);
   border-radius: 0;
   border: 0;
   background: none;
@@ -14647,10 +14661,11 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 .post-detail-refined.post-memoir .post-memoir-hero {
   position: relative;
   overflow: hidden;
+  width: 100%;
   margin-bottom: 8px;
   border-radius: 14px;
   border: 0;
-  padding: clamp(10px, 2vw, 18px) clamp(8px, 2vw, 18px) clamp(8px, 1.8vw, 14px);
+  padding: clamp(10px, 2vw, 20px) clamp(10px, 2.1vw, 20px) clamp(8px, 1.8vw, 14px);
   background:
     radial-gradient(60% 72% at 100% 0%, rgba(109, 161, 190, 0.12), rgba(109, 161, 190, 0) 72%),
     radial-gradient(48% 62% at 0% 100%, rgba(200, 140, 98, 0.1), rgba(200, 140, 98, 0) 74%);
@@ -14681,8 +14696,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   z-index: 2;
   display: grid;
   gap: 8px;
-  max-width: min(760px, 100%);
-  padding-left: 10px;
+  max-width: min(94ch, calc(100% - clamp(26px, 8vw, 120px)));
+  padding-left: clamp(10px, 1.4vw, 18px);
   border-left: 1px solid rgba(92, 131, 152, 0.24);
 }
 
@@ -14794,7 +14809,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir {
   margin: 0;
-  max-width: 22ch;
+  max-width: min(28ch, 100%);
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
   font-weight: 620;
   letter-spacing: 0.02em;
@@ -14802,7 +14817,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .post-memoir-subtitle {
   margin: 0;
-  max-width: 52ch;
+  max-width: min(68ch, 100%);
   color: #446576;
   font-size: clamp(0.92rem, 1.6vw, 1.02rem);
   line-height: 1.72;
@@ -15008,7 +15023,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-title-main {
-  max-width: 22ch;
+  max-width: min(28ch, 100%);
   color: var(--memoir-ink);
   font-size: clamp(1.76rem, 3.6vw, 2.68rem);
   letter-spacing: -0.015em;
@@ -15020,7 +15035,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .post-summary-main.post-summary-main-memoir {
   margin: 0;
-  max-width: 62ch;
+  max-width: min(74ch, 100%);
   padding: 0;
   color: #597181;
   font-size: 0.86rem;
@@ -15040,7 +15055,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .post-memoir-note {
   margin: 2px 0 0;
-  width: min(680px, 100%);
+  width: min(92ch, 100%);
   display: block;
   padding: 2px 0 0 12px;
   border-left: 2px solid rgba(92, 131, 152, 0.34);
@@ -15076,16 +15091,17 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir {
-  max-width: 1080px;
+  width: min(var(--memoir-shell-width), 100%);
+  max-width: none;
   margin: 0 auto;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(24px, 3.4vw, 44px) clamp(18px, 4vw, 56px) clamp(32px, 4.2vw, 52px);
+  padding: clamp(24px, 3.4vw, 44px) var(--memoir-paper-pad-inline) clamp(32px, 4.2vw, 52px);
   border-radius: 18px;
   border: 1px solid rgba(62, 98, 120, 0.16);
   background:
-    linear-gradient(90deg, rgba(214, 98, 103, 0.22) 0 2px, rgba(214, 98, 103, 0) 2px) clamp(56px, 6vw, 82px) 0 / 2px 100% no-repeat,
+    linear-gradient(90deg, rgba(214, 98, 103, 0.22) 0 2px, rgba(214, 98, 103, 0) 2px) var(--memoir-content-offset) 0 / 2px 100% no-repeat,
     repeating-linear-gradient(
       180deg,
       rgba(124, 154, 172, 0.08) 0,
@@ -15380,8 +15396,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   content: '';
   position: absolute;
   top: 14px;
-  left: clamp(64px, 7.4vw, 102px);
-  width: clamp(180px, 36vw, 420px);
+  left: calc(var(--memoir-content-offset) + clamp(14px, 2.2vw, 28px));
+  width: clamp(220px, 42vw, 560px);
   height: 2px;
   border-radius: 999px;
   background: linear-gradient(
@@ -15397,8 +15413,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir > h1:first-of-type {
-  max-width: 78ch;
-  margin-left: clamp(34px, 5.4vw, 78px);
+  max-width: var(--memoir-content-max);
+  margin-left: var(--memoir-content-offset);
   margin-right: auto;
   font-size: clamp(1.06rem, 1.9vw, 1.2rem);
   letter-spacing: 0.06em;
@@ -15415,8 +15431,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir > :where(p, h2, h3, blockquote, ul, ol, pre, figure, table) {
-  max-width: 78ch;
-  margin-left: clamp(34px, 5.4vw, 78px);
+  max-width: var(--memoir-content-max);
+  margin-left: var(--memoir-content-offset);
   margin-right: auto;
 }
 
@@ -16251,6 +16267,14 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 @media (max-width: 768px) {
+  .post-detail-refined.post-memoir {
+    --memoir-shell-width: min(100%, calc(100vw - 18px));
+    --memoir-shell-pad-inline: 6px;
+    --memoir-paper-pad-inline: 10px;
+    --memoir-content-offset: 16px;
+    --memoir-content-max: min(100%, calc(100% - 16px));
+  }
+
   .post-detail-refined.post-memoir .post-memoir-headplayground {
     display: none;
   }
