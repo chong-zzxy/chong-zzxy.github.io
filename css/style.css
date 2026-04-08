@@ -4292,6 +4292,10 @@ a:focus-visible {
   margin-top: 8px;
 }
 
+.blog-journal .journal-category-stream-extra[hidden] {
+  display: none !important;
+}
+
 .blog-journal .journal-category-toggle {
   margin-top: 8px;
   min-height: 32px;
@@ -14119,11 +14123,14 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   --memoir-gold: #a88652;
   --memoir-rose: #c47f84;
   --memoir-surface: rgba(255, 255, 255, 0.84);
-  --memoir-shell-width: min(1320px, calc(100vw - clamp(40px, 7vw, 168px)));
+  --memoir-shell-width: min(1360px, calc(100vw - clamp(34px, 6.2vw, 152px)));
   --memoir-shell-pad-inline: clamp(12px, 2.2vw, 24px);
-  --memoir-paper-pad-inline: clamp(18px, 3.2vw, 60px);
-  --memoir-content-offset: clamp(34px, 5.3vw, 92px);
-  --memoir-content-max: min(92ch, calc(100% - var(--memoir-content-offset) - clamp(12px, 2vw, 28px)));
+  --memoir-paper-pad-inline: clamp(18px, 3vw, 64px);
+  --memoir-content-offset: clamp(30px, 4.4vw, 82px);
+  --memoir-content-max: min(108ch, calc(100% - var(--memoir-content-offset) - clamp(10px, 1.6vw, 26px)));
+  --memoir-reading-size: clamp(1.02rem, 0.22vw + 0.96rem, 1.12rem);
+  --memoir-reading-leading: 1.94;
+  --memoir-heading-size: clamp(1.08rem, 0.2vw + 1.02rem, 1.24rem);
   position: relative;
   background:
     radial-gradient(54% 44% at 96% -8%, rgba(108, 151, 177, 0.14) 0%, rgba(108, 151, 177, 0) 74%),
@@ -14629,7 +14636,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-header {
-  padding: clamp(14px, 2vw, 26px) 0 clamp(8px, 1.4vw, 14px);
+  padding: clamp(8px, 1.2vw, 14px) 0 clamp(4px, 0.8vw, 10px);
 }
 
 .post-detail-refined.post-memoir .post-header .container {
@@ -14662,43 +14669,61 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 8px;
-  border-radius: 14px;
-  border: 0;
-  padding: clamp(10px, 2vw, 20px) clamp(10px, 2.1vw, 20px) clamp(8px, 1.8vw, 14px);
+  margin-bottom: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(73, 108, 130, 0.18);
+  padding: clamp(8px, 1.3vw, 12px) clamp(12px, 1.8vw, 18px) clamp(8px, 1.2vw, 11px);
   background:
-    radial-gradient(60% 72% at 100% 0%, rgba(109, 161, 190, 0.12), rgba(109, 161, 190, 0) 72%),
-    radial-gradient(48% 62% at 0% 100%, rgba(200, 140, 98, 0.1), rgba(200, 140, 98, 0) 74%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(248, 253, 255, 0.95));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 8px 18px rgba(20, 43, 58, 0.06);
 }
 
 .post-detail-refined.post-memoir .post-memoir-hero::before {
   content: '';
   position: absolute;
-  left: 0;
-  right: 42%;
-  top: 0;
-  height: 2px;
+  left: 12px;
+  right: 12px;
+  top: 9px;
+  height: 1px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(76, 133, 163, 0.4), rgba(168, 134, 82, 0.2), rgba(168, 134, 82, 0));
+  background: linear-gradient(90deg, rgba(94, 136, 160, 0.28), rgba(94, 136, 160, 0.06));
+  pointer-events: none;
+}
+
+.post-detail-refined.post-memoir .post-memoir-hero::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 11px;
+  width: 38px;
+  height: 13px;
+  border-radius: 999px;
+  border: 1px dashed rgba(94, 136, 160, 0.36);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(114, 165, 194, 0.14) 0 7px,
+      rgba(224, 177, 123, 0.14) 7px 14px
+    );
+  opacity: 0.72;
+  transform: rotate(-8deg);
   pointer-events: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-headplayground {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-hero-main {
   position: relative;
   z-index: 2;
   display: grid;
-  gap: 8px;
-  max-width: min(94ch, calc(100% - clamp(26px, 8vw, 120px)));
-  padding-left: clamp(10px, 1.4vw, 18px);
-  border-left: 1px solid rgba(92, 131, 152, 0.24);
+  gap: 4px;
+  max-width: min(92ch, 100%);
+  padding: 0;
+  border-left: 0;
 }
 
 .post-detail-refined.post-memoir .memoir-head-cloud-a {
@@ -14795,34 +14820,73 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  border-radius: 0;
-  border: 0;
-  background: none;
-  color: #557385;
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(79, 117, 138, 0.18);
+  background: rgba(247, 252, 255, 0.92);
+  color: #4e6f82;
+  font-size: 0.62rem;
+  font-weight: 620;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  padding: 3px 10px;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+.post-detail-refined.post-memoir .post-memoir-kicker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(92, 148, 178, 0.82), rgba(80, 128, 153, 0.72));
 }
 
 .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir {
   margin: 0;
-  max-width: min(28ch, 100%);
+  max-width: min(32ch, 100%);
+  font-size: clamp(1.32rem, 2.2vw, 1.88rem);
+  line-height: 1.16;
+  letter-spacing: -0.008em;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
   font-weight: 620;
-  letter-spacing: 0.02em;
+}
+
+.post-detail-refined.post-memoir .post-title-main.post-title-main-memoir::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 5px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(88, 143, 172, 0.56) 0 10px,
+      rgba(88, 143, 172, 0.18) 10px 16px
+    );
+  opacity: 0.7;
 }
 
 .post-detail-refined.post-memoir .post-memoir-subtitle {
   margin: 0;
-  max-width: min(68ch, 100%);
-  color: #446576;
-  font-size: clamp(0.92rem, 1.6vw, 1.02rem);
-  line-height: 1.72;
-  letter-spacing: 0.02em;
+  max-width: min(64ch, 100%);
+  color: #536f7f;
+  font-size: clamp(0.82rem, 1.1vw, 0.9rem);
+  line-height: 1.56;
+  letter-spacing: 0.01em;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+.post-detail-refined.post-memoir .post-memoir-series-line {
+  margin: 0;
+  color: #60798a;
+  font-size: 0.73rem;
+  letter-spacing: 0.02em;
+}
+
+.post-detail-refined.post-memoir .post-memoir-series-line strong {
+  color: #2f5268;
+  font-weight: 680;
 }
 
 .post-detail-refined.post-memoir .memoir-path {
@@ -15034,13 +15098,14 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-summary-main.post-summary-main-memoir {
+  display: none;
   margin: 0;
-  max-width: min(74ch, 100%);
+  max-width: min(78ch, 100%);
   padding: 0;
-  color: #597181;
-  font-size: 0.86rem;
-  line-height: 1.66;
-  letter-spacing: 0.008em;
+  color: #5f7687;
+  font-size: 0.82rem;
+  line-height: 1.62;
+  letter-spacing: 0.006em;
 }
 
 .post-detail-refined.post-memoir .post-summary-main.post-summary-main-memoir::after {
@@ -15053,36 +15118,41 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   background: linear-gradient(90deg, rgba(103, 131, 149, 0.42), rgba(103, 131, 149, 0));
 }
 
-.post-detail-refined.post-memoir .post-memoir-note {
-  margin: 2px 0 0;
-  width: min(92ch, 100%);
+.post-detail-refined.post-memoir.post-memoir-hub .post-summary-main.post-summary-main-memoir {
   display: block;
-  padding: 2px 0 0 12px;
-  border-left: 2px solid rgba(92, 131, 152, 0.34);
-  background: none;
-  color: #4f6b7d;
-  transform: none;
+  max-width: min(60ch, 100%);
+  font-size: 0.78rem;
+  line-height: 1.52;
+  color: #688293;
+}
+
+.post-detail-refined.post-memoir.post-memoir-hub .post-summary-main.post-summary-main-memoir::after {
+  display: none;
+}
+
+.post-detail-refined.post-memoir .post-memoir-note {
+  display: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-note-label {
   display: inline;
   padding: 0;
   margin-right: 6px;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: none;
-  color: #5f7a8a;
+  color: #678191;
   background: none;
   border: 0;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
 }
 
 .post-detail-refined.post-memoir .post-memoir-note-text {
-  font-size: 0.88rem;
-  line-height: 1.66;
-  letter-spacing: 0.02em;
-  color: #4f6878;
+  font-size: 0.82rem;
+  line-height: 1.58;
+  letter-spacing: 0.016em;
+  color: #58707f;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
 }
 
@@ -15416,11 +15486,11 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   max-width: var(--memoir-content-max);
   margin-left: var(--memoir-content-offset);
   margin-right: auto;
-  font-size: clamp(1.06rem, 1.9vw, 1.2rem);
-  letter-spacing: 0.06em;
+  font-size: var(--memoir-heading-size);
+  letter-spacing: 0.045em;
   text-transform: none;
   color: #476174;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   padding-bottom: 10px;
   border-bottom: 1px dashed rgba(76, 133, 163, 0.24);
   font-weight: 650;
@@ -15439,20 +15509,31 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 .post-detail-refined.post-memoir .post-body.post-body-memoir > p {
   margin-bottom: 20px;
   color: #33495a;
-  font-size: 1.04rem;
-  line-height: 1.96;
-  letter-spacing: 0.008em;
+  font-size: var(--memoir-reading-size);
+  line-height: var(--memoir-reading-leading);
+  letter-spacing: 0.012em;
+  text-align: justify;
+  text-justify: inter-ideograph;
   text-wrap: pretty;
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir > p:first-of-type::first-letter {
   float: left;
-  font-size: 2.8rem;
+  font-size: clamp(2.5rem, 0.8vw + 2.2rem, 3.2rem);
   line-height: 0.9;
   padding: 8px 10px 0 0;
   margin-right: 2px;
   color: #4d7386;
   font-weight: 640;
+}
+
+.post-detail-refined.post-memoir .post-body.post-body-memoir > :where(ul, ol) {
+  padding-left: 1.45em;
+  line-height: 1.86;
+}
+
+.post-detail-refined.post-memoir .post-body.post-body-memoir > :where(ul, ol) li + li {
+  margin-top: 0.5em;
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir h2,
@@ -15501,6 +15582,310 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   border-color: rgba(56, 92, 114, 0.18);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 12px 24px rgba(18, 35, 48, 0.08);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-edge {
+  position: absolute;
+  right: clamp(7px, 1.1vw, 16px);
+  top: clamp(16px, 2.1vw, 30px);
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding-left: 7px;
+  border-left: 1px solid rgba(71, 106, 127, 0.22);
+  pointer-events: none;
+  user-select: none;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-edge-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16px;
+  padding: 0 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(76, 116, 138, 0.28);
+  background: rgba(255, 255, 255, 0.84);
+  color: #436175;
+  font-size: 0.54rem;
+  letter-spacing: 0.11em;
+  line-height: 1;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-edge-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: rgba(60, 93, 112, 0.72);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  line-height: 1.36;
+  max-height: min(220px, 46vh);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav {
+  max-width: var(--memoir-content-max);
+  margin: 24px 0 8px var(--memoir-content-offset);
+  padding-top: 10px;
+  border-top: 1px dashed rgba(71, 110, 131, 0.28);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link {
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  color: #446276;
+  text-decoration: none;
+  font-size: 0.73rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-prev {
+  justify-self: start;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-hub {
+  justify-self: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(73, 110, 132, 0.24);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next {
+  justify-self: end;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link:hover {
+  color: #264b61;
+  transform: translateY(-1px);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link.is-disabled {
+  color: rgba(67, 97, 115, 0.48);
+  pointer-events: none;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview {
+  max-width: var(--memoir-content-max);
+  margin: 42px 0 8px var(--memoir-content-offset);
+  padding-top: 18px;
+  border-top: 1px dashed rgba(77, 119, 143, 0.26);
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-kicker {
+  margin: 0;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(68, 104, 124, 0.68);
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-title {
+  margin: 0;
+  color: #254a62;
+  font-size: clamp(1.08rem, 0.52vw + 1rem, 1.34rem);
+  letter-spacing: 0.018em;
+  font-weight: 660;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-note {
+  margin: 0;
+  color: #587184;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-progress {
+  margin-top: 4px;
+  display: grid;
+  gap: 6px;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-progress-track {
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(122, 156, 177, 0.22), rgba(122, 156, 177, 0.08));
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-progress-track i {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(54, 108, 138, 0.84), rgba(84, 145, 178, 0.92));
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-progress-text {
+  color: #4f697b;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+}
+
+.post-detail-refined.post-memoir .memoir-series-overview-progress-text strong {
+  color: #274c64;
+  font-weight: 680;
+}
+
+.post-detail-refined.post-memoir .memoir-series-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 2px;
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+
+.post-detail-refined.post-memoir .memoir-series-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(75, 125, 153, 0.34), rgba(75, 125, 153, 0.06));
+}
+
+.post-detail-refined.post-memoir .memoir-series-node {
+  position: relative;
+  padding-left: 34px;
+}
+
+.post-detail-refined.post-memoir .memoir-series-node-dot {
+  position: absolute;
+  left: 1px;
+  top: 19px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(70, 109, 131, 0.5);
+  background: rgba(244, 251, 255, 0.92);
+  box-shadow: 0 0 0 4px rgba(228, 243, 251, 0.6);
+}
+
+.post-detail-refined.post-memoir .memoir-series-node.is-ongoing .memoir-series-node-dot {
+  border-color: rgba(68, 122, 151, 0.78);
+  background: linear-gradient(145deg, rgba(94, 155, 187, 0.9), rgba(62, 115, 145, 0.86));
+  box-shadow:
+    0 0 0 4px rgba(193, 226, 241, 0.72),
+    0 8px 14px rgba(43, 86, 110, 0.2);
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry {
+  display: grid;
+  gap: 10px;
+  padding: 14px 14px 13px;
+  border-radius: 14px;
+  border: 1px solid rgba(68, 104, 126, 0.22);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(245, 251, 255, 0.93));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 12px 24px rgba(20, 43, 58, 0.08);
+  transition: transform 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry:hover {
+  transform: translateY(-2px);
+  border-color: rgba(55, 92, 114, 0.44);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 16px 28px rgba(20, 43, 58, 0.12);
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-order,
+.post-detail-refined.post-memoir .memoir-series-entry-state {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-order {
+  color: #3f6478;
+  border: 1px solid rgba(77, 118, 140, 0.26);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-state {
+  color: #2e6078;
+  border-color: rgba(76, 133, 163, 0.28);
+  background: rgba(76, 133, 163, 0.12);
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-title {
+  margin: 0;
+  color: #274b63;
+  font-size: 1.02rem;
+  line-height: 1.38;
+  letter-spacing: 0.015em;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-summary {
+  margin: 0;
+  color: #526c7d;
+  font-size: 0.84rem;
+  line-height: 1.72;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  color: #5c7485;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+}
+
+.post-detail-refined.post-memoir .memoir-series-entry-foot span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(78, 117, 139, 0.18);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.post-detail-refined.post-memoir.post-memoir-chapter .post-memoir-skyground {
+  opacity: 0.82;
+}
+
+.post-detail-refined.post-memoir.post-memoir-chapter .post-memoir-paperplayground {
+  opacity: 0.78;
 }
 
 @keyframes memoirIntroLift {
@@ -15957,6 +16342,17 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 }
 
+@keyframes memoirTailNavReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .post-detail-refined.post-memoir .post-memoir-skyground::before {
     animation: memoirSkyBreath 14s ease-in-out infinite;
@@ -15972,6 +16368,10 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
   .post-detail-refined.post-memoir .post-body.post-body-memoir {
     animation: memoirIntroLift 0.8s cubic-bezier(0.2, 1, 0.3, 1) 0.08s both;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav {
+    animation: memoirTailNavReveal 0.55s ease 0.12s both;
   }
 
   .post-detail-refined.post-memoir .post-memoir-note {
@@ -16280,40 +16680,65 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero {
-    padding: 8px 6px 8px;
-    border-radius: 12px;
-    margin-bottom: 6px;
+    padding: 7px 9px 7px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+
+  .post-detail-refined.post-memoir .post-memoir-hero::before {
+    top: 7px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .post-detail-refined.post-memoir .post-memoir-hero::after {
+    right: 10px;
+    top: 8px;
+    width: 30px;
+    height: 11px;
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero-main {
-    gap: 6px;
-    padding-left: 8px;
+    gap: 3px;
+    padding-left: 0;
   }
 
   .post-detail-refined.post-memoir .post-memoir-kicker {
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    padding: 2px 8px;
+    font-size: 0.58rem;
+    letter-spacing: 0.09em;
+    padding: 2px 7px;
   }
 
   .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir {
     max-width: 100%;
+    font-size: clamp(1.14rem, 5.2vw, 1.44rem);
+    line-height: 1.2;
+  }
+
+  .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir::after {
+    width: 58px;
+    height: 4px;
+    margin-top: 5px;
   }
 
   .post-detail-refined.post-memoir .post-memoir-subtitle {
-    font-size: 0.86rem;
-    line-height: 1.58;
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+
+  .post-detail-refined.post-memoir .post-memoir-series-line {
+    font-size: 0.68rem;
   }
 
   .post-detail-refined.post-memoir .post-title-main {
     max-width: 100%;
-    font-size: clamp(1.46rem, 6.6vw, 1.92rem);
+    font-size: clamp(1.2rem, 5.4vw, 1.5rem);
   }
 
   .post-detail-refined.post-memoir .post-summary-main.post-summary-main-memoir {
-    max-width: 100%;
-    font-size: 0.8rem;
-    line-height: 1.56;
+    max-width: min(100%, 52ch);
+    font-size: 0.72rem;
+    line-height: 1.48;
     padding: 0;
   }
 
@@ -16354,8 +16779,119 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     margin-left: 16px;
   }
 
+  .post-detail-refined.post-memoir .post-body.post-body-memoir > p {
+    font-size: 0.98rem;
+    line-height: 1.84;
+    letter-spacing: 0.01em;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-edge {
+    right: 6px;
+    top: 14px;
+    gap: 4px;
+    padding-left: 5px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-edge-no {
+    min-height: 14px;
+    padding: 0 4px;
+    font-size: 0.48rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-edge-title {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    max-height: 116px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav {
+    max-width: 100%;
+    margin: 20px 0 6px 16px;
+    padding-top: 8px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-inner {
+    gap: 6px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-link {
+    font-size: 0.64rem;
+    min-height: 22px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-hub {
+    padding: 0 6px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-overview {
+    max-width: 100%;
+    margin: 34px 0 6px 16px;
+    padding-top: 12px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-overview-head {
+    margin-bottom: 12px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-overview-note {
+    font-size: 0.8rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-overview-progress-text {
+    font-size: 0.72rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-timeline {
+    gap: 10px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-timeline::before {
+    left: 7px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-node {
+    padding-left: 27px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-node-dot {
+    top: 18px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry {
+    border-radius: 12px;
+    padding: 12px 12px 11px;
+    gap: 8px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry-head {
+    gap: 6px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry-order,
+  .post-detail-refined.post-memoir .memoir-series-entry-state {
+    min-height: 22px;
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry-title {
+    font-size: 0.95rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry-summary {
+    font-size: 0.8rem;
+    line-height: 1.66;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-entry-foot {
+    font-size: 0.7rem;
+    gap: 6px;
+  }
+
   .post-detail-refined.post-memoir .post-memoir-note {
-    padding: 2px 0 0 9px;
+    padding: 1px 0 0 8px;
   }
 
   .post-detail-refined.post-memoir .post-body.post-body-memoir > p:first-of-type::first-letter {
