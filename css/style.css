@@ -3610,6 +3610,11 @@ a:focus-visible {
   gap: 16px;
 }
 
+.blog-journal #journal-view-panel-list[hidden],
+.blog-journal #journal-view-panel-category[hidden] {
+  display: none !important;
+}
+
 .blog-journal .journal-feed {
   display: grid;
   gap: 12px;
