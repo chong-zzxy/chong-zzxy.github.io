@@ -13018,13 +13018,33 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .identity-inline-lines {
+    display: grid;
+    align-items: start;
     flex-wrap: wrap;
     row-gap: 2px;
+    gap: 2px;
+  }
+
+  .identity-inline-line {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.45;
+  }
+
+  .identity-inline-name {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .identity-inline-line + .identity-inline-line {
-    margin-left: 8px;
-    padding-left: 8px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .identity-inline-line + .identity-inline-line::before {
+    content: none;
   }
 
   .identity-notes.identity-notes-main {
@@ -13058,6 +13078,25 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     margin: 0;
     min-height: 52px;
     padding: 12px 32px 12px 15px;
+  }
+
+  .identity-tag-faves {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 5px;
+  }
+
+  .identity-tag-faves-label {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .identity-tag-faves-list {
+    min-width: 0;
+    flex: 1 1 100%;
   }
 
   .identity-overview {
@@ -13282,6 +13321,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
   .identity-inline-lines {
     font-size: 0.78rem;
+    gap: 3px;
   }
 
   .identity-role {
@@ -13376,10 +13416,12 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   .identity-tag-faves {
     margin-top: 0;
     gap: 6px;
+    row-gap: 4px;
   }
 
   .identity-tag-faves-label {
     font-size: 0.64rem;
+    line-height: 1.35;
   }
 
   .identity-tag-faves-list {
