@@ -4923,8 +4923,6 @@ a:focus-visible {
   box-shadow: var(--shadow-lg);
 }
 
-}
-
 .lightbox-prev:hover,
 .lightbox-next:hover {
   background: var(--primary, #317EFB);

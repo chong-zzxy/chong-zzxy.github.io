@@ -35,7 +35,10 @@ function displayCategoryName(name) {
 // Load search data
 async function loadSearchData() {
   try {
-    const response = await fetch('/search.json');
+    const searchDataPath = (typeof window !== 'undefined' && window.__XW_SEARCH_PATH)
+      ? window.__XW_SEARCH_PATH
+      : '/search.json';
+    const response = await fetch(searchDataPath);
     if (!response.ok) {
       throw new Error('Search data not found');
     }

@@ -51,32 +51,45 @@
   // ====================
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
+  let closeMobileMenu = function() {};
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
+    const toggleSpans = mobileToggle.querySelectorAll('span');
+    const applyMobileToggleVisualState = function(isOpen) {
+      if (!toggleSpans.length) return;
+      toggleSpans[0].style.transform = isOpen ? 'rotate(45deg) translateY(7px)' : 'none';
+      toggleSpans[1].style.opacity = isOpen ? '0' : '1';
+      toggleSpans[2].style.transform = isOpen ? 'rotate(-45deg) translateY(-7px)' : 'none';
+    };
+    const setMobileMenuState = function(isOpen) {
+      navMenu.classList.toggle('active', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      applyMobileToggleVisualState(isOpen);
+    };
+    closeMobileMenu = function() {
+      setMobileMenuState(false);
+    };
 
-      // 切换按钮动画
-      const spans = mobileToggle.querySelectorAll('span');
-      spans[0].style.transform = navMenu.classList.contains('active')
-        ? 'rotate(45deg) translateY(7px)'
-        : 'none';
-      spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
-      spans[2].style.transform = navMenu.classList.contains('active')
-        ? 'rotate(-45deg) translateY(-7px)'
-        : 'none';
+    // 初始化状态，避免刷新后 aria 与视觉不同步。
+    setMobileMenuState(navMenu.classList.contains('active'));
+
+    mobileToggle.addEventListener('click', function() {
+      const isOpen = !navMenu.classList.contains('active');
+      setMobileMenuState(isOpen);
     });
 
     // 点击外部关闭菜单
     document.addEventListener('click', function(e) {
       if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        const spans = mobileToggle.querySelectorAll('span');
-        spans.forEach(span => {
-          span.style.transform = 'none';
-          span.style.opacity = '1';
-        });
+        closeMobileMenu();
       }
+    });
+
+    // 移动端点击菜单项后自动收起菜单。
+    navMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeMobileMenu();
+      });
     });
   }
 
@@ -226,22 +239,38 @@
   // ====================
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
+      if (e.defaultPrevented) return;
       const href = this.getAttribute('href');
+      if (!href || href === '#' || this.hasAttribute('data-no-smooth-scroll')) return;
 
-      if (href !== '#' && href !== '') {
-        e.preventDefault();
-        const target = document.querySelector(href);
+      let target = null;
+      try {
+        target = document.querySelector(href);
+      } catch (error) {
+        target = null;
+      }
+      if (!target) {
+        const fallbackId = href.slice(1);
+        target = document.getElementById(decodeURIComponent(fallbackId));
+      }
+      if (!target) return;
 
-        if (target) {
-          const headerOffset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      e.preventDefault();
+      const headerOffset = 80;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: reduceMotion ? 'auto' : 'smooth'
+      });
+
+      const nextHash = target.id ? ('#' + target.id) : href;
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, '', nextHash);
+      } else {
+        window.location.hash = nextHash;
       }
     });
   });
@@ -336,7 +365,7 @@
 
     // Esc: 关闭移动端菜单
     if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
-      navMenu.classList.remove('active');
+      closeMobileMenu();
     }
   });
 
