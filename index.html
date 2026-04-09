@@ -366,8 +366,11 @@
     var heroSection = root.querySelector('.editorial-hero');
     var lowerSection = root.querySelector('.editorial-lower');
     var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var disableScreenModeForMobile =
+      window.matchMedia('(max-width: 900px)').matches ||
+      window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-    if (heroSection && lowerSection) {
+    if (heroSection && lowerSection && !disableScreenModeForMobile) {
       var screenSections = [heroSection, lowerSection];
       var currentScreen = 0;
       var isScreenSwitching = false;

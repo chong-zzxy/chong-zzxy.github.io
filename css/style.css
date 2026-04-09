@@ -13082,6 +13082,18 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 @media (max-width: 760px) {
+  .home-editorial.is-screen-mode .editorial-screen,
+  .home-editorial.is-screen-mode .editorial-hero,
+  .home-editorial.is-screen-mode .editorial-lower {
+    min-height: auto;
+  }
+
+  .home-editorial.is-screen-mode .editorial-screen:not(.is-screen-active),
+  .home-editorial.is-screen-mode .editorial-screen.is-screen-active {
+    opacity: 1;
+    transform: none;
+  }
+
   .home-editorial {
     --hero-stage-top: clamp(12px, 3vh, 24px);
     --hero-stage-bottom: clamp(14px, 3.2vh, 26px);
