@@ -105,44 +105,6 @@
   }
 
   // ====================
-  // 目录高亮
-  // ====================
-  const tocLinks = document.querySelectorAll('.toc-content a');
-  const headings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3');
-
-  if (tocLinks.length > 0 && headings.length > 0) {
-    const observer = new IntersectionObserver(
-      function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-
-            // 移除所有高亮
-            tocLinks.forEach(function(link) {
-              link.style.color = '';
-              link.style.background = '';
-            });
-
-            // 高亮当前项
-            const activeLink = document.querySelector(`.toc-content a[href="#${id}"]`);
-            if (activeLink) {
-              activeLink.style.color = 'var(--primary)';
-              activeLink.style.background = 'var(--primary-alpha-10)';
-            }
-          }
-        });
-      },
-      {
-        rootMargin: '-80px 0px -80% 0px'
-      }
-    );
-
-    headings.forEach(function(heading) {
-      observer.observe(heading);
-    });
-  }
-
-  // ====================
   // 图片懒加载增强
   // ====================
   const images = document.querySelectorAll('img[loading="lazy"]');

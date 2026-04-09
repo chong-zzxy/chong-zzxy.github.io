@@ -780,13 +780,18 @@
   const lightboxInfo = document.getElementById('lightbox-info');
   const currentIndexEl = document.getElementById('current-index');
   const totalImagesEl = document.getElementById('total-images');
+  const closeButton = document.getElementById('lightbox-close');
+  const prevButton = document.getElementById('lightbox-prev');
+  const nextButton = document.getElementById('lightbox-next');
   const thumbButtons = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-thumb]'));
   const albumTitle = "粘粘星球";
+  const focusableSelector = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
   const photos = [{"image":"/img/gallery/Madame-Nian/20230331_1155.jpg","title":"20230331 初识","description":"体型像棉花糖，软软糯糯。"},{"image":"/img/gallery/Madame-Nian/20230401_0137.jpg","title":"20230401 爱吃小猫","description":"罐头开盖 3 秒，进入无我境界。"},{"image":"/img/gallery/Madame-Nian/20230415_200102.jpg","title":"20230415 皮皮猫","description":"我刚翻开书，她就来审核学习态度。"},{"image":"/img/gallery/Madame-Nian/20230611_161953.jpg","title":"20230611 妩媚小猫","description":"这个眼神，今天不上班，专职撸猫。"},{"image":"/img/gallery/Madame-Nian/20230618_151515.jpg","title":"20230618 傻（伞）猫","description":"伞一打开，她以为是新房交付。"},{"image":"/img/gallery/Madame-Nian/20230619_184230.jpg","title":"20230619 偷税（水）猫","description":"别人品酒，她品我的白开水。"},{"image":"/img/gallery/Madame-Nian/20230720_184128.jpg","title":"20230720 福（袋）猫","description":"主动钻喜糖袋，赖着就不走了。"},{"image":"/img/gallery/Madame-Nian/20230922_130018.jpg","title":"20230922 表情喵","description":"表情包首发，版权归她所有。"},{"image":"/img/gallery/Madame-Nian/20231028_1133.jpg","title":"20231028 嘎 猫","description":"猫生总有一帧像网卡。"},{"image":"/img/gallery/Madame-Nian/20240505_0056.jpg","title":"20240505 贴贴模式","description":"强制贴贴，冷却时间为 0。"},{"image":"/img/gallery/Madame-Nian/20240617_215932.jpg","title":"20240617 学习搭子","description":"我在卷，她在躺，分工明确。"},{"image":"/img/gallery/Madame-Nian/20241028_113303.jpg","title":"20241028 精装 猫","description":"一大坨正版毛绒，手感 S 级。"},{"image":"/img/gallery/Madame-Nian/20241104_185358.jpg","title":"20241104 被窥猫","description":"门缝侦察兵，眼睛瞪的像铜铃。"},{"image":"/img/gallery/Madame-Nian/20241208_225117.jpg","title":"20241208 杀戮机器","description":"偷喝被抓后，我怀疑她想刀了我。"},{"image":"/img/gallery/Madame-Nian/20250203_103958.jpg","title":"20250203 兄妹相煎","description":"日常切磋，点到为止（大概）。"},{"image":"/img/gallery/Madame-Nian/20250702_201510.jpg","title":"20250702 抓拍天才","description":"0.5 秒神图。"},{"image":"/img/gallery/Madame-Nian/20250910_2238.jpg","title":"20250910 可恶小猫","description":"使用权归她了，我端着电脑干活儿。"},{"image":"/img/gallery/Madame-Nian/20251012_022647.jpg","title":"20251012 可恶小猫","description":"枕头被占领，我得睡边上。"},{"image":"/img/gallery/Madame-Nian/20251013_222358.jpg","title":"20251013 猛咪撒娇","description":"霸气中的一丝娇俏。"},{"image":"/img/gallery/Madame-Nian/20251019_022730.jpg","title":"20251019 闺秀","description":"披着纱像小公主，可爱粉嫩。"},{"image":"/img/gallery/Madame-Nian/20260124_2052.jpg","title":"20260124 主动！！！","description":"主动跳腿上，年度 KPI 提前完成。"}];
   if (!lightbox || !photos.length) return;
 
   let currentIndex = 0;
+  let lastActiveElement = null;
 
   function extractDominantColor(img, callback) {
     const canvas = document.createElement('canvas');
@@ -864,17 +869,49 @@
     };
   }
 
+  function trapFocus(container, event) {
+    const focusableElements = Array.prototype.slice.call(container.querySelectorAll(focusableSelector))
+      .filter(function(el) {
+        if (el.hasAttribute('hidden')) return false;
+        if (el.getAttribute('aria-hidden') === 'true') return false;
+        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+      });
+    if (!focusableElements.length) return;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey) {
+      if (active === first || active === container) {
+        event.preventDefault();
+        last.focus();
+      }
+    } else if (active === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
   function openLightbox(index) {
+    lastActiveElement = document.activeElement;
     updateLightbox(index);
     lightbox.classList.add('active');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(function() {
+      if (closeButton) closeButton.focus();
+    });
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+    lastActiveElement = null;
   }
 
   function prevImage() {
@@ -903,9 +940,9 @@
     });
   });
 
-  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-  document.getElementById('lightbox-prev').addEventListener('click', prevImage);
-  document.getElementById('lightbox-next').addEventListener('click', nextImage);
+  if (closeButton) closeButton.addEventListener('click', closeLightbox);
+  if (prevButton) prevButton.addEventListener('click', prevImage);
+  if (nextButton) nextButton.addEventListener('click', nextImage);
 
   if (lightboxOverlay) {
     lightboxOverlay.addEventListener('click', closeLightbox);
@@ -913,6 +950,10 @@
 
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Tab') {
+      trapFocus(lightbox, e);
+      return;
+    }
     if (e.key === 'Escape') {
       e.preventDefault();
       closeLightbox();

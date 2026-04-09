@@ -1248,6 +1248,7 @@
     var prevButton = document.getElementById('atlas-lightbox-prev');
     var nextButton = document.getElementById('atlas-lightbox-next');
     var overlay = lightbox.querySelector('[data-atlas-close]');
+    var focusableSelector = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
     var activeIndex = 0;
     var triggerButton = null;
 
@@ -1295,7 +1296,32 @@
       });
     }
 
+    function trapFocus(container, event) {
+      var focusableElements = Array.prototype.slice.call(container.querySelectorAll(focusableSelector))
+        .filter(function(el) {
+          if (el.hasAttribute('hidden')) return false;
+          if (el.getAttribute('aria-hidden') === 'true') return false;
+          return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+        });
+      if (!focusableElements.length) return;
+
+      var first = focusableElements[0];
+      var last = focusableElements[focusableElements.length - 1];
+      var active = document.activeElement;
+
+      if (event.shiftKey) {
+        if (active === first || active === container) {
+          event.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
     function openByIndex(index) {
+      if (!triggerButton) triggerButton = document.activeElement;
       activeIndex = (index + islands.length) % islands.length;
       var island = islands[activeIndex];
       activate(island);
@@ -1303,6 +1329,9 @@
       lightbox.classList.add('is-active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      window.requestAnimationFrame(function() {
+        if (closeButton) closeButton.focus();
+      });
     }
 
     function closeModal() {
@@ -1336,6 +1365,10 @@
 
     document.addEventListener('keydown', function(e) {
       if (!lightbox.classList.contains('is-active')) return;
+      if (e.key === 'Tab') {
+        trapFocus(lightbox, e);
+        return;
+      }
       if (e.key === 'Escape') {
         e.preventDefault();
         closeModal();

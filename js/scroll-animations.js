@@ -65,8 +65,3 @@ class ScrollAnimations {
 document.addEventListener('DOMContentLoaded', () => {
   new ScrollAnimations();
 });
-
-// 页面加载完成后的淡入
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});

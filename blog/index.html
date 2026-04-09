@@ -123,13 +123,29 @@
       </div>
 
       <div class="view-switcher" role="tablist" aria-label="文章视图">
-        <button class="view-btn active" data-view="list" role="tab" aria-selected="true">
+        <button
+          class="view-btn active"
+          id="journal-view-tab-list"
+          data-view="list"
+          role="tab"
+          aria-selected="true"
+          aria-controls="journal-view-panel-list"
+          tabindex="0"
+        >
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path fill="currentColor" d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
           </svg>
           列表
         </button>
-        <button class="view-btn" data-view="category" role="tab" aria-selected="false">
+        <button
+          class="view-btn"
+          id="journal-view-tab-category"
+          data-view="category"
+          role="tab"
+          aria-selected="false"
+          aria-controls="journal-view-panel-category"
+          tabindex="-1"
+        >
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path fill="currentColor" d="M3 5.5A2.5 2.5 0 0 1 5.5 3h4A2.5 2.5 0 0 1 12 5.5v4A2.5 2.5 0 0 1 9.5 12h-4A2.5 2.5 0 0 1 3 9.5v-4zm9 0A2.5 2.5 0 0 1 14.5 3h4A2.5 2.5 0 0 1 21 5.5v4A2.5 2.5 0 0 1 18.5 12h-4A2.5 2.5 0 0 1 12 9.5v-4zm-9 9A2.5 2.5 0 0 1 5.5 12h4A2.5 2.5 0 0 1 12 14.5v4A2.5 2.5 0 0 1 9.5 21h-4A2.5 2.5 0 0 1 3 18.5v-4zm9 0A2.5 2.5 0 0 1 14.5 12h4a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-2.5 2.5h-4a2.5 2.5 0 0 1-2.5-2.5v-4z"/>
           </svg>
@@ -139,7 +155,7 @@
     </div>
   </header>
 
-  <div class="blog-layout">
+  <div class="blog-layout" id="journal-view-panel-list" role="tabpanel" aria-labelledby="journal-view-tab-list">
     <div class="blog-main">
       <div class="post-list journal-feed" id="journal-feed">
         
@@ -223,7 +239,7 @@
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2023-01-10T16:00:00.000Z">2023-01-11</time>
                 <span class="journal-card-cat">人间漫游</span>
-                <span class="journal-card-read">6 min</span>
+                <span class="journal-card-read">3 min</span>
               </div>
 
               <h2 class="journal-card-title">
@@ -255,7 +271,7 @@
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">Natural Language Processing</span>
-                <span class="journal-card-read">4 min</span>
+                <span class="journal-card-read">2 min</span>
               </div>
 
               <h2 class="journal-card-title">
@@ -271,7 +287,7 @@
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">Computer Vision</span>
-                <span class="journal-card-read">5 min</span>
+                <span class="journal-card-read">2 min</span>
               </div>
 
               <h2 class="journal-card-title">
@@ -287,7 +303,7 @@
               <div class="journal-card-top">
                 <time class="journal-card-date" datetime="2022-01-10T04:00:00.000Z">2022-01-10</time>
                 <span class="journal-card-cat">Computer Vision</span>
-                <span class="journal-card-read">11 min</span>
+                <span class="journal-card-read">5 min</span>
               </div>
 
               <h2 class="journal-card-title">
@@ -360,7 +376,7 @@
     </aside>
   </div>
 
-  <div class="category-view journal-category-view" style="display: none;">
+  <div class="category-view journal-category-view" id="journal-view-panel-category" role="tabpanel" aria-labelledby="journal-view-tab-category" hidden>
     <div class="journal-timeline-header journal-category-header">
       <h2>分类导览</h2>
       <p>按主题浏览全部文章，滚动时导航会自动定位当前章节。</p>
@@ -564,6 +580,8 @@
   if (!root) return;
 
   var viewBtns = root.querySelectorAll('.view-btn');
+  var viewSwitcher = root.querySelector('.view-switcher[role="tablist"]');
+  var viewBtnList = Array.prototype.slice.call(viewBtns);
   var listView = root.querySelector('.blog-layout');
   var categoryView = root.querySelector('.category-view');
   var categoryNavChips = Array.prototype.slice.call(root.querySelectorAll('.journal-category-nav-chip[href^="#blog-cat-"]'));
@@ -711,11 +729,12 @@
       var active = btn.getAttribute('data-view') === view;
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.setAttribute('tabindex', active ? '0' : '-1');
     });
 
     if (view === 'category') {
-      listView.style.display = 'none';
-      categoryView.style.display = 'block';
+      listView.hidden = true;
+      categoryView.hidden = false;
       initCategoryObserver();
       if (isCategoryHash(window.location.hash)) {
         window.requestAnimationFrame(function() {
@@ -725,8 +744,8 @@
         setActiveCategoryChip('#' + categorySections[0].id);
       }
     } else {
-      listView.style.display = 'grid';
-      categoryView.style.display = 'none';
+      listView.hidden = false;
+      categoryView.hidden = true;
     }
   }
 
@@ -737,6 +756,42 @@
       safeStorage.set('blogView', view);
     });
   });
+
+  if (viewSwitcher && viewBtnList.length > 1) {
+    viewSwitcher.addEventListener('keydown', function(event) {
+      var current = event.target;
+      if (!current || !current.classList || !current.classList.contains('view-btn')) return;
+      var index = viewBtnList.indexOf(current);
+      if (index === -1) return;
+
+      var nextIndex = index;
+      if (event.key === 'ArrowRight') {
+        nextIndex = (index + 1) % viewBtnList.length;
+      } else if (event.key === 'ArrowLeft') {
+        nextIndex = (index - 1 + viewBtnList.length) % viewBtnList.length;
+      } else if (event.key === 'Home') {
+        nextIndex = 0;
+      } else if (event.key === 'End') {
+        nextIndex = viewBtnList.length - 1;
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        var activeView = current.getAttribute('data-view');
+        switchView(activeView);
+        safeStorage.set('blogView', activeView);
+        return;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      var nextBtn = viewBtnList[nextIndex];
+      if (!nextBtn) return;
+      nextBtn.focus();
+      var nextView = nextBtn.getAttribute('data-view');
+      switchView(nextView);
+      safeStorage.set('blogView', nextView);
+    });
+  }
 
   categoryNavChips.forEach(function(chip) {
     chip.addEventListener('click', function(e) {

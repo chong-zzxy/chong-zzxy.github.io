@@ -14120,6 +14120,36 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   --memoir-ink: #1e3647;
   --memoir-subtle: #4f6675;
   --memoir-accent: #4c85a3;
+  --memoir-tone-page-start: #f8fbfe;
+  --memoir-tone-page-mid: #f4f8fb;
+  --memoir-tone-page-end: #eff4f8;
+  --memoir-tone-glow-a: rgba(108, 151, 177, 0.14);
+  --memoir-tone-glow-b: rgba(176, 145, 93, 0.1);
+  --memoir-tone-paper-start: rgba(255, 255, 255, 0.985);
+  --memoir-tone-paper-end: rgba(249, 253, 255, 0.99);
+  --memoir-tone-paper-line: rgba(124, 154, 172, 0.045);
+  --memoir-tone-margin: rgba(214, 98, 103, 0.18);
+  --memoir-tone-heading: #284a60;
+  --memoir-tone-heading-border: rgba(76, 133, 163, 0.52);
+  --memoir-tone-link: #276484;
+  --memoir-tone-link-hover: #1f4f67;
+  --memoir-tone-nav: #46657a;
+  --memoir-tone-nav-center: #35546a;
+  --memoir-tone-nav-divider: rgba(71, 106, 127, 0.18);
+  --memoir-progress-accent: #6587a2;
+  --memoir-progress-accent-deep: #3f627d;
+  --memoir-progress-rail: rgba(88, 120, 142, 0.26);
+  --memoir-progress-rail-soft: rgba(88, 120, 142, 0.1);
+  --memoir-progress-glow: rgba(73, 106, 128, 0.22);
+  --memoir-progress-done-a: rgba(112, 152, 177, 0.88);
+  --memoir-progress-done-b: rgba(147, 173, 208, 0.8);
+  --memoir-progress-done-c: rgba(143, 180, 163, 0.74);
+  --memoir-progress-live-a: rgba(119, 164, 117, 0.93);
+  --memoir-progress-live-b: rgba(189, 166, 96, 0.86);
+  --memoir-progress-future: rgba(92, 114, 129, 0.2);
+  --memoir-progress-future-soft: rgba(92, 114, 129, 0.06);
+  --memoir-stage-glass: rgba(238, 248, 255, 0.86);
+  --memoir-grain-opacity: 0.12;
   --memoir-gold: #a88652;
   --memoir-rose: #c47f84;
   --memoir-surface: rgba(255, 255, 255, 0.84);
@@ -14133,9 +14163,130 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   --memoir-heading-size: clamp(1.08rem, 0.2vw + 1.02rem, 1.24rem);
   position: relative;
   background:
-    radial-gradient(54% 44% at 96% -8%, rgba(108, 151, 177, 0.14) 0%, rgba(108, 151, 177, 0) 74%),
-    radial-gradient(40% 36% at -14% 16%, rgba(176, 145, 93, 0.1) 0%, rgba(176, 145, 93, 0) 78%),
-    linear-gradient(180deg, #f8fbfe 0%, #f4f8fb 56%, #eff4f8 100%);
+    radial-gradient(54% 44% at 96% -8%, var(--memoir-tone-glow-a) 0%, rgba(0, 0, 0, 0) 74%),
+    radial-gradient(40% 36% at -14% 16%, var(--memoir-tone-glow-b) 0%, rgba(0, 0, 0, 0) 78%),
+    linear-gradient(180deg, var(--memoir-tone-page-start) 0%, var(--memoir-tone-page-mid) 56%, var(--memoir-tone-page-end) 100%);
+}
+
+.post-detail-refined.post-memoir[data-memoir-tone='spring'] {
+  --memoir-ink: #22463e;
+  --memoir-tone-page-start: #f8fcf8;
+  --memoir-tone-page-mid: #f2f8f3;
+  --memoir-tone-page-end: #ecf4ef;
+  --memoir-tone-glow-a: rgba(122, 167, 127, 0.13);
+  --memoir-tone-glow-b: rgba(192, 165, 116, 0.09);
+  --memoir-tone-paper-line: rgba(128, 158, 134, 0.045);
+  --memoir-tone-margin: rgba(206, 112, 114, 0.15);
+  --memoir-tone-heading: #295043;
+  --memoir-tone-heading-border: rgba(93, 150, 126, 0.48);
+  --memoir-tone-link: #2d6e60;
+  --memoir-tone-link-hover: #24594f;
+  --memoir-tone-nav: #42695d;
+  --memoir-tone-nav-center: #35584e;
+  --memoir-tone-nav-divider: rgba(82, 121, 108, 0.18);
+  --memoir-progress-accent: #719a81;
+  --memoir-progress-accent-deep: #4f765f;
+  --memoir-progress-rail: rgba(87, 121, 102, 0.27);
+  --memoir-progress-rail-soft: rgba(87, 121, 102, 0.11);
+  --memoir-progress-glow: rgba(83, 118, 98, 0.2);
+}
+
+.post-detail-refined.post-memoir[data-memoir-tone='mist'] {
+  --memoir-ink: #1f3950;
+  --memoir-tone-page-start: #f8fbfe;
+  --memoir-tone-page-mid: #f2f7fb;
+  --memoir-tone-page-end: #ebf2f8;
+  --memoir-tone-glow-a: rgba(108, 151, 177, 0.14);
+  --memoir-tone-glow-b: rgba(176, 145, 93, 0.1);
+  --memoir-tone-paper-line: rgba(124, 154, 172, 0.045);
+  --memoir-tone-margin: rgba(214, 98, 103, 0.18);
+  --memoir-tone-heading: #284a60;
+  --memoir-tone-heading-border: rgba(76, 133, 163, 0.52);
+  --memoir-tone-link: #276484;
+  --memoir-tone-link-hover: #1f4f67;
+  --memoir-tone-nav: #46657a;
+  --memoir-tone-nav-center: #35546a;
+  --memoir-tone-nav-divider: rgba(71, 106, 127, 0.18);
+  --memoir-progress-accent: #6587a2;
+  --memoir-progress-accent-deep: #3f627d;
+  --memoir-progress-rail: rgba(88, 120, 142, 0.26);
+  --memoir-progress-rail-soft: rgba(88, 120, 142, 0.1);
+  --memoir-progress-glow: rgba(73, 106, 128, 0.22);
+}
+
+.post-detail-refined.post-memoir[data-memoir-tone='sunset'] {
+  --memoir-ink: #4f382f;
+  --memoir-tone-page-start: #fcf9f6;
+  --memoir-tone-page-mid: #f8f1eb;
+  --memoir-tone-page-end: #f3ece6;
+  --memoir-tone-glow-a: rgba(196, 145, 107, 0.14);
+  --memoir-tone-glow-b: rgba(158, 131, 180, 0.1);
+  --memoir-tone-paper-start: rgba(255, 253, 250, 0.985);
+  --memoir-tone-paper-end: rgba(252, 247, 241, 0.992);
+  --memoir-tone-paper-line: rgba(173, 145, 126, 0.05);
+  --memoir-tone-margin: rgba(200, 118, 101, 0.16);
+  --memoir-tone-heading: #5a4337;
+  --memoir-tone-heading-border: rgba(186, 131, 97, 0.46);
+  --memoir-tone-link: #81513d;
+  --memoir-tone-link-hover: #6a4131;
+  --memoir-tone-nav: #6e5344;
+  --memoir-tone-nav-center: #5e4538;
+  --memoir-tone-nav-divider: rgba(154, 116, 90, 0.2);
+  --memoir-progress-accent: #ae8161;
+  --memoir-progress-accent-deep: #865a3d;
+  --memoir-progress-rail: rgba(138, 102, 77, 0.3);
+  --memoir-progress-rail-soft: rgba(138, 102, 77, 0.12);
+  --memoir-progress-glow: rgba(135, 98, 72, 0.2);
+}
+
+.post-detail-refined.post-memoir[data-memoir-tone='rain'] {
+  --memoir-ink: #2b4259;
+  --memoir-tone-page-start: #f6f9fc;
+  --memoir-tone-page-mid: #eef3f8;
+  --memoir-tone-page-end: #e8eef5;
+  --memoir-tone-glow-a: rgba(101, 131, 166, 0.14);
+  --memoir-tone-glow-b: rgba(120, 149, 177, 0.09);
+  --memoir-tone-paper-start: rgba(252, 254, 255, 0.985);
+  --memoir-tone-paper-end: rgba(244, 249, 253, 0.99);
+  --memoir-tone-paper-line: rgba(111, 132, 156, 0.05);
+  --memoir-tone-margin: rgba(145, 112, 132, 0.16);
+  --memoir-tone-heading: #334f69;
+  --memoir-tone-heading-border: rgba(102, 133, 165, 0.46);
+  --memoir-tone-link: #345f80;
+  --memoir-tone-link-hover: #2a4d67;
+  --memoir-tone-nav: #47637c;
+  --memoir-tone-nav-center: #39556d;
+  --memoir-tone-nav-divider: rgba(86, 112, 139, 0.2);
+  --memoir-progress-accent: #738aa3;
+  --memoir-progress-accent-deep: #546b85;
+  --memoir-progress-rail: rgba(92, 112, 136, 0.28);
+  --memoir-progress-rail-soft: rgba(92, 112, 136, 0.11);
+  --memoir-progress-glow: rgba(86, 107, 131, 0.22);
+}
+
+.post-detail-refined.post-memoir[data-memoir-tone='night'] {
+  --memoir-ink: #27384d;
+  --memoir-tone-page-start: #f6f8fa;
+  --memoir-tone-page-mid: #eff3f7;
+  --memoir-tone-page-end: #e8edf3;
+  --memoir-tone-glow-a: rgba(81, 112, 146, 0.15);
+  --memoir-tone-glow-b: rgba(140, 125, 166, 0.1);
+  --memoir-tone-paper-start: rgba(251, 253, 255, 0.982);
+  --memoir-tone-paper-end: rgba(241, 248, 253, 0.988);
+  --memoir-tone-paper-line: rgba(101, 123, 148, 0.052);
+  --memoir-tone-margin: rgba(134, 107, 143, 0.17);
+  --memoir-tone-heading: #344a62;
+  --memoir-tone-heading-border: rgba(97, 124, 155, 0.44);
+  --memoir-tone-link: #36577a;
+  --memoir-tone-link-hover: #2b4866;
+  --memoir-tone-nav: #496177;
+  --memoir-tone-nav-center: #3b5369;
+  --memoir-tone-nav-divider: rgba(86, 110, 134, 0.2);
+  --memoir-progress-accent: #7e8fb2;
+  --memoir-progress-accent-deep: #5f7194;
+  --memoir-progress-rail: rgba(95, 111, 137, 0.3);
+  --memoir-progress-rail-soft: rgba(95, 111, 137, 0.12);
+  --memoir-progress-glow: rgba(93, 109, 135, 0.24);
 }
 
 .post-detail-refined.post-memoir > * {
@@ -14669,47 +14820,23 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 6px;
-  border-radius: 12px;
-  border: 1px solid rgba(73, 108, 130, 0.18);
-  padding: clamp(8px, 1.3vw, 12px) clamp(12px, 1.8vw, 18px) clamp(8px, 1.2vw, 11px);
+  margin-bottom: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(76, 113, 136, 0.2);
+  padding: clamp(10px, 1.45vw, 15px) clamp(14px, 2.2vw, 24px) clamp(10px, 1.45vw, 14px);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(248, 253, 255, 0.95));
+    linear-gradient(166deg, rgba(255, 255, 255, 0.97) 0%, rgba(247, 252, 255, 0.94) 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    0 8px 18px rgba(20, 43, 58, 0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 10px 22px rgba(20, 43, 58, 0.07);
 }
 
 .post-detail-refined.post-memoir .post-memoir-hero::before {
-  content: '';
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 9px;
-  height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(94, 136, 160, 0.28), rgba(94, 136, 160, 0.06));
-  pointer-events: none;
+  content: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-hero::after {
-  content: '';
-  position: absolute;
-  right: 14px;
-  top: 11px;
-  width: 38px;
-  height: 13px;
-  border-radius: 999px;
-  border: 1px dashed rgba(94, 136, 160, 0.36);
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(114, 165, 194, 0.14) 0 7px,
-      rgba(224, 177, 123, 0.14) 7px 14px
-    );
-  opacity: 0.72;
-  transform: rotate(-8deg);
-  pointer-events: none;
+  content: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-headplayground {
@@ -14720,7 +14847,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   position: relative;
   z-index: 2;
   display: grid;
-  gap: 4px;
+  gap: 6px;
   max-width: min(92ch, 100%);
   padding: 0;
   border-left: 0;
@@ -14820,25 +14947,21 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  border-radius: 999px;
-  border: 1px solid rgba(79, 117, 138, 0.18);
-  background: rgba(247, 252, 255, 0.92);
-  color: #4e6f82;
-  font-size: 0.62rem;
+  border-radius: 9px;
+  border: 1px solid rgba(87, 126, 149, 0.24);
+  background: linear-gradient(155deg, rgba(248, 253, 255, 0.96), rgba(235, 247, 253, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: #476578;
+  font-size: 0.61rem;
   font-weight: 620;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: none;
-  padding: 3px 10px;
+  padding: 4px 10px 3px;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
 }
 
 .post-detail-refined.post-memoir .post-memoir-kicker::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  margin-right: 6px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, rgba(92, 148, 178, 0.82), rgba(80, 128, 153, 0.72));
+  content: none;
 }
 
 .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir {
@@ -14852,41 +14975,52 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir::after {
-  content: '';
-  display: block;
-  width: 72px;
-  height: 5px;
-  margin-top: 6px;
-  border-radius: 999px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(88, 143, 172, 0.56) 0 10px,
-      rgba(88, 143, 172, 0.18) 10px 16px
-    );
-  opacity: 0.7;
+  content: none;
 }
 
 .post-detail-refined.post-memoir .post-memoir-subtitle {
   margin: 0;
-  max-width: min(64ch, 100%);
-  color: #536f7f;
-  font-size: clamp(0.82rem, 1.1vw, 0.9rem);
-  line-height: 1.56;
+  max-width: min(68ch, 100%);
+  color: #4f6d80;
+  font-size: clamp(0.82rem, 1.04vw, 0.9rem);
+  line-height: 1.6;
   letter-spacing: 0.01em;
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
 }
 
-.post-detail-refined.post-memoir .post-memoir-series-line {
-  margin: 0;
-  color: #60798a;
-  font-size: 0.73rem;
-  letter-spacing: 0.02em;
+.post-detail-refined.post-memoir .post-memoir-hero-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
 }
 
-.post-detail-refined.post-memoir .post-memoir-series-line strong {
-  color: #2f5268;
-  font-weight: 680;
+.post-detail-refined.post-memoir .post-memoir-hero-actions-top {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.post-detail-refined.post-memoir .post-memoir-backlink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(78, 120, 144, 0.26);
+  background: linear-gradient(150deg, rgba(250, 254, 255, 0.98), rgba(237, 248, 254, 0.94));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.94);
+  color: #3f6076;
+  font-size: 0.66rem;
+  letter-spacing: 0.055em;
+  text-decoration: none;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.post-detail-refined.post-memoir .post-memoir-backlink:hover {
+  color: #2c4f66;
+  border-color: rgba(61, 104, 129, 0.4);
+  background: linear-gradient(150deg, rgba(252, 255, 255, 0.98), rgba(231, 245, 253, 0.96));
 }
 
 .post-detail-refined.post-memoir .memoir-path {
@@ -15109,13 +15243,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-summary-main.post-summary-main-memoir::after {
-  content: '';
-  display: block;
-  margin-top: 8px;
-  width: 56px;
-  height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(103, 131, 149, 0.42), rgba(103, 131, 149, 0));
+  content: none;
 }
 
 .post-detail-refined.post-memoir.post-memoir-hub .post-summary-main.post-summary-main-memoir {
@@ -15171,15 +15299,15 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   border-radius: 18px;
   border: 1px solid rgba(62, 98, 120, 0.16);
   background:
-    linear-gradient(90deg, rgba(214, 98, 103, 0.22) 0 2px, rgba(214, 98, 103, 0) 2px) var(--memoir-content-offset) 0 / 2px 100% no-repeat,
+    linear-gradient(90deg, var(--memoir-tone-margin) 0 2px, rgba(0, 0, 0, 0) 2px) var(--memoir-content-offset) 0 / 2px 100% no-repeat,
     repeating-linear-gradient(
       180deg,
-      rgba(124, 154, 172, 0.08) 0,
-      rgba(124, 154, 172, 0.08) 1px,
-      rgba(255, 255, 255, 0) 1px,
-      rgba(255, 255, 255, 0) 36px
+      var(--memoir-tone-paper-line) 0,
+      var(--memoir-tone-paper-line) 1px,
+      rgba(0, 0, 0, 0) 1px,
+      rgba(0, 0, 0, 0) 38px
     ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.985) 0%, rgba(249, 253, 255, 0.99) 100%);
+    linear-gradient(180deg, var(--memoir-tone-paper-start) 0%, var(--memoir-tone-paper-end) 100%);
   box-shadow:
     0 14px 30px rgba(17, 42, 60, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.88);
@@ -15446,6 +15574,20 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   transform: rotate(-6deg);
 }
 
+.post-detail-refined.post-memoir .memoir-paper-random-asset {
+  position: absolute;
+  pointer-events: none;
+  width: clamp(32px, 2.6vw, 64px);
+  height: clamp(32px, 2.6vw, 64px);
+  transform-origin: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 8px 18px rgba(30, 58, 76, 0.14));
+  will-change: transform, opacity;
+  animation: memoirAssetSoftFloatA 58s ease-in-out infinite;
+}
+
 .post-detail-refined.post-memoir .post-body.post-body-memoir::before {
   content: '';
   position: absolute;
@@ -15465,21 +15607,17 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 .post-detail-refined.post-memoir .post-body.post-body-memoir::after {
   content: '';
   position: absolute;
-  top: 14px;
-  left: calc(var(--memoir-content-offset) + clamp(14px, 2.2vw, 28px));
-  width: clamp(220px, 42vw, 560px);
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(76, 133, 163, 0),
-    rgba(76, 133, 163, 0.52) 40%,
-    rgba(168, 134, 82, 0.52) 72%,
-    rgba(168, 134, 82, 0)
-  );
+  inset: 0;
   pointer-events: none;
-  opacity: 0.76;
   z-index: 1;
+  opacity: var(--memoir-grain-opacity);
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 18%, rgba(67, 95, 113, 0.08) 0.45px, rgba(0, 0, 0, 0) 0.9px),
+    radial-gradient(circle at 74% 26%, rgba(67, 95, 113, 0.06) 0.4px, rgba(0, 0, 0, 0) 0.85px),
+    radial-gradient(circle at 38% 72%, rgba(67, 95, 113, 0.07) 0.42px, rgba(0, 0, 0, 0) 0.88px);
+  background-size: 3px 3px, 4px 4px, 5px 5px;
+  background-position: 0 0, 1px 2px, 2px 1px;
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir > h1:first-of-type {
@@ -15489,10 +15627,10 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   font-size: var(--memoir-heading-size);
   letter-spacing: 0.045em;
   text-transform: none;
-  color: #476174;
+  color: var(--memoir-tone-heading);
   margin-bottom: 18px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed rgba(76, 133, 163, 0.24);
+  border-bottom: 0;
   font-weight: 650;
 }
 
@@ -15538,9 +15676,9 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir h2,
 .post-detail-refined.post-memoir .post-body.post-body-memoir h3 {
-  color: #284a60;
+  color: var(--memoir-tone-heading);
   padding-left: 14px;
-  border-left: 3px solid rgba(76, 133, 163, 0.52);
+  border-left: 3px solid var(--memoir-tone-heading-border);
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir blockquote {
@@ -15555,12 +15693,12 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir a {
-  color: #276484;
+  color: var(--memoir-tone-link);
   text-decoration-color: rgba(39, 100, 132, 0.34);
 }
 
 .post-detail-refined.post-memoir .post-body.post-body-memoir a:hover {
-  color: #1f4f67;
+  color: var(--memoir-tone-link-hover);
   text-decoration-color: rgba(31, 79, 103, 0.64);
 }
 
@@ -15584,71 +15722,32 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   box-shadow: 0 12px 24px rgba(18, 35, 48, 0.08);
 }
 
-.post-detail-refined.post-memoir .memoir-chapter-edge {
-  position: absolute;
-  right: clamp(7px, 1.1vw, 16px);
-  top: clamp(16px, 2.1vw, 30px);
-  z-index: 4;
-  display: grid;
-  justify-items: center;
-  gap: 6px;
-  padding-left: 7px;
-  border-left: 1px solid rgba(71, 106, 127, 0.22);
-  pointer-events: none;
-  user-select: none;
-}
-
-.post-detail-refined.post-memoir .memoir-chapter-edge-no {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 16px;
-  padding: 0 5px;
-  border-radius: 999px;
-  border: 1px solid rgba(76, 116, 138, 0.28);
-  background: rgba(255, 255, 255, 0.84);
-  color: #436175;
-  font-size: 0.54rem;
-  letter-spacing: 0.11em;
-  line-height: 1;
-}
-
-.post-detail-refined.post-memoir .memoir-chapter-edge-title {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  color: rgba(60, 93, 112, 0.72);
-  font-size: 0.56rem;
-  letter-spacing: 0.14em;
-  line-height: 1.36;
-  max-height: min(220px, 46vh);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .post-detail-refined.post-memoir .memoir-chapter-tailnav {
+  --memoir-progress-ratio: 0;
+  --memoir-progress-segment: 22px;
   max-width: var(--memoir-content-max);
-  margin: 24px 0 8px var(--memoir-content-offset);
-  padding-top: 10px;
-  border-top: 1px dashed rgba(71, 110, 131, 0.28);
+  margin: 10px 0 20px var(--memoir-content-offset);
+  padding: 4px 0 0;
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-inner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link {
   min-height: 24px;
   display: inline-flex;
   align-items: center;
-  color: #446276;
+  color: var(--memoir-tone-nav);
   text-decoration: none;
-  font-size: 0.73rem;
-  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
   white-space: nowrap;
-  transition: color 0.22s ease, transform 0.22s ease;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  transition: color 0.22s ease, opacity 0.22s ease, transform 0.22s ease;
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-prev {
@@ -15657,45 +15756,440 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-hub {
   justify-self: center;
-  padding: 0 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(73, 110, 132, 0.24);
-  background: rgba(255, 255, 255, 0.74);
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 0;
+  border: 0;
+  background: none;
+  border-left: 1px dashed var(--memoir-tone-nav-divider);
+  border-right: 1px dashed var(--memoir-tone-nav-divider);
+  color: var(--memoir-tone-nav-center);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next {
   justify-self: end;
+  color: var(--memoir-tone-nav-center);
+  font-weight: 560;
+  max-width: min(56%, 40ch);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next .memoir-chapter-tailnav-link-prefix {
+  opacity: 0.54;
+  font-weight: 520;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next .memoir-chapter-tailnav-link-title {
+  display: inline-block;
+  max-width: min(22ch, 43vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  font-weight: 610;
+  color: var(--memoir-tone-nav-center);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next .memoir-chapter-tailnav-link-arrow {
+  margin-left: 4px;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next.is-disabled {
+  max-width: none;
+  font-weight: 560;
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link:hover {
-  color: #264b61;
-  transform: translateY(-1px);
+  color: var(--memoir-tone-link-hover);
+  opacity: 0.9;
+  transform: none;
+}
+
+.post-detail-refined.post-memoir .post-body.post-body-memoir > .memoir-reveal-item {
+  opacity: 0.62;
+  transform: translateY(4px);
+  filter: blur(1.8px) saturate(0.97);
+  clip-path: inset(0 0 8% 0 round 4px);
+  will-change: opacity, transform, filter, clip-path;
+  transition:
+    opacity 0.72s cubic-bezier(0.24, 0.78, 0.24, 1) var(--memoir-reveal-delay, 0ms),
+    transform 0.82s cubic-bezier(0.21, 0.82, 0.24, 1) var(--memoir-reveal-delay, 0ms),
+    filter 0.86s ease-out var(--memoir-reveal-delay, 0ms),
+    clip-path 0.92s cubic-bezier(0.2, 0.82, 0.24, 1) var(--memoir-reveal-delay, 0ms);
+}
+
+.post-detail-refined.post-memoir .post-body.post-body-memoir > .memoir-reveal-item.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-detail-refined.post-memoir .post-body.post-body-memoir > .memoir-reveal-item {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: inset(0 0 0 0);
+    transition: none;
+  }
 }
 
 .post-detail-refined.post-memoir .memoir-chapter-tailnav-link.is-disabled {
-  color: rgba(67, 97, 115, 0.48);
+  color: rgba(67, 97, 115, 0.42);
   pointer-events: none;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-progress {
+  margin-top: 12px;
+  padding: 0 2px 8px;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-progress-track {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 42px;
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-progress-track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  border-radius: 999px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    var(--memoir-progress-rail-soft) 8%,
+    var(--memoir-progress-rail) 14%,
+    var(--memoir-progress-rail) 86%,
+    var(--memoir-progress-rail-soft) 92%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.post-detail-refined.post-memoir .memoir-progress-future,
+.post-detail-refined.post-memoir .memoir-progress-done,
+.post-detail-refined.post-memoir .memoir-progress-current {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 999px;
+}
+
+.post-detail-refined.post-memoir .memoir-progress-future {
+  left: calc(var(--memoir-progress-ratio) * 100%);
+  width: calc((1 - var(--memoir-progress-ratio)) * 100%);
+  height: 3px;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.28) 0 14%, rgba(0, 0, 0, 0) 16%) left center / 24px 100% repeat-x,
+    linear-gradient(90deg, var(--memoir-progress-future-soft), var(--memoir-progress-future), var(--memoir-progress-future-soft));
+  opacity: 0.82;
+  filter: blur(0.28px);
+  animation: memoirFutureDrift 7.8s linear infinite;
+}
+
+.post-detail-refined.post-memoir .memoir-progress-done {
+  left: 0;
+  width: calc(var(--memoir-progress-prev-ratio) * 100%);
+  height: 4px;
+  background: linear-gradient(90deg, var(--memoir-progress-done-a), var(--memoir-progress-done-b), var(--memoir-progress-done-c));
+  background-size: 180% 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    0 4px 11px rgba(74, 114, 142, 0.2);
+  animation: memoirDoneShimmer 8.6s linear infinite;
+}
+
+.post-detail-refined.post-memoir .memoir-progress-current {
+  left: calc(var(--memoir-progress-prev-ratio) * 100%);
+  width: calc(var(--memoir-progress-current-ratio) * 100%);
+  height: 5px;
+  background: linear-gradient(90deg, var(--memoir-progress-live-a), var(--memoir-progress-live-b), var(--memoir-progress-live-a));
+  background-size: 200% 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 0 0 1px rgba(214, 231, 175, 0.24),
+    0 5px 13px rgba(112, 143, 95, 0.28);
+  animation: memoirCurrentFlow 2.6s linear infinite;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone {
+  position: absolute;
+  left: var(--memoir-stage-pos);
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 11px;
+  transform: translate(-50%, -50%);
+  isolation: isolate;
+  transition: transform 0.28s ease, filter 0.28s ease, opacity 0.28s ease;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone .memoir-stage-island,
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone .memoir-stage-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone .memoir-stage-island {
+  inset: 2px;
+  border-radius: 46% 52% 44% 50%;
+  border: 1px solid rgba(87, 116, 134, 0.34);
+  background:
+    radial-gradient(120% 76% at 50% 96%, rgba(88, 121, 144, 0.33) 0 46%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(155deg, rgba(249, 253, 255, 0.98), rgba(228, 240, 248, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 3px 10px rgba(30, 58, 76, 0.16);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone .memoir-stage-scene {
+  inset: 7px;
+  border-radius: 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.96;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-village .memoir-stage-island {
+  background:
+    radial-gradient(115% 70% at 50% 98%, rgba(91, 128, 82, 0.38) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(236, 248, 224, 0.98), rgba(199, 224, 182, 0.97));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-village .memoir-stage-scene {
+  background-image:
+    radial-gradient(circle at 79% 60%, rgba(122, 160, 188, 0.94) 0 18%, rgba(255, 255, 255, 0.25) 20%, rgba(0, 0, 0, 0) 30%),
+    linear-gradient(0deg, rgba(120, 164, 107, 0.86) 0 1px, rgba(0, 0, 0, 0) 1px),
+    linear-gradient(135deg, rgba(165, 112, 72, 0.92) 0 40%, rgba(0, 0, 0, 0) 42%),
+    linear-gradient(180deg, rgba(205, 160, 114, 0.9) 0 42%, rgba(0, 0, 0, 0) 44%);
+  background-size:
+    100% 100%,
+    58% 58%,
+    52% 44%,
+    54% 58%;
+  background-position:
+    center,
+    11% 79%,
+    36% 38%,
+    33% 52%;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-school .memoir-stage-island {
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(119, 126, 96, 0.34) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(243, 246, 224, 0.98), rgba(224, 231, 195, 0.97));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-school .memoir-stage-scene {
+  background-image:
+    linear-gradient(180deg, rgba(89, 111, 132, 0.9) 0 42%, rgba(0, 0, 0, 0) 44%),
+    linear-gradient(180deg, rgba(210, 176, 118, 0.9) 0 56%, rgba(0, 0, 0, 0) 58%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.54) 0 1px, rgba(0, 0, 0, 0) 1px 3px),
+    linear-gradient(180deg, rgba(127, 151, 87, 0.8) 0 100%);
+  background-size:
+    54% 36%,
+    62% 53%,
+    42% 16%,
+    28% 4px;
+  background-position:
+    32% 18%,
+    28% 40%,
+    66% 56%,
+    18% 92%;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-campus .memoir-stage-island {
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(93, 116, 148, 0.33) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(232, 243, 250, 0.98), rgba(194, 214, 233, 0.97));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-campus .memoir-stage-scene {
+  background-image:
+    linear-gradient(180deg, rgba(79, 116, 146, 0.94) 0 100%),
+    repeating-linear-gradient(90deg, rgba(215, 234, 248, 0.66) 0 1px, rgba(0, 0, 0, 0) 1px 4px),
+    linear-gradient(180deg, rgba(70, 97, 121, 0.88) 0 100%),
+    linear-gradient(180deg, rgba(145, 165, 187, 0.9) 0 100%);
+  background-size:
+    52% 52%,
+    39% 23%,
+    26% 16%,
+    58% 4px;
+  background-position:
+    26% 34%,
+    33% 52%,
+    73% 47%,
+    24% 92%;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-research .memoir-stage-island {
+  border-color: rgba(104, 145, 171, 0.56);
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(90, 139, 161, 0.34) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(245, 252, 255, 0.98), rgba(206, 231, 246, 0.9));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-research .memoir-stage-scene {
+  background-image:
+    radial-gradient(circle at 79% 28%, rgba(244, 251, 255, 0.96) 0 24%, rgba(90, 123, 149, 0.22) 27%, rgba(0, 0, 0, 0) 38%),
+    linear-gradient(180deg, rgba(74, 109, 137, 0.9) 0 100%),
+    linear-gradient(180deg, rgba(90, 145, 172, 0.95) 0 100%),
+    linear-gradient(90deg, rgba(134, 184, 171, 0.92), rgba(172, 171, 111, 0.9));
+  background-size:
+    40% 44%,
+    20% 46%,
+    18% 52%,
+    72% 3px;
+  background-position:
+    79% 28%,
+    24% 46%,
+    53% 38%,
+    14% 82%;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-future .memoir-stage-island {
+  border-color: rgba(108, 114, 142, 0.5);
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(95, 104, 138, 0.28) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(235, 239, 249, 0.94), rgba(204, 214, 237, 0.9));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-future .memoir-stage-scene {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(244, 249, 255, 0.9) 0 18%, rgba(174, 201, 225, 0.4) 22%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(circle at 50% 50%, rgba(85, 106, 147, 0.86) 0 48%, rgba(0, 0, 0, 0) 52%),
+    linear-gradient(90deg, rgba(164, 180, 214, 0.3), rgba(229, 236, 255, 0.88), rgba(164, 180, 214, 0.3));
+  background-size:
+    36% 36%,
+    58% 58%,
+    64% 2px;
+  background-position:
+    center,
+    center,
+    center 82%;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-pending {
+  opacity: 0.54;
+  filter: saturate(0.74);
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-done {
+  opacity: 0.98;
+  filter: saturate(1.04);
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current {
+  width: 34px;
+  height: 34px;
+  filter: saturate(1.12);
+  transform: translate(-50%, -50%) scale(1.04);
+  z-index: 3;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  border: 1px solid rgba(141, 179, 155, 0.56);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.86),
+    0 0 18px rgba(140, 176, 146, 0.34);
+  animation: memoirCurrentPulse 2.8s ease-in-out infinite;
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current .memoir-stage-island {
+  border-color: rgba(109, 148, 171, 0.72);
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(88, 140, 157, 0.38) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(247, 253, 255, 0.99), rgba(220, 238, 247, 0.95));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-research.is-current .memoir-stage-island {
+  background:
+    radial-gradient(115% 72% at 50% 98%, rgba(92, 158, 164, 0.4) 0 44%, rgba(0, 0, 0, 0) 49%),
+    linear-gradient(150deg, rgba(244, 253, 255, 0.99), rgba(201, 232, 241, 0.93));
+}
+
+.post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.stage-future.is-pending .memoir-stage-scene {
+  opacity: 0.72;
+}
+
+@keyframes memoirDoneShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 180% 50%;
+  }
+}
+
+@keyframes memoirCurrentFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes memoirFutureDrift {
+  0% {
+    background-position: 0 50%, 0 50%;
+    opacity: 0.62;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    background-position: 32px 50%, 0 50%;
+    opacity: 0.62;
+  }
+}
+
+@keyframes memoirCurrentPulse {
+  0%, 100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-detail-refined.post-memoir .memoir-progress-future,
+  .post-detail-refined.post-memoir .memoir-progress-done,
+  .post-detail-refined.post-memoir .memoir-progress-current,
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current::before,
+  .post-detail-refined.post-memoir .memoir-paper-random-asset {
+    animation: none;
+  }
 }
 
 .post-detail-refined.post-memoir .memoir-series-overview {
   max-width: var(--memoir-content-max);
   margin: 42px 0 8px var(--memoir-content-offset);
   padding-top: 18px;
-  border-top: 1px dashed rgba(77, 119, 143, 0.26);
+  border-top: 0;
 }
 
 .post-detail-refined.post-memoir .memoir-series-overview-head {
   display: grid;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.post-detail-refined.post-memoir .memoir-series-overview-kicker {
-  margin: 0;
-  font-size: 0.64rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(68, 104, 124, 0.68);
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .post-detail-refined.post-memoir .memoir-series-overview-title {
@@ -15706,15 +16200,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   font-weight: 660;
 }
 
-.post-detail-refined.post-memoir .memoir-series-overview-note {
-  margin: 0;
-  color: #587184;
-  font-size: 0.84rem;
-  line-height: 1.7;
-}
-
 .post-detail-refined.post-memoir .memoir-series-overview-progress {
-  margin-top: 4px;
+  margin-top: 2px;
   display: grid;
   gap: 6px;
 }
@@ -15725,7 +16212,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   height: 6px;
   border-radius: 999px;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(122, 156, 177, 0.22), rgba(122, 156, 177, 0.08));
+  background: linear-gradient(90deg, rgba(122, 156, 177, 0.2), rgba(122, 156, 177, 0.08));
 }
 
 .post-detail-refined.post-memoir .memoir-series-overview-progress-track i {
@@ -15733,7 +16220,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(54, 108, 138, 0.84), rgba(84, 145, 178, 0.92));
+  background: linear-gradient(90deg, var(--memoir-progress-accent-deep), var(--memoir-progress-accent));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
 .post-detail-refined.post-memoir .memoir-series-overview-progress-text {
@@ -15817,7 +16305,8 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
 .post-detail-refined.post-memoir .memoir-series-entry-head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -16342,6 +16831,216 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 }
 
+@keyframes memoirAssetPlaneGlideA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  26% {
+    transform: translate3d(var(--memoir-asset-dx-1, 14px), var(--memoir-asset-dy-1, -8px), 0) rotate(var(--memoir-asset-rot-1, 8deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.04));
+  }
+  58% {
+    transform: translate3d(var(--memoir-asset-dx-2, 26px), var(--memoir-asset-dy-2, -2px), 0) rotate(var(--memoir-asset-rot-2, -6deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.97));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 8px), var(--memoir-asset-dy-3, -6px), 0) rotate(var(--memoir-asset-rot-3, 2deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.01));
+  }
+}
+
+@keyframes memoirAssetPlaneGlideB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  22% {
+    transform: translate3d(var(--memoir-asset-dx-2, -14px), var(--memoir-asset-dy-2, 6px), 0) rotate(var(--memoir-asset-rot-2, -8deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.98));
+  }
+  60% {
+    transform: translate3d(var(--memoir-asset-dx-1, 22px), var(--memoir-asset-dy-1, -10px), 0) rotate(var(--memoir-asset-rot-1, 10deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.05));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 4px), var(--memoir-asset-dy-3, -3px), 0) rotate(var(--memoir-asset-rot-3, 1deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetKiteFloatA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  32% {
+    transform: translate3d(var(--memoir-asset-dx-1, 10px), var(--memoir-asset-dy-1, -12px), 0) rotate(var(--memoir-asset-rot-1, 7deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.03));
+  }
+  67% {
+    transform: translate3d(var(--memoir-asset-dx-2, -8px), var(--memoir-asset-dy-2, 16px), 0) rotate(var(--memoir-asset-rot-2, -7deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.96));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 6px), var(--memoir-asset-dy-3, 8px), 0) rotate(var(--memoir-asset-rot-3, 2deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetKiteFloatB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  30% {
+    transform: translate3d(var(--memoir-asset-dx-2, -10px), var(--memoir-asset-dy-2, 12px), 0) rotate(var(--memoir-asset-rot-2, -8deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.95));
+  }
+  64% {
+    transform: translate3d(var(--memoir-asset-dx-1, 14px), var(--memoir-asset-dy-1, -10px), 0) rotate(var(--memoir-asset-rot-1, 8deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.04));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 3px), var(--memoir-asset-dy-3, 6px), 0) rotate(var(--memoir-asset-rot-3, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetPinwheelDriftA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  40% {
+    transform: translate3d(var(--memoir-asset-dx-1, 6px), var(--memoir-asset-dy-1, -5px), 0) rotate(calc(var(--memoir-asset-rot-1, 6deg) + var(--memoir-spin-half, 0.4turn))) scale(calc(var(--memoir-asset-scale, 1) * 1.03));
+  }
+  76% {
+    transform: translate3d(var(--memoir-asset-dx-2, -5px), var(--memoir-asset-dy-2, 4px), 0) rotate(calc(var(--memoir-asset-rot-2, -6deg) + var(--memoir-spin-turn, 1turn))) scale(calc(var(--memoir-asset-scale, 1) * 0.98));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 2px), var(--memoir-asset-dy-3, 2px), 0) rotate(calc(var(--memoir-asset-rot-3, 2deg) + var(--memoir-spin-turn, 1turn))) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetPinwheelDriftB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  34% {
+    transform: translate3d(var(--memoir-asset-dx-2, -4px), var(--memoir-asset-dy-2, 4px), 0) rotate(calc(var(--memoir-asset-rot-2, -8deg) + var(--memoir-spin-half, 0.4turn))) scale(calc(var(--memoir-asset-scale, 1) * 0.97));
+  }
+  72% {
+    transform: translate3d(var(--memoir-asset-dx-1, 5px), var(--memoir-asset-dy-1, -5px), 0) rotate(calc(var(--memoir-asset-rot-1, 8deg) + var(--memoir-spin-turn, 1turn))) scale(calc(var(--memoir-asset-scale, 1) * 1.03));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, -2px), var(--memoir-asset-dy-3, 2px), 0) rotate(calc(var(--memoir-asset-rot-3, 0deg) + var(--memoir-spin-turn, 1turn))) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetDragonflyDartA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  18% {
+    transform: translate3d(var(--memoir-asset-dx-1, 9px), var(--memoir-asset-dy-1, -12px), 0) rotate(var(--memoir-asset-rot-1, 14deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.03));
+  }
+  38% {
+    transform: translate3d(calc(var(--memoir-asset-dx-1, 9px) * -0.42), calc(var(--memoir-asset-dy-1, -12px) * -0.3), 0) rotate(calc(var(--memoir-asset-rot-1, 14deg) * -0.7)) scale(calc(var(--memoir-asset-scale, 1) * 0.96));
+  }
+  66% {
+    transform: translate3d(var(--memoir-asset-dx-2, -12px), var(--memoir-asset-dy-2, 6px), 0) rotate(var(--memoir-asset-rot-2, -16deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.02));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 4px), var(--memoir-asset-dy-3, -6px), 0) rotate(var(--memoir-asset-rot-3, 8deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetDragonflyDartB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  21% {
+    transform: translate3d(var(--memoir-asset-dx-2, -10px), var(--memoir-asset-dy-2, -9px), 0) rotate(var(--memoir-asset-rot-2, -15deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.02));
+  }
+  42% {
+    transform: translate3d(calc(var(--memoir-asset-dx-2, -10px) * -0.4), calc(var(--memoir-asset-dy-2, -9px) * -0.35), 0) rotate(calc(var(--memoir-asset-rot-2, -15deg) * -0.7)) scale(calc(var(--memoir-asset-scale, 1) * 0.96));
+  }
+  68% {
+    transform: translate3d(var(--memoir-asset-dx-1, 12px), var(--memoir-asset-dy-1, 7px), 0) rotate(var(--memoir-asset-rot-1, 15deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.03));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 3px), var(--memoir-asset-dy-3, -4px), 0) rotate(var(--memoir-asset-rot-3, 6deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetLeafDriftA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  32% {
+    transform: translate3d(var(--memoir-asset-dx-1, 8px), var(--memoir-asset-dy-1, 9px), 0) rotate(var(--memoir-asset-rot-1, 16deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.98));
+  }
+  68% {
+    transform: translate3d(var(--memoir-asset-dx-2, -10px), var(--memoir-asset-dy-2, 14px), 0) rotate(var(--memoir-asset-rot-2, -14deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.02));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 6px), var(--memoir-asset-dy-3, 12px), 0) rotate(var(--memoir-asset-rot-3, 7deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetLeafDriftB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  30% {
+    transform: translate3d(var(--memoir-asset-dx-2, -8px), var(--memoir-asset-dy-2, 12px), 0) rotate(var(--memoir-asset-rot-2, -16deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.01));
+  }
+  64% {
+    transform: translate3d(var(--memoir-asset-dx-1, 11px), var(--memoir-asset-dy-1, 9px), 0) rotate(var(--memoir-asset-rot-1, 14deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.97));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 5px), var(--memoir-asset-dy-3, 11px), 0) rotate(var(--memoir-asset-rot-3, 6deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetGroundShiftA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  44% {
+    transform: translate3d(var(--memoir-asset-dx-1, 2px), var(--memoir-asset-dy-1, -1px), 0) rotate(var(--memoir-asset-rot-1, 2deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.01));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-2, -2px), var(--memoir-asset-dy-2, 1px), 0) rotate(var(--memoir-asset-rot-2, -2deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetGroundShiftB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  48% {
+    transform: translate3d(var(--memoir-asset-dx-2, -2px), var(--memoir-asset-dy-2, 1px), 0) rotate(var(--memoir-asset-rot-2, -2deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.99));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 2px), var(--memoir-asset-dy-3, -1px), 0) rotate(var(--memoir-asset-rot-3, 1deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetSoftFloatA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  34% {
+    transform: translate3d(var(--memoir-asset-dx-1, 8px), var(--memoir-asset-dy-1, -6px), 0) rotate(var(--memoir-asset-rot-1, 6deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.02));
+  }
+  72% {
+    transform: translate3d(var(--memoir-asset-dx-2, -8px), var(--memoir-asset-dy-2, 6px), 0) rotate(var(--memoir-asset-rot-2, -6deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.97));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 4px), var(--memoir-asset-dy-3, -3px), 0) rotate(var(--memoir-asset-rot-3, 2deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
+@keyframes memoirAssetSoftFloatB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--memoir-asset-rot-0, 0deg)) scale(var(--memoir-asset-scale, 1));
+  }
+  30% {
+    transform: translate3d(var(--memoir-asset-dx-2, -7px), var(--memoir-asset-dy-2, 5px), 0) rotate(var(--memoir-asset-rot-2, -7deg)) scale(calc(var(--memoir-asset-scale, 1) * 0.98));
+  }
+  66% {
+    transform: translate3d(var(--memoir-asset-dx-1, 9px), var(--memoir-asset-dy-1, -6px), 0) rotate(var(--memoir-asset-rot-1, 7deg)) scale(calc(var(--memoir-asset-scale, 1) * 1.02));
+  }
+  100% {
+    transform: translate3d(var(--memoir-asset-dx-3, 3px), var(--memoir-asset-dy-3, -2px), 0) rotate(var(--memoir-asset-rot-3, 1deg)) scale(var(--memoir-asset-scale, 1));
+  }
+}
+
 @keyframes memoirTailNavReveal {
   from {
     opacity: 0;
@@ -16680,33 +17379,28 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero {
-    padding: 7px 9px 7px;
+    padding: 8px 10px 8px;
     border-radius: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero::before {
-    top: 7px;
-    left: 10px;
-    right: 10px;
+    content: none;
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero::after {
-    right: 10px;
-    top: 8px;
-    width: 30px;
-    height: 11px;
+    content: none;
   }
 
   .post-detail-refined.post-memoir .post-memoir-hero-main {
-    gap: 3px;
+    gap: 5px;
     padding-left: 0;
   }
 
   .post-detail-refined.post-memoir .post-memoir-kicker {
     font-size: 0.58rem;
-    letter-spacing: 0.09em;
-    padding: 2px 7px;
+    letter-spacing: 0.07em;
+    padding: 3px 8px 2px;
   }
 
   .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir {
@@ -16715,19 +17409,16 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     line-height: 1.2;
   }
 
-  .post-detail-refined.post-memoir .post-title-main.post-title-main-memoir::after {
-    width: 58px;
-    height: 4px;
-    margin-top: 5px;
-  }
-
   .post-detail-refined.post-memoir .post-memoir-subtitle {
-    font-size: 0.76rem;
-    line-height: 1.5;
+    font-size: 0.77rem;
+    line-height: 1.54;
   }
 
-  .post-detail-refined.post-memoir .post-memoir-series-line {
-    font-size: 0.68rem;
+  .post-detail-refined.post-memoir .post-memoir-backlink {
+    min-height: 22px;
+    padding: 0 9px;
+    font-size: 0.62rem;
+    letter-spacing: 0.045em;
   }
 
   .post-detail-refined.post-memoir .post-title-main {
@@ -16751,15 +17442,15 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     padding: 16px 10px 22px;
     border-radius: 14px;
     background:
-      linear-gradient(90deg, rgba(214, 98, 103, 0.2) 0 2px, rgba(214, 98, 103, 0) 2px) 36px 0 / 2px 100% no-repeat,
+      linear-gradient(90deg, var(--memoir-tone-margin) 0 2px, rgba(0, 0, 0, 0) 2px) 36px 0 / 2px 100% no-repeat,
       repeating-linear-gradient(
         180deg,
-        rgba(124, 154, 172, 0.08) 0,
-        rgba(124, 154, 172, 0.08) 1px,
-        rgba(255, 255, 255, 0) 1px,
-        rgba(255, 255, 255, 0) 34px
+        var(--memoir-tone-paper-line) 0,
+        var(--memoir-tone-paper-line) 1px,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0) 36px
       ),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.985) 0%, rgba(249, 253, 255, 0.99) 100%);
+      linear-gradient(180deg, var(--memoir-tone-paper-start) 0%, var(--memoir-tone-paper-end) 100%);
   }
 
   .post-detail-refined.post-memoir .post-body.post-body-memoir::before {
@@ -16767,10 +17458,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .post-detail-refined.post-memoir .post-body.post-body-memoir::after {
-    top: 10px;
-    left: 42px;
-    width: min(56vw, 220px);
-    opacity: 0.64;
+    opacity: calc(var(--memoir-grain-opacity) * 0.7);
   }
 
   .post-detail-refined.post-memoir .post-body.post-body-memoir > h1:first-of-type,
@@ -16785,29 +17473,10 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     letter-spacing: 0.01em;
   }
 
-  .post-detail-refined.post-memoir .memoir-chapter-edge {
-    right: 6px;
-    top: 14px;
-    gap: 4px;
-    padding-left: 5px;
-  }
-
-  .post-detail-refined.post-memoir .memoir-chapter-edge-no {
-    min-height: 14px;
-    padding: 0 4px;
-    font-size: 0.48rem;
-  }
-
-  .post-detail-refined.post-memoir .memoir-chapter-edge-title {
-    font-size: 0.5rem;
-    letter-spacing: 0.1em;
-    max-height: 116px;
-  }
-
   .post-detail-refined.post-memoir .memoir-chapter-tailnav {
     max-width: 100%;
-    margin: 20px 0 6px 16px;
-    padding-top: 8px;
+    margin: 10px 0 12px 16px;
+    padding: 3px 0;
   }
 
   .post-detail-refined.post-memoir .memoir-chapter-tailnav-inner {
@@ -16815,12 +17484,66 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .post-detail-refined.post-memoir .memoir-chapter-tailnav-link {
-    font-size: 0.64rem;
-    min-height: 22px;
+    font-size: 0.61rem;
+    min-height: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next {
+    max-width: min(58%, 24ch);
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-next .memoir-chapter-tailnav-link-title {
+    max-width: 12ch;
   }
 
   .post-detail-refined.post-memoir .memoir-chapter-tailnav-link-hub {
+    min-height: 22px;
     padding: 0 6px;
+    font-size: 0.58rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-progress {
+    margin-top: 8px;
+    padding: 0 1px 4px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-progress-track {
+    height: 34px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-progress-track::before {
+    height: 1.5px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-progress-future {
+    height: 2px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-progress-done {
+    height: 3px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-progress-current {
+    height: 4px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone {
+    width: 23px;
+    height: 23px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone .memoir-stage-scene {
+    inset: 6px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current {
+    width: 28px;
+    height: 28px;
+  }
+
+  .post-detail-refined.post-memoir .memoir-chapter-tailnav-milestone.is-current::before {
+    inset: -4px;
   }
 
   .post-detail-refined.post-memoir .memoir-series-overview {
@@ -16833,12 +17556,12 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     margin-bottom: 12px;
   }
 
-  .post-detail-refined.post-memoir .memoir-series-overview-note {
-    font-size: 0.8rem;
-  }
-
   .post-detail-refined.post-memoir .memoir-series-overview-progress-text {
     font-size: 0.72rem;
+  }
+
+  .post-detail-refined.post-memoir .memoir-series-overview-progress-track {
+    height: 5px;
   }
 
   .post-detail-refined.post-memoir .memoir-series-timeline {
@@ -16866,6 +17589,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
   }
 
   .post-detail-refined.post-memoir .memoir-series-entry-head {
+    justify-content: flex-start;
     gap: 6px;
   }
 
@@ -16983,6 +17707,7 @@ body.is-home .editorial-lower-fusion .identity-card.identity-card-merged {
     width: 62px;
     opacity: 0.24;
   }
+
 }
 
 /* ====================
