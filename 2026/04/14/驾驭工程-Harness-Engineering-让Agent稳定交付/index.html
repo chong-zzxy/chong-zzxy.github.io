@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>驾驭工程（Harness Engineering）：让 Agent 稳定交付 | 星唯向导</title>
+  <meta name="description" content="Harness Engineering 的核心不是“更聪明的模型”，而是“更稳定的执行环境与反馈闭环”。">
+  
+    <meta name="keywords" content="AI, 计算机视觉, NLP, 深度学习, 机器学习, Python">
+  
+  <link rel="canonical" href="https://chong-zzxy.github.io/2026/04/14/%E9%A9%BE%E9%A9%AD%E5%B7%A5%E7%A8%8B-Harness-Engineering-%E8%AE%A9Agent%E7%A8%B3%E5%AE%9A%E4%BA%A4%E4%BB%98/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="星唯向导">
+  <meta property="og:title" content="驾驭工程（Harness Engineering）：让 Agent 稳定交付 | 星唯向导">
+  <meta property="og:description" content="Harness Engineering 的核心不是“更聪明的模型”，而是“更稳定的执行环境与反馈闭环”。">
+  <meta property="og:url" content="https://chong-zzxy.github.io/2026/04/14/%E9%A9%BE%E9%A9%AD%E5%B7%A5%E7%A8%8B-Harness-Engineering-%E8%AE%A9Agent%E7%A8%B3%E5%AE%9A%E4%BA%A4%E4%BB%98/">
+  <meta property="og:image" content="https://chong-zzxy.github.io/img/%E7%8E%8B%E5%AD%90.gif">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="驾驭工程（Harness Engineering）：让 Agent 稳定交付 | 星唯向导">
+  <meta name="twitter:description" content="Harness Engineering 的核心不是“更聪明的模型”，而是“更稳定的执行环境与反馈闭环”。">
+  <meta name="twitter:image" content="https://chong-zzxy.github.io/img/%E7%8E%8B%E5%AD%90.gif">
+  <link rel="icon" href="/img/%E7%94%B7%E5%AD%A9%E5%84%BF.svg">
+  
+  <link rel="stylesheet" href="/css/style.css?v=20260414">
+  <link rel="stylesheet" href="/css/theme-green.css?v=20260414">
+  
+  <script>
+    window.__XW_CATEGORY_DISPLAY_MAP = {"CV":"Computer Vision","NLP":"Natural Language Processing","Life":"人间漫游"};
+    window.__XW_SEARCH_PATH = "/search.json";
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="theme-green">
+  <!-- Navigation -->
+  <header class="header">
+  <nav class="nav-container">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <span class="avatar-mini-frame">
+          <img src="/img/%E7%8E%8B%E5%AD%90.gif" alt="星唯向导" class="avatar-mini">
+        </span>
+        <span class="site-name">星唯向导</span>
+      </a>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+      
+        <a href="/"
+           class="nav-item ">
+          Home
+        </a>
+      
+        <a href="/blog/"
+           class="nav-item ">
+          Blog
+        </a>
+      
+        <a href="/gallery/"
+           class="nav-item ">
+          Gallery
+        </a>
+      
+        <a href="/resume/"
+           class="nav-item ">
+          Resume
+        </a>
+      
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换主题">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+        </svg>
+      </button>
+      <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="菜单" aria-controls="nav-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Main Content -->
+  <main class="main-container">
+    
+
+<article class="post-detail post-detail-refined">
+  
+  <!-- Post Header -->
+  <header class="post-header">
+    <div class="container">
+      
+        
+        <h1 class="post-title-main">驾驭工程（Harness Engineering）：让 Agent 稳定交付</h1>
+        
+          <p class="post-summary-main">Harness Engineering 的核心不是“更聪明的模型”，而是“更稳定的执行环境与反馈闭环”。</p>
+        
+      
+
+      <div class="post-meta-main">
+        <div class="meta-left">
+          <time class="post-date" datetime="2026-04-14T07:05:00.000Z">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+            </svg>
+            2026年04月14日
+          </time>
+
+          
+            <span class="post-updated">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z"/>
+              </svg>
+              更新于 2026年04月14日
+            </span>
+          
+
+          
+            <a href="/categories/Agent%E5%B7%A5%E7%A8%8B/" class="post-category-link">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+              </svg>
+              Agent工程
+            </a>
+          
+
+          <span class="post-reading-main">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm.5-12h-1.5v5l4.2 2.5.8-1.2-3.5-2.1V8z"/>
+            </svg>
+            约 3 分钟阅读
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  
+
+  <!-- Post Content -->
+  <div class="container">
+    <div class="post-layout" data-post-layout>
+      
+        <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸" data-toc-toggle>
+          <span class="toc-toggle-label">沉浸</span>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+        </button>
+      
+      <div class="post-body">
+        
+        
+        <p>OpenAI 对 Harness Engineering 的一句话非常到位：<br><strong>Humans steer. Agents execute.</strong></p>
+<p>如果把提示词工程理解成“怎么下指令”，把上下文工程理解成“喂什么信息”，那 Harness Engineering 就是：</p>
+<p><strong>如何把整个执行系统做成可控、可复盘、可持续优化的工程闭环。</strong></p>
+<span id="more"></span>
+
+<hr>
+<h2 id="1-什么是-Harness-Engineering"><a href="#1-什么是-Harness-Engineering" class="headerlink" title="1. 什么是 Harness Engineering"></a>1. 什么是 Harness Engineering</h2><p>Harness 直译是“驾驭装置”。在 Agent 工程里，它不是某个工具，而是一整套基础设施：</p>
+<ol>
+<li>规则文件（行为边界）。</li>
+<li>工具系统（执行能力）。</li>
+<li>验证系统（质量把关）。</li>
+<li>观测系统（问题定位）。</li>
+<li>反馈系统（持续迭代）。</li>
+</ol>
+<p>你可以把它理解为“让代理可运营”的骨架。</p>
+<hr>
+<h2 id="2-为什么很多-Agent-项目止步于-demo"><a href="#2-为什么很多-Agent-项目止步于-demo" class="headerlink" title="2. 为什么很多 Agent 项目止步于 demo"></a>2. 为什么很多 Agent 项目止步于 demo</h2><p>常见原因不是模型不够强，而是 harness 不完整：</p>
+<ol>
+<li>没有统一约束，代理行为漂移。</li>
+<li>没有验证门，修复和回归混在一起。</li>
+<li>没有观测链，线上问题无法复盘。</li>
+<li>没有反馈闭环，每次都靠人工经验重来。</li>
+</ol>
+<p>因此，Harness Engineering 的重点是“系统行为稳定性”，不是“单次回答质量”。</p>
+<hr>
+<h2 id="3-从项目抽象出来的-Harness-结构"><a href="#3-从项目抽象出来的-Harness-结构" class="headerlink" title="3. 从项目抽象出来的 Harness 结构"></a>3. 从项目抽象出来的 Harness 结构</h2><p>结合项目中的运行逻辑，可以抽象出五层 harness。</p>
+<h2 id="3-1-Policy-Layer（策略层）"><a href="#3-1-Policy-Layer（策略层）" class="headerlink" title="3.1 Policy Layer（策略层）"></a>3.1 Policy Layer（策略层）</h2><ul>
+<li>定义代理边界、权限模式、失败处理原则。</li>
+<li>典型载体：AGENTS.md、权限策略、工具 allowlist。</li>
+</ul>
+<h2 id="3-2-Runtime-Layer（运行层）"><a href="#3-2-Runtime-Layer（运行层）" class="headerlink" title="3.2 Runtime Layer（运行层）"></a>3.2 Runtime Layer（运行层）</h2><ul>
+<li>负责 query loop、工具调度、恢复链执行。</li>
+<li>核心目标：稳定推进、可终止。</li>
+</ul>
+<h2 id="3-3-Verification-Layer（验证层）"><a href="#3-3-Verification-Layer（验证层）" class="headerlink" title="3.3 Verification Layer（验证层）"></a>3.3 Verification Layer（验证层）</h2><ul>
+<li>代码改动后自动执行测试、lint、关键检查。</li>
+<li>禁止“未验证即宣称成功”。</li>
+</ul>
+<h2 id="3-4-Observability-Layer（可观测层）"><a href="#3-4-Observability-Layer（可观测层）" class="headerlink" title="3.4 Observability Layer（可观测层）"></a>3.4 Observability Layer（可观测层）</h2><ul>
+<li>记录状态转移、错误分类、恢复次数、终止原因。</li>
+<li>支持线上回放和指标聚合。</li>
+</ul>
+<h2 id="3-5-Learning-Layer（学习层）"><a href="#3-5-Learning-Layer（学习层）" class="headerlink" title="3.5 Learning Layer（学习层）"></a>3.5 Learning Layer（学习层）</h2><ul>
+<li>把故障复盘沉淀为新规则、技能、评测样本。</li>
+<li>实现“失败一次，系统变强一次”。</li>
+</ul>
+<hr>
+<h2 id="4-Harness-的核心闭环（Python，带注释）"><a href="#4-Harness-的核心闭环（Python，带注释）" class="headerlink" title="4. Harness 的核心闭环（Python，带注释）"></a>4. Harness 的核心闭环（Python，带注释）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@dataclass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TurnResult</span>:</span><br><span class="line">    success: <span class="built_in">bool</span></span><br><span class="line">    reason: <span class="built_in">str</span></span><br><span class="line">    metrics: <span class="built_in">dict</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_agent_turn</span>(<span class="params">task: <span class="built_in">str</span></span>) -&gt; TurnResult:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;一个回合的标准闭环：计划 -&gt; 执行 -&gt; 验证 -&gt; 记录 -&gt; 学习。&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1) 计划：明确目标和约束</span></span><br><span class="line">    plan = make_plan(task)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2) 执行：在策略边界内调用工具</span></span><br><span class="line">    execution = execute_with_policy(plan)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3) 验证：运行自动检查，拒绝“未验证成功”</span></span><br><span class="line">    verify = run_verification(execution)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4) 记录：结构化写入可观测数据</span></span><br><span class="line">    log_turn(</span><br><span class="line">        state_from=<span class="string">&quot;turn_start&quot;</span>,</span><br><span class="line">        state_to=<span class="string">&quot;turn_end&quot;</span>,</span><br><span class="line">        transition_reason=verify.reason,</span><br><span class="line">        metrics=verify.metrics,</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 5) 学习：把失败样本沉淀为规则或评测用例</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> verify.success:</span><br><span class="line">        update_playbook_from_failure(task, verify)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> TurnResult(</span><br><span class="line">        success=verify.success,</span><br><span class="line">        reason=verify.reason,</span><br><span class="line">        metrics=verify.metrics,</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<p>这段代码最重要的点不是语法，而是顺序：</p>
+<ul>
+<li>没有验证，不算完成。</li>
+<li>没有记录，不算可运营。</li>
+<li>没有学习，不算工程化。</li>
+</ul>
+<hr>
+<h2 id="5-如何落地一个“最小可用-Harness”"><a href="#5-如何落地一个“最小可用-Harness”" class="headerlink" title="5. 如何落地一个“最小可用 Harness”"></a>5. 如何落地一个“最小可用 Harness”</h2><p>你可以先从下面 5 个文件&#x2F;机制开始。</p>
+<ol>
+<li><code>AGENTS.md</code>：明确代理行为边界与输出规范。</li>
+<li><code>skills/</code>：把重复流程做成可复用技能。</li>
+<li><code>eval/</code>：沉淀失败样本，做回归评测。</li>
+<li><code>scripts/verify.*</code>：统一验证入口。</li>
+<li><code>logs/structured</code>：统一日志字段。</li>
+</ol>
+<p>这就是一个最小骨架，已经能把 demo 变成可迭代系统。</p>
+<hr>
+<h2 id="6-Harness-Engineering-能解决什么问题"><a href="#6-Harness-Engineering-能解决什么问题" class="headerlink" title="6. Harness Engineering 能解决什么问题"></a>6. Harness Engineering 能解决什么问题</h2><h3 id="问题一：输出风格漂移"><a href="#问题一：输出风格漂移" class="headerlink" title="问题一：输出风格漂移"></a>问题一：输出风格漂移</h3><p>通过策略层和模板约束，减少随机波动。</p>
+<h3 id="问题二：修复质量不稳定"><a href="#问题二：修复质量不稳定" class="headerlink" title="问题二：修复质量不稳定"></a>问题二：修复质量不稳定</h3><p>通过验证层和评测集，减少“看似修复”。</p>
+<h3 id="问题三：线上问题复盘困难"><a href="#问题三：线上问题复盘困难" class="headerlink" title="问题三：线上问题复盘困难"></a>问题三：线上问题复盘困难</h3><p>通过可观测层，建立状态转移与故障因果链。</p>
+<h3 id="问题四：团队经验无法沉淀"><a href="#问题四：团队经验无法沉淀" class="headerlink" title="问题四：团队经验无法沉淀"></a>问题四：团队经验无法沉淀</h3><p>通过学习层，把个体经验升级为系统能力。</p>
+<hr>
+<h2 id="7-风险与取舍"><a href="#7-风险与取舍" class="headerlink" title="7. 风险与取舍"></a>7. 风险与取舍</h2><h3 id="风险一：harness-过重"><a href="#风险一：harness-过重" class="headerlink" title="风险一：harness 过重"></a>风险一：harness 过重</h3><p>流程太多会拖慢迭代速度。</p>
+<p>建议：</p>
+<ul>
+<li>先做最小骨架，再按故障频率扩展。</li>
+</ul>
+<h3 id="风险二：只做规范，不做执行"><a href="#风险二：只做规范，不做执行" class="headerlink" title="风险二：只做规范，不做执行"></a>风险二：只做规范，不做执行</h3><p>文档写得很好，但运行时不 enforce，等于没有 harness。</p>
+<p>建议：</p>
+<ul>
+<li>能自动检查的都自动检查。</li>
+</ul>
+<h3 id="风险三：只记录，不分析"><a href="#风险三：只记录，不分析" class="headerlink" title="风险三：只记录，不分析"></a>风险三：只记录，不分析</h3><p>日志堆积但不形成反馈，系统不会变强。</p>
+<p>建议：</p>
+<ul>
+<li>每周固定做故障样本回灌。</li>
+</ul>
+<hr>
+<h2 id="8-你可以直接拿走的-Harness-迭代节奏"><a href="#8-你可以直接拿走的-Harness-迭代节奏" class="headerlink" title="8. 你可以直接拿走的 Harness 迭代节奏"></a>8. 你可以直接拿走的 Harness 迭代节奏</h2><h3 id="第-1-周"><a href="#第-1-周" class="headerlink" title="第 1 周"></a>第 1 周</h3><ul>
+<li>补齐策略层与验证层最小闭环。</li>
+</ul>
+<h3 id="第-2-周"><a href="#第-2-周" class="headerlink" title="第 2 周"></a>第 2 周</h3><ul>
+<li>补齐可观测字段，完成状态转移回放。</li>
+</ul>
+<h3 id="第-3-周"><a href="#第-3-周" class="headerlink" title="第 3 周"></a>第 3 周</h3><ul>
+<li>建失败样本库和回归评测。</li>
+</ul>
+<h3 id="第-4-周及以后"><a href="#第-4-周及以后" class="headerlink" title="第 4 周及以后"></a>第 4 周及以后</h3><ul>
+<li>以指标驱动优化，持续沉淀技能。</li>
+</ul>
+<hr>
+<h2 id="9-结语"><a href="#9-结语" class="headerlink" title="9. 结语"></a>9. 结语</h2><p>Harness Engineering 的价值，不在于让代理“偶尔惊艳”，而在于让系统“长期稳定”。</p>
+<p>当你把“规则、执行、验证、观测、学习”连成闭环时，Agent 才真正从玩具变成生产力。</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>OpenAI Harness Engineering: <a target="_blank" rel="noopener" href="https://openai.com/index/harness-engineering/">https://openai.com/index/harness-engineering/</a></li>
+<li>OpenAI Codex Customization: <a target="_blank" rel="noopener" href="https://developers.openai.com/codex/concepts/customization">https://developers.openai.com/codex/concepts/customization</a></li>
+<li>OpenAI Codex Workflows: <a target="_blank" rel="noopener" href="https://developers.openai.com/codex/workflows">https://developers.openai.com/codex/workflows</a></li>
+<li>Anthropic Building Effective Agents: <a target="_blank" rel="noopener" href="https://www.anthropic.com/engineering/building-effective-agents">https://www.anthropic.com/engineering/building-effective-agents</a></li>
+<li>Anthropic Subagents: <a target="_blank" rel="noopener" href="https://docs.anthropic.com/en/docs/claude-code/sub-agents">https://docs.anthropic.com/en/docs/claude-code/sub-agents</a></li>
+</ol>
+
+        
+      </div>
+
+      
+        <aside class="post-toc">
+          <div class="toc-wrapper">
+            <h3 class="toc-title">目录</h3>
+            <div class="toc-content">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-Harness-Engineering"><span class="toc-text">1. 什么是 Harness Engineering</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BE%88%E5%A4%9A-Agent-%E9%A1%B9%E7%9B%AE%E6%AD%A2%E6%AD%A5%E4%BA%8E-demo"><span class="toc-text">2. 为什么很多 Agent 项目止步于 demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%8E%E9%A1%B9%E7%9B%AE%E6%8A%BD%E8%B1%A1%E5%87%BA%E6%9D%A5%E7%9A%84-Harness-%E7%BB%93%E6%9E%84"><span class="toc-text">3. 从项目抽象出来的 Harness 结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Policy-Layer%EF%BC%88%E7%AD%96%E7%95%A5%E5%B1%82%EF%BC%89"><span class="toc-text">3.1 Policy Layer（策略层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Runtime-Layer%EF%BC%88%E8%BF%90%E8%A1%8C%E5%B1%82%EF%BC%89"><span class="toc-text">3.2 Runtime Layer（运行层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Verification-Layer%EF%BC%88%E9%AA%8C%E8%AF%81%E5%B1%82%EF%BC%89"><span class="toc-text">3.3 Verification Layer（验证层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Observability-Layer%EF%BC%88%E5%8F%AF%E8%A7%82%E6%B5%8B%E5%B1%82%EF%BC%89"><span class="toc-text">3.4 Observability Layer（可观测层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-Learning-Layer%EF%BC%88%E5%AD%A6%E4%B9%A0%E5%B1%82%EF%BC%89"><span class="toc-text">3.5 Learning Layer（学习层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Harness-%E7%9A%84%E6%A0%B8%E5%BF%83%E9%97%AD%E7%8E%AF%EF%BC%88Python%EF%BC%8C%E5%B8%A6%E6%B3%A8%E9%87%8A%EF%BC%89"><span class="toc-text">4. Harness 的核心闭环（Python，带注释）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%80%E4%B8%AA%E2%80%9C%E6%9C%80%E5%B0%8F%E5%8F%AF%E7%94%A8-Harness%E2%80%9D"><span class="toc-text">5. 如何落地一个“最小可用 Harness”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Harness-Engineering-%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="toc-text">6. Harness Engineering 能解决什么问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E8%BE%93%E5%87%BA%E9%A3%8E%E6%A0%BC%E6%BC%82%E7%A7%BB"><span class="toc-text">问题一：输出风格漂移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9A%E4%BF%AE%E5%A4%8D%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%A8%B3%E5%AE%9A"><span class="toc-text">问题二：修复质量不稳定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98%E5%9B%B0%E9%9A%BE"><span class="toc-text">问题三：线上问题复盘困难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%EF%BC%9A%E5%9B%A2%E9%98%9F%E7%BB%8F%E9%AA%8C%E6%97%A0%E6%B3%95%E6%B2%89%E6%B7%80"><span class="toc-text">问题四：团队经验无法沉淀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E9%A3%8E%E9%99%A9%E4%B8%8E%E5%8F%96%E8%88%8D"><span class="toc-text">7. 风险与取舍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E4%B8%80%EF%BC%9Aharness-%E8%BF%87%E9%87%8D"><span class="toc-text">风险一：harness 过重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E4%BA%8C%EF%BC%9A%E5%8F%AA%E5%81%9A%E8%A7%84%E8%8C%83%EF%BC%8C%E4%B8%8D%E5%81%9A%E6%89%A7%E8%A1%8C"><span class="toc-text">风险二：只做规范，不做执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E4%B8%89%EF%BC%9A%E5%8F%AA%E8%AE%B0%E5%BD%95%EF%BC%8C%E4%B8%8D%E5%88%86%E6%9E%90"><span class="toc-text">风险三：只记录，不分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E4%BD%A0%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E6%8B%BF%E8%B5%B0%E7%9A%84-Harness-%E8%BF%AD%E4%BB%A3%E8%8A%82%E5%A5%8F"><span class="toc-text">8. 你可以直接拿走的 Harness 迭代节奏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-1-%E5%91%A8"><span class="toc-text">第 1 周</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-2-%E5%91%A8"><span class="toc-text">第 2 周</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-3-%E5%91%A8"><span class="toc-text">第 3 周</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-4-%E5%91%A8%E5%8F%8A%E4%BB%A5%E5%90%8E"><span class="toc-text">第 4 周及以后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BB%93%E8%AF%AD"><span class="toc-text">9. 结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+            </div>
+          </div>
+        </aside>
+      
+    </div>
+
+    
+      <script>
+        (function() {
+          var toggle = document.querySelector('[data-toc-toggle]');
+          var layout = document.querySelector('[data-post-layout]');
+          var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-content a[href^="#"]'));
+          var headings = Array.prototype.slice.call(document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4'));
+          var postBody = document.querySelector('.post-body');
+          var toc = document.querySelector('.post-toc');
+
+          var updateTocOffset = function() {
+            if (!layout || !postBody || !toc) return;
+            var bodyRect = postBody.getBoundingClientRect();
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+            var bodyTop = bodyRect.top;
+            var bodyBottom = bodyRect.bottom;
+            var tocContentHeight = toc.scrollHeight;
+
+            var top = bodyTop > 0 ? bodyTop : 0;
+            if (bodyBottom <= viewportHeight && (bodyBottom - tocContentHeight) < top) {
+              top = bodyBottom - tocContentHeight;
+            }
+
+            var maxHeight = Math.max(0, Math.min(viewportHeight - top, bodyBottom - top));
+            layout.style.setProperty('--toc-top', top + 'px');
+            layout.style.setProperty('--toc-max-height', maxHeight + 'px');
+          };
+
+          if (layout) {
+            var ticking = false;
+            var onScroll = function() {
+              if (ticking) return;
+              ticking = true;
+              window.requestAnimationFrame(function() {
+                updateTocOffset();
+                ticking = false;
+              });
+            };
+            updateTocOffset();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateTocOffset);
+          }
+
+          var normalize = function(text) {
+            return (text || '').trim().replace(/\s+/g, ' ');
+          };
+
+          var slugify = function(text) {
+            var slug = normalize(text)
+              .toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^\w\u4e00-\u9fa5\-]/g, '')
+              .replace(/\-+/g, '-')
+              .replace(/^\-+|\-+$/g, '');
+            return slug;
+          };
+
+          if (headings.length) {
+            headings.forEach(function(heading, index) {
+              if (!heading.id) {
+                var base = slugify(heading.textContent) || ('section-' + (index + 1));
+                var id = base;
+                var i = 1;
+                while (document.getElementById(id)) {
+                  id = base + '-' + (i++);
+                }
+                heading.id = id;
+              }
+            });
+          }
+
+          if (tocLinks.length && headings.length) {
+            var headingMap = {};
+            headings.forEach(function(heading) {
+              var key = normalize(heading.textContent);
+              if (!key) return;
+              if (!headingMap[key]) headingMap[key] = [];
+              headingMap[key].push(heading);
+            });
+            var headingMapCursor = {};
+
+            tocLinks.forEach(function(link) {
+              var label = normalize(link.textContent);
+              if (label) link.setAttribute('title', label);
+
+              var href = link.getAttribute('href');
+              if (!href || href.charAt(0) !== '#') return;
+              var targetId = decodeURIComponent(href.slice(1));
+              var target = document.getElementById(targetId);
+              if (!target && label && headingMap[label] && headingMap[label].length) {
+                var cursor = headingMapCursor[label] || 0;
+                var bucket = headingMap[label];
+                var mappedHeading = bucket[Math.min(cursor, bucket.length - 1)];
+                headingMapCursor[label] = cursor + 1;
+                if (mappedHeading && mappedHeading.id) {
+                  link.setAttribute('href', '#' + mappedHeading.id);
+                }
+              }
+            });
+
+            tocLinks.forEach(function(link) {
+              link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                if (!href || href.charAt(0) !== '#') return;
+                var targetId = decodeURIComponent(href.slice(1));
+                var target = document.getElementById(targetId);
+                if (!target) return;
+                e.preventDefault();
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                history.pushState(null, '', '#' + targetId);
+              });
+            });
+
+            if ('IntersectionObserver' in window) {
+              var linkById = {};
+              tocLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href && href.charAt(0) === '#') {
+                  linkById[decodeURIComponent(href.slice(1))] = link;
+                }
+              });
+
+              var activeId = null;
+              var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    activeId = entry.target.id;
+                  }
+                });
+                if (activeId && linkById[activeId]) {
+                  tocLinks.forEach(function(link) {
+                    link.classList.toggle('is-active', linkById[activeId] === link);
+                  });
+                }
+              }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.1 });
+
+              headings.forEach(function(heading) {
+                observer.observe(heading);
+              });
+            }
+          }
+
+          if (toggle && layout) {
+            var setState = function(hidden) {
+              layout.classList.toggle('toc-hidden', hidden);
+              toggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+              toggle.setAttribute('aria-label', hidden ? '显示目录' : '沉浸');
+            };
+
+            toggle.addEventListener('click', function() {
+              var hidden = !layout.classList.contains('toc-hidden');
+              setState(hidden);
+            });
+          }
+        })();
+      </script>
+    
+    
+    
+
+    <!-- Post Tags -->
+    
+      <div class="post-tags-section">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+        </svg>
+        <div class="post-tags-list">
+          
+            <a href="/tags/Agent/" class="post-tag-item">#Agent</a>
+          
+            <a href="/tags/Harness-Engineering/" class="post-tag-item">#Harness Engineering</a>
+          
+            <a href="/tags/Codex/" class="post-tag-item">#Codex</a>
+          
+            <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="post-tag-item">#工程化</a>
+          
+        </div>
+      </div>
+    
+
+    <!-- Post Navigation -->
+    
+      <nav class="post-nav">
+        
+          <a href="/agent-playbook/memory/" class="post-nav-item prev">
+            <div class="nav-label">← 上一篇</div>
+            <div class="nav-title">01 Agent 问题查询宝典：记忆系统</div>
+          </a>
+        
+
+        
+          <a href="/2026/04/14/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B-%E6%8A%8A%E5%96%82%E4%BF%A1%E6%81%AF%E5%81%9A%E6%88%90%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/" class="post-nav-item next">
+            <div class="nav-label">下一篇 →</div>
+            <div class="nav-title">上下文工程：把“喂信息”做成系统能力</div>
+          </a>
+        
+      </nav>
+    
+  </div>
+</article>
+
+  </main>
+
+  <!-- Footer (仅在简历页隐藏) -->
+  
+    <footer class="footer site-footer">
+  
+  <div class="site-footer-shell">
+    
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <strong class="site-footer-name">星唯向导</strong>
+          
+            <span class="site-footer-dot" aria-hidden="true">·</span>
+          
+          
+            <span class="site-footer-brief site-footer-brief-poem">
+              
+                <span class="site-footer-brief-line">星是惟一的向导</span>
+              
+                <span class="site-footer-brief-line">在年轻的飞奔里，你是迎面而来的风</span>
+              
+            </span>
+          
+        </div>
+
+        
+          <section class="site-footer-social" aria-label="社交链接">
+            
+              <a href="https://github.com/chong-zzxy"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>GitHub</span>
+              </a>
+            
+              <a href="https://linux.do/u/Chong_xy"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>L站（LinuxDo）</span>
+              </a>
+            
+              <a href="mailto:441046702@qq.com"
+                 target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+                 class="site-footer-social-link">
+                <span>Email</span>
+              </a>
+            
+          </section>
+        
+      </div>
+    
+
+    <div class="site-footer-meta">
+      <p class="site-footer-powered">
+        <span>Powered by</span>
+        <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a>
+        <span class="site-footer-divider">·</span>
+        <span>Theme</span>
+        <a href="https://github.com/chong-zzxy" target="_blank" rel="noopener noreferrer">Xingwei</a>
+      </p>
+
+      <p class="site-footer-copyright">© 2022-2026 星唯向导 · 保留所有权利</p>
+
+      
+
+      
+        <div class="site-footer-stats" id="site-footer-stats" data-provider="busuanzi">
+          
+          <span id="busuanzi_container_site_pv">
+            访问量
+            <strong id="busuanzi_value_site_pv">--</strong>
+          </span>
+          <span id="busuanzi_container_site_uv">
+            访客
+            <strong id="busuanzi_value_site_uv">--</strong>
+          </span>
+          
+        </div>
+      
+    </div>
+  </div>
+
+  
+    <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</footer>
+
+  
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script src="/js/main.js?v=20260414"></script>
+  <script src="/js/scroll-animations.js?v=20260414"></script>
+</body>
+</html>

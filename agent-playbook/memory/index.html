@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>自然语言处理-NLP基础 | 星唯向导</title>
-  <meta name="description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <title>01 Agent 问题查询宝典：记忆系统 | 星唯向导</title>
+  <meta name="description" content="记忆系统设计要点：准入、落盘、注入、遗忘与团队同步。">
   
     <meta name="keywords" content="AI, 计算机视觉, NLP, 深度学习, 机器学习, Python">
   
-  <link rel="canonical" href="https://chong-zzxy.github.io/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/">
+  <link rel="canonical" href="https://chong-zzxy.github.io/agent-playbook/memory/">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="星唯向导">
-  <meta property="og:title" content="自然语言处理-NLP基础 | 星唯向导">
-  <meta property="og:description" content="圈地自萌的个人记录｜有技术，也有生活">
-  <meta property="og:url" content="https://chong-zzxy.github.io/2022/01/10/NLP/NLP%E5%9F%BA%E7%A1%80/">
+  <meta property="og:title" content="01 Agent 问题查询宝典：记忆系统 | 星唯向导">
+  <meta property="og:description" content="记忆系统设计要点：准入、落盘、注入、遗忘与团队同步。">
+  <meta property="og:url" content="https://chong-zzxy.github.io/agent-playbook/memory/">
   <meta property="og:image" content="https://chong-zzxy.github.io/img/%E7%8E%8B%E5%AD%90.gif">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="自然语言处理-NLP基础 | 星唯向导">
-  <meta name="twitter:description" content="圈地自萌的个人记录｜有技术，也有生活">
+  <meta name="twitter:title" content="01 Agent 问题查询宝典：记忆系统 | 星唯向导">
+  <meta name="twitter:description" content="记忆系统设计要点：准入、落盘、注入、遗忘与团队同步。">
   <meta name="twitter:image" content="https://chong-zzxy.github.io/img/%E7%8E%8B%E5%AD%90.gif">
   <link rel="icon" href="/img/%E7%94%B7%E5%AD%A9%E5%84%BF.svg">
   
@@ -91,41 +91,38 @@
   <main class="main-container">
     
 
-<article class="post-detail post-detail-refined">
+<article class="post-detail post-detail-refined post-playbook">
   
   <!-- Post Header -->
   <header class="post-header">
     <div class="container">
       
         
-        <h1 class="post-title-main">自然语言处理-NLP基础</h1>
+          <a href="/blog/" class="post-main-backlink" aria-label="返回上一级" data-back-link>← 返回上一级</a>
+        
+        <h1 class="post-title-main">01 Agent 问题查询宝典：记忆系统</h1>
+        
+          <p class="post-summary-main">记忆系统设计要点：准入、落盘、注入、遗忘与团队同步。</p>
         
       
 
       <div class="post-meta-main">
         <div class="meta-left">
-          <time class="post-date" datetime="2022-01-10T04:00:00.000Z">
+          <time class="post-date" datetime="2026-04-15T02:20:00.000Z">
             <svg viewBox="0 0 24 24" width="16" height="16">
               <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
             </svg>
-            2022年01月10日
+            2026年04月15日
           </time>
 
           
-            <span class="post-updated">
-              <svg viewBox="0 0 24 24" width="16" height="16">
-                <path fill="currentColor" d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z"/>
-              </svg>
-              更新于 2026年04月07日
-            </span>
-          
 
           
-            <a href="/categories/NLP/" class="post-category-link">
+            <a href="/categories/Agent%E5%B7%A5%E7%A8%8B/" class="post-category-link">
               <svg viewBox="0 0 24 24" width="16" height="16">
                 <path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
               </svg>
-              Natural Language Processing
+              Agent工程
             </a>
           
 
@@ -148,74 +145,55 @@
   <div class="container">
     <div class="post-layout" data-post-layout>
       
-        <button class="post-toc-toggle" type="button" aria-expanded="true" aria-label="沉浸" data-toc-toggle>
-          <span class="toc-toggle-label">沉浸</span>
-          <span class="toc-toggle-icon" aria-hidden="true"></span>
-        </button>
-      
       <div class="post-body">
         
         
-        <h1 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h1><h2 id="一、NLP基本概念"><a href="#一、NLP基本概念" class="headerlink" title="一、NLP基本概念"></a>一、NLP基本概念</h2><h3 id="1-1、自然语言处理-NLP"><a href="#1-1、自然语言处理-NLP" class="headerlink" title="1.1、自然语言处理 - NLP"></a>1.1、自然语言处理 - NLP</h3><p>自然语言处理（NLP）就是在机器语言和人类语言之间沟通的桥梁，以实现人机交流的目的。</p>
-<p>**难点：**没有规律、自由组合复杂的语言表达、全新的表达方式、知识依赖、基于环境和上下文<br>				多样性、歧义性、鲁棒性、知识依赖、上下文</p>
-<p>**应用：**情感分析、聊天机器人、语音识别、机器翻译</p>
-<p>**语料预处理（中）：**中文分词(Chinese Word Segmentation)<code>-&gt;</code>词性标注(Parts of Speech)<code>-&gt;</code>命名实体识别(NER)<code>-&gt;</code>去除停用词</p>
-<p>**语料预处理（英）：**分词(tokenization)<code>-&gt;</code>词干提取(stemming)<code>-&gt;</code>词形还原(lemmatization)<code>-&gt;</code>词性标注(POS tags)<code>-&gt;</code>命名实体识别(NER)<code>-&gt;</code>分块(chunking)</p>
-<p><img src="/img/nlp/image-20231225113255562.png" alt="image-20231225113255562"></p>
-<h3 id="1-1、自然语言理解-NLU-NLI"><a href="#1-1、自然语言理解-NLU-NLI" class="headerlink" title="1.1、自然语言理解 - NLU | NLI"></a>1.1、自然语言理解 - NLU | NLI</h3><p>自然语言理解就是希望机器像人一样，具备正常人的语言理解能力</p>
-<p> <strong>NLU</strong>至今还远不如人类，有很多难点（语言的多样性、歧义性、鲁棒性、知识依赖、上下文）。</p>
+        <div class="playbook-hero" role="note" aria-label="章节导读">
+  <p class="playbook-hero-kicker"><span class="jump-no">01</span><span class="jump-name">记忆系统</span></p>
+  <p class="playbook-hero-desc">本章目标：建立“采集 → 准入 → 写入 → 注入 → 清理 → 同步”闭环，让记忆稳定、可追溯、可纠偏。</p>
+</div>
+
+<div class="playbook-jump" role="navigation" aria-label="Agent 查询宝典专题导航">
+  <a class="playbook-jump-chip is-active" href="/agent-playbook/memory/"><span class="jump-no">01</span><span class="jump-name">记忆系统</span></a>
+  <a class="playbook-jump-chip" href="/agent-playbook/loop-recovery/"><span class="jump-no">02</span><span class="jump-name">主循环</span></a>
+  <a class="playbook-jump-chip" href="/agent-playbook/tool-orchestration/"><span class="jump-no">03</span><span class="jump-name">工具编排</span></a>
+  <a class="playbook-jump-chip" href="/agent-playbook/multi-agent/"><span class="jump-no">04</span><span class="jump-name">多 Agent</span></a>
+  <a class="playbook-jump-chip" href="/agent-playbook/observe-migrate/"><span class="jump-no">05</span><span class="jump-name">可观测迁移</span></a>
+</div>
+
+<h2 id="1-为什么记忆系统经常越做越差"><a href="#1-为什么记忆系统经常越做越差" class="headerlink" title="1. 为什么记忆系统经常越做越差"></a>1. 为什么记忆系统经常越做越差</h2><p>常见退化路径：</p>
 <ol>
-<li>基于规则的方法</li>
-<li>基于统计的方法</li>
-<li>基于深度学习的方法</li>
+<li>把临时信息写成长期事实。</li>
+<li>只写不清理，历史噪声累计。</li>
+<li>检索命中很多，但注入质量很低。</li>
+<li>团队共享时冲突覆盖，事实漂移。</li>
 </ol>
-<h3 id="1-2、自然语言生成-NLG"><a href="#1-2、自然语言生成-NLG" class="headerlink" title="1.2、自然语言生成 - NLG"></a>1.2、自然语言生成 - NLG</h3><p><strong>NLG</strong>是为了跨越人类和机器之间的沟通鸿沟，将非语言格式的数据转换成人类可以理解的语言格式，如文章、报告等。</p>
-<p><strong>NLG有两种方式：</strong><code>text-to-text</code>：⽂文本到语⾔言的⽣生成；<code>data-to-text</code> ：数据到语⾔言的⽣生成</p>
-<p><strong>NLG 的6个步骤：</strong></p>
+<p>所以重点不是“有没有记忆”，而是“记忆生命周期是否受控”。</p>
+<h2 id="2-设计逻辑：六段闭环"><a href="#2-设计逻辑：六段闭环" class="headerlink" title="2. 设计逻辑：六段闭环"></a>2. 设计逻辑：六段闭环</h2><ol>
+<li><code>候选提取</code>：从对话与工具结果中提取候选记忆。</li>
+<li><code>准入判定</code>：过滤临时、可推导、敏感、冲突项。</li>
+<li><code>写入落盘</code>：区分本地记忆与团队记忆。</li>
+<li><code>检索注入</code>：按当前任务相关度注入，不做全量塞入。</li>
+<li><code>预算治理</code>：超预算时先去重，再压缩，再降级。</li>
+<li><code>遗忘纠偏</code>：过期、替换、删除与冲突回滚。</li>
+</ol>
+<h2 id="3-一个最小可运行的准入器（Python）"><a href="#3-一个最小可运行的准入器（Python）" class="headerlink" title="3. 一个最小可运行的准入器（Python）"></a>3. 一个最小可运行的准入器（Python）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@dataclass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MemoryCandidate</span>:</span><br><span class="line">    content: <span class="built_in">str</span></span><br><span class="line">    confidence: <span class="built_in">float</span></span><br><span class="line">    is_temporary: <span class="built_in">bool</span></span><br><span class="line">    is_sensitive: <span class="built_in">bool</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">allow_write</span>(<span class="params">c: MemoryCandidate</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;记忆准入：先过滤风险，再看稳定性。&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1) 临时信息不入长期记忆</span></span><br><span class="line">    <span class="keyword">if</span> c.is_temporary:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2) 敏感信息默认拒绝</span></span><br><span class="line">    <span class="keyword">if</span> c.is_sensitive:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3) 置信度不足时不写入，避免污染</span></span><br><span class="line">    <span class="keyword">if</span> c.confidence &lt; <span class="number">0.75</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-注入不是越多越好"><a href="#4-注入不是越多越好" class="headerlink" title="4. 注入不是越多越好"></a>4. 注入不是越多越好</h2><p>建议顺序：</p>
 <ol>
-<li>内容确定 – Content Determination</li>
-<li>文本结构 – Text Structuring</li>
-<li>句子聚合 – Sentence Aggregation</li>
-<li>语法化 – Lexicalisation</li>
-<li>参考表达式生成 – Referring Expression Generation|REG</li>
-<li>语言实现 – Linguistic Realisation</li>
+<li>当前任务必需信息。</li>
+<li>最近确认的人名&#x2F;角色映射。</li>
+<li>高相关历史决策。</li>
+<li>低优先级背景信息（预算允许才注入）。</li>
 </ol>
-<h2 id="二、基础扩展"><a href="#二、基础扩展" class="headerlink" title="二、基础扩展"></a>二、基础扩展</h2><h3 id="2-1、分词-TOKENIZATION"><a href="#2-1、分词-TOKENIZATION" class="headerlink" title="2.1、分词 - TOKENIZATION"></a>2.1、分词 - TOKENIZATION</h3><p>分词，将句子、段落、文章这种长文本，分解为以字词为单位的数据结构，方便后续的处理分析工作。</p>
-<p>文本【非结构化数据】<code>=&gt;&gt;</code>易于理解的【结构化数据】<code>=&gt;&gt;</code>【数学问题】</p>
-<p>词是表达完整含义的最小单位，是一个比较适合的粒度</p>
-<p>**中英文分词区别：**分词方式不同，中文更难；英文单词有多种形态，需要词性还原和词干提取；中文分词需要考虑粒度问题。</p>
-<p>**中文分词的3大难点：**没有统一的标准；歧义词如何切分；新词的识别。</p>
-<p>**3个典型的分词方式：**基于词典匹配；基于统计；基于深度学习。</p>
-<h3 id="2-2、词干提取-STEMMING-词形还原-LEMMATISATION"><a href="#2-2、词干提取-STEMMING-词形还原-LEMMATISATION" class="headerlink" title="2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION"></a>2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION</h3><p>词干提取是英文语料预处理的一个步骤，语料预处理是NLP的第一步。</p>
-<table>
-<thead>
-<tr>
-<th align="center">图解</th>
-<th align="left">文字注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><img src="/img/nlp/image-20231225134313816.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图1" /></td>
-<td align="left">词干提取是英文语料预处理的一个步骤，语料预处理是NLP的第一步。</td>
-</tr>
-<tr>
-<td align="center"><img src="/img/nlp/image-20231225135205727.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图2" /></td>
-<td align="left"><strong>1、词干提取 - STEMMING</strong><br />去除单词的前后缀得到词根的过程；<br />前后缀：【名词复数】【进行式】【过去分词】…<br /></td>
-</tr>
-<tr>
-<td align="center"><img src="/img/nlp/image-20231225135158099.png" style="max-width: 160px; width: 100%; height: auto;" alt="示意图3" /></td>
-<td align="left"><strong>2、词形还原 - Lemmatisation</strong><br />基于词典，将单词的复杂形态转变为最基础的形态</td>
-</tr>
-</tbody></table>
-<p>**相似点：**目标一致、结果部分分叉、主流实现方法类似、应用领域相似</p>
-<p>**不同点：**原理不同、词形还原更复杂、实现侧重点不同、应用领域侧重点不同、呈现结果不同</p>
-<p>**主流词干提取算法：**Porter、Snowball、Lancaster</p>
-<h3 id="2-3、词性标注-PART-OF-SPEECH"><a href="#2-3、词性标注-PART-OF-SPEECH" class="headerlink" title="2.3、词性标注 - PART OF SPEECH"></a>2.3、词性标注 - PART OF SPEECH</h3><p>词性是以词的特点作为划分词类的依据。</p>
-<p>词类是一个语言学术语，是一种语言中词的语法分类，是以语法特征（包括句法功能和形态变化）为主要依据、兼顾词汇意义对此进行划分的结果。在一个语言中，众多具有相同句法功能、能在同样的组合位置中出现的词，聚合在一起的范畴。</p>
-<p>**常见方法：**基于规则、基于统计、基于规则+统计、基于深度学习</p>
-<p>词性标注工具：Jieba、SnowNLP、THULAC、StanfordCoreNLP、HanLP、NLTK、SpaCy</p>
-<h3 id="2-4、命名实体识别-NER"><a href="#2-4、命名实体识别-NER" class="headerlink" title="2.4、命名实体识别 - NER"></a>2.4、命名实体识别 - NER</h3><p>命名实体识别，识别文本中具有特定意义的实体，主要包括人名、地名、机构名、专有名词等。</p>
-<p><img src="/img/nlp/image-20231225141238507.png" alt="image-20231225141238507"></p>
+<p>这样能避免“记忆很多，但答案更差”的反直觉问题。</p>
+<h2 id="5-风险清单"><a href="#5-风险清单" class="headerlink" title="5. 风险清单"></a>5. 风险清单</h2><ol>
+<li><code>污染风险</code>：错误人名映射被长期记住。</li>
+<li><code>陈旧风险</code>：旧事实覆盖新事实。</li>
+<li><code>膨胀风险</code>：上下文被历史记忆拖慢。</li>
+<li><code>同步风险</code>：团队写入冲突导致事实分叉。</li>
+</ol>
+<p>如果你只做写入，不做纠偏，系统会慢慢失真。</p>
 
         
       </div>
@@ -225,7 +203,7 @@
           <div class="toc-wrapper">
             <h3 class="toc-title">目录</h3>
             <div class="toc-content">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86"><span class="toc-text">自然语言处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81NLP%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、NLP基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86-NLP"><span class="toc-text">1.1、自然语言处理 - NLP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%90%86%E8%A7%A3-NLU-NLI"><span class="toc-text">1.1、自然语言理解 - NLU | NLI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E3%80%81%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90-NLG"><span class="toc-text">1.2、自然语言生成 - NLG</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E7%A1%80%E6%89%A9%E5%B1%95"><span class="toc-text">二、基础扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E5%88%86%E8%AF%8D-TOKENIZATION"><span class="toc-text">2.1、分词 - TOKENIZATION</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E3%80%81%E8%AF%8D%E5%B9%B2%E6%8F%90%E5%8F%96-STEMMING-%E8%AF%8D%E5%BD%A2%E8%BF%98%E5%8E%9F-LEMMATISATION"><span class="toc-text">2.2、词干提取 - STEMMING &amp;&amp; 词形还原 - LEMMATISATION</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E3%80%81%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8-PART-OF-SPEECH"><span class="toc-text">2.3、词性标注 - PART OF SPEECH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E3%80%81%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB-NER"><span class="toc-text">2.4、命名实体识别 - NER</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E7%BB%8F%E5%B8%B8%E8%B6%8A%E5%81%9A%E8%B6%8A%E5%B7%AE"><span class="toc-text">1. 为什么记忆系统经常越做越差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E9%80%BB%E8%BE%91%EF%BC%9A%E5%85%AD%E6%AE%B5%E9%97%AD%E7%8E%AF"><span class="toc-text">2. 设计逻辑：六段闭环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%80%E4%B8%AA%E6%9C%80%E5%B0%8F%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E5%87%86%E5%85%A5%E5%99%A8%EF%BC%88Python%EF%BC%89"><span class="toc-text">3. 一个最小可运行的准入器（Python）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B3%A8%E5%85%A5%E4%B8%8D%E6%98%AF%E8%B6%8A%E5%A4%9A%E8%B6%8A%E5%A5%BD"><span class="toc-text">4. 注入不是越多越好</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%A3%8E%E9%99%A9%E6%B8%85%E5%8D%95"><span class="toc-text">5. 风险清单</span></a></li></ol>
             </div>
           </div>
         </aside>
@@ -391,25 +369,103 @@
       </script>
     
     
+      <script>
+        (function() {
+          var backLink = document.querySelector('[data-back-link]');
+          if (!backLink) return;
+
+          // "上一级"优先恢复 Blog 内状态（分页/视图/锚点），再兜底。
+          var returnStateKey = 'xw_blog_return_state_v2';
+          var returnStateMaxAgeMs = 6 * 60 * 60 * 1000;
+          var fallbackPath = '/blog/';
+          var focusPostPath = '/agent-playbook/memory/';
+          var referrer = document.referrer || '';
+          var fallbackHref = fallbackPath + '?focus=' + encodeURIComponent(focusPostPath);
+
+          function withFocus(targetHref) {
+            try {
+              var targetUrl = new URL(targetHref, window.location.origin);
+              targetUrl.searchParams.set('focus', focusPostPath);
+              var query = targetUrl.searchParams.toString();
+              return targetUrl.pathname + (query ? ('?' + query) : '') + targetUrl.hash;
+            } catch (error) {
+              return fallbackHref;
+            }
+          }
+
+          function hrefFromSavedState() {
+            try {
+              var raw = window.sessionStorage.getItem(returnStateKey);
+              if (!raw) return '';
+              var parsed = JSON.parse(raw);
+              if (!parsed || typeof parsed.sourceUrl !== 'string') return '';
+              if (typeof parsed.savedAt !== 'number' || (Date.now() - parsed.savedAt) > returnStateMaxAgeMs) return '';
+
+              var stateUrl = new URL(parsed.sourceUrl, window.location.origin);
+              var inBlogTree = /^\/blog(\/|$)/.test(stateUrl.pathname);
+
+              if (!inBlogTree) return '';
+              return withFocus(stateUrl.pathname + stateUrl.search + stateUrl.hash);
+            } catch (error) {
+              return '';
+            }
+          }
+
+          try {
+            var stateHref = hrefFromSavedState();
+            if (stateHref) {
+              backLink.setAttribute('href', stateHref);
+              return;
+            }
+
+            if (referrer) {
+              var refUrl = new URL(referrer, window.location.origin);
+              var sameOrigin = refUrl.origin === window.location.origin;
+              var inBlogTree = /^\/blog(\/|$)/.test(refUrl.pathname);
+
+              if (sameOrigin && inBlogTree) {
+                backLink.setAttribute('href', withFocus(refUrl.pathname + refUrl.search + refUrl.hash));
+              } else {
+                backLink.setAttribute('href', fallbackHref);
+              }
+            } else {
+              backLink.setAttribute('href', fallbackHref);
+            }
+          } catch (e) {
+            backLink.setAttribute('href', fallbackHref);
+          }
+        })();
+      </script>
+    
     
 
     <!-- Post Tags -->
+    
+      <div class="post-tags-section">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+        </svg>
+        <div class="post-tags-list">
+          
+            <a href="/tags/Agent/" class="post-tag-item">#Agent</a>
+          
+            <a href="/tags/Playbook/" class="post-tag-item">#Playbook</a>
+          
+            <a href="/tags/Agent%E5%B7%A5%E7%A8%8B/" class="post-tag-item">#Agent工程</a>
+          
+        </div>
+      </div>
     
 
     <!-- Post Navigation -->
     
       <nav class="post-nav">
         
-          <a href="/2023/01/10/Life/%E4%BA%BA%E7%94%9F%E8%87%AA%E8%BF%B0/" class="post-nav-item prev">
-            <div class="nav-label">← 上一篇</div>
-            <div class="nav-title">人生自述</div>
-          </a>
-        
 
         
-          <a href="/2022/01/10/CV/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="post-nav-item next">
+          <a href="/2026/04/14/%E9%A9%BE%E9%A9%AD%E5%B7%A5%E7%A8%8B-Harness-Engineering-%E8%AE%A9Agent%E7%A8%B3%E5%AE%9A%E4%BA%A4%E4%BB%98/" class="post-nav-item next">
             <div class="nav-label">下一篇 →</div>
-            <div class="nav-title">目标检测</div>
+            <div class="nav-title">驾驭工程（Harness Engineering）：让 Agent 稳定交付</div>
           </a>
         
       </nav>
